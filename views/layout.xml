@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <template id="custom_layout" inherit_id="web.layout" name="Custom Layout">
+    <xpath expr="//head" position="inside">
+      <!-- CSS ============================================ -->
+      <!-- Bootstrap CSS -->
+      <link
+        rel="stylesheet"
+        href="/theme_kdmobilier/static/src/css/bootstrap.min.css"
+      />
+      <!-- Fontawesome -->
+      <link
+        rel="stylesheet"
+        href="/theme_kdmobilier/static/src/css/fontawesome.css"
+      />
+      <!-- Flaticon -->
+      <link
+        rel="stylesheet"
+        href="/theme_kdmobilier/static/src/css/flaticon.css"
+      />
+      <!-- Base Icons -->
+      <link
+        rel="stylesheet"
+        href="/theme_kdmobilier/static/src/css/pbminfotech-base-icons.css"
+      />
+      <!-- Themify Icons -->
+      <link
+        rel="stylesheet"
+        href="/theme_kdmobilier/static/src/css/themify-icons.css"
+      />
+      <!-- Slick -->
+      <link
+        rel="stylesheet"
+        href="/theme_kdmobilier/static/src/css/swiper.min.css"
+      />
+      <!-- Magnific -->
+      <link
+        rel="stylesheet"
+        href="/theme_kdmobilier/static/src/css/magnific-popup.css"
+      />
+      <!-- Twentytwenty CSS -->
+      <link
+        rel="stylesheet"
+        href="/theme_kdmobilier/static/src/css/twentytwenty.css"
+      />
+      <!-- AOS -->
+      <link rel="stylesheet" href="/theme_kdmobilier/static/src/css/aos.css" />
+      <!-- Shortcode CSS -->
+      <link
+        rel="stylesheet"
+        href="/theme_kdmobilier/static/src/css/shortcode.css"
+      />
+      <!-- Base CSS -->
+      <link rel="stylesheet" href="/theme_kdmobilier/static/src/css/base.css" />
+      <!-- Style CSS -->
+      <link
+        rel="stylesheet"
+        href="/theme_kdmobilier/static/src/css/style.css"
+      />
+      <!-- Responsive CSS -->
+      <link
+        rel="stylesheet"
+        href="/theme_kdmobilier/static/src/css/responsive.css"
+      />
+    </xpath>
+    <xpath expr="//body" position="inside">
+      <!-- Search Box Start Here -->
+      <div class="pbmit-search-overlay">
+        <div class="pbmit-icon-close">
+          <svg
+            class="qodef-svg--close qodef-m"
+            xmlns="http://www.w3.org/2000/svg"
+            width="28.163"
+            height="28.163"
+            viewBox="0 0 26.163 26.163"
+          >
+            <rect
+              width="36"
+              height="1"
+              transform="translate(0.707) rotate(45)"
+            ></rect>
+            <rect
+              width="36"
+              height="1"
+              transform="translate(0 25.456) rotate(-45)"
+            ></rect>
+          </svg>
+        </div>
+        <div class="pbmit-search-outer">
+          <form
+            class="pbmit-site-searchform"
+            t-attf-action="/website/search"
+            method="get"
+          >
+            <div class="input-group" role="search">
+              <t t-set="search_placeholder">Search...</t>
+              <input
+                type="search"
+                name="search"
+                class="form-control field searchform-s oe_search_box mb-0"
+                t-att-placeholder="placeholder if placeholder else search_placeholder"
+                t-att-value="search if search else ''"
+                t-att-data-search-type="search_type or 'all'"
+                t-att-data-limit="limit or '5'"
+                t-att-data-display-image="display_image or 'true'"
+                t-att-data-display-description="display_description or 'true'"
+                t-att-data-display-extra-link="display_extra_link or 'true'"
+                t-att-data-display-detail="display_detail or 'true'"
+                t-att-data-order-by="order_by or 'name asc'"
+              />
+              <button
+                type="submit"
+                class="oe_search_button"
+                aria-label="Search"
+                title="Search"
+              >
+                <span t-if="search" class="oe_search_found">
+                  <small>( <t t-out="search_count or 0" /> found)</small>
+                </span>
+              </button>
+              <input
+                name="order"
+                type="hidden"
+                class="o_search_order_by"
+                t-att-value="order_by if order_by else 'name asc'"
+              />
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- Search Box End Here -->
+
+      <!-- Scroll To Top -->
+      <div class="pbmit-progress-wrap">
+        <svg
+          class="pbmit-progress-circle svg-content"
+          width="100%"
+          height="100%"
+          viewBox="-1 -1 102 102"
+        >
+          <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+        </svg>
+      </div>
+      <!-- Scroll To Top End -->
+      <!-- <script src="/theme_hotcodes/static/src/js/vendors/jquery-3.6.0.min.js">
+			</script> -->
+      <!-- <script src="/theme_hotcodes/static/src/js/vendors/bootstrap.bundle.min.js">
+			</script> -->
+      <!-- <script src="/theme_hotcodes/static/src/js/vendors/swiper-bundle.min.js">
+			</script>
+			<script src="/theme_hotcodes/static/src/js/vendors/jquery.magnific-popup.min.js">
+			</script>
+			<script src="/theme_hotcodes/static/src/js/vendors/parallax.min.js">
+			</script>
+			<script src="/theme_hotcodes/static/src/js/vendors/aos.js">
+			</script>
+			<script src="/theme_hotcodes/static/src/js/vendors/massonry.min.js">
+			</script>
+			<script src="/theme_hotcodes/static/src/js/app.js">
+			</script> -->
+      <script src="/theme_kdmobilier/static/src/js/jquery.min.js"></script>
+      <!-- Popper JS -->
+      <script src="/theme_kdmobilier/static/src/js/popper.min.js"></script>
+      <!-- Bootstrap JS -->
+      <!-- <script src="/theme_kdmobilier/static/src/js/bootstrap.min.js"></script> -->
+      <!-- jquery Waypoints JS -->
+      <script src="/theme_kdmobilier/static/src/js/jquery.waypoints.min.js"></script>
+      <!-- jquery Appear JS -->
+      <script src="/theme_kdmobilier/static/src/js/jquery.appear.js"></script>
+      <!-- Numinate JS -->
+      <script src="/theme_kdmobilier/static/src/js/numinate.min.js"></script>
+      <!-- Slick JS -->
+      <script src="/theme_kdmobilier/static/src/js/swiper.min.js"></script>
+      <!-- Magnific JS -->
+      <script src="/theme_kdmobilier/static/src/js/jquery.magnific-popup.min.js"></script>
+      <!-- Circle Progress JS -->
+      <script src="/theme_kdmobilier/static/src/js/circle-progress.js"></script>
+      <!-- countdown JS -->
+      <script src="/theme_kdmobilier/static/src/js/jquery.countdown.min.js"></script>
+      <!-- AOS -->
+      <script src="/theme_kdmobilier/static/src/js/aos.js"></script>
+      <!-- GSAP -->
+      <script src="/theme_kdmobilier/static/src/js/gsap.js"></script>
+      <!-- Scroll Trigger -->
+      <script src="/theme_kdmobilier/static/src/js/ScrollTrigger.js"></script>
+      <!-- Split Text -->
+      <script src="/theme_kdmobilier/static/src/js/SplitText.js"></script>
+      <!-- Magnetic -->
+      <script src="/theme_kdmobilier/static/src/js/magnetic.js"></script>
+      <!-- Morphext JS -->
+      <script src="/theme_kdmobilier/static/src/js/morphext.min.js"></script>
+      <script src="/theme_kdmobilier/static/src/js/popper.min.js"></script>
+      <!-- GSAP Animation -->
+      <!-- <script src="/theme_kdmobilier/static/src/js/gsap-animation.js"></script> -->
+      <!-- Twentytwenty JS -->
+      <script src="/theme_kdmobilier/static/src/js/jquery.event.move.js"></script>
+      <!-- <script src="/theme_kdmobilier/static/src/js/jquery.twentytwenty.js"></script> -->
+      <!-- Isotope JS -->
+      <script src="/theme_kdmobilier/static/src/js/isotope.pkgd.min.js"></script>
+      <!-- Scripts JS -->
+      <script src="/theme_kdmobilier/static/src/js/scripts.js"></script>
+    </xpath>
+  </template>
+</odoo>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data noupdate="1">
+
+        <record id="menu_salon" model="website.menu">
+            <field name="name">Salon</field>
+            <field name="url">/shop/category/01-salons-18</field>
+            <field name="sequence" type="int">20</field>
+            <field name="is_mega_menu">True</field>
+
+            <field name="mega_menu_content" type="html">
+
+                <ul>
+                    <li>
+                        <a href="/shop/category/01-salons-canapes-21">Canapé</a>
+                    </li>
+                    <li>
+                        <a href="/shop/category/01-salons-fauteuils-22">Fauteuil</a>
+                    </li>
+                    <li class="active">
+                        <a href="/shop/category/01-salons-bibliotheques-compositions-murales-20">Composition murales</a>
+                    </li>
+                    <li>
+                        <a href="/shop/category/01-salons-consoles-24">Consoles</a>
+                    </li>
+                    <li>
+                        <a href="/shop/category/01-salons-tables-basses-23">Tables basses</a>
+                    </li>
+                </ul>
+
+            </field>
+        </record>
+
+
+        <record id="menu_salle_manger" model="website.menu">
+            <field name="name">Salles à manger</field>
+            <field name="url">/shop/category/salles-a-manger-25</field>
+            <field name="sequence" type="int">20</field>
+            <field name="is_mega_menu">True</field>
+
+            <field name="mega_menu_content" type="html">
+
+                <ul>
+                    <li>
+                        <a href="/shop/category/salles-a-manger-table-a-manger-27">Tables à manger</a>
+                    </li>
+                    <li>
+                        <a href="/shop/category/salles-a-manger-buffets-26">Buffets</a>
+                    </li>
+                </ul>
+
+            </field>
+        </record>
+
+
+        <record id="chambre-a-coucher" model="website.menu">
+            <field name="name">Chambre à coucher</field>
+            <field name="url">/shop/category/chambres-a-coucher-lits-29</field>
+            <field name="sequence" type="int">20</field>
+            <field name="is_mega_menu">True</field>
+
+            <field name="mega_menu_content" type="html">
+
+                <ul>
+                    <li>
+                        <a href="/shop/category/chambres-a-coucher-lits-29">Lits</a>
+                    </li>
+                    <li>
+                        <a href="/shop/category/chambres-a-coucher-armoires-32">Armoires</a>
+                    </li>
+                    <li class="active">
+                        <a href="shop/category/chambres-a-coucher-commodes-31">Commodes</a>
+                    </li>
+                    <li>
+                        <a href="/shop/category/chambres-a-coucher-chevets-30">Chevets</a>
+                    </li>
+                </ul>
+
+            </field>
+        </record>
+
+    </data>
+
+
+</odoo>

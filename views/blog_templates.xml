@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <!-- =====   Custom Blog Templates   ====== -->
+
+  <!-- =====   Custom Blog Post Short LAYOUT BLOG LIST START  ====== -->
+  <template
+    id="custom_blog_post_short"
+    inherit_id="website_blog.blog_post_short"
+    name="Custom Short Blog Post"
+  >
+    <xpath expr="//section[@id='o_wblog_index_content']" position="replace">
+      <div class="page-content">
+        <div t-if="original_search and posts" class="alert alert-warning mt8">
+          No results found for '<span t-esc="original_search" /> '. Showing
+          results for '<span t-esc="search" />
+          '.
+        </div>
+
+        <t t-call="website_blog.posts_loop">
+          <t
+            t-if="not blog"
+            t-set="posts_list_show_parent_blog"
+            t-value="True"
+          />
+        </t>
+
+        <t t-call="website.pager">
+          <t t-set="classname" t-valuef="justify-content-center" />
+          <t t-set="extraLinkClass" t-valuef="post_link" />
+        </t>
+      </div>
+    </xpath>
+  </template>
+  <!-- =====   Custom Blog Post Short LAYOUT BLOG LIST END  ====== -->
+  <!-- =====   Custom Blog Posts Grid LAYOUT BLOG LIST START /blog page  ====== -->
+  <template
+    id="custom_blog_posts_grid"
+    inherit_id="website_blog.posts_loop"
+    name="Custom Grid Blog Posts"
+  >
+    <xpath expr="//div[@id='o_wblog_posts_loop']" position="replace">
+      <section class="section-md pb-120">
+        <div class="container-fluid px-4">
+          <div class="row pbmit-element-posts-wrapper">
+            <!-- Loop through posts -->
+            <t t-foreach="posts" t-as="post">
+              <article
+                class="pbmit-ele-blog pbmit-blog-style-1 col-md-6 col-lg-3"
+              >
+                <div class="post-item">
+                  <div class="pbminfotech-box-content">
+                    <!-- Featured Image Container -->
+                    <div class="pbmit-featured-container">
+                      <div class="pbmit-featured-img-wrapper">
+                        <div class="pbmit-featured-wrapper">
+                          <t
+                            t-set="cover_properties"
+                            t-value="json.loads(post.cover_properties)"
+                          />
+
+                          <t
+                            t-set="bg_image"
+                            t-value="cover_properties.get('background-image', 'none')"
+                          />
+                          <t
+                            t-set="bg_color_style"
+                            t-value="cover_properties.get('background_color_style', '')"
+                          />
+                          <t
+                            t-set="bg_color_class"
+                            t-value="cover_properties.get('background_color_class', '')"
+                          />
+
+                          <t t-if="bg_image != 'none'">
+                            <img
+                              t-att-src="bg_image.replace('url(', '').replace(')', '').replace('&quot;', '')"
+                              t-att-alt="post.name"
+                              class="img-fluid"
+                              loading="lazy"
+                            />
+                          </t>
+                          <t t-else="">
+                            <div
+                              class="img-fluid o_cc3"
+                              style="height: 224px"
+                            />
+                          </t>
+                        </div>
+                      </div>
+                      <a
+                        class="pbmit-blog-btn"
+                        t-att-href="post.website_url"
+                        t-att-title="post.name"
+                      >
+                        <span class="pbmit-button-icon">
+                          <i class="pbmit-base-icon-pbmit-up-arrow" />
+                        </span>
+                      </a>
+                    </div>
+
+                    <!-- Content Wrapper -->
+                    <div class="pbmit-content-wrapper">
+                      <!-- Date and Author -->
+                      <div class="pbmit-date-wraper d-flex align-items-center">
+                        <div class="pbmit-meta-date-wrapper pbmit-meta-line">
+                          <div class="pbmit-meta-date">
+                            <span class="pbmit-post-date">
+                              <i class="pbmit-base-icon-calendar-3" />
+                              <span
+                                t-field="post.post_date"
+                                t-options='{"format": "MMMM d, yyyy"}'
+                              />
+                            </span>
+                          </div>
+                        </div>
+                        <div class="pbmit-meta-author pbmit-meta-line">
+                          <span class="pbmit-post-author">
+                            <i class="pbmit-base-icon-user-3" />
+                            <span>By </span>
+                            <span t-field="post.author_id.name" />
+                          </span>
+                        </div>
+                      </div>
+
+                      <!-- Post Title -->
+                      <h3 class="pbmit-post-title">
+                        <a t-att-href="post.website_url" t-esc="post.name" />
+                      </h3>
+
+                      <!-- Description -->
+                      <div class="pbminfotech-box-desc" t-esc="post.subtitle" />
+                      <!-- Tags -->
+                      <div class="article-category mb-4">
+                        <t t-foreach="post.tag_ids" t-as="tag">
+                          <a
+                            t-att-href="'/blog/%s/tag/%s' % (slug(post.blog_id), slug(tag))"
+                            t-attf-class="d-inline-block text-dark badge bg-#{tag_index % 4 == 0 and 'primary' or tag_index % 4 == 1 and 'danger' or tag_index % 4 == 2 and 'warning' or 'info'}-soft me-2"
+                            t-esc="tag.name"
+                          />
+                        </t>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </t>
+          </div>
+
+          <!-- Pagination -->
+          <t t-call="website.pager" />
+        </div>
+      </section>
+    </xpath>
+  </template>
+  <!-- =====   Custom Blog Posts Grid LAYOUT BLOG LIST START /blog page  ====== -->
+
+  <!-- ========= BLOG PAGE START =========  -->
+  <template
+    id="blog_post_complete"
+    name="Blog Post"
+    inherit_id="website_blog.blog_post_complete"
+    active="True"
+    priority="1"
+  >
+    <xpath expr="//section[@id='o_wblog_post_main']" position="replace">
+      <section
+        id="o_wblog_post_main"
+        t-attf-class="site-content blog-details #{'anim' in request.params and 'o_wblog_post_main_transition'}"
+      >
+        <!-- Sidebar-enabled Layout -->
+        <div
+          t-if="opt_blog_post_sidebar"
+          t-attf-class="container #{opt_blog_post_readable and ''}"
+        >
+          <div
+            t-attf-class="row #{opt_blog_post_readable and 'justify-content-between'}"
+          >
+            <div
+              id="o_wblog_post_content"
+              t-attf-class="#{opt_blog_post_readable and 'col-lg-9 blog-right-col' or 'col-lg-9 blog-right-col'}"
+            >
+              <t t-call="website_blog.blog_post_content" />
+            </div>
+            <div
+              id="o_wblog_post_sidebar_col"
+              t-attf-class="col-md-12 col-lg-3 blog-left-col #{not opt_blog_post_readable and ''}"
+            >
+              <div class="sidebar">
+                <t t-call="website_blog.blog_post_sidebar" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- No-Sidebar Layout -->
+        <div
+          t-if="not opt_blog_post_sidebar"
+          t-attf-class="#{opt_blog_post_readable and 'o_container_small'}"
+        >
+          <div class="d-flex flex-column flex-lg-row">
+            <div
+              id="o_wblog_post_content"
+              t-attf-class=" #{opt_blog_post_readable and 'o_container_small w-100 flex-shrink-0'}"
+            >
+              <t t-call="website_blog.blog_post_content" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </xpath>
+  </template>
+  <!-- ========= BLOG PAGE END =========  -->
+
+  <!-- =====   Custom Blog SIDEBAR ITEMS START  ====== -->
+  <template
+    id="blog_post_sidebar"
+    inherit_id="website_blog.blog_post_sidebar"
+    name="Blog Sidebar"
+  >
+    <xpath expr="//div[@id='o_wblog_post_sidebar']" position="replace">
+      <div id="o_wblog_post_sidebar">
+        <!-- (Option) Post Sidebar: display Blogs list START -->
+        <div t-if="len(blogs) > 1" class="widget widget-categories">
+          <h2 class="widget-title">Nos Blogs</h2>
+          <ul>
+            <li t-foreach="blogs" t-as="nav_blog">
+              <span class="pbmit-cat-li">
+                <a
+                  t-attf-href="#{blog_url(blog=nav_blog, tag=False, date_begin=False, date_end=False)}"
+                >
+                  <b t-field="nav_blog.name" />
+                </a>
+              </span>
+            </li>
+          </ul>
+        </div>
+        <div class="oe_structure" id="oe_structure_blog_post_sidebar_5" />
+        <!-- (Option) Post Sidebar: display Blogs list START -->
+        <!-- (Option) Post Sidebar: RECENT POSTS -->
+        <aside class="widget widget-recent-post">
+          <h2 class="widget-title">Postes Reccents</h2>
+
+          <ul class="recent-post-list">
+            <t
+              t-set="posts"
+              t-value="env['blog.post'].search([], limit=3, order='post_date asc')"
+            />
+            <li t-foreach="posts" t-as="post" class="recent-post-list-li">
+              <t
+                t-set="cover_properties"
+                t-value="json.loads(post.cover_properties)"
+              />
+              <t
+                t-set="bg_image"
+                t-value="cover_properties.get('background-image', 'none')"
+              />
+              <t
+                t-set="bg_color_style"
+                t-value="cover_properties.get('background_color_style', '')"
+              />
+              <t
+                t-set="bg_color_class"
+                t-value="cover_properties.get('background_color_class', '')"
+              />
+              <a
+                t-att-href="post.website_url"
+                class="recent-post-thum"
+                t-att-aria-label="'Read more about ' + post.name"
+              >
+                <t t-if="bg_image != 'none'">
+                  <img
+                    t-att-src="bg_image.replace('url(', '').replace(')', '').replace('&quot;', '')"
+                    t-att-alt="post.name"
+                    class="img-fluid"
+                    loading="lazy"
+                  />
+                </t>
+                <t t-elif="bg_color_style">
+                  <div
+                    t-attf-style="#{bg_color_style}height: 224px"
+                    class="img-fluid"
+                  />
+                </t>
+                <t t-elif="bg_color_class">
+                  <div
+                    t-attf-class="img-fluid #{bg_color_class}"
+                    t-attf-style="height: 224px"
+                  />
+                </t>
+                <t t-else="">
+                  <div class="img-fluid o_cc3" t-attf-style="height: 224px" />
+                </t>
+              </a>
+              <div class="pbmit-rpw-content">
+                <span class="pbmit-rpw-date">
+                  <a t-att-href="post.website_url">
+                    <span
+                      t-field="post.post_date"
+                      t-options='{"format": "MMMM d, yyyy"}'
+                    />
+                  </a>
+                </span>
+                <span class="pbmit-rpw-title">
+                  <a t-att-href="post.website_url">
+                    <span t-field="post.name" />
+                  </a>
+                </span>
+              </div>
+            </li>
+          </ul>
+        </aside>
+        <div class="oe_structure" id="oe_structure_blog_post_sidebar_10" />
+        <!-- (Option) Post Sidebar: RECENT POSTS -->
+        <!-- (Option) Post Sidebar: Tags START -->
+        <aside class="widget widget-tag-cloud">
+          <h3 class="widget-title">Tags</h3>
+          <t t-if="blog_post.tag_ids">
+            <div class="tagcloud">
+              <t t-foreach="blog_post.tag_ids" t-as="one_tag">
+                <a
+                  class="tag-cloud-link"
+                  t-attf-href="#{blog_url(tag=slug(one_tag))}"
+                  t-esc="one_tag.name"
+                />
+              </t>
+            </div>
+          </t>
+          <t t-else="">
+            <div class="tagcloud" groups="website.group_website_designer">
+              <h3 class="widget-title"><em>No tags defined</em></h3>
+              <a
+                role="menuitem"
+                t-attf-href="/web#view_type=form&amp;model=#{main_object._name}&amp;id=#{main_object.id}&amp;action=#{action}&amp;menu_id=#{menu or main_object.env.ref('website.menu_website_configuration').id}"
+                title="Edit in backend"
+                id="edit-in-backend"
+                >Add some</a
+              >
+            </div>
+          </t>
+        </aside>
+        <div class="oe_structure" id="oe_structure_blog_post_sidebar_4" />
+        <!-- (Option) Post Sidebar: Tags END -->
+
+        <!-- (Option) Post Sidebar: display Ads START -->
+        <aside class="widget pbmit-service-ad">
+          <div class="textwidget">
+            <div class="pbmit-service-ads">
+              <h5 class="pbmit-ads-subheding">Our Newsletter</h5>
+              <h4 class="pbmit-ads-subtitle">Ready to start learn ?</h4>
+              <h3 class="pbmit-ads-title">Sign up now!</h3>
+              <div class="pbmit-ads-desc">
+                <i class="pbmit-base-icon-phone-call-1"></i>+(123) 1234-567-8901
+              </div>
+              <a class="pbmit-btn pbmit-btn-hover-white" href="#">
+                <span class="pbmit-button-content-wrapper">
+                  <span class="pbmit-button-text">Register now</span>
+                </span>
+              </a>
+            </div>
+          </div>
+        </aside>
+        <div class="oe_structure" id="oe_structure_blog_post_sidebar_11" />
+        <!-- (Option) Post Sidebar: display Ads END -->
+      </div>
+    </xpath>
+  </template>
+  <!-- =====   Custom Blog SIDEBAR ITEMS END  ====== -->
+</odoo>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+
+    <!-- Add controller method to get categories -->
+    <template id="kdmobilier_homepage_categories" inherit_id="kdmobilier_homepage">
+        <xpath expr="//section[hasclass('header-style-3')]" position="after">
+            <t t-set="website_sale_categories" t-value="website.get_ecommerce_categories()" />
+            <t t-set="category" t-value="false" />
+            <t t-set="categories" t-value="website_sale_categories" />
+            <t t-set="search" t-value="false" />
+            <t t-set="search_categories_ids" t-value="[]" />
+
+            <div class="ihbox-section-two">
+                <div class="container-fluid p-0">
+                    <div class="swiper-slider" data-autoplay="false" data-loop="true" data-dots="false" data-arrows="false" data-columns="4" data-margin="30" data-effect="slide">
+                        <div class="swiper-wrapper">
+                            <t t-foreach="categories" t-as="c">
+                                <article class="pbmit-miconheading-style-7 swiper-slide">
+                                    <a t-att-href="'/shop/category/%s' % c.id" class="pbmit-ihbox-style-7">
+                                        <div class="pbmit-ihbox-box">
+                                            <div class="pbmit-icon-wrapper d-flex align-items-center">
+                                                <div class="pbmit-ihbox-icon">
+                                                    <div class="pbmit-ihbox-icon-wrapper">
+                                                        <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
+                                                            <div t-if="c.image_128" t-attf-style="background-image:url('data:image/png;base64,#{c.image_128}')" class="o_image_40_cover oe_img_bg o_bg_img_center rounded-3" t-att-alt="c.name" />
+                                                            <i t-else="" class="pbmit-xinterio-icon pbmit-xinterio-icon-house"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="pbmit-title-wrap">
+                                                    <h2 class="pbmit-element-title" t-field="c.name" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="pbmit-ihbox-btn">
+                                            <a class="pbmit-button-inner" t-att-href="'/shop/category/%s' % c.id">
+                                                <span class="pbmit-button-wrapper">
+                                                    <span class="pbmit-button-text">Read More</span>
+                                                </span>
+                                            </a>
+                                        </div> -->
+                                    </a>
+                                </article>
+                            </t>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </template>
+    <!-- Add controller method to get categories -->
+
+    <!-- Mega Menu Template -->
+    <template id="custom_submenu" inherit_id="website.submenu" name="Custom Submenu">
+        <!-- Remove the original mega menu div -->
+        <xpath expr="//div[@t-if='submenu.is_mega_menu and not is_mobile']" position="replace" />
+
+        <!-- Add the new structure -->
+        <xpath expr="//li[@t-elif='show_dropdown']" position="replace">
+            <li t-if="show_dropdown" t-attf-class="#{item_class or ''} dropdown #{submenu._is_active() and 'active'}" role="presentation">
+                <a t-att-href="submenu._clean_url()" t-attf-class="#{link_class or ''} #{submenu._is_active() and 'active'}" role="menuitem" t-ignore="true" t-att-target="'_blank' if submenu.new_window else None">
+                    <span t-field="submenu.name" />
+                </a>
+                <!-- Direct insertion of mega menu content -->
+                <t t-if="submenu.is_mega_menu">
+                    <t t-raw="submenu.mega_menu_content" />
+                </t>
+                <!-- Regular submenu -->
+                <ul t-else="" t-attf-class="#{dropdown_menu_classes}" role="menu">
+                    <t t-foreach="submenu.child_id" t-as="submenu">
+                        <t t-call="website.submenu">
+                            <t t-set="item_class" t-value="None" />
+                            <t t-set="link_class" t-value="'dropdown-item'" />
+                        </t>
+                    </t>
+                </ul>
+            </li>
+        </xpath>
+    </template>
+    <!-- Remove navbar pills -->
+    <template id="remove_navbar_pills" inherit_id="website.navbar_nav" name="Remove Navbar Pills" priority="99">
+        <xpath expr="//ul[@id='top_menu']" position="attributes">
+            <attribute name="t-attf-class" remove="nav-pills" separator=" " />
+        </xpath>
+    </template>
+    <!-- Header 1 KD mobilier -->
+    <!-- <template id="template_kdmobilier_header_1" inherit_id="website.layout" name="Template KD mobilier Header 1">
+
+    </template> -->
+</odoo>
