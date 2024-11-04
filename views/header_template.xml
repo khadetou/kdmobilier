@@ -8,31 +8,47 @@
             <div class="d-flex justify-content-between">
               <div class="pbmit-pre-header-left">
                 <ul class="pbmit-social-links">
-                  <li class="pbmit-social-li pbmit-social-facebook">
-                    <a title="Facebook" href="#" target="_blank">
+
+                  <li class="pbmit-social-li pbmit-social-twitter">
+                    <a title="Twitter" href="https://www.facebook.com/kdmobilier" target="_blank">
                       <span>
-                        <i class="pbmit-base-icon-facebook-f"></i>
+                        <i class="fa fa-facebook o_editable_media" style="font-size: 20px;"></i>
                       </span>
                     </a>
                   </li>
                   <li class="pbmit-social-li pbmit-social-twitter">
-                    <a title="Twitter" href="#" target="_blank">
+                    <a title="Twitter" href="https://x.com/kdmobilier" target="_blank">
                       <span>
-                        <i class="pbmit-base-icon-twitter-2"></i>
+                        <i class="fa fa-twitter o_editable_media" style="font-size: 20px;"></i>
                       </span>
                     </a>
                   </li>
-                  <li class="pbmit-social-li pbmit-social-linkedin">
-                    <a title="LinkedIn" href="#" target="_blank">
+
+                  <li class="pbmit-social-li pbmit-social-instagram">
+                    <a title="Instagram" href="https://www.instagram.com/kdmobilier" target="_blank">
                       <span>
-                        <i class="pbmit-base-icon-linkedin-in"></i>
+                        <i class="fa fa-instagram o_editable_media" style="font-size: 20px;"></i>
                       </span>
                     </a>
                   </li>
                   <li class="pbmit-social-li pbmit-social-instagram">
-                    <a title="Instagram" href="#" target="_blank">
+                    <a title="Instagram" href="https://www.youtube.com/@kdmobilier" target="_blank">
                       <span>
-                        <i class="pbmit-base-icon-instagram"></i>
+                        <i class="fa fa-youtube o_editable_media" style="font-size: 20px;"></i>
+                      </span>
+                    </a>
+                  </li>
+                  <li class="pbmit-social-li pbmit-social-instagram">
+                    <a title="Instagram" href="https://www.tiktok.com/@kdmobilier" target="_blank">
+                      <span>
+                        <i class="fa fa-tiktok o_editable_media" style="font-size: 20px;"></i>
+                      </span>
+                    </a>
+                  </li>
+                  <li class="pbmit-social-li pbmit-social-instagram">
+                    <a title="Instagram" href="https://www.snapchat.com/add/kdmobilier" target="_blank">
+                      <span>
+                        <i class="fa fa-snapchat o_editable_media" style="font-size: 20px;"></i>
                       </span>
                     </a>
                   </li>
@@ -49,8 +65,7 @@
                     Auchan Sacré Coeur 3, Dakar - Sénégal
                   </li>
                   <li>
-                    <i class="pbmit-base-icon-phone-volume-solid-1"></i>+221 33
-                    826 08 08
+                    <i class="pbmit-base-icon-phone-volume-solid-1"></i>+221 78 533 28 28
                   </li>
                 </ul>
               </div>
@@ -59,18 +74,12 @@
         </div>
         <div class="pbmit-main-header-area">
           <div class="container">
-            <div
-              class="pbmit-header-content d-flex justify-content-between align-items-center"
-            >
+            <div class="pbmit-header-content d-flex justify-content-between align-items-center">
               <div class="pbmit-logo-area">
                 <div class="site-branding">
                   <h1 class="site-title">
                     <a href="/">
-                      <img
-                        class="logo-img"
-                        src="/theme_kdmobilier/static/src/images/long_logo.svg"
-                        alt="KD mobilier"
-                      />
+                      <img class="logo-img" src="/theme_kdmobilier/static/src/images/long_logo.svg" alt="KD mobilier" />
                     </a>
                   </h1>
                 </div>
@@ -85,29 +94,13 @@
                   </div>
                   <!-- Mobile Menu -->
                   <div class="pbmit-mobile-menu-bg"></div>
-                  <div
-                    class="collapse navbar-collapse clearfix show"
-                    id="pbmit-menu"
-                  >
+                  <div class="collapse navbar-collapse clearfix show" id="pbmit-menu">
                     <div class="pbmit-menu-wrap">
                       <span class="closepanel">
-                        <svg
-                          class="qodef-svg--close qodef-m"
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="20.163"
-                          height="20.163"
-                          viewBox="0 0 26.163 26.163"
-                        >
-                          <rect
-                            width="36"
-                            height="1"
-                            transform="translate(0.707) rotate(45)"
-                          ></rect>
-                          <rect
-                            width="36"
-                            height="1"
-                            transform="translate(0 25.456) rotate(-45)"
-                          ></rect>
+                        <svg class="qodef-svg--close qodef-m"
+                          xmlns="http://www.w3.org/2000/svg" width="20.163" height="20.163" viewBox="0 0 26.163 26.163">
+                          <rect width="36" height="1" transform="translate(0.707) rotate(45)"></rect>
+                          <rect width="36" height="1" transform="translate(0 25.456) rotate(-45)"></rect>
                         </svg>
                       </span>
                       <t t-call="website.navbar_nav">
@@ -116,10 +109,7 @@
                         <!-- Menu -->
                         <t t-foreach="website.menu_id.child_id" t-as="submenu">
                           <t t-call="website.submenu">
-                            <t
-                              t-set="item_class"
-                              t-valuef="nav-item dropdown"
-                            />
+                            <t t-set="item_class" t-valuef="nav-item dropdown" />
                             <t t-set="link_class" t-valuef="" />
                           </t>
                         </t>
@@ -161,8 +151,7 @@
                               <a href="our-team.html">Our Team</a>
                             </li>
                             <li>
-                              <a href="team-single-details.html"
-                                >Team Single Details</a
+                              <a href="team-single-details.html">Team Single Details</a
                               >
                             </li>
                             <li>
@@ -185,23 +174,19 @@
                               <a href="#">Masonry View</a>
                               <ul>
                                 <li>
-                                  <a href="portfolio-m-grid-col-2.html"
-                                    >Grid Col 2</a
+                                  <a href="portfolio-m-grid-col-2.html">Grid Col 2</a
                                   >
                                 </li>
                                 <li>
-                                  <a href="portfolio-m-grid-col-3.html"
-                                    >Grid Col 3</a
+                                  <a href="portfolio-m-grid-col-3.html">Grid Col 3</a
                                   >
                                 </li>
                                 <li>
-                                  <a href="portfolio-m-grid-col-4.html"
-                                    >Grid Col 4</a
+                                  <a href="portfolio-m-grid-col-4.html">Grid Col 4</a
                                   >
                                 </li>
                                 <li>
-                                  <a href="portfolio-m-grid-col-wide.html"
-                                    >Grid Wide</a
+                                  <a href="portfolio-m-grid-col-wide.html">Grid Wide</a
                                   >
                                 </li>
                               </ul>
@@ -210,23 +195,19 @@
                               <a href="#">Grid View</a>
                               <ul>
                                 <li>
-                                  <a href="portfolio-grid-col-2.html"
-                                    >Grid Col 2</a
+                                  <a href="portfolio-grid-col-2.html">Grid Col 2</a
                                   >
                                 </li>
                                 <li>
-                                  <a href="portfolio-grid-col-3.html"
-                                    >Grid Col 3</a
+                                  <a href="portfolio-grid-col-3.html">Grid Col 3</a
                                   >
                                 </li>
                                 <li>
-                                  <a href="portfolio-grid-col-4.html"
-                                    >Grid Col 4</a
+                                  <a href="portfolio-grid-col-4.html">Grid Col 4</a
                                   >
                                 </li>
                                 <li>
-                                  <a href="portfolio-grid-no-gap.html"
-                                    >Grid No Gap</a
+                                  <a href="portfolio-grid-no-gap.html">Grid No Gap</a
                                   >
                                 </li>
                               </ul>
@@ -235,18 +216,15 @@
                               <a href="#">Sortable View</a>
                               <ul>
                                 <li>
-                                  <a href="portfolio-sortable-grid-col-2.html"
-                                    >Grid Col 2</a
+                                  <a href="portfolio-sortable-grid-col-2.html">Grid Col 2</a
                                   >
                                 </li>
                                 <li>
-                                  <a href="portfolio-sortable-grid-col-3.html"
-                                    >Grid Col 3</a
+                                  <a href="portfolio-sortable-grid-col-3.html">Grid Col 3</a
                                   >
                                 </li>
                                 <li>
-                                  <a href="portfolio-sortable-grid-col-4.html"
-                                    >Grid Col 4</a
+                                  <a href="portfolio-sortable-grid-col-4.html">Grid Col 4</a
                                   >
                                 </li>
                               </ul>
@@ -255,13 +233,11 @@
                               <a href="#">Single Detail Style</a>
                               <ul>
                                 <li>
-                                  <a href="portfolio-detail-style-1.html"
-                                    >Portfolio Detail Style 1</a
+                                  <a href="portfolio-detail-style-1.html">Portfolio Detail Style 1</a
                                   >
                                 </li>
                                 <li>
-                                  <a href="portfolio-detail-style-2.html"
-                                    >Portfolio Detail Style 2</a
+                                  <a href="portfolio-detail-style-2.html">Portfolio Detail Style 2</a
                                   >
                                 </li>
                               </ul>
@@ -275,23 +251,19 @@
                               <a href="#">Blog Masonry View</a>
                               <ul>
                                 <li>
-                                  <a href="blog-m-grid-col-2.html"
-                                    >Grid Col 2</a
+                                  <a href="blog-m-grid-col-2.html">Grid Col 2</a
                                   >
                                 </li>
                                 <li>
-                                  <a href="blog-m-grid-col-3.html"
-                                    >Grid Col 3</a
+                                  <a href="blog-m-grid-col-3.html">Grid Col 3</a
                                   >
                                 </li>
                                 <li>
-                                  <a href="blog-m-grid-col-4.html"
-                                    >Grid Col 4</a
+                                  <a href="blog-m-grid-col-4.html">Grid Col 4</a
                                   >
                                 </li>
                                 <li>
-                                  <a href="blog-masonry-wide.html"
-                                    >Masonry Wide</a
+                                  <a href="blog-masonry-wide.html">Masonry Wide</a
                                   >
                                 </li>
                               </ul>
@@ -309,8 +281,7 @@
                                   <a href="blog-grid-col-4.html">Grid Col 4</a>
                                 </li>
                                 <li>
-                                  <a href="blog-sortable-grid-view.html"
-                                    >Sortable Grid View</a
+                                  <a href="blog-sortable-grid-view.html">Sortable Grid View</a
                                   >
                                 </li>
                               </ul>
@@ -319,8 +290,7 @@
                               <a href="blog-classic.html">Blog Classic</a>
                             </li>
                             <li>
-                              <a href="blog-single-details.html"
-                                >Blog Single Details</a
+                              <a href="blog-single-details.html">Blog Single Details</a
                               >
                             </li>
                           </ul>

@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-  <template
-    id="kdmobilier_footer_1"
-    inherit_id="website.layout"
-    name="Footer KD mobilier"
-  >
+  <template id="kdmobilier_footer_1" inherit_id="website.layout" name="Footer KD mobilier">
     <xpath expr="//footer" position="replace">
-      <footer
-        id="footer"
-        class="site-footer footer-style-2 pbmit-bg-color-light"
-      >
+      <footer id="footer" class="site-footer footer-style-2 pbmit-bg-color-light">
         <div class="footer-wrap pbmit-footer-widget-area">
           <div class="container">
             <div class="row">
@@ -18,39 +11,26 @@
                   <div class="textwidget">
                     <div class="pbmit-footer-logo">
                       <a href="/">
-                        <img
-                          src="/theme_kdmobilier/static/src/images/long_logo.svg"
-                          alt=""
-                        />
+                        <img src="/theme_kdmobilier/static/src/images/long_logo.svg" alt="" />
                       </a>
                     </div>
                   </div>
                 </aside>
                 <aside class="widget">
                   <div class="pbmit-contact-widget-lines">
-                    <div
-                      class="pbmit-contact-widget-line pbmit-contact-widget-address"
-                    >
+                    <div class="pbmit-contact-widget-line pbmit-contact-widget-address">
                       <strong>Dakar:</strong> C.C Bin Abdallah sacré coeur 3
                     </div>
-                    <div
-                      class="pbmit-contact-widget-line pbmit-contact-widget-address"
-                    >
+                    <div class="pbmit-contact-widget-line pbmit-contact-widget-address">
                       <strong>Saly:</strong> Musée Khelcom
                     </div>
-                    <div
-                      class="pbmit-contact-widget-line pbmit-contact-widget-phone"
-                    >
+                    <div class="pbmit-contact-widget-line pbmit-contact-widget-phone">
                       +221 33 826 08 08
                     </div>
-                    <div
-                      class="pbmit-contact-widget-line pbmit-contact-widget-phone"
-                    >
+                    <div class="pbmit-contact-widget-line pbmit-contact-widget-phone">
                       +221 78 533 28 28
                     </div>
-                    <div
-                      class="pbmit-contact-widget-line pbmit-contact-widget-email"
-                    >
+                    <div class="pbmit-contact-widget-line pbmit-contact-widget-email">
                       <a href="#" class="__cf_email__">contact@kdmobilier.sn</a>
                     </div>
                   </div>
@@ -124,26 +104,16 @@
             <div class="row g-0">
               <div class="col-md-12 col-xl-6 pbmit-footer-left">
                 <form>
-                  <div
-                    class="s_newsletter_subscribe_form s_newsletter_list js_subscribe pbmit-newsletter"
-                  >
+                  <div class="s_newsletter_subscribe_form s_newsletter_list js_subscribe pbmit-newsletter">
                     <h3>Recevez les Offres Exclusives de KD Mobilier !</h3>
                     <div class="pbmit-footer-email-button">
-                      <input
-                        type="email"
-                        name="EMAIL"
-                        class="js_subscribe_value"
-                        placeholder="Your email address"
-                      />
+                      <input type="email" name="EMAIL" class="js_subscribe_value" placeholder="Your email address" />
                       <button class="pbmit-btn js_subscribe_btn">
                         <span class="pbmit-button-content-wrapper">
                           <span class="pbmit-button-text">Subscribe</span>
                         </span>
                       </button>
-                      <button
-                        class="pbmit-btn js_subscribed_btn btn btn-success d-none"
-                        disabled="disabled"
-                      >
+                      <button class="pbmit-btn js_subscribed_btn btn btn-success d-none" disabled="disabled">
                         <span class="pbmit-button-content-wrapper">
                           <span class="pbmit-button-text">Thanks</span>
                         </span>
@@ -154,10 +124,7 @@
               </div>
               <div class="col-md-12 col-xl-6 pbmit-footer-right">
                 <div class="pbmit-footer-bg-image">
-                  <img
-                    src="/themes/theme_kdmobilier/static/src/images/footer-mailchip-img.png"
-                    alt=""
-                  />
+                  <img src="/themes/theme_kdmobilier/static/src/images/footer-mailchip-img.png" alt="" />
                 </div>
               </div>
             </div>
@@ -170,31 +137,25 @@
                 <div class="col-md-6">
                   <div class="pbmit-footer-copyright-text-area">
                     Copyright © 2024 KD MOBILIER, Designed by
-                    <a href="/https://hotcodes.io"><strong>HotCodes</strong></a>
+                    <a href="/https://hotcodes.io">
+                      <strong>HotCodes</strong>
+                    </a>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="pbmit-footer-social-area">
                     <ul class="pbmit-social-links">
                       <li class="pbmit-social-li pbmit-social-facebook">
-                        <a
-                          title="Facebook"
-                          href="https://www.facebook.com/kdmobilier"
-                          target="_blank"
-                        >
+                        <a title="Facebook" href="https://www.facebook.com/kdmobilier" target="_blank">
                           <span>
-                            <i class="pbmit-base-icon-facebook-f"></i>
+                            <i class="pbmit-social-li fa  fa-facebook o_editable_media" style="font-size: 20px;"></i>
                           </span>
                         </a>
                       </li>
                       <li class="pbmit-social-li pbmit-social-twitter">
-                        <a
-                          title="Twitter"
-                          href="https://x.com/kdmobilier"
-                          target="_blank"
-                        >
+                        <a title="Twitter" href="https://x.com/kdmobilier" target="_blank">
                           <span>
-                            <i class="pbmit-base-icon-twitter-2"></i>
+                            <i class="fa fa-twitter o_editable_media" style="font-size: 20px;"></i>
                           </span>
                         </a>
                       </li>
@@ -206,13 +167,30 @@
                         </a>
                       </li> -->
                       <li class="pbmit-social-li pbmit-social-instagram">
-                        <a
-                          title="Instagram"
-                          href="https://www.instagram.com/kdmobilier"
-                          target="_blank"
-                        >
+                        <a title="Instagram" href="https://www.instagram.com/kdmobilier" target="_blank">
                           <span>
-                            <i class="pbmit-base-icon-instagram"></i>
+                            <i class="fa fa-instagram o_editable_media" style="font-size: 20px;"></i>
+                          </span>
+                        </a>
+                      </li>
+                      <li class="pbmit-social-li pbmit-social-instagram">
+                        <a title="Instagram" href="https://www.youtube.com/@kdmobilier" target="_blank">
+                          <span>
+                            <i class="fa fa-youtube o_editable_media" style="font-size: 20px;"></i>
+                          </span>
+                        </a>
+                      </li>
+                      <li class="pbmit-social-li pbmit-social-instagram">
+                        <a title="Instagram" href="https://www.tiktok.com/@kdmobilier" target="_blank">
+                          <span>
+                            <i class="fa fa-tiktok o_editable_media" style="font-size: 20px;"></i>
+                          </span>
+                        </a>
+                      </li>
+                      <li class="pbmit-social-li pbmit-social-instagram">
+                        <a title="Instagram" href="https://www.snapchat.com/add/kdmobilier" target="_blank">
+                          <span>
+                            <i class="fa fa-snapchat o_editable_media" style="font-size: 20px;"></i>
                           </span>
                         </a>
                       </li>
