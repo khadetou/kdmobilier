@@ -21,6 +21,26 @@
 /*----------------------------------------*/
 
 /* CUSTOM CODES START */
+.oe_product_cart .oe_product_image .oe_product_image_link {
+  padding-top: calc(
+    71% / (var(--o-wsale-card-thumb-aspect-ratio, 1))
+  ) !important;
+}
+.o_image_64_cover {
+  display: inline-block;
+  background-size: cover;
+  background-position: center;
+  min-width: 64px;
+  min-height: 64px;
+}
+
+.o_wsale_filmstip_container {
+  min-height: 120px;
+}
+
+.o_wsale_filmstip {
+  padding: 0.5rem;
+}
 .main-menu .navigation > li > ul,
 .main-menu .navigation > li > ul > li > ul {
   list-style: none;

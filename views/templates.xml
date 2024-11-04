@@ -1,68 +1,444 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+  <!-- Shop Template -->
+  <template
+    id="products_item_blog_style"
+    inherit_id="website_sale.products_item"
+    name="Product Item Blog Style"
+  >
+    <xpath expr="//form" position="replace">
+      <form
+        action="/shop/cart/update"
+        method="post"
+        class="oe_product_cart pbmit-ele-blog pbmit-blog-style-1 h-100 d-flex"
+        t-att-data-publish="product.website_published and 'on' or 'off'"
+        itemscope="itemscope"
+        itemtype="http://schema.org/Product"
+      >
+        <t
+          t-set="product_href"
+          t-value="keep(product.website_url, page=(pager['page']['num'] if pager['page']['num']&gt;1 else None))"
+        />
+        <t
+          t-set="image_type"
+          t-value="product._get_suitable_image_size(ppr, td_product['x'], td_product['y'])"
+        />
 
-    <!-- Shop Template -->
-    <template id="products_item_blog_style" inherit_id="website_sale.products_item" name="Product Item Blog Style">
-        <xpath expr="//form" position="replace">
-            <form action="/shop/cart/update" method="post" class="oe_product_cart pbmit-ele-blog pbmit-blog-style-1 h-100 d-flex" t-att-data-publish="product.website_published and 'on' or 'off'" itemscope="itemscope" itemtype="http://schema.org/Product">
+        <div
+          class="oe_product_image post-item position-relative h-100 flex-grow-0 overflow-hidden"
+        >
+          <div class="pbminfotech-box-content">
+            <div class="pbmit-featured-container">
+              <div class="pbmit-featured-img-wrapper">
+                <div class="pbmit-featured-wrapper">
+                  <input
+                    type="hidden"
+                    name="csrf_token"
+                    t-att-value="request.csrf_token()"
+                    t-nocache="The csrf token must always be up to date."
+                  />
+                  <t
+                    t-set="image_holder"
+                    t-value="product._get_image_holder()"
+                  />
+                  <span
+                    t-field="image_holder.image_1920"
+                    t-options="{'widget': 'image', 'preview_image': image_type, 'itemprop': 'image'}"
+                    class="img-fluid"
+                  />
+                  <t
+                    t-set="bg_color"
+                    t-value="td_product['ribbon']['bg_color'] or ''"
+                  />
+                  <t
+                    t-set="text_color"
+                    t-value="td_product['ribbon']['text_color']"
+                  />
+                  <t
+                    t-set="bg_class"
+                    t-value="td_product['ribbon']['html_class']"
+                  />
+                  <span
+                    t-attf-class="o_ribbon o_not_editable #{bg_class}"
+                    t-attf-style="#{text_color and ('color: %s; ' % text_color)}#{bg_color and 'background-color:' + bg_color}"
+                    t-out="td_product['ribbon']['html'] or ''"
+                  />
+                </div>
+              </div>
+              <a
+                t-att-href="product_href"
+                class="pbmit-blog-btn"
+                title="How To Choose The Right  Furniture Of Your Home"
+                itemprop="url"
+                contenteditable="false"
+              >
+                <span class="pbmit-button-icon">
+                  <i class="pbmit-base-icon-pbmit-up-arrow"></i>
+                </span>
+              </a>
+              <a class="pbmit-link" t-att-href="product_href"></a>
+            </div>
 
-                <t t-set="product_href" t-value="keep(product.website_url, page=(pager['page']['num'] if pager['page']['num']&gt;1 else None))" />
-                <t t-set="image_type" t-value="product._get_suitable_image_size(ppr, td_product['x'], td_product['y'])"/>
+            <div class="pbmit-content-wrapper">
+              <h6 class="pbmit-post-title">
+                <a
+                  itemprop="name"
+                  t-att-href="product_href"
+                  t-att-content="product.name"
+                  t-field="product.name"
+                />
+                <a
+                  t-if="not product.website_published"
+                  role="button"
+                  t-att-href="product_href"
+                  class="btn btn-sm btn-danger"
+                  title="This product is unpublished."
+                >
+                  Unpublished
+                </a>
+              </h6>
+            </div>
 
-                <div class="oe_product_image post-item position-relative h-100 flex-grow-0 overflow-hidden">
-                    <div class="pbminfotech-box-content">
-                        <div class="pbmit-featured-container">
-                            <div class="pbmit-featured-img-wrapper">
-                                <div class="pbmit-featured-wrapper">
-                                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" t-nocache="The csrf token must always be up to date."/>
-                                    <t t-set="image_holder" t-value="product._get_image_holder()"/>
-                                    <span t-field="image_holder.image_1920" t-options="{'widget': 'image', 'preview_image': image_type, 'itemprop': 'image'}" class="img-fluid"/>
-                                    <t t-set="bg_color" t-value="td_product['ribbon']['bg_color'] or ''"/>
-                                    <t t-set="text_color" t-value="td_product['ribbon']['text_color']"/>
-                                    <t t-set="bg_class" t-value="td_product['ribbon']['html_class']"/>
-                                    <span t-attf-class="o_ribbon o_not_editable #{bg_class}" t-attf-style="#{text_color and ('color: %s; ' % text_color)}#{bg_color and 'background-color:' + bg_color}" t-out="td_product['ribbon']['html'] or ''"/>
-                                </div>
-                            </div>
-                            <a t-att-href="product_href" class="pbmit-blog-btn" title="How To Choose The Right  Furniture Of Your Home" itemprop="url" contenteditable="false">
-                                <span class="pbmit-button-icon">
-                                    <i class="pbmit-base-icon-pbmit-up-arrow"></i>
-                                </span>
-                            </a>
-                            <a class="pbmit-link" t-att-href="product_href"></a>
-                        </div>
+            <!-- Price -->
+            <div class="pbminfotech-box-desc">
+              <t
+                t-set="template_price_vals"
+                t-value="get_product_prices(product)"
+              />
+              <div class="o_wsale_product_btn" />
+              <div
+                class="product_price"
+                itemprop="offers"
+                itemscope="itemscope"
+                itemtype="http://schema.org/Offer"
+              >
+                <t
+                  t-if="'base_price' in template_price_vals and (template_price_vals['base_price'] &gt; template_price_vals['price_reduce']) and (template_price_vals['price_reduce'] or not website.prevent_zero_price_sale)"
+                >
+                  <del
+                    t-attf-class="text-muted me-1 h6 mb-0"
+                    style="white-space: nowrap"
+                  >
+                    <em
+                      class="small"
+                      t-esc="template_price_vals['base_price']"
+                      t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"
+                    />
+                  </del>
+                </t>
+                <span
+                  class="h6 mb-0"
+                  t-if="template_price_vals['price_reduce'] or not website.prevent_zero_price_sale"
+                  t-esc="template_price_vals['price_reduce']"
+                  t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"
+                />
+                <span
+                  class="h6 mb-0"
+                  t-else=""
+                  t-field="website.prevent_zero_price_sale_text"
+                />
+                <span
+                  itemprop="price"
+                  style="display: none"
+                  t-esc="template_price_vals['price_reduce']"
+                />
+                <span
+                  itemprop="priceCurrency"
+                  style="display: none"
+                  t-esc="website.currency_id.name"
+                />
+              </div>
+            </div>
+            <!-- Price -->
+          </div>
+        </div>
+      </form>
+    </xpath>
+  </template>
+  <!-- Shop Template -->
 
-                        <div class="pbmit-content-wrapper">
-                            <h6 class="pbmit-post-title">
-                                <a itemprop="name" t-att-href="product_href" t-att-content="product.name" t-field="product.name" />
-                                <a t-if="not product.website_published" role="button" t-att-href="product_href" class="btn btn-sm btn-danger" title="This product is unpublished.">
-                            Unpublished
-                                </a>
-                            </h6>
-                        </div>
+  <template
+    id="custom_products"
+    inherit_id="website_sale.products"
+    name="Custom Products"
+  >
+    <xpath expr="//div[@id='wrap']" position="replace">
+      <div id="wrap" class="js_sale o_wsale_products_page">
+        <div
+          class="oe_structure oe_empty oe_structure_not_nearest"
+          id="oe_structure_website_sale_products_1"
+        />
+        <div class="container oe_website_sale pt-2">
+          <div
+            class="row o_wsale_products_main_row align-items-start flex-nowrap"
+          >
+            <t t-if="opt_wsale_categories">
+              <span>hello</span>
+            </t>
 
-                        <!-- Price -->
-                        <div class="pbminfotech-box-desc">
-                            <t t-set="template_price_vals" t-value="get_product_prices(product)"/>
-                            <div class="o_wsale_product_btn"/>
-                            <div class="product_price" itemprop="offers" itemscope="itemscope" itemtype="http://schema.org/Offer">
-                                <t t-if="'base_price' in template_price_vals and (template_price_vals['base_price'] &gt; template_price_vals['price_reduce']) and (template_price_vals['price_reduce'] or not website.prevent_zero_price_sale)">
-                                    <del t-attf-class="text-muted me-1 h6 mb-0" style="white-space: nowrap;">
-                                        <em class="small" t-esc="template_price_vals['base_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
-                                    </del>
-                                </t>
-                                <span class="h6 mb-0" t-if="template_price_vals['price_reduce'] or not website.prevent_zero_price_sale" t-esc="template_price_vals['price_reduce']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
-                                <span class="h6 mb-0" t-else="" t-field="website.prevent_zero_price_sale_text"/>
-                                <span itemprop="price" style="display:none;" t-esc="template_price_vals['price_reduce']" />
-                                <span itemprop="priceCurrency" style="display:none;" t-esc="website.currency_id.name" />
-                            </div>
-                        </div>
-                        <!-- Price -->
-                    </div>
+            <t t-if="hasLeftColumn"> it's working </t>
+            <aside
+              t-if="hasLeftColumn"
+              id="products_grid_before"
+              class="d-none d-lg-block position-sticky col-3 px-3 clearfix"
+            >
+              <span t-esc="opt_wsale_categories" />
+
+              <div
+                class="o_wsale_products_grid_before_rail vh-100 ms-n2 mt-n2 pt-2 pe-lg-2 pb-lg-5 ps-2 overflow-y-scroll"
+              >
+                <div
+                  t-if="opt_wsale_categories"
+                  class="products_categories mb-3"
+                >
+                  <t t-call="website_sale.products_categories_list" />
+                </div>
+                <div class="products_attributes_filters" />
+                <t
+                  t-if="opt_wsale_filter_price and opt_wsale_attributes"
+                  t-call="website_sale.filter_products_price"
+                />
+              </div>
+            </aside>
+            <div
+              id="products_grid"
+              t-attf-class="#{'o_wsale_layout_list' if layout_mode == 'list' else ''} {{'col-lg-9' if hasLeftColumn else 'col-12'}}"
+            >
+              <t t-call="website_sale.products_breadcrumb">
+                <t
+                  t-set="_classes"
+                  t-valuef="d-none d-lg-flex w-100 p-0 small"
+                />
+              </t>
+              <div
+                class="products_header btn-toolbar flex-nowrap align-items-center justify-content-between gap-3 mb-3"
+              >
+                <t
+                  t-if="is_view_active('website_sale.search')"
+                  t-call="website_sale.search"
+                >
+                  <t t-set="search" t-value="original_search or search" />
+                  <t
+                    t-set="_form_classes"
+                    t-valuef="d-lg-inline {{'d-inline' if not category else 'd-none'}}"
+                  />
+                </t>
+
+                <t t-call="website_sale.pricelist_list" t-cache="pricelist">
+                  <t t-set="_classes" t-valuef="d-none d-lg-inline" />
+                </t>
+
+                <t
+                  t-if="is_view_active('website_sale.sort')"
+                  t-call="website_sale.sort"
+                >
+                  <t t-set="_classes" t-valuef="d-none d-lg-inline-block" />
+                </t>
+
+                <div
+                  t-if="category"
+                  class="d-flex align-items-center d-lg-none me-auto"
+                >
+                  <t
+                    t-if="not category.parent_id"
+                    t-set="backUrl"
+                    t-valuef="/shop"
+                  />
+                  <t
+                    t-else=""
+                    t-set="backUrl"
+                    t-value="keep('/shop/category/' + slug(category.parent_id), category=0)"
+                  />
+
+                  <a
+                    t-attf-class="btn btn-{{ navClass }} me-2"
+                    t-att-href="category.parent_id and keep('/shop/category/' + slug(category.parent_id), category=0) or '/shop'"
+                  >
+                    <i class="fa fa-angle-left" />
+                  </a>
+                  <h4 t-out="category.name" class="mb-0 me-auto" />
                 </div>
 
-            </form>
-        </xpath>
-    </template>
-    <!-- Shop Template -->
+                <t
+                  t-if="is_view_active('website_sale.add_grid_or_list_option')"
+                  t-call="website_sale.add_grid_or_list_option"
+                >
+                  <t t-set="_classes" t-valuef="d-flex" />
+                </t>
 
+                <button
+                  t-if="is_view_active('website_sale.sort') or opt_wsale_categories or opt_wsale_attributes or opt_wsale_attributes_top"
+                  t-attf-class="btn btn-{{
+                    navClass
+                  }} position-relative {{not opt_wsale_attributes_top and 'd-lg-none'}}"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#o_wsale_offcanvas"
+                >
+                  <i class="fa fa-sliders" />
+                  <span
+                    t-if="isFilteringByPrice or attrib_set or tags"
+                    t-attf-class="position-absolute top-0 start-100 translate-middle border border-{{
+                      navClass
+                    }} rounded-circle bg-danger p-1"
+                  >
+                    <span class="visually-hidden">filters active</span>
+                  </span>
+                </button>
+              </div>
+
+              <t
+                t-if="opt_wsale_categories_top"
+                t-call="website_sale.filmstrip_categories"
+              />
+
+              <div
+                t-if="original_search and products"
+                class="alert alert-warning mt8"
+              >
+                No results found for '<span t-esc="original_search" /> '.
+                Showing results for '<span t-esc="search" />
+                '.
+              </div>
+
+              <t t-if="category">
+                <t t-set="editor_msg"
+                  >Drag building blocks here to customize the header for "<t
+                    t-esc="category.name"
+                  />
+                  " category.</t
+                >
+                <div
+                  class="mb16"
+                  id="category_header"
+                  t-att-data-editor-message="editor_msg"
+                  t-field="category.website_description"
+                />
+              </t>
+
+              <div
+                t-if="products"
+                class="o_wsale_products_grid_table_wrapper pt-3 pt-lg-0"
+              >
+                <table
+                  class="table table-borderless h-100 m-0"
+                  t-att-data-ppg="ppg"
+                  t-att-data-ppr="ppr"
+                  t-att-data-default-sort="website.shop_default_sort"
+                  t-att-data-name="grid_block_name"
+                >
+                  <colgroup t-ignore="true">
+                    <!-- Force the number of columns (useful when only one row of (x < ppr) products) -->
+                    <col t-foreach="ppr" t-as="p" />
+                  </colgroup>
+                  <tbody>
+                    <tr t-foreach="bins" t-as="tr_product">
+                      <t t-foreach="tr_product" t-as="td_product">
+                        <t t-if="td_product">
+                          <!-- We use t-attf-class here to allow easier customization -->
+                          <td
+                            t-att-colspan="td_product['x'] != 1 and td_product['x']"
+                            t-att-rowspan="td_product['y'] != 1 and td_product['y']"
+                            t-attf-class="oe_product"
+                            t-att-data-ribbon-id="td_product['ribbon'].id"
+                            t-att-data-name="product_block_name"
+                          >
+                            <div
+                              t-attf-class="o_wsale_product_grid_wrapper position-relative h-100 o_wsale_product_grid_wrapper_#{td_product['x']}_#{td_product['y']}"
+                            >
+                              <t t-call="website_sale.products_item">
+                                <t
+                                  t-set="product"
+                                  t-value="td_product['product']"
+                                />
+                              </t>
+                            </div>
+                          </td>
+                        </t>
+                        <td t-else="" />
+                      </t>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div
+                t-nocache="get the actual search"
+                t-else=""
+                class="text-center text-muted mt128 mb256"
+              >
+                <t t-if="not search">
+                  <h3 class="mt8">No product defined</h3>
+                  <p t-if="category">No product defined in this category.</p>
+                </t>
+                <t t-else="">
+                  <h3 class="mt8">No results</h3>
+                  <p>
+                    No results for "<strong t-esc="search" /> "
+                    <t t-if="category">
+                      in category "<strong t-esc="category.display_name" /> "</t
+                    >.
+                  </p>
+                </t>
+                <p t-ignore="true" groups="sales_team.group_sale_manager">
+                  Click <i>'New'</i> in the top-right corner to create your
+                  first product.
+                </p>
+              </div>
+              <div
+                class="products_pager d-flex justify-content-center pt-5 pb-3"
+              >
+                <t t-call="website.pager" />
+              </div>
+            </div>
+          </div>
+
+          <t t-call="website_sale.o_wsale_offcanvas" />
+        </div>
+        <div
+          class="oe_structure oe_empty oe_structure_not_nearest"
+          id="oe_structure_website_sale_products_2"
+        />
+      </div>
+    </xpath>
+  </template>
+
+  <!-- PRODUCT LIS -->
+  <div t-if="products" class="o_wsale_products_grid_table_wrapper pt-3 pt-lg-0">
+    <table
+      class="table table-borderless h-100 m-0"
+      t-att-data-ppg="ppg"
+      t-att-data-ppr="ppr"
+      t-att-data-default-sort="website.shop_default_sort"
+      t-att-data-name="grid_block_name"
+    >
+      <colgroup t-ignore="true">
+        <!-- Force the number of columns (useful when only one row of (x < ppr) products) -->
+        <col t-foreach="ppr" t-as="p" />
+      </colgroup>
+      <tbody>
+        <tr t-foreach="bins" t-as="tr_product">
+          <t t-foreach="tr_product" t-as="td_product">
+            <t t-if="td_product">
+              <!-- We use t-attf-class here to allow easier customization -->
+              <td
+                t-att-colspan="td_product['x'] != 1 and td_product['x']"
+                t-att-rowspan="td_product['y'] != 1 and td_product['y']"
+                t-attf-class="oe_product"
+                t-att-data-ribbon-id="td_product['ribbon'].id"
+                t-att-data-name="product_block_name"
+              >
+                <div
+                  t-attf-class="o_wsale_product_grid_wrapper position-relative h-100 o_wsale_product_grid_wrapper_#{td_product['x']}_#{td_product['y']}"
+                >
+                  <t t-call="website_sale.products_item">
+                    <t t-set="product" t-value="td_product['product']" />
+                  </t>
+                </div>
+              </td>
+            </t>
+            <td t-else="" />
+          </t>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </odoo>
