@@ -10,24 +10,30 @@
             <field name="is_mega_menu">True</field>
 
             <field name="mega_menu_content" type="html">
+                <section class="s_mega_menu_odoo_menu pt16 o_colored_level o_cc o_cc1">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 col-lg pt16 pb24 o_draggable o_colored_level">
+                                <h4 class="o_default_snippet_text text-uppercase h5 fw-bold mt-0">Sallon</h4>
+                                <div class="s_hr text-start pt4 pb16 text-o-color-3" style="--o-border-color: currentColor;">
+                                    <hr class="w-100 mx-auto" style="border-top-width: 2px; border-top-style: solid;"/>
+                                </div>
+                                <nav class="nav flex-column">
+                                    <a class="nav-link o_default_snippet_text px-0" href="/shop/category/01-salons-canapes-21">Canapé</a>
 
-                <ul>
-                    <li>
-                        <a href="/shop/category/01-salons-canapes-21">Canapé</a>
-                    </li>
-                    <li>
-                        <a href="/shop/category/01-salons-fauteuils-22">Fauteuil</a>
-                    </li>
-                    <li class="active">
-                        <a href="/shop/category/01-salons-bibliotheques-compositions-murales-20">Bibliothèques / Composition murales</a>
-                    </li>
-                    <li>
-                        <a href="/shop/category/01-salons-consoles-24">Consoles</a>
-                    </li>
-                    <li>
-                        <a href="/shop/category/01-salons-tables-basses-23">Tables basses</a>
-                    </li>
-                </ul>
+                                    <a class="nav-link o_default_snippet_text px-0" href="/shop/category/01-salons-fauteuils-22">Fauteuil</a>
+
+                                    <a class="nav-link o_default_snippet_text px-0" href="/shop/category/01-salons-bibliotheques-compositions-murales-20">Bibliothèques / Composition murales</a>
+
+                                    <a class="nav-link o_default_snippet_text px-0" href="/shop/category/01-salons-consoles-24">Consoles</a>
+
+                                    <a class="nav-link o_default_snippet_text px-0" href="/shop/category/01-salons-tables-basses-23">Tables basses</a>
+
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
             </field>
         </record>
@@ -40,16 +46,25 @@
             <field name="is_mega_menu">True</field>
 
             <field name="mega_menu_content" type="html">
+                <section class="s_mega_menu_odoo_menu pt16 o_colored_level o_cc o_cc1">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 col-lg pt16 pb24 o_draggable o_colored_level">
+                                <h4 class="o_default_snippet_text text-uppercase h5 fw-bold mt-0">Salle à manger</h4>
+                                <div class="s_hr text-start pt4 pb16 text-o-color-3" style="--o-border-color: currentColor;">
+                                    <hr class="w-100 mx-auto" style="border-top-width: 2px; border-top-style: solid;"/>
+                                </div>
+                                <nav class="nav flex-column">
 
-                <ul>
-                    <li>
-                        <a href="/shop/category/salles-a-manger-table-a-manger-27">Tables à manger</a>
-                    </li>
-                    <li>
-                        <a href="/shop/category/salles-a-manger-buffets-26">Buffets</a>
-                    </li>
-                </ul>
+                                    <a class="nav-link o_default_snippet_text px-0" href="/shop/category/salles-a-manger-table-a-manger-27">Tables à manger</a>
 
+                                    <a class="nav-link o_default_snippet_text px-0" href="/shop/category/salles-a-manger-buffets-26">Buffets</a>
+
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </field>
         </record>
 
@@ -60,23 +75,36 @@
             <field name="sequence" type="int">20</field>
             <field name="is_mega_menu">True</field>
 
+
             <field name="mega_menu_content" type="html">
+                <section class="s_mega_menu_odoo_menu pt16 o_colored_level o_cc o_cc1">
+                    <div class="container">
 
-                <ul>
-                    <li>
-                        <a href="/shop/category/chambres-a-coucher-lits-29">Lits</a>
-                    </li>
-                    <li>
-                        <a href="/shop/category/chambres-a-coucher-armoires-32">Armoires</a>
-                    </li>
-                    <li class="active">
-                        <a href="/shop/category/chambres-a-coucher-commodes-31">Commodes</a>
-                    </li>
-                    <li>
-                        <a href="/shop/category/chambres-a-coucher-chevets-30">Chevets</a>
-                    </li>
-                </ul>
 
+                        <div class="row">
+                            <div class="col-md-6 col-lg pt16 pb24 o_draggable o_colored_level">
+                                <h4 class="o_default_snippet_text text-uppercase h5 fw-bold mt-0">Chambre à coucher</h4>
+                                <div class="s_hr text-start pt4 pb16 text-o-color-3" style="--o-border-color: currentColor;">
+                                    <hr class="w-100 mx-auto" style="border-top-width: 2px; border-top-style: solid;"/>
+                                </div>
+                                <nav class="nav flex-column">
+
+                                    <a class="nav-link o_default_snippet_text px-0" href="/shop/category/chambres-a-coucher-lits-29">Lits</a>
+
+
+                                    <a class="nav-link o_default_snippet_text px-0" href="/shop/category/chambres-a-coucher-armoires-32">Armoires</a>
+
+
+                                    <a class="nav-link o_default_snippet_text px-0" href="/shop/category/chambres-a-coucher-commodes-31">Commodes</a>
+
+
+                                    <a class="nav-link o_default_snippet_text px-0" href="/shop/category/chambres-a-coucher-chevets-30">Chevets</a>
+
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </field>
         </record>
 

@@ -534,7 +534,9 @@
   /*-------------------------------------
 	Responsive Menu
 	-------------------------------------*/
-  $(".main-menu ul.navigation li.dropdown .righticon").on("click", function () {
+  $(
+    ".main-menu .dropdown-menu.o_mega_menu.navigation li.dropdown .righticon"
+  ).on("click", function () {
     $(this).siblings().toggleClass("open");
     $(this)
       .find("i")

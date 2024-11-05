@@ -8,46 +8,6 @@
   >
     <xpath expr="//div[@id='wrap']" position="replace">
       <div id="wrap" class="js_sale o_wsale_products_page">
-        <!-- Title Bar -->
-        <div class="pbmit-title-bar-wrapper">
-          <div class="container">
-            <div class="pbmit-title-bar-content">
-              <div class="pbmit-title-bar-content-inner">
-                <div class="pbmit-tbar">
-                  <div class="pbmit-tbar-inner container">
-                    <h1 class="pbmit-tbar-title">Nos Meubles</h1>
-                  </div>
-                </div>
-                <div class="pbmit-breadcrumb">
-                  <div class="pbmit-breadcrumb-inner">
-                    <span>
-                      <t t-call="theme_kdmobilier.custom_products_breadcrumb">
-                        <t
-                          t-set="_classes"
-                          t-valuef="d-none d-lg-flex w-100 p-0 small"
-                        />
-                      </t>
-                    </span>
-                    <!-- <span>
-                      <a title="" href="#" class="home"
-                        ><span>Xinterio</span></a
-                      >
-                    </span>
-                    <span class="sep">
-                      <i class="pbmit-base-icon-angle-right"></i>
-                    </span>
-                    <span
-                      ><span class="post-root post post-post current-item">
-                        Nos Meubles
-                      </span>
-                    </span> -->
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Title Bar End-->
         <div
           class="oe_structure page-content oe_empty oe_structure_not_nearest"
           id="oe_structure_website_sale_products_1"
@@ -1048,52 +1008,6 @@
     </xpath>
   </template>
   <!-- Add controller method to get categories -->
-
-  <!-- Mega Menu Template -->
-  <template
-    id="custom_submenu"
-    inherit_id="website.submenu"
-    name="Custom Submenu"
-  >
-    <!-- Remove the original mega menu div -->
-    <xpath
-      expr="//div[@t-if='submenu.is_mega_menu and not is_mobile']"
-      position="replace"
-    />
-
-    <!-- Add the new structure -->
-    <xpath expr="//li[@t-elif='show_dropdown']" position="replace">
-      <li
-        t-if="show_dropdown"
-        t-attf-class="#{item_class or ''} dropdown #{submenu._is_active() and 'active'}"
-        role="presentation"
-      >
-        <a
-          t-att-href="submenu._clean_url()"
-          t-attf-class="#{link_class or ''} #{submenu._is_active() and 'active'}"
-          role="menuitem"
-          t-ignore="true"
-          t-att-target="'_blank' if submenu.new_window else None"
-        >
-          <span t-field="submenu.name" />
-        </a>
-        <!-- Direct insertion of mega menu content -->
-        <t t-if="submenu.is_mega_menu">
-          <t t-raw="submenu.mega_menu_content" />
-        </t>
-        <!-- Regular submenu -->
-        <ul t-else="" t-attf-class="#{dropdown_menu_classes}" role="menu">
-          <t t-foreach="submenu.child_id" t-as="submenu">
-            <t t-call="website.submenu">
-              <t t-set="item_class" t-value="None" />
-              <t t-set="link_class" t-value="'dropdown-item'" />
-            </t>
-          </t>
-        </ul>
-      </li>
-    </xpath>
-  </template>
-  <!-- Mega Menu Template -->
 
   <!-- Remove navbar pills -->
   <template
