@@ -65,8 +65,12 @@
                     Auchan Sacré Coeur 3, Dakar - Sénégal
                   </li>
                   <li>
-                    <i class="pbmit-base-icon-phone-volume-solid-1"></i>+221 78 533 28 28
+                    <a title="Clickez ici pour envoyer un message whatsapp" href="https://api.whatsapp.com/send?phone=221785332828" target="_blank">
+                      <i class="fa fa-whatsapp text-green-600"></i>
+                      <span class="font-medium">+221 78 533 28 28</span>
+                    </a>
                   </li>
+
                 </ul>
               </div>
             </div>
