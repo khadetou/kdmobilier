@@ -746,7 +746,10 @@
                       t-set="ctaSizeBig"
                       t-value="not hasQuantities or not hasBuyNow"
                     />
-
+                    <strong
+                      class="attribute_name w-100 bg-light mb-3"
+                      style="height: 1px"
+                    />
                     <div
                       id="add_to_cart_wrap"
                       t-attf-class="{{'d-none' if combination_info['prevent_zero_price_sale'] else 'd-inline-flex'}} align-items-center mb-2 me-4"
