@@ -569,6 +569,7 @@ body .pbmit-bg-color-white {
   max-width: 100%;
   height: auto;
   max-height: 30px;
+  width: 174px;
   display: inline-block;
   -webkit-transition: all 300ms ease;
   transition: all 300ms ease;

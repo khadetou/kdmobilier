@@ -72,7 +72,7 @@ li.list-inline-item.mb-3 {
 @media (min-width: 992px) {
   .dropdown-menu.o_mega_menu_container_size,
   .o_mega_menu_container_size.o_dropdown_menu {
-    left: 55% !important;
+    left: 41% !important;
     transform: translate(-50%, -5px) !important;
   }
 }

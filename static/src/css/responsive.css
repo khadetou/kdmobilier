@@ -3478,7 +3478,7 @@ body {
     line-height: 85px;
   }
   .header-style-3 .site-navigation {
-    margin: 0 0 0 15%;
+    margin: 0 0 0 0%;
   }
   .header-style-4 .pbmit-pre-header-wrapper {
     width: calc(100% - 100px);
@@ -3632,7 +3632,7 @@ body {
 
 @media (min-width: 1025px) {
   /*=== Img Animation ===*/
-  .pbmit-animation-style1 {
+  /* .pbmit-animation-style1 {
     clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
   }
   .pbmit-animation-style1.active,
@@ -3640,7 +3640,7 @@ body {
   .pbmit-animation-style3.active,
   .pbmit-animation-style4.active {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  }
+  } */
   .pbmit-animation-style1 img {
     transform: scale(1.5) translate(-100px, 0);
   }
