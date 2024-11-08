@@ -58,25 +58,16 @@
                   t-if="opt_wsale_categories_top"
                   t-call="theme_kdmobilier.custom_filmstrip_categories"
                 />
-                <!-- <t
-                  t-if="is_view_active('website_sale.search')"
-                  t-call="website_sale.search"
-                >
+                <!-- <t t-if="is_view_active('website_sale.search')" t-call="website_sale.search">
                   <t t-set="search" t-value="original_search or search" />
-                  <t
-                    t-set="_form_classes"
-                    t-valuef="d-lg-inline {{'d-inline' if not category else 'd-none'}}"
-                  />
+                  <t t-set="_form_classes" t-valuef="d-lg-inline {{'d-inline' if not category else 'd-none'}}" />
                 </t> -->
 
                 <t t-call="website_sale.pricelist_list" t-cache="pricelist">
                   <t t-set="_classes" t-valuef="d-none d-lg-inline" />
                 </t>
 
-                <!-- <t
-                  t-if="is_view_active('website_sale.sort')"
-                  t-call="website_sale.sort"
-                >
+                <!-- <t t-if="is_view_active('website_sale.sort')" t-call="website_sale.sort">
                   <t t-set="_classes" t-valuef="d-none d-lg-inline-block" />
                 </t> -->
 
@@ -104,28 +95,17 @@
                   <h4 t-out="category.name" class="mb-0 me-auto" />
                 </div>
 
-                <!-- <t
-                  t-if="is_view_active('website_sale.add_grid_or_list_option')"
-                  t-call="website_sale.add_grid_or_list_option"
-                >
+                <!-- <t t-if="is_view_active('website_sale.add_grid_or_list_option')" t-call="website_sale.add_grid_or_list_option">
                   <t t-set="_classes" t-valuef="d-flex" />
                 </t>
 
-                <button
-                  t-if="is_view_active('website_sale.sort') or opt_wsale_categories or opt_wsale_attributes or opt_wsale_attributes_top"
-                  t-attf-class="btn btn-{{
+                <button t-if="is_view_active('website_sale.sort') or opt_wsale_categories or opt_wsale_attributes or opt_wsale_attributes_top" t-attf-class="btn btn-{{
                     navClass
-                  }} position-relative {{not opt_wsale_attributes_top and 'd-lg-none'}}"
-                  data-bs-toggle="offcanvas"
-                  data-bs-target="#o_wsale_offcanvas"
-                >
+                  }} position-relative {{not opt_wsale_attributes_top and 'd-lg-none'}}" data-bs-toggle="offcanvas" data-bs-target="#o_wsale_offcanvas">
                   <i class="fa fa-sliders" />
-                  <span
-                    t-if="isFilteringByPrice or attrib_set or tags"
-                    t-attf-class="position-absolute top-0 start-100 translate-middle border border-{{
+                  <span t-if="isFilteringByPrice or attrib_set or tags" t-attf-class="position-absolute top-0 start-100 translate-middle border border-{{
                       navClass
-                    }} rounded-circle bg-danger p-1"
-                    ><span class="visually-hidden">filters active</span></span
+                    }} rounded-circle bg-danger p-1"><span class="visually-hidden">filters active</span></span
                   >
                 </button> -->
               </div>
@@ -134,15 +114,17 @@
                 t-if="original_search and products"
                 class="alert alert-warning mt8"
               >
-                No results found for '<span t-esc="original_search" />'. Showing
-                results for '<span t-esc="search" />'.
+                No results found for '<span t-esc="original_search" /> '.
+                Showing results for '<span t-esc="search" />
+                '.
               </div>
 
               <t t-if="category">
                 <t t-set="editor_msg"
                   >Drag building blocks here to customize the header for "<t
                     t-esc="category.name"
-                  />" category.</t
+                  />
+                  " category.</t
                 >
                 <div
                   class="mb16"
@@ -187,10 +169,9 @@
                 <t t-else="">
                   <h3 class="mt8">No results</h3>
                   <p>
-                    No results for "<strong t-esc="search" />"<t
-                      t-if="category"
-                    >
-                      in category "<strong t-esc="category.display_name" />"</t
+                    No results for "<strong t-esc="search" /> "
+                    <t t-if="category">
+                      in category "<strong t-esc="category.display_name" /> "</t
                     >.
                   </p>
                 </t>
@@ -251,7 +232,9 @@
                 navClass
               }} d-flex align-items-center py-1 mb-2"
             >
-              <small class="mx-auto"><b>Clear Filters</b></small>
+              <small class="mx-auto">
+                <b>Clear Filters</b>
+              </small>
               <i class="oi oi-close" />
             </a>
             <t t-foreach="attributes" t-as="a">
@@ -608,22 +591,13 @@
           <div class="row align-items-center">
             <!-- <div class="col-lg-6 d-flex align-items-center">
               <div class="d-flex justify-content-between w-100">
-                <t
-                  t-if="is_view_active('website_sale.search')"
-                  t-call="website_sale.search"
-                >
+                <t t-if="is_view_active('website_sale.search')" t-call="website_sale.search">
                   <t t-set="search" t-value="False" />
                   <t t-set="_form_classes" t-valuef="mb-2 mb-lg-0" />
                   <t t-set="_classes" t-value="'me-sm-2'" />
                 </t>
-                <t
-                  t-set="website_sale_pricelists"
-                  t-value="website.get_pricelist_available(show_visible=True)"
-                />
-                <t
-                  t-set="hasPricelistDropdown"
-                  t-value="website_sale_pricelists and len(website_sale_pricelists)&gt;1"
-                />
+                <t t-set="website_sale_pricelists" t-value="website.get_pricelist_available(show_visible=True)" />
+                <t t-set="hasPricelistDropdown" t-value="website_sale_pricelists and len(website_sale_pricelists)&gt;1" />
                 <t t-call="website_sale.pricelist_list">
                   <t t-set="_classes" t-valuef="d-lg-inline ms-2" />
                 </t>
@@ -854,14 +828,16 @@
                   <t t-foreach="single_value_attributes" t-as="attribute">
                     <tr>
                       <td>
-                        <span t-field="attribute.name" />:
+                        <span t-field="attribute.name" />
+                        :
                         <t
                           t-foreach="single_value_attributes[attribute]"
                           t-as="ptal"
                         >
                           <span
                             t-field="ptal.product_template_value_ids._only_active().name"
-                          /><t t-if="not ptal_last">, </t>
+                          />
+                          <t t-if="not ptal_last">, </t>
                         </t>
                       </td>
                     </tr>
@@ -919,7 +895,7 @@
       </div>
     </xpath>
   </template>
-  <!-- PRODUCT PAGE CUSTOM -->
+  <!-- PRODUCT PAGE CUSTOM GENERAL CONDITONS AND SHARE-->
   <template
     id="custom_product_share_buttons"
     inherit_id="website_sale.product_share_buttons"
@@ -947,6 +923,20 @@
       </div>
     </xpath>
   </template>
+
+  <template
+    inherit_id="website_sale.product_custom_text"
+    customize_show="True"
+    active="True"
+    id="product_custom_text"
+    name="thTerms and Conditions"
+    priority="21"
+  >
+    <xpath expr="//p[@class='text-muted mb-0']" position="replace">
+      <p class="text-muted mb-0"></p>
+    </xpath>
+  </template>
+  <!-- PRODUCT PAGE CUSTOM GENERAL CONDITONS AND SHARE-->
   <!-- Add controller method to get categories -->
   <template
     id="kdmobilier_homepage_categories"
