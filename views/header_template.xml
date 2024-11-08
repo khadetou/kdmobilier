@@ -8,11 +8,32 @@
             <div class="d-flex justify-content-between">
               <div class="pbmit-pre-header-left">
                 <ul class="pbmit-social-links">
-
+                  <li class="pbmit-social-li pbmit-social-instagram">
+                    <a title="Instagram" href="https://www.instagram.com/kdmobilier" target="_blank">
+                      <span>
+                        <i class="fa fa-instagram o_editable_media" style="font-size: 20px;"></i>
+                      </span>
+                    </a>
+                  </li>
+                  <li class="pbmit-social-li pbmit-social-instagram">
+                    <a title="Instagram" href="https://www.tiktok.com/@kdmobilier" target="_blank">
+                      <span>
+                        <i class="fa fa-tiktok o_editable_media" style="font-size: 20px;"></i>
+                      </span>
+                    </a>
+                  </li>
                   <li class="pbmit-social-li pbmit-social-twitter">
                     <a title="Twitter" href="https://www.facebook.com/kdmobilier" target="_blank">
                       <span>
                         <i class="fa fa-facebook o_editable_media" style="font-size: 20px;"></i>
+                      </span>
+                    </a>
+                  </li>
+
+                  <li class="pbmit-social-li pbmit-social-instagram">
+                    <a title="Instagram" href="https://www.youtube.com/@kdmobilier" target="_blank">
+                      <span>
+                        <i class="fa fa-youtube o_editable_media" style="font-size: 20px;"></i>
                       </span>
                     </a>
                   </li>
@@ -24,27 +45,6 @@
                     </a>
                   </li>
 
-                  <li class="pbmit-social-li pbmit-social-instagram">
-                    <a title="Instagram" href="https://www.instagram.com/kdmobilier" target="_blank">
-                      <span>
-                        <i class="fa fa-instagram o_editable_media" style="font-size: 20px;"></i>
-                      </span>
-                    </a>
-                  </li>
-                  <li class="pbmit-social-li pbmit-social-instagram">
-                    <a title="Instagram" href="https://www.youtube.com/@kdmobilier" target="_blank">
-                      <span>
-                        <i class="fa fa-youtube o_editable_media" style="font-size: 20px;"></i>
-                      </span>
-                    </a>
-                  </li>
-                  <li class="pbmit-social-li pbmit-social-instagram">
-                    <a title="Instagram" href="https://www.tiktok.com/@kdmobilier" target="_blank">
-                      <span>
-                        <i class="fa fa-tiktok o_editable_media" style="font-size: 20px;"></i>
-                      </span>
-                    </a>
-                  </li>
                   <li class="pbmit-social-li pbmit-social-instagram">
                     <a title="Instagram" href="https://www.snapchat.com/add/kdmobilier" target="_blank">
                       <span>

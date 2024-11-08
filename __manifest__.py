@@ -20,6 +20,7 @@
         "views/menues.xml",
         "views/contact_us.xml",
         "views/auth_templage.xml",
+        # "views/services.xml",
     ],
     "assets": {
         "web.assets_frontend": [

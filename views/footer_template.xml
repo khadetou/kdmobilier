@@ -136,47 +136,16 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="pbmit-footer-copyright-text-area">
-                    Copyright © 2024 KD MOBILIER, Designed by
-                    <a href="/https://hotcodes.io">
-                      <strong>HotCodes</strong>
-                    </a>
+                    Copyright © 2024 KD MOBILIER
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="pbmit-footer-social-area">
                     <ul class="pbmit-social-links">
-                      <li class="pbmit-social-li pbmit-social-facebook">
-                        <a title="Facebook" href="https://www.facebook.com/kdmobilier" target="_blank">
-                          <span>
-                            <i class="pbmit-social-li fa  fa-facebook o_editable_media" style="font-size: 20px;"></i>
-                          </span>
-                        </a>
-                      </li>
-                      <li class="pbmit-social-li pbmit-social-twitter">
-                        <a title="Twitter" href="https://x.com/kdmobilier" target="_blank">
-                          <span>
-                            <i class="fa fa-twitter o_editable_media" style="font-size: 20px;"></i>
-                          </span>
-                        </a>
-                      </li>
-                      <!-- <li class="pbmit-social-li pbmit-social-linkedin">
-                        <a title="LinkedIn" href="#" target="_blank">
-                          <span>
-                            <i class="pbmit-base-icon-linkedin-in"></i>
-                          </span>
-                        </a>
-                      </li> -->
                       <li class="pbmit-social-li pbmit-social-instagram">
                         <a title="Instagram" href="https://www.instagram.com/kdmobilier" target="_blank">
                           <span>
                             <i class="fa fa-instagram o_editable_media" style="font-size: 20px;"></i>
-                          </span>
-                        </a>
-                      </li>
-                      <li class="pbmit-social-li pbmit-social-instagram">
-                        <a title="Instagram" href="https://www.youtube.com/@kdmobilier" target="_blank">
-                          <span>
-                            <i class="fa fa-youtube o_editable_media" style="font-size: 20px;"></i>
                           </span>
                         </a>
                       </li>
@@ -187,6 +156,30 @@
                           </span>
                         </a>
                       </li>
+                      <li class="pbmit-social-li pbmit-social-facebook">
+                        <a title="Facebook" href="https://www.facebook.com/kdmobilier" target="_blank">
+                          <span>
+                            <i class="pbmit-social-li fa  fa-facebook o_editable_media" style="font-size: 20px;"></i>
+                          </span>
+                        </a>
+                      </li>
+
+                      <li class="pbmit-social-li pbmit-social-instagram">
+                        <a title="Youtube" href="https://www.youtube.com/@kdmobilier" target="_blank">
+                          <span>
+                            <i class="fa fa-youtube o_editable_media" style="font-size: 20px;"></i>
+                          </span>
+                        </a>
+                      </li>
+                      <li class="pbmit-social-li pbmit-social-twitter">
+                        <a title="Twitter" href="https://x.com/kdmobilier" target="_blank">
+                          <span>
+                            <i class="fa fa-twitter o_editable_media" style="font-size: 20px;"></i>
+                          </span>
+                        </a>
+                      </li>
+
+
                       <li class="pbmit-social-li pbmit-social-instagram">
                         <a title="Instagram" href="https://www.snapchat.com/add/kdmobilier" target="_blank">
                           <span>

@@ -55,20 +55,20 @@
 @media (min-width: 1400px) {
   .dropdown-menu.o_mega_menu_container_size,
   .o_mega_menu_container_size.o_dropdown_menu {
-    max-width: 897px !important;
+    max-width: 8448px !important;
   }
 }
 @media (min-width: 1200px) {
   .dropdown-menu.o_mega_menu_container_size,
   .o_mega_menu_container_size.o_dropdown_menu {
-    max-width: 897px !important;
+    max-width: 448px !important;
   }
 }
 
 @media (min-width: 992px) {
   .dropdown-menu.o_mega_menu_container_size,
   .o_mega_menu_container_size.o_dropdown_menu {
-    left: 50% !important;
+    left: 55% !important;
     transform: translate(-50%, -5px) !important;
   }
 }

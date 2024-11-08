@@ -793,12 +793,12 @@
                       t-attf-class="{{'d-none' if combination_info['prevent_zero_price_sale'] else 'd-inline-flex'}} align-items-center mb-2 me-auto"
                     >
                       <a
-                        t-attf-class="btn btn-primary  flex-grow-1"
+                        t-attf-class="btn btn-success flex-grow-1"
                         t-att-href="'https://api.whatsapp.com/send?phone=221785332828&amp;text=Je+suis+int%C3%A9ress%C3%A9+par+ce+produit%3A+' + product.name + '%0ALien+du+produit+dans+le+site+de+KD+MOBILIER%3A+' + base_url + product.website_url"
                         target="_blank"
                       >
                         <i class="fa fa-whatsapp me-2" />
-                        Commender par WhatsApp
+                        Information
                       </a>
                     </div>
 
