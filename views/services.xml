@@ -5,7 +5,7 @@
       <field name="name">Services</field>
       <field name="type">qweb</field>
       <field name="url">/services</field>
-      <field name="key">theme_kdmobilier.service_page</field>
+      <field name="key">theme_kdmobilier.services</field>
       <field name="arch" type="xml">
         <t t-name="theme_kdmobilier.services">
           <t t-call="website.layout">

@@ -29,7 +29,6 @@
                       </span>
                     </a>
                   </li>
-
                   <li class="pbmit-social-li pbmit-social-instagram">
                     <a title="Instagram" href="https://www.youtube.com/@kdmobilier" target="_blank">
                       <span>
@@ -44,7 +43,6 @@
                       </span>
                     </a>
                   </li>
-
                   <li class="pbmit-social-li pbmit-social-instagram">
                     <a title="Instagram" href="https://www.snapchat.com/add/kdmobilier" target="_blank">
                       <span>
@@ -62,7 +60,10 @@
                   </li>
                   <li>
                     <i class="pbmit-base-icon-location-dot-solid"></i>Derrière
-                    Auchan Sacré Coeur 3, Dakar - Sénégal
+            Auchan Sacré Coeur 3, Dakar - Sénégal
+                  </li>
+                  <li>
+                    <i class="pbmit-base-icon-location-dot-solid"></i>Saly: musée khelcom
                   </li>
                   <li>
                     <a title="Clickez ici pour envoyer un message whatsapp" href="https://api.whatsapp.com/send?phone=221785332828" target="_blank">
@@ -70,7 +71,6 @@
                       <span class="font-medium">+221 78 533 28 28</span>
                     </a>
                   </li>
-
                 </ul>
               </div>
             </div>
