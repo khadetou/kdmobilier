@@ -765,7 +765,7 @@
                         Acheter
                       </a>
                     </div>
-                    <div
+                    <!-- <div
                       id="add_to_whatsapp_cart_wrap"
                       t-attf-class="{{'d-none' if combination_info['prevent_zero_price_sale'] else 'd-inline-flex'}} align-items-center mb-2 me-auto"
                     >
@@ -777,7 +777,7 @@
                         <i class="fa fa-whatsapp me-2" />
                         Information
                       </a>
-                    </div>
+                    </div> -->
 
                     <div
                       id="product_option_block"
@@ -877,10 +877,36 @@
                   </div>
                 </t>
               </div>
-              <div
+              <!-- <div
                 id="o_product_terms_and_share"
                 class="d-flex justify-content-between flex-column flex-md-row align-items-md-end mb-3"
+              ></div> -->
+            </div>
+            <strong
+              class="attribute_name w-100 bg-light mb-3"
+              style="height: 1px"
+            />
+            <div>
+              <h6 class="text-primary h6">PARTAGEZ CE PRODUIT</h6>
+              <div
+                id="o_product_terms_and_share"
+                class="d-flex justify-content-between flex-column flex-md-row-reverse align-items-md-start mb-3"
               ></div>
+            </div>
+            <strong
+              class="attribute_name w-100 bg-light mb-3"
+              style="height: 1px"
+            />
+            <div>
+              <h6 class="text-primary h6">PLUS D'INFORMATION</h6>
+              <a
+                title="Pour avoir plus d'information sur ce produit, cliquez ici."
+                t-attf-class="flex-grow-1 text-succcess"
+                t-att-href="'https://api.whatsapp.com/send?phone=221785332828&amp;text=Je+suis+int%C3%A9ress%C3%A9+par+ce+produit%3A+' + product.name + '%0ALien+du+produit+dans+le+site+de+KD+MOBILIER%3A+' + base_url + product.website_url"
+                target="_blank"
+              >
+                <i class="fa fa-2x fa-whatsapp text-success me-2" />
+              </a>
             </div>
           </div>
         </section>
@@ -917,7 +943,7 @@
         <t t-snippet-call="website.s_share">
           <t
             t-set="_exclude_share_links"
-            t-value="['whatsapp','linkedin', 'facebook', 'pinterest', 'email', 'twitter']"
+            t-value="['linkedin', 'pinterest', 'email', ]"
           />
           <t t-set="_no_title" t-value="True" />
           <t t-set="_classes" t-valuef="text-lg-end" />
