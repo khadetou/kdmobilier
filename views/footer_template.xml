@@ -104,10 +104,10 @@
             <div class="row g-0">
               <div class="col-md-12 col-xl-6 pbmit-footer-left">
                 <form>
-                  <div class="s_newsletter_subscribe_form s_newsletter_list js_subscribe pbmit-newsletter">
+                  <div class="s_newsletter_subscribe_form s_newsletter_list js_subscribe pbmit-newsletter" data-list-id="1">
                     <h3>Recevez les Offres Exclusives de KD Mobilier !</h3>
                     <div class="pbmit-footer-email-button">
-                      <input type="email" name="EMAIL" class="js_subscribe_value" placeholder="Your email address" />
+                      <input type="email" name="email" class="js_subscribe_value" placeholder="Your email address" />
                       <button class="pbmit-btn js_subscribe_btn">
                         <span class="pbmit-button-content-wrapper">
                           <span class="pbmit-button-text">Subscribe</span>
