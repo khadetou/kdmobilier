@@ -51,6 +51,8 @@
             "theme_kdmobilier/static/src/css/style.css",
             # JAVA SCRIPT
             "/theme_kdmobilier/static/build/js/main.js",
+            "theme_kdmobilier/static/src/js/attributes.js",
+            "theme_kdmobilier/static/src/js/poppup.js",
             # "theme_kdmobilier/static/src/js/jquery.min.js",
             # "theme_kdmobilier/static/src/js/popper.min.js",
             # "theme_kdmobilier/static/src/js/bootstrap.min.js",
