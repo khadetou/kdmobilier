@@ -43,32 +43,17 @@
           <!-- Ihbox -->
           <section class="ihbox-section-two">
             <div class="container-fluid p-0">
-              <div
-                class="swiper-slider"
-                data-autoplay="false"
-                data-loop="true"
-                data-dots="false"
-                data-arrows="false"
-                data-columns="4"
-                data-margin="30"
-                data-effect="slide"
-              >
+              <div class="swiper-slider" data-autoplay="false" data-loop="true" data-dots="false" data-arrows="false" data-columns="4" data-margin="30" data-effect="slide">
                 <div class="swiper-wrapper">
                   <!-- Slide1 -->
                   <article class="pbmit-miconheading-style-7 swiper-slide">
                     <div class="pbmit-ihbox-style-7">
                       <div class="pbmit-ihbox-box">
-                        <div
-                          class="pbmit-icon-wrapper d-flex align-items-center"
-                        >
+                        <div class="pbmit-icon-wrapper d-flex align-items-center">
                           <div class="pbmit-ihbox-icon">
                             <div class="pbmit-ihbox-icon-wrapper">
-                              <div
-                                class="pbmit-icon-wrapper pbmit-icon-type-icon"
-                              >
-                                <i
-                                  class="pbmit-xinterio-icon pbmit-xinterio-icon-living-room"
-                                ></i>
+                              <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
+                                <i class="pbmit-xinterio-icon pbmit-xinterio-icon-living-room"></i>
                               </div>
                             </div>
                           </div>
@@ -86,8 +71,7 @@
                       <div class="pbmit-ihbox-btn">
                         <a class="pbmit-button-inner" href="#">
                           <span class="pbmit-button-wrapper">
-                            <span class="pbmit-button-text"
-                              >En savoir plus</span
+                            <span class="pbmit-button-text">En savoir plus</span
                             >
                           </span>
                         </a>
@@ -98,17 +82,11 @@
                   <article class="pbmit-miconheading-style-7 swiper-slide">
                     <div class="pbmit-ihbox-style-7">
                       <div class="pbmit-ihbox-box">
-                        <div
-                          class="pbmit-icon-wrapper d-flex align-items-center"
-                        >
+                        <div class="pbmit-icon-wrapper d-flex align-items-center">
                           <div class="pbmit-ihbox-icon">
                             <div class="pbmit-ihbox-icon-wrapper">
-                              <div
-                                class="pbmit-icon-wrapper pbmit-icon-type-icon"
-                              >
-                                <i
-                                  class="pbmit-xinterio-icon pbmit-xinterio-icon-house"
-                                ></i>
+                              <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
+                                <i class="pbmit-xinterio-icon pbmit-xinterio-icon-house"></i>
                               </div>
                             </div>
                           </div>
@@ -128,8 +106,7 @@
                       <div class="pbmit-ihbox-btn">
                         <a class="pbmit-button-inner" href="#">
                           <span class="pbmit-button-wrapper">
-                            <span class="pbmit-button-text"
-                              >En savoir plus</span
+                            <span class="pbmit-button-text">En savoir plus</span
                             >
                           </span>
                         </a>
@@ -140,17 +117,11 @@
                   <article class="pbmit-miconheading-style-7 swiper-slide">
                     <div class="pbmit-ihbox-style-7">
                       <div class="pbmit-ihbox-box">
-                        <div
-                          class="pbmit-icon-wrapper d-flex align-items-center"
-                        >
+                        <div class="pbmit-icon-wrapper d-flex align-items-center">
                           <div class="pbmit-ihbox-icon">
                             <div class="pbmit-ihbox-icon-wrapper">
-                              <div
-                                class="pbmit-icon-wrapper pbmit-icon-type-icon"
-                              >
-                                <i
-                                  class="pbmit-xinterio-icon pbmit-xinterio-icon-3d"
-                                ></i>
+                              <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
+                                <i class="pbmit-xinterio-icon pbmit-xinterio-icon-3d"></i>
                               </div>
                             </div>
                           </div>
@@ -170,8 +141,7 @@
                       <div class="pbmit-ihbox-btn">
                         <a class="pbmit-button-inner" href="#">
                           <span class="pbmit-button-wrapper">
-                            <span class="pbmit-button-text"
-                              >En savoir plus</span
+                            <span class="pbmit-button-text">En savoir plus</span
                             >
                           </span>
                         </a>
@@ -182,17 +152,11 @@
                   <article class="pbmit-miconheading-style-7 swiper-slide">
                     <div class="pbmit-ihbox-style-7">
                       <div class="pbmit-ihbox-box">
-                        <div
-                          class="pbmit-icon-wrapper d-flex align-items-center"
-                        >
+                        <div class="pbmit-icon-wrapper d-flex align-items-center">
                           <div class="pbmit-ihbox-icon">
                             <div class="pbmit-ihbox-icon-wrapper">
-                              <div
-                                class="pbmit-icon-wrapper pbmit-icon-type-icon"
-                              >
-                                <i
-                                  class="pbmit-xinterio-icon pbmit-xinterio-icon-brickwall-1"
-                                ></i>
+                              <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
+                                <i class="pbmit-xinterio-icon pbmit-xinterio-icon-brickwall-1"></i>
                               </div>
                             </div>
                           </div>
@@ -210,8 +174,7 @@
                       <div class="pbmit-ihbox-btn">
                         <a class="pbmit-button-inner" href="#">
                           <span class="pbmit-button-wrapper">
-                            <span class="pbmit-button-text"
-                              >En savoir plus</span
+                            <span class="pbmit-button-text">En savoir plus</span
                             >
                           </span>
                         </a>
@@ -222,17 +185,11 @@
                   <article class="pbmit-miconheading-style-7 swiper-slide">
                     <div class="pbmit-ihbox-style-7">
                       <div class="pbmit-ihbox-box">
-                        <div
-                          class="pbmit-icon-wrapper d-flex align-items-center"
-                        >
+                        <div class="pbmit-icon-wrapper d-flex align-items-center">
                           <div class="pbmit-ihbox-icon">
                             <div class="pbmit-ihbox-icon-wrapper">
-                              <div
-                                class="pbmit-icon-wrapper pbmit-icon-type-icon"
-                              >
-                                <i
-                                  class="pbmit-xinterio-icon pbmit-xinterio-icon-hard-hat"
-                                ></i>
+                              <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
+                                <i class="pbmit-xinterio-icon pbmit-xinterio-icon-hard-hat"></i>
                               </div>
                             </div>
                           </div>
@@ -252,8 +209,7 @@
                       <div class="pbmit-ihbox-btn">
                         <a class="pbmit-button-inner" href="#">
                           <span class="pbmit-button-wrapper">
-                            <span class="pbmit-button-text"
-                              >En savoir plus</span
+                            <span class="pbmit-button-text">En savoir plus</span
                             >
                           </span>
                         </a>
@@ -294,72 +250,22 @@
                       <div class="pbmit-heading animation-style2">
                         <h2 class="pbmit-title">Envoyez-nous un message</h2>
                       </div>
-                      <form
-                        action="/website/form/"
-                        method="post"
-                        enctype="multipart/form-data"
-                        data-mark="*"
-                        data-model_name="mail.mail"
-                        data-success-mode="redirect"
-                        data-success-page="/contactus-thank-you"
-                        data-pre-fill="true"
-                        class="contact-form"
-                        id="contact-form"
-                      >
+                      <form action="/website/form/" method="post" enctype="multipart/form-data" data-mark="*" data-model_name="mail.mail" data-success-mode="redirect" data-success-page="/contactus-thank-you" data-pre-fill="true" class="contact-form" id="contact-form">
                         <div class="row">
                           <div class="col-md-12">
-                            <textarea
-                              name="message"
-                              cols="40"
-                              rows="10"
-                              class="form-control"
-                              placeholder="Votre message (détaillez votre projet ou vos questions)"
-                              required=""
-                            ></textarea>
+                            <textarea name="message" cols="40" rows="10" class="form-control" placeholder="Votre message (détaillez votre projet ou vos questions)" required=""></textarea>
                           </div>
                           <div class="col-md-6">
-                            <input
-                              type="text"
-                              class="form-control"
-                              placeholder="Votre nom complet *"
-                              name="name"
-                              required=""
-                              data-fill-with="name"
-                              style="margin-bottom: 20px"
-                            />
+                            <input type="text" class="form-control" placeholder="Votre nom complet *" name="name" required="" data-fill-with="name" style="margin-bottom: 20px" />
                           </div>
                           <div class="col-md-6">
-                            <input
-                              type="email"
-                              class="form-control"
-                              placeholder="Votre email *"
-                              name="email"
-                              required=""
-                              data-fill-with="email"
-                              style="margin-bottom: 20px"
-                            />
+                            <input type="email" class="form-control" placeholder="Votre email *" name="email" required="" data-fill-with="email" style="margin-bottom: 20px" />
                           </div>
                           <div class="col-md-6">
-                            <input
-                              type="tel"
-                              class="form-control"
-                              placeholder="Votre téléphone *"
-                              name="phone"
-                              required=""
-                              data-fill-with="phone"
-                              style="margin-bottom: 20px"
-                            />
+                            <input type="tel" class="form-control" placeholder="Votre téléphone *" name="phone" required="" data-fill-with="phone" style="margin-bottom: 20px" />
                           </div>
                           <div class="col-md-6">
-                            <input
-                              type="text"
-                              class="form-control"
-                              placeholder="Sujet de votre message"
-                              name="subject"
-                              data-fill-with="subject"
-                              required=""
-                              style="margin-bottom: 20px"
-                            />
+                            <input type="text" class="form-control" placeholder="Sujet de votre message" name="subject" data-fill-with="subject" required="" style="margin-bottom: 20px" />
                           </div>
                           <div class="col-md-12">
                             <div class="form-check">
@@ -371,16 +277,10 @@
                             </div>
                           </div>
                           <div class="col-md-12">
-                            <button
-                              type="submit"
-                              class="pbmit-btn pbmit-btn-outline"
-                            >
-                              <i
-                                class="form-btn-loader fa fa-circle-o-notch fa-spin fa-fw margin-bottom d-none"
-                              ></i>
+                            <button type="submit" class="pbmit-btn pbmit-btn-outline">
+                              <i class="form-btn-loader fa fa-circle-o-notch fa-spin fa-fw margin-bottom d-none"></i>
                               <span class="pbmit-button-content-wrapper">
-                                <span class="pbmit-button-text"
-                                  >Envoyer le message</span
+                                <span class="pbmit-button-text">Envoyer le message</span
                                 >
                               </span>
                             </button>
@@ -399,38 +299,19 @@
           <!-- Client -->
           <section class="client-three">
             <div class="container">
-              <div
-                class="swiper-slider"
-                data-autoplay="true"
-                data-loop="true"
-                data-dots="false"
-                data-arrows="false"
-                data-columns="6"
-                data-margin="0"
-                data-effect="slide"
-              >
+              <div class="swiper-slider" data-autoplay="true" data-loop="true" data-dots="false" data-arrows="false" data-columns="6" data-margin="0" data-effect="slide">
                 <div class="swiper-wrapper">
                   <!-- Slide1 -->
                   <article class="pbmit-client-style-1 swiper-slide">
                     <div class="pbmit-border-wrapper">
-                      <div
-                        class="pbmit-client-wrapper pbmit-client-with-hover-img"
-                      >
+                      <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
                         <h4 class="pbmit-hide">Client 12</h4>
                         <div class="pbmit-client-hover-img">
-                          <img
-                            src="/theme_kdmobilier/static/src/images/homepage-3/client/client-global-01.png"
-                            class="img-fluid"
-                            alt=""
-                          />
+                          <img src="/theme_kdmobilier/static/src/images/homepage-3/client/client-global-01.png" class="img-fluid" alt="" />
                         </div>
                         <div class="pbmit-featured-img-wrapper">
                           <div class="pbmit-featured-wrapper">
-                            <img
-                              src="/theme_kdmobilier/static/src/images/homepage-3/client/client-grey-01.png"
-                              class="img-fluid"
-                              alt=""
-                            />
+                            <img src="/theme_kdmobilier/static/src/images/homepage-3/client/client-grey-01.png" class="img-fluid" alt="" />
                           </div>
                         </div>
                       </div>
@@ -439,24 +320,14 @@
                   <!-- Slide2 -->
                   <article class="pbmit-client-style-1 swiper-slide">
                     <div class="pbmit-border-wrapper">
-                      <div
-                        class="pbmit-client-wrapper pbmit-client-with-hover-img"
-                      >
+                      <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
                         <h4 class="pbmit-hide">Client 12</h4>
                         <div class="pbmit-client-hover-img">
-                          <img
-                            src="/theme_kdmobilier/static/src/images/homepage-3/client/client-global-02.png"
-                            class="img-fluid"
-                            alt=""
-                          />
+                          <img src="/theme_kdmobilier/static/src/images/homepage-3/client/client-global-02.png" class="img-fluid" alt="" />
                         </div>
                         <div class="pbmit-featured-img-wrapper">
                           <div class="pbmit-featured-wrapper">
-                            <img
-                              src="/theme_kdmobilier/static/src/images/homepage-3/client/client-grey-02.png"
-                              class="img-fluid"
-                              alt=""
-                            />
+                            <img src="/theme_kdmobilier/static/src/images/homepage-3/client/client-grey-02.png" class="img-fluid" alt="" />
                           </div>
                         </div>
                       </div>
@@ -465,24 +336,14 @@
                   <!-- Slide3 -->
                   <article class="pbmit-client-style-1 swiper-slide">
                     <div class="pbmit-border-wrapper">
-                      <div
-                        class="pbmit-client-wrapper pbmit-client-with-hover-img"
-                      >
+                      <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
                         <h4 class="pbmit-hide">Client 12</h4>
                         <div class="pbmit-client-hover-img">
-                          <img
-                            src="/theme_kdmobilier/static/src/images/homepage-3/client/client-global-03.png"
-                            class="img-fluid"
-                            alt=""
-                          />
+                          <img src="/theme_kdmobilier/static/src/images/homepage-3/client/client-global-03.png" class="img-fluid" alt="" />
                         </div>
                         <div class="pbmit-featured-img-wrapper">
                           <div class="pbmit-featured-wrapper">
-                            <img
-                              src="/theme_kdmobilier/static/src/images/homepage-3/client/client-grey-03.png"
-                              class="img-fluid"
-                              alt=""
-                            />
+                            <img src="/theme_kdmobilier/static/src/images/homepage-3/client/client-grey-03.png" class="img-fluid" alt="" />
                           </div>
                         </div>
                       </div>
@@ -491,24 +352,14 @@
                   <!-- Slide4 -->
                   <article class="pbmit-client-style-1 swiper-slide">
                     <div class="pbmit-border-wrapper">
-                      <div
-                        class="pbmit-client-wrapper pbmit-client-with-hover-img"
-                      >
+                      <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
                         <h4 class="pbmit-hide">Client 12</h4>
                         <div class="pbmit-client-hover-img">
-                          <img
-                            src="/theme_kdmobilier/static/src/images/homepage-3/client/client-global-04.png"
-                            class="img-fluid"
-                            alt=""
-                          />
+                          <img src="/theme_kdmobilier/static/src/images/homepage-3/client/client-global-04.png" class="img-fluid" alt="" />
                         </div>
                         <div class="pbmit-featured-img-wrapper">
                           <div class="pbmit-featured-wrapper">
-                            <img
-                              src="/theme_kdmobilier/static/src/images/homepage-3/client/client-grey-04.png"
-                              class="img-fluid"
-                              alt=""
-                            />
+                            <img src="/theme_kdmobilier/static/src/images/homepage-3/client/client-grey-04.png" class="img-fluid" alt="" />
                           </div>
                         </div>
                       </div>
@@ -517,24 +368,14 @@
                   <!-- Slide5 -->
                   <article class="pbmit-client-style-1 swiper-slide">
                     <div class="pbmit-border-wrapper">
-                      <div
-                        class="pbmit-client-wrapper pbmit-client-with-hover-img"
-                      >
+                      <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
                         <h4 class="pbmit-hide">Client 12</h4>
                         <div class="pbmit-client-hover-img">
-                          <img
-                            src="/theme_kdmobilier/static/src/images/homepage-3/client/client-global-05.png"
-                            class="img-fluid"
-                            alt=""
-                          />
+                          <img src="/theme_kdmobilier/static/src/images/homepage-3/client/client-global-05.png" class="img-fluid" alt="" />
                         </div>
                         <div class="pbmit-featured-img-wrapper">
                           <div class="pbmit-featured-wrapper">
-                            <img
-                              src="/theme_kdmobilier/static/src/images/homepage-3/client/client-grey-05.png"
-                              class="img-fluid"
-                              alt=""
-                            />
+                            <img src="/theme_kdmobilier/static/src/images/homepage-3/client/client-grey-05.png" class="img-fluid" alt="" />
                           </div>
                         </div>
                       </div>
@@ -543,24 +384,14 @@
                   <!-- Slide6 -->
                   <article class="pbmit-client-style-1 swiper-slide">
                     <div class="pbmit-border-wrapper">
-                      <div
-                        class="pbmit-client-wrapper pbmit-client-with-hover-img"
-                      >
+                      <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
                         <h4 class="pbmit-hide">Client 12</h4>
                         <div class="pbmit-client-hover-img">
-                          <img
-                            src="/theme_kdmobilier/static/src/images/homepage-3/client/client-global-06.png"
-                            class="img-fluid"
-                            alt=""
-                          />
+                          <img src="/theme_kdmobilier/static/src/images/homepage-3/client/client-global-06.png" class="img-fluid" alt="" />
                         </div>
                         <div class="pbmit-featured-img-wrapper">
                           <div class="pbmit-featured-wrapper">
-                            <img
-                              src="/theme_kdmobilier/static/src/images/homepage-3/client/client-grey-06.png"
-                              class="img-fluid"
-                              alt=""
-                            />
+                            <img src="/theme_kdmobilier/static/src/images/homepage-3/client/client-grey-06.png" class="img-fluid" alt="" />
                           </div>
                         </div>
                       </div>
@@ -569,24 +400,14 @@
                   <!-- Slide7 -->
                   <article class="pbmit-client-style-1 swiper-slide">
                     <div class="pbmit-border-wrapper">
-                      <div
-                        class="pbmit-client-wrapper pbmit-client-with-hover-img"
-                      >
+                      <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
                         <h4 class="pbmit-hide">Client 12</h4>
                         <div class="pbmit-client-hover-img">
-                          <img
-                            src="/theme_kdmobilier/static/src/images/homepage-3/client/client-global-07.png"
-                            class="img-fluid"
-                            alt=""
-                          />
+                          <img src="/theme_kdmobilier/static/src/images/homepage-3/client/client-global-07.png" class="img-fluid" alt="" />
                         </div>
                         <div class="pbmit-featured-img-wrapper">
                           <div class="pbmit-featured-wrapper">
-                            <img
-                              src="/theme_kdmobilier/static/src/images/homepage-3/client/client-grey-07.png"
-                              class="img-fluid"
-                              alt=""
-                            />
+                            <img src="/theme_kdmobilier/static/src/images/homepage-3/client/client-grey-07.png" class="img-fluid" alt="" />
                           </div>
                         </div>
                       </div>
@@ -595,24 +416,14 @@
                   <!-- Slide8 -->
                   <article class="pbmit-client-style-1 swiper-slide">
                     <div class="pbmit-border-wrapper">
-                      <div
-                        class="pbmit-client-wrapper pbmit-client-with-hover-img"
-                      >
+                      <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
                         <h4 class="pbmit-hide">Client 12</h4>
                         <div class="pbmit-client-hover-img">
-                          <img
-                            src="/theme_kdmobilier/static/src/images/homepage-3/client/client-global-08.png"
-                            class="img-fluid"
-                            alt=""
-                          />
+                          <img src="/theme_kdmobilier/static/src/images/homepage-3/client/client-global-08.png" class="img-fluid" alt="" />
                         </div>
                         <div class="pbmit-featured-img-wrapper">
                           <div class="pbmit-featured-wrapper">
-                            <img
-                              src="/theme_kdmobilier/static/src/images/homepage-3/client/client-grey-08.png"
-                              class="img-fluid"
-                              alt=""
-                            />
+                            <img src="/theme_kdmobilier/static/src/images/homepage-3/client/client-grey-08.png" class="img-fluid" alt="" />
                           </div>
                         </div>
                       </div>
@@ -628,14 +439,12 @@
           <section class="section-xl">
             <div class="container-fluid">
               <div class="iframe-area">
-                <iframe
-                  src="https://maps.google.com/maps?q=London%20Eye%2C%20London%2C%20United%20Kingdom&amp;t=m&amp;z=10&amp;output=embed&amp;iwloc=near"
-                  title="London Eye, London, United Kingdom"
-                  aria-label="London Eye, London, United Kingdom"
-                ></iframe>
+                <div id="map" style="width: 100%; height: 450px;"></div>
+                <div id="wrap" class="oe_structure oe_empty"/>
               </div>
             </div>
           </section>
+
           <!-- Iframe End-->
         </div>
       </div>
