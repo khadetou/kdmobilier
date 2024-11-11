@@ -22,6 +22,46 @@
 
 /* CUSTOM CODES START */
 /* Default style for larger screens (≥1200px) */
+
+/* ACTIVE  DEFAULT BTN */
+.variant_attribute .o_variant_pills.canape,
+.variant_attribute .o_variant_pills.canape .radio_input_value {
+  cursor: pointer !important;
+}
+.variant_attribute .o_variant_pills.canape:not(.active) {
+  color: #6c757d;
+  background-color: transparent;
+}
+
+.variant_attribute .o_variant_pills.canape.btn.active {
+  background-color: transparent;
+  border: solid 1px black;
+  color: black;
+}
+
+.variant_attribute .o_variant_pills.canape.btn.active .productname {
+  font-weight: 500 !important;
+}
+/* ACTIVE  DEFAULT BTN */
+
+.text-right {
+  text-align: right !important;
+}
+
+.product-set-products {
+  max-height: 134px;
+}
+.product-set-products {
+  scrollbar-color: #cbcbcb #cbcbcb;
+  scrollbar-width: thin;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.list-unstyled {
+  list-style: none;
+  padding-left: 0;
+}
+
 .leather-type-info {
   cursor: pointer;
   text-decoration: none;
