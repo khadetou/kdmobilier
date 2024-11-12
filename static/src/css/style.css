@@ -22,7 +22,41 @@
 
 /* CUSTOM CODES START */
 /* Default style for larger screens (≥1200px) */
+.pbmit-featured-wrapper {
+  overflow: hidden;
+}
 
+.hover-product-image {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  object-fit: cover;
+}
+
+.pbmit-featured-img-wrapper:hover .hover-product-image {
+  opacity: 1;
+}
+
+.main-product-image {
+  transition: transform 0.3s ease-in-out;
+}
+
+.pbmit-featured-img-wrapper:hover .main-product-image {
+  transform: scale(1.05);
+}
+
+.pbmit-featured-container:hover .pbmit-featured-wrapper .hover-product-image {
+  opacity: 1;
+}
+
+/* Ensure proper stacking */
+.pbmit-featured-wrapper img,
+.pbmit-featured-wrapper span img {
+  object-fit: cover;
+}
+
+.pbmit-featured-container {
+  overflow: hidden;
+}
 /* ACTIVE  DEFAULT BTN */
 .variant_attribute .o_variant_pills.canape,
 .variant_attribute .o_variant_pills.canape .radio_input_value {

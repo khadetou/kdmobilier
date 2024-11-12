@@ -152,3 +152,9 @@ publicWidget.registry.attributes = publicWidget.Widget.extend({
     }
   },
 });
+
+// //   {
+//     name: "KD Mobilier Sacré Coeur",
+//     position: { lat: 14.720039814631185, lng: -17.46587331474792 },
+//     address: "Sacré Coeur 3 VDN, Dakar, Sénégal",
+//   },
