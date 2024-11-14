@@ -147,6 +147,37 @@
                 </section>
             </field>
         </record>
+        <record id="decoration" model="website.menu">
+            <field name="name">Notre univers</field>
+            <field name="url">/shop/category/decoration</field>
+            <field name="sequence" type="int">20</field>
+            <field name="is_mega_menu">True</field>
+
+
+            <field name="mega_menu_content" type="html">
+                <section class="s_mega_menu_odoo_menu pt16 o_colored_level o_cc o_cc1">
+                    <div class="container">
+
+
+                        <div class="row">
+                            <div class="col-md-6 col-lg pt16 pb24 o_draggable o_colored_level">
+                                <h4 class="o_default_snippet_text text-uppercase h5 fw-bold mt-0">Décoration</h4>
+                                <div class="s_hr text-start pt4 pb16 text-o-color-3" style="--o-border-color: currentColor;">
+                                    <hr class="w-100 mx-auto" style="border-top-width: 2px; border-top-style: solid;"/>
+                                </div>
+                                <nav class="nav flex-column">
+
+                                    <a class="nav-link o_default_snippet_text px-0" href="/about-us">A propos</a>
+
+
+                                    <a class="nav-link o_default_snippet_text px-0" href="/services">Service de décoration </a>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </field>
+        </record>
 
     </data>
 
