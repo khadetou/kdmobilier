@@ -147,9 +147,9 @@
                 </section>
             </field>
         </record>
-        <record id="decoration" model="website.menu">
+        <record id="notreunivers" model="website.menu">
             <field name="name">Notre univers</field>
-            <field name="url">/shop/category/decoration</field>
+            <field name="url">/shop/category/notre-univers</field>
             <field name="sequence" type="int">20</field>
             <field name="is_mega_menu">True</field>
 
