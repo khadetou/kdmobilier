@@ -22,6 +22,11 @@
 
 /* CUSTOM CODES START */
 /* Default style for larger screens (≥1200px) */
+
+#o_terms_conditions ul {
+  padding-left: 2rem !important;
+}
+
 .pbmit-featured-wrapper {
   overflow: hidden;
 }
