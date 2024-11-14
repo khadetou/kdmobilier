@@ -56,12 +56,12 @@ publicWidget.registry.leatherPreview = publicWidget.Widget.extend({
                             <div class="modal-body">
                                 <div class="row g-3">
                                     <!-- Art Royal -->
-                                    <div class="col-12 col-md-4">
+                                    <div class="col-12 col-md-6">
                                         <div class="leather-preview-card h-100">
-                                            <h6 class="text-center mb-3">${this.leatherDescriptions.lisse.title}</h6>
+                                            <h6 class="text-center mb-3 text-primary">${this.leatherDescriptions.lisse.title}</h6>
                                             <div class="leather-samples d-flex flex-wrap justify-content-center" id="artRoyalSamples">
                                                 <div class="main-leather-image mb-3">
-                                                    <img src="" alt="Cuir Lisse" class="img-fluid rounded leather-type-img"/>
+                                                    <img src="" alt="Cuir Lisse" class="img-fluid rounded leather-type-img-lisse"/>
                                                 </div>
                                             </div>
                                             <div class="leather-description">
@@ -70,12 +70,12 @@ publicWidget.registry.leatherPreview = publicWidget.Widget.extend({
                                         </div>
                                     </div>
                                     <!-- Dollaro -->
-                                    <div class="col-12 col-md-4">
+                                    <div class="col-12 col-md-6">
                                         <div class="leather-preview-card h-100">
-                                            <h6 class="text-center mb-3">${this.leatherDescriptions.graine.title}</h6>
+                                            <h6 class="text-center mb-3 text-primary">${this.leatherDescriptions.graine.title}</h6>
                                             <div class="leather-samples d-flex flex-wrap justify-content-center" id="dollaroSamples">
                                                 <div class="main-leather-image mb-3">
-                                                    <img src="" alt="Cuir Grainé" class="img-fluid rounded leather-type-img"/>
+                                                    <img src="" alt="Cuir Grainé" class="img-fluid rounded leather-type-img-graine"/>
                                                 </div>
                                             </div>
                                             <div class="leather-description">
@@ -83,20 +83,7 @@ publicWidget.registry.leatherPreview = publicWidget.Widget.extend({
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- Statuto -->
-                                    <div class="col-12 col-md-4">
-                                        <div class="leather-preview-card h-100">
-                                            <h6 class="text-center mb-3">${this.leatherDescriptions.texture.title}</h6>
-                                            <div class="leather-samples d-flex flex-wrap justify-content-center" id="statutoSamples">
-                                                <div class="main-leather-image mb-3">
-                                                    <img src="" alt="Cuir Texturé" class="img-fluid rounded leather-type-img"/>
-                                                </div>
-                                            </div>
-                                            <div class="leather-description">
-                                                <p class="text-muted small">${this.leatherDescriptions.texture.description}</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                  
                                 </div>
                             </div>
                         </div>
@@ -138,9 +125,15 @@ publicWidget.registry.leatherPreview = publicWidget.Widget.extend({
     const valueId = sample.getAttribute("data-value_id");
     if (!valueId) return;
 
-    const imgEl = container.querySelector(".leather-type-img");
-    if (imgEl) {
-      imgEl.src = `/web/image/product.template.attribute.value/${valueId}/image`;
+    const imgElg = container.querySelector(".leather-type-img-graine");
+    const imgEll = container.querySelector(".leather-type-img-lisse");
+    if (imgElg) {
+      //   imgEl.src = `/web/image/product.template.attribute.value/${valueId}/image`;
+      imgElg.src = `/theme_kdmobilier/static/src/images/cuire/cuire_graine.jpg`;
+    }
+    if (imgEll) {
+      //   imgEl.src = `/web/image/product.template.attribute.value/${valueId}/image`;
+      imgEll.src = `/theme_kdmobilier/static/src/images/cuire/cuire_lisse.jpg`;
     }
   },
 

@@ -43,7 +43,7 @@ publicWidget.registry.KDMobilierMap = publicWidget.Widget.extend({
       },
       {
         name: "KD Mobilier Saly",
-        position: { lat: 14.444893476755823, lng: -17.005459193632046 },
+        position: { lat: 14.443927431900583, lng: -17.005591795792135 },
         address: "Route de Saly, Saly, Sénégal",
       },
     ];

@@ -387,8 +387,6 @@
               class="oe_product_image_img_wrapper d-flex h-100 justify-content-center align-items-center position-absolute pbmit-featured-wrapper"
             />
 
-            <span t-esc="product.product_template_image_ids" />
-
             <t t-if="product.product_template_image_ids">
               <span
                 t-field="product.product_template_image_ids[0].image_1920"
@@ -757,10 +755,10 @@
                       t-set="ctaSizeBig"
                       t-value="not hasQuantities or not hasBuyNow"
                     />
-                    <strong
+                    <!-- <strong
                       class="attribute_name w-100 bg-light mb-3"
                       style="height: 1px"
-                    />
+                    /> -->
                     <div
                       id="add_to_cart_wrap"
                       t-attf-class="{{'d-none' if combination_info['prevent_zero_price_sale'] else 'd-inline-flex'}} align-items-center mb-2 me-4"
@@ -787,6 +785,12 @@
                       id="product_option_block"
                       class="d-flex flex-wrap w-100"
                     />
+
+                    <!-- <h6 class="text-primary h6">PARTAGEZ CE PRODUIT</h6> -->
+                    <!-- <div
+                    id="o_product_terms_and_share"
+                    class="d-flex justify-content-between flex-column flex-md-row-reverse align-items-md-start mb-3"
+                  ></div> -->
                   </div>
 
                   <div
@@ -881,37 +885,21 @@
                   </div>
                 </t>
               </div>
-              <!-- <div id="o_product_terms_and_share" class="d-flex justify-content-between flex-column flex-md-row align-items-md-end mb-3"></div> -->
-            </div>
-            <strong
-              class="attribute_name w-100 bg-light mb-3"
-              style="height: 1px"
-            />
-            <div class="row">
-              <!-- Première colonne -->
-              <div class="col-12 col-md-6 mb-3 mb-md-0">
-                <div>
-                  <h6 class="text-primary h6">PARTAGEZ CE PRODUIT</h6>
-                  <div
-                    id="o_product_terms_and_share"
-                    class="d-flex justify-content-between flex-column flex-md-row-reverse align-items-md-start mb-3"
-                  ></div>
-                </div>
-              </div>
+              <div
+                id="o_product_terms_and_share"
+                class="d-flex justify-content-between flex-column flex-md-row align-items-md-end mb-3"
+              ></div>
 
-              <!-- Deuxième colonne -->
-              <div class="col-12 col-md-6">
-                <div>
-                  <h6 class="text-primary h6">PLUS D'INFORMATION</h6>
-                  <a
-                    title="Pour avoir plus d'information sur ce produit, cliquez ici."
-                    t-attf-class="flex-grow-1 text-succcess"
-                    t-att-href="'https://api.whatsapp.com/send?phone=221785332828&amp;text=Je+suis+int%C3%A9ress%C3%A9+par+ce+produit%3A+' + product.name + '%0ALien+du+produit+dans+le+site+de+KD+MOBILIER%3A+' + base_url + product.website_url"
-                    target="_blank"
-                  >
-                    <i class="fa fa-2x fa-whatsapp text-success me-2"></i>
-                  </a>
-                </div>
+              <div>
+                <h6 class="text-primary h6">PLUS D'INFORMATION</h6>
+                <a
+                  title="Pour avoir plus d'information sur ce produit, cliquez ici."
+                  t-attf-class="flex-grow-1 text-succcess"
+                  t-att-href="'https://api.whatsapp.com/send?phone=221785332828&amp;text=Je+suis+int%C3%A9ress%C3%A9+par+ce+produit%3A+' + product.name + '%0ALien+du+produit+dans+le+site+de+KD+MOBILIER%3A+' + base_url + product.website_url"
+                  target="_blank"
+                >
+                  <i class="fa fa-2x fa-whatsapp text-success me-2"></i>
+                </a>
               </div>
             </div>
           </div>
@@ -931,6 +919,48 @@
     </xpath>
   </template>
   <!-- PRODUCT PAGE CUSTOM GENERAL CONDITONS AND SHARE-->
+
+  <!-- PRODUCT QUATITY INSIDE OF PRODUCT PAGE CUSTOM NEXT TO ADD TO CART -->
+  <template
+    id="product_quantity"
+    inherit_id="theme_kdmobilier.custom_product"
+    name="Select Quantity"
+  >
+    <xpath expr="//t[@t-set='hasQuantities']" position="attributes">
+      <attribute name="t-value" remove="false" add="true" separator=" " />
+    </xpath>
+    <xpath expr="//div[@id='add_to_cart_wrap']" position="before">
+      <div
+        t-attf-class="css_quantity input-group {{'d-none' if combination_info['prevent_zero_price_sale'] else 'd-inline-flex'}} me-2 mb-2 align-middle"
+        contenteditable="false"
+      >
+        <a
+          t-attf-href="#"
+          class="btn btn-link js_add_cart_json"
+          aria-label="Remove one"
+          title="Remove one"
+        >
+          <i class="fa fa-minus"></i>
+        </a>
+        <input
+          type="text"
+          class="form-control quantity text-center"
+          data-min="1"
+          name="add_qty"
+          t-att-value="add_qty or 1"
+        />
+        <a
+          t-attf-href="#"
+          class="btn btn-link float_left js_add_cart_json"
+          aria-label="Add one"
+          title="Add one"
+        >
+          <i class="fa fa-plus"></i>
+        </a>
+      </div>
+    </xpath>
+  </template>
+  <!-- PRODUCT QUATITY INSIDE OF PRODUCT PAGE CUSTOM NEXT TO ADD TO CART -->
   <template
     id="custom_product_share_buttons"
     inherit_id="website_sale.product_share_buttons"
@@ -958,7 +988,7 @@
       </div>
     </xpath>
   </template>
-
+  <!-- CONDITIONS GÉNÉRALES -->
   <template
     inherit_id="website_sale.product_custom_text"
     customize_show="True"
@@ -968,9 +998,15 @@
     priority="21"
   >
     <xpath expr="//p[@class='text-muted mb-0']" position="replace">
-      <p class="text-muted mb-0"></p>
+      <p class="text-muted mb-0">
+        <a href="/terms" class="text-muted"><u>Conditions générales</u></a
+        ><br />
+        <!-- 30-day money-back guarantee<br /> -->
+        Expédition : 45 jours ouvrables
+      </p>
     </xpath>
   </template>
+  <!-- CONDITIONS GÉNÉRALES -->
   <!-- PRODUCT PAGE CUSTOM GENERAL CONDITONS AND SHARE-->
   <!-- Add controller method to get categories -->
   <template
@@ -1187,7 +1223,7 @@
             <t t-if="ptal.attribute_id.display_type == 'select'">
               <ul
                 t-att-data-attribute_id="ptal.attribute_id.id"
-                t-attf-class="btn-group-toggle list-inline produc-set-products list-unstyled o_wsale_product_attribute #{'d-none' if single_and_custom else ''}"
+                t-attf-class="btn-group-toggle list-inline product-set-products list-unstyled o_wsale_product_attribute #{'d-none' if single_and_custom else ''}"
                 data-bs-toggle="buttons"
               >
                 <t

@@ -229,20 +229,20 @@ li.list-inline-item.mb-3 {
 @media (min-width: 1400px) {
   .dropdown-menu.o_mega_menu_container_size,
   .o_mega_menu_container_size.o_dropdown_menu {
-    max-width: 8448px !important;
+    max-width: 575px !important;
   }
 }
 @media (min-width: 1200px) {
   .dropdown-menu.o_mega_menu_container_size,
   .o_mega_menu_container_size.o_dropdown_menu {
-    max-width: 448px !important;
+    max-width: 575px !important;
   }
 }
 
 @media (min-width: 992px) {
   .dropdown-menu.o_mega_menu_container_size,
   .o_mega_menu_container_size.o_dropdown_menu {
-    left: 41% !important;
+    left: 50% !important;
     transform: translate(-50%, -5px) !important;
   }
 }
