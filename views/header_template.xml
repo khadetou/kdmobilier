@@ -54,17 +54,17 @@
               </div>
               <div class="pbmit-pre-header-right">
                 <ul class="pbmit-contact-info">
-                  <li>
+                  <!-- <li>
                     <i class="pbmit-base-icon-mail-alt"></i>
                     <a href="#" class="__cf_email__">contact@kdmobilier.sn</a>
                   </li>
                   <li>
                     <i class="pbmit-base-icon-location-dot-solid"></i>Derrière
-            Auchan Sacré Coeur 3, Dakar - Sénégal
+                      Auchan Sacré Coeur 3, Dakar - Sénégal
                   </li>
                   <li>
                     <i class="pbmit-base-icon-location-dot-solid"></i>Saly: musée khelcom
-                  </li>
+                  </li> -->
                   <li>
                     <a title="Clickez ici pour envoyer un message whatsapp" href="https://api.whatsapp.com/send?phone=221785332828" target="_blank">
                       <i class="fa fa-whatsapp text-green-600"></i>
