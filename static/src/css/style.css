@@ -234,13 +234,13 @@ li.list-inline-item.mb-3 {
 @media (min-width: 1400px) {
   .dropdown-menu.o_mega_menu_container_size,
   .o_mega_menu_container_size.o_dropdown_menu {
-    max-width: 575px !important;
+    max-width: 919px !important;
   }
 }
 @media (min-width: 1200px) {
   .dropdown-menu.o_mega_menu_container_size,
   .o_mega_menu_container_size.o_dropdown_menu {
-    max-width: 575px !important;
+    max-width: 919px !important;
   }
 }
 

@@ -21,6 +21,7 @@
         "views/contact_us.xml",
         "views/auth_templage.xml",
         "views/services.xml",
+        # "views/aboutus_page.xml",
     ],
     "assets": {
         "web.assets_frontend": [
@@ -54,6 +55,7 @@
             "theme_kdmobilier/static/src/js/attributes.js",
             "theme_kdmobilier/static/src/js/poppup.js",
             "theme_kdmobilier/static/src/js/maps.js",
+            "theme_kdmobilier/static/src/js/infinite_scroll.js",
             # "theme_kdmobilier/static/src/js/jquery.min.js",
             # "theme_kdmobilier/static/src/js/popper.min.js",
             # "theme_kdmobilier/static/src/js/bootstrap.min.js",

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data noupdate="1">
+
+        <record id="theme_kdmobilier.aboutus_page" model="website.page">
+            <field name="name">About Us</field>
+            <field name="type">qweb</field>
+            <field name="url">/about-us</field>
+            <field name="key">theme_kdmobilier.aboutus_page</field>
+            <field name="arch" type="xml">
+                <t name="About Us" t-name="theme_kdmobilier.aboutus_page">
+                    <t t-call="website.layout">
+                        <section>
+                            <h1>Hello world!</h1>
+                        </section>
+                    </t>
+                </t>
+            </field>
+        </record>
+
+    </data>
+
+</odoo>
