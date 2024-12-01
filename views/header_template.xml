@@ -83,7 +83,7 @@
                 <div class="site-branding">
                   <h1 class="site-title">
                     <a href="/">
-                      <img class="logo-img" src="/theme_kdmobilier/static/src/images/long_logo.svg" alt="KD mobilier" />
+                      <img class="logo-img" src="/theme_kdmobilier/static/src/images/long_logo.png" alt="KD mobilier" />
                     </a>
                   </h1>
                 </div>
@@ -123,12 +123,22 @@
                 </nav>
               </div>
 
-              <ul>
+              <ul class="d-flex align-items-center gap-3 ">
                 <t t-call="website_sale.header_cart_link">
                   <t t-set="_icon" t-value="True" />
                   <t t-set="_link_class" t-value="'o_navlink_background btn position-relative rounded-circle p-1 text-center text-reset'" />
                   <t t-set="_badge_class" t-value="'position-absolute top-0 end-0 mt-n1 me-n1 rounded-pill'" />
                 </t>
+
+                <t t-call="website_sale_wishlist.header_wishlist_link">
+                  <t t-set="_icon" t-value="True"/>
+                  <t t-set="_link_class" t-value="'o_navlink_background btn position-relative rounded-circle p-1 text-center text-reset'"/>
+                  <t t-set="_badge_class" t-value="'position-absolute top-0 end-0 mt-n1 me-n1 rounded-pill'"/>
+                </t>
+              </ul>
+
+              <ul>
+
               </ul>
 
               <div class="pbmit-right-box d-flex align-items-center">

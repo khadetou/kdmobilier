@@ -23,6 +23,59 @@
 /* CUSTOM CODES START */
 /* Default style for larger screens (≥1200px) */
 
+/* HOMEPAGE PRODUCT CARDS */
+
+.pbmit-featured-wrapper.bg-size {
+  min-height: 342px !important;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+
+/* Mobile devices */
+@media screen and (max-width: 576px) {
+  .pbmit-featured-wrapper.bg-size {
+    min-height: 230px !important;
+  }
+}
+
+/* Tablets */
+@media screen and (min-width: 577px) and (max-width: 768px) {
+  .pbmit-featured-wrapper.bg-size {
+    min-height: 250px !important;
+  }
+}
+
+/* Small laptops */
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  .pbmit-featured-wrapper.bg-size {
+    min-height: 300px !important;
+  }
+}
+
+/* Larger screens */
+@media screen and (min-width: 993px) {
+  .pbmit-featured-wrapper.bg-size {
+    min-height: 342px !important;
+  }
+}
+/* HOMEPAGE PRODUCT CARDS */
+
+/* LOGO FOOTER */
+.footer-style-2 .pbmit-footer-logo img {
+  height: 59px !important;
+}
+/* LOGO FOOTER END */
+
+/* WISH LIST STYLE */
+.o_wsale_products_item_title {
+  text-align: center !important;
+}
+
+table.table-comparator .td-img img {
+  max-height: 383px !important;
+}
+/* WISH LIST STYLE END */
 #o_terms_conditions ul {
   padding-left: 2rem !important;
 }

@@ -11,7 +11,7 @@
                   <div class="textwidget">
                     <div class="pbmit-footer-logo">
                       <a href="/">
-                        <img src="/theme_kdmobilier/static/src/images/long_logo.svg" alt="" />
+                        <img src="/theme_kdmobilier/static/src/images/long_logo.png" alt="" />
                       </a>
                     </div>
                   </div>
@@ -24,9 +24,9 @@
                     <div class="pbmit-contact-widget-line pbmit-contact-widget-address">
                       <strong>Saly:</strong> Musée Khelcom
                     </div>
-                    <div class="pbmit-contact-widget-line pbmit-contact-widget-phone">
+                    <!-- <div class="pbmit-contact-widget-line pbmit-contact-widget-phone">
                       +221 33 826 08 08
-                    </div>
+                    </div> -->
                     <div class="pbmit-contact-widget-line pbmit-contact-widget-phone">
                       +221 78 533 28 28
                     </div>
@@ -49,13 +49,13 @@
                       <a href="/shop">Boutique</a>
                     </li>
                     <li>
-                      <a href="#">Salon</a>
+                      <a href="/shop/category/salons-18">Salon</a>
                     </li>
                     <li>
                       <a href="/about-us">A propos</a>
                     </li>
                     <li>
-                      <a href="#">Salle à manger</a>
+                      <a href="/shop/category/salles-a-manger-25">Salle à manger</a>
                     </li>
                     <li>
                       <a href="/blog">Blog</a>
@@ -70,7 +70,7 @@
                 <aside class="pbmit-two-column-menu widget">
                   <ul>
                     <li>
-                      <a href="#">Politique de confidentialité</a>
+                      <a href="/terms">Politique de confidentialité</a>
                     </li>
                     <li>
                       <a href="#">Termes</a>
@@ -79,20 +79,20 @@
                       <a href="#">Sitemap</a>
                     </li>
                     <li>
-                      <a href="#">Cookies</a>
+                      <a href="/cookie-policy">Cookies</a>
                     </li>
                     <li>
-                      <a href="#">Assistance</a>
+                      <a href="/helpdesk/service-clientele-1">Assistance</a>
                     </li>
-                    <li>
+                    <!-- <li>
                       <a href="#">FAQ</a>
-                    </li>
+                    </li> -->
                     <li>
-                      <a href="#">Rendez-vous</a>
+                      <a href="/appointment">Rendez-vous</a>
                     </li>
-                    <li>
+                    <!-- <li>
                       <a href="#">Livraison</a>
-                    </li>
+                    </li> -->
                   </ul>
                 </aside>
               </div>

@@ -39,8 +39,7 @@
                           <i class="pbmit-base-icon-angle-right"></i>
                         </span>
                         <span>
-                          <span class="post-root post post-post current-item"
-                            >Design &amp; Planning</span
+                          <span class="post-root post post-post current-item">Design &amp; Planning</span
                           >
                         </span>
                       </div>
@@ -59,11 +58,7 @@
                   <div class="row">
                     <div class="col-lg-9 service-right-col">
                       <div class="pbmit-service-feature-image">
-                        <img
-                          src="/theme_kdmobilier/static/src/images/service/service-det-01.jpg"
-                          class="img-fluid w-100"
-                          alt="Service Feature"
-                        />
+                        <img src="/theme_kdmobilier/static/src/images/service/service-det-01.jpg" class="img-fluid w-100" alt="Service Feature" />
                       </div>
                       <div class="pbmit-entry-content">
                         <div class="pbmit-service-content">
@@ -94,20 +89,12 @@
                             <div class="row">
                               <div class="col-md-12 text-center">
                                 <div class="pbmit-animation-style1">
-                                  <img
-                                    src="/theme_kdmobilier/static/src/images/service/service-det-02.jpeg"
-                                    class="img-fluid"
-                                    alt="Service Detail"
-                                  />
+                                  <img src="/theme_kdmobilier/static/src/images/service/service-det-02.jpeg" class="img-fluid" alt="Service Detail" />
                                 </div>
                               </div>
                               <!-- <div class="col-md-6 text-center">
                                 <div class="pbmit-animation-style2">
-                                  <img
-                                    src="/theme_kdmobilier/static/src/images/service/service-det-03.jpg"
-                                    class="img-fluid"
-                                    alt="Service Detail"
-                                  />
+                                  <img src="/theme_kdmobilier/static/src/images/service/service-det-03.jpg" class="img-fluid" alt="Service Detail" />
                                 </div>
                               </div> -->
                             </div>
@@ -139,17 +126,10 @@
                               <div class="col-md-4">
                                 <div class="pbminfotech-ele-fid-style-3">
                                   <div class="pbmit-fld-contents">
-                                    <div
-                                      class="pbmit-circle-outer"
-                                      data-digit="87"
-                                      data-fill="#bb9a65"
-                                      data-thickness="1.5"
-                                      data-size="153"
-                                    >
+                                    <div class="pbmit-circle-outer" data-digit="87" data-fill="#bb9a65" data-thickness="1.5" data-size="153">
                                       <div class="pbmit-circle">
                                         <div class="pbmit-fid-inner">
-                                          <span class="pbmit-number-rotate"
-                                            >87</span
+                                          <span class="pbmit-number-rotate">87</span
                                           >
                                           <span class="pbmit-fid">%</span>
                                         </div>
@@ -169,17 +149,10 @@
                               <div class="col-md-4">
                                 <div class="pbminfotech-ele-fid-style-3">
                                   <div class="pbmit-fld-contents">
-                                    <div
-                                      class="pbmit-circle-outer"
-                                      data-digit="95"
-                                      data-fill="#bb9a65"
-                                      data-thickness="1.5"
-                                      data-size="153"
-                                    >
+                                    <div class="pbmit-circle-outer" data-digit="95" data-fill="#bb9a65" data-thickness="1.5" data-size="153">
                                       <div class="pbmit-circle">
                                         <div class="pbmit-fid-inner">
-                                          <span class="pbmit-number-rotate"
-                                            >95</span
+                                          <span class="pbmit-number-rotate">95</span
                                           >
                                           <span class="pbmit-fid">%</span>
                                         </div>
@@ -199,17 +172,10 @@
                               <div class="col-md-4">
                                 <div class="pbminfotech-ele-fid-style-3">
                                   <div class="pbmit-fld-contents">
-                                    <div
-                                      class="pbmit-circle-outer"
-                                      data-digit="100"
-                                      data-fill="#bb9a65"
-                                      data-thickness="1.5"
-                                      data-size="153"
-                                    >
+                                    <div class="pbmit-circle-outer" data-digit="100" data-fill="#bb9a65" data-thickness="1.5" data-size="153">
                                       <div class="pbmit-circle">
                                         <div class="pbmit-fid-inner">
-                                          <span class="pbmit-number-rotate"
-                                            >100</span
+                                          <span class="pbmit-number-rotate">100</span
                                           >
                                           <span class="pbmit-fid">%</span>
                                         </div>
@@ -236,20 +202,11 @@
                           <div class="accordion" id="serviceAccordion">
                             <div class="accordion-item">
                               <h2 class="accordion-header">
-                                <button
-                                  class="accordion-button"
-                                  type="button"
-                                  data-bs-toggle="collapse"
-                                  data-bs-target="#collapse1"
-                                >
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
                                   1- Dites-nous tout
                                 </button>
                               </h2>
-                              <div
-                                id="collapse1"
-                                class="accordion-collapse collapse show"
-                                data-bs-parent="#serviceAccordion"
-                              >
+                              <div id="collapse1" class="accordion-collapse collapse show" data-bs-parent="#serviceAccordion">
                                 <div class="accordion-body">
                                   <p>
                                     Pour les professionnels de KD Mobilier, Vous
@@ -267,20 +224,11 @@
 
                             <div class="accordion-item">
                               <h2 class="accordion-header">
-                                <button
-                                  class="accordion-button collapsed"
-                                  type="button"
-                                  data-bs-toggle="collapse"
-                                  data-bs-target="#collapse2"
-                                >
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
                                   2- Nous peaufinons avec vous
                                 </button>
                               </h2>
-                              <div
-                                id="collapse2"
-                                class="accordion-collapse collapse"
-                                data-bs-parent="#serviceAccordion"
-                              >
+                              <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#serviceAccordion">
                                 <div class="accordion-body">
                                   <p>
                                     Le service conseil décoration KD Mobilier
@@ -299,20 +247,11 @@
 
                             <div class="accordion-item">
                               <h2 class="accordion-header">
-                                <button
-                                  class="accordion-button collapsed"
-                                  type="button"
-                                  data-bs-toggle="collapse"
-                                  data-bs-target="#collapse3"
-                                >
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
                                   3- La 3D pour y voir plus clair
                                 </button>
                               </h2>
-                              <div
-                                id="collapse3"
-                                class="accordion-collapse collapse"
-                                data-bs-parent="#serviceAccordion"
-                              >
+                              <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#serviceAccordion">
                                 <div class="accordion-body">
                                   <p>
                                     Une fois les premiers schémas validés, les
@@ -331,20 +270,11 @@
 
                             <div class="accordion-item">
                               <h2 class="accordion-header">
-                                <button
-                                  class="accordion-button collapsed"
-                                  type="button"
-                                  data-bs-toggle="collapse"
-                                  data-bs-target="#collapse4"
-                                >
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4">
                                   4- Un suivi de bout en bout
                                 </button>
                               </h2>
-                              <div
-                                id="collapse4"
-                                class="accordion-collapse collapse"
-                                data-bs-parent="#serviceAccordion"
-                              >
+                              <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#serviceAccordion">
                                 <div class="accordion-body">
                                   <p>
                                     Une fois le projet définitivement validé, le
@@ -419,10 +349,9 @@
                           </div>
 
                           <div class="text-center mt-5">
-                            <a href="#" class="pbmit-btn pbmit-btn-outline">
+                            <a href="/appointment" class="pbmit-btn pbmit-btn-outline">
                               <span class="pbmit-button-content-wrapper">
-                                <span class="pbmit-button-text"
-                                  >Prendre rendez-vous</span
+                                <span class="pbmit-button-text">Prendre rendez-vous</span
                                 >
                               </span>
                             </a>
@@ -485,13 +414,9 @@
                                 <i class="pbmit-base-icon-phone-call-1"></i>
                                 +221 78 533 28 28
                               </div>
-                              <a
-                                class="pbmit-btn pbmit-btn-hover-white"
-                                href="#"
-                              >
+                              <a class="pbmit-btn pbmit-btn-hover-white" href="#">
                                 <span class="pbmit-button-content-wrapper">
-                                  <span class="pbmit-button-text"
-                                    >S'inscrire maintenant</span
+                                  <span class="pbmit-button-text">S'inscrire maintenant</span
                                   >
                                 </span>
                               </a>
@@ -504,40 +429,24 @@
                           <div class="textwidget">
                             <div class="download">
                               <div class="item-download">
-                                <a
-                                  href="#"
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                >
+                                <a href="#" target="_blank" rel="noopener noreferrer">
                                   <span class="pbmit-download-content">
-                                    <i
-                                      class="pbmit-base-icon-pdf-file-format-symbol-1"
-                                    ></i>
+                                    <i class="pbmit-base-icon-pdf-file-format-symbol-1"></i>
                                     Catalogue 2024
                                   </span>
                                   <span class="pbmit-download-item">
-                                    <i
-                                      class="pbminfotech-base-icons pbmit-righticon pbmit-base-icon-download"
-                                    ></i>
+                                    <i class="pbminfotech-base-icons pbmit-righticon pbmit-base-icon-download"></i>
                                   </span>
                                 </a>
                               </div>
                               <div class="item-download">
-                                <a
-                                  href="#"
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                >
+                                <a href="#" target="_blank" rel="noopener noreferrer">
                                   <span class="pbmit-download-content">
-                                    <i
-                                      class="pbmit-base-icon-pdf-file-format-symbol-1"
-                                    ></i>
+                                    <i class="pbmit-base-icon-pdf-file-format-symbol-1"></i>
                                     Guide des mesures
                                   </span>
                                   <span class="pbmit-download-item">
-                                    <i
-                                      class="pbminfotech-base-icons pbmit-righticon pbmit-base-icon-download"
-                                    ></i>
+                                    <i class="pbminfotech-base-icons pbmit-righticon pbmit-base-icon-download"></i>
                                   </span>
                                 </a>
                               </div>

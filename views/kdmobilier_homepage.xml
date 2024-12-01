@@ -117,7 +117,7 @@
         </section>
 
         <div class="page-content">
-          <!-- Service -->
+          <!-- Service section 5 -->
           <section class="service-section-five">
             <div class="container pbmit-col-stretched-yes pbmit-col-right">
               <div class="pbmit-col-stretched-right">
@@ -146,11 +146,13 @@
                                 <span class="pbmit-number-rotate numinate"
                                   >100</span
                                 >
-                                <span class="pbmit-fid"><span>+</span></span>
+                                <span class="pbmit-fid">
+                                  <span>+</span>
+                                </span>
                               </h4>
                               <span class="pbmit-fid-title"
-                                >Des Salons d'Exception<br />Pour Votre
-                                Confort</span
+                                >Des Salons d'Exception<br />
+                                Pour Votre Confort</span
                               >
                             </div>
                           </div>
@@ -192,7 +194,7 @@
                               <div class="pbmit-box-content-wrap">
                                 <div class="pbmit-service-image-wrapper">
                                   <div class="pbmit-featured-img-wrapper">
-                                    <div class="pbmit-featured-wrapper">
+                                    <div class="pbmit-featured-wrapper bg-size">
                                       <img
                                         t-att-src="website.image_url(product, 'image_1024')"
                                         class="img-fluid"
@@ -252,7 +254,7 @@
               </div>
             </div>
           </section>
-          <!-- Service End -->
+          <!-- Service section 5 End -->
           <!-- About Start -->
           <section class="section-xl">
             <div class="container">
@@ -508,7 +510,7 @@
                         <div class="pbmit-box-content-wrap">
                           <div class="pbmit-service-image-wrapper">
                             <div class="pbmit-featured-img-wrapper">
-                              <div class="pbmit-featured-wrapper">
+                              <div class="pbmit-featured-wrapper bg-size">
                                 <img
                                   t-att-src="website.image_url(product, 'image_1024')"
                                   class="img-fluid"
@@ -624,7 +626,7 @@
                           <div class="pbminfotech-box-content">
                             <div class="pbmit-service-image-wrapper">
                               <div class="pbmit-featured-img-wrapper">
-                                <div class="pbmit-featured-wrapper">
+                                <div class="pbmit-featured-wrapper bg-size">
                                   <img
                                     t-att-src="website.image_url(product, 'image_1024')"
                                     class="img-fluid"
@@ -786,11 +788,7 @@
                       >
                     </li>
                     <!-- <li>
-                      <a
-                        href="#"
-                        class="pbmit-sortable-link"
-                        data-sortby="Buffets"
-                        >Buffets</a
+                      <a href="#" class="pbmit-sortable-link" data-sortby="Buffets">Buffets</a
                       >
                     </li> -->
                   </ul>
@@ -1053,7 +1051,7 @@
               <div class="text-center">
                 <div class="pbmit-heading-subheading-style-1 animation-style4">
                   <h4 class="pbmit-subtitle" style="color: #ffffff">
-                    Appelez-nous au +221 33 826 08 08
+                    Appelez-nous au +221 78 533 28 28
                   </h4>
                   <h2 class="pbmit-title">
                     Créateur d'Intérieurs <br />
@@ -1067,7 +1065,7 @@
                 <div class="play-button">
                   <a
                     class="pbmit-icon pbmin-lightbox-video"
-                    href="https://www.youtube.com/watch?v=VOTRE_VIDEO_ID"
+                    href="https://www.youtube.com/watch?v=dixUIdLPw0k"
                   >
                     <i class="fa fa-play"></i>
                   </a>

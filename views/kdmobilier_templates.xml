@@ -529,30 +529,36 @@
         <div class="swiper-wrapper">
           <t t-foreach="categories" t-as="c">
             <article class="pbmit-miconheading-style-7 swiper-slide">
-              <a t-att-href="'/shop/category/%s' % c.id" class="pbmit-ihbox-style-7">
-                <div class="pbmit-ihbox-box">
-                  <div class="pbmit-icon-wrapper d-flex align-items-center">
-                    <div class="pbmit-ihbox-icon">
-                      <div class="pbmit-ihbox-icon-wrapper">
-                        <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
-                          <div t-if="c.image_128" t-attf-style="background-image:url('data:image/png;base64,#{c.image_128}')" class="o_image_40_cover oe_img_bg o_bg_img_center rounded-3" t-att-alt="c.name" />
+              <a t-att-href="'/shop/category/%s' % c.id" class="">
+                <div class="pbmit-ihbox-style-7">
+                  <div class="pbmit-ihbox-box">
+                    <div class="pbmit-icon-wrapper d-flex align-items-center">
+                      <div class="pbmit-ihbox-icon">
+                        <!-- <div class="pbmit-ihbox-icon-wrapper"> -->
+                        <div class="pbmit-icon-wrapper pbmit-icon-type-icon" style="width: 120px; height: 120px;">
+                          <div t-if="c.image_128" t-attf-style="background-image:url('data:image/png;base64,#{c.image_128}'); height: 120px; width: 120px" class="o_image_40_cover oe_img_bg o_bg_img_center rounded-3" t-att-alt="c.name" />
                           <i t-else="" class="pbmit-xinterio-icon pbmit-xinterio-icon-house"></i>
                         </div>
+                        <!-- </div> -->
+                        <div class="pbmit-content-wrapper">
+                          <div class="pbmit-title-wrap">
+                            <h2 class="pbmit-element-title" t-field="c.name" />
+                          </div>
+
+                        </div>
                       </div>
-                    </div>
-                    <div class="pbmit-title-wrap">
-                      <h2 class="pbmit-element-title" t-field="c.name" />
+
                     </div>
                   </div>
-                </div>
-                <!-- <div class="pbmit-ihbox-btn">
-                                            <a class="pbmit-button-inner" t-att-href="'/shop/category/%s' % c.id">
-                                                <span class="pbmit-button-wrapper">
-                                                    <span class="pbmit-button-text">Read More</span>
-                                                </span>
-                                            </a>
-                                        </div> -->
-              </a>
+
+                  <div class="pbmit-ihbox-btn">
+                    <a class="pbmit-button-inner" t-att-href="'/shop/category/%s' % c.id">
+                      <span class="pbmit-button-wrapper">
+                        <span class="pbmit-button-text">Read More</span>
+                      </span>
+                    </a>
+                  </div>
+                </div>                <!-- <div class="pbmit-ihbox-btn">                   <a class="pbmit-button-inner" t-att-href="'/shop/category/%s' % c.id">                     <span class="pbmit-button-wrapper">                       <span class="pbmit-button-text">Read More</span>                     </span>                   </a>                 </div> --></a>
             </article>
           </t>
         </div>
@@ -770,4 +776,62 @@
 </xpath>
 </template>
 <!-- VARIANTS ENDS -->
+
+
+
+<!-- HELP DESK TEMPLATE CUSTOM -->
+<!-- Inherit from the base helpdesk team template -->
+<template id="custom_team_template" inherit_id="website_helpdesk.team" name="Custom Helpdesk Team Template">
+<xpath expr="//div[hasclass('container')]" position="replace">
+  <section class="pbmit-sticky-section">
+    <div class="container">
+      <div class="contact-us-bg">
+        <div class="row">
+          <!-- Left Column - Info -->
+          <div class="col-md-12 col-xl-4">
+            <div class="pbmit-sticky-col">
+              <div class="contact-us-left-area">
+                <div class="pbmit-heading-subheading animation-style2">
+                  <h4 class="pbmit-subtitle">Centre d'Aide</h4>
+                  <h2 class="pbmit-title">Besoin d'Assistance ?</h2>
+                  <div class="pbmit-heading-desc">
+                                                Soumettez votre ticket et notre équipe de support vous répondra dans les plus brefs délais.
+                  </div>
+                </div>
+                <div t-if="not is_html_empty(team.description)" class="mt-4">
+                  <div class="card bg-secondary mt-2" id="about_team">
+                    <h6 class="card-header">
+                      <b>À propos de notre équipe</b>
+                    </h6>
+                    <div class="card-body">
+                      <span t-field="team.description"/>
+                    </div>
+                  </div>
+                </div>
+                <div class="oe_structure" id="oe_structure_website_helpdesk_team_2"/>
+                <div class="oe_structure" id="oe_structure_website_helpdesk_team_3"/>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column - Form -->
+          <div class="col-md-12 col-xl-8">
+            <div class="contact-form-area">
+              <div class="oe_structure w-100 mb-2" id="oe_structure_website_helpdesk_team_1"/>
+              <div t-if="team.use_website_helpdesk_form">
+                <t t-set="template_xmlid" t-value="team.website_form_view_id.xml_id"/>
+                <t t-call="#{template_xmlid}"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="oe_structure" id="oe_structure_website_helpdesk_team_4"/>
+  </section>
+</xpath>
+</template>
+
+
+<!-- HELP DESK TEMPLATE CUSTOM END -->
 </odoo>

@@ -8,6 +8,8 @@
         "website",
         "website_blog",
         "website_sale",
+        "website_sale_wishlist",
+        "website_helpdesk",
         "website_mass_mailing",
     ],
     "data": [
