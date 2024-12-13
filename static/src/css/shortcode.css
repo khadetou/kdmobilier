@@ -39,7 +39,7 @@ body {
 .pbmit-heading,
 .pbmit-heading-subheading,
 .pbmit-heading-subheading-style-1 {
-  margin-bottom: 50px;
+  margin-bottom: 0;
   position: relative;
   z-index: 1;
 }

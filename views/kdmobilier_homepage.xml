@@ -5,680 +5,311 @@
       <t t-call="website.layout">
         <t t-set="pageName" t-value="'homepage'" />
         <!-- BANNER -->
-        <section class="header-style-3">
-          <div class="pbmit-slider-area pbmit-slider-three">
-            <div
-              class="swiper-slider"
-              data-autoplay="true"
-              data-loop="true"
-              data-dots="true"
-              data-arrows="false"
-              data-columns="1"
-              data-margin="0"
-              data-effect="fade"
-            >
-              <div class="swiper-wrapper">
-                <!-- Slide1 -->
-                <div class="swiper-slide">
-                  <div class="pbmit-slider-item">
-                    <div
-                      class="pbmit-slider-bg"
-                      style="
-                        background-image: url(/theme_kdmobilier/static/src/images/banner-slider-img/edith-demo.jpg);
-                      "
-                    ></div>
-                    <div class="container">
-                      <div class="row align-items-center">
-                        <div class="col-md-12 col-lg-7"></div>
-                        <div class="col-md-12 col-lg-5 pbmit-right-col">
-                          <div class="pbmit-slider-content">
-                            <h2
-                              class="pbmit-title transform-left transform-delay-3"
-                            >
-                              L'élégance à votre Portée.
-                            </h2>
-                            <p
-                              class="pbmit-desc transform-left transform-delay-4"
-                            >
-                              Sublimez votre intérieur avec notre collection
-                              <br />
-                              de mobilier haut de gamme
-                            </p>
-                            <div
-                              class="pbmit-button transform-left transform-delay-5"
-                            >
-                              <a
-                                class="pbmit-btn pbmit-btn-global"
-                                href="/contact-us"
-                              >
-                                <span class="pbmit-button-content-wrapper">
-                                  <span class="pbmit-button-text"
-                                    >Consultation</span
-                                  >
-                                </span>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Slide2 -->
-                <div class="swiper-slide">
-                  <div class="pbmit-slider-item">
-                    <div
-                      class="pbmit-slider-bg"
-                      style="
-                        background-image: url(/theme_kdmobilier/static/src/images/banner-slider-img/cartesio-demo.jpg);
-                      "
-                    ></div>
-                    <div class="container">
-                      <div class="row align-items-center">
-                        <div class="col-md-12 col-lg-7"></div>
-                        <div class="col-md-12 col-lg-5 pbmit-right-col">
-                          <div class="pbmit-slider-content">
-                            <h2
-                              class="pbmit-title transform-left transform-delay-3"
-                            >
-                              Le luxe dans chaque Détail.
-                            </h2>
-                            <p
-                              class="pbmit-desc transform-left transform-delay-4"
-                            >
-                              Transformez votre espace avec nos collections
-                              raffinées,
-                              <br />
-                              pensées pour votre confort.
-                            </p>
-                            <div
-                              class="pbmit-button transform-left transform-delay-5"
-                            >
-                              <a
-                                class="pbmit-btn pbmit-btn-global"
-                                href="/shop"
-                              >
-                                <span class="pbmit-button-content-wrapper">
-                                  <span class="pbmit-button-text"
-                                    >Boutique</span
-                                  >
-                                </span>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
+        <div class="oe_structure oe_empty" />
+        <section class="header-style-3"></section>
+        <div class="oe_structure oe_empty" />
         <div class="page-content">
-          <!-- Service section 5 -->
-          <section class="service-section-five">
-            <div class="container pbmit-col-stretched-yes pbmit-col-right">
-              <div class="pbmit-col-stretched-right">
-                <div class="row g-0">
-                  <div class="col-md-12 col-lg-3">
-                    <div class="service-five-header-area">
-                      <div
-                        class="pbmit-heading-subheading blue animation-style4"
-                      >
-                        <h4 class="pbmit-subtitle" style="color: #1b3669">
-                          Notre Collection
-                        </h4>
-                        <h2 class="pbmit-title">
-                          Le Confort Raffiné pour votre Salon
-                        </h2>
-                      </div>
-                      <div
-                        class="service-five-arrow swiper-btn-custom d-inline-flex flex-row-reverse"
-                      ></div>
-                      <div class="fid-style-area">
-                        <div class="pbminfotech-ele-fid-style-6">
-                          <div class="pbmit-fld-contents">
-                            <div class="pbmit-fld-wrap">
-                              <h4 class="pbmit-fid-inner">
-                                <span class="pbmit-fid-before"></span>
-                                <span class="pbmit-number-rotate numinate"
-                                  >100</span
-                                >
-                                <span class="pbmit-fid">
-                                  <span>+</span>
-                                </span>
-                              </h4>
-                              <span class="pbmit-fid-title"
-                                >Des Salons d'Exception<br />
-                                Pour Votre Confort</span
-                              >
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Get Bureaux category and its products -->
-                  <t
-                    t-set="bureau_category"
-                    t-value="request.env['product.public.category'].search([('name', '=', 'Canapes')], limit=1)"
-                  />
-                  <t
-                    t-set="category_products"
-                    t-value="request.env['product.template'].search([
-    ('public_categ_ids', 'in', bureau_category.ids),
-    ('website_published', '=', True)
-], limit=6)"
-                  />
-                  <div class="col-md-12 col-lg-9 service-five-right-col">
-                    <div
-                      class="swiper-slider"
-                      data-arrows-class="service-five-arrow"
-                      data-autoplay="false"
-                      data-loop="true"
-                      data-dots="false"
-                      data-arrows="true"
-                      data-columns="2.6"
-                      data-margin="30"
-                      data-effect="slide"
-                    >
-                      <div class="swiper-wrapper">
-                        <t t-foreach="category_products" t-as="product">
-                          <article
-                            class="pbmit-ele-service pbmit-service-style-1 swiper-slide"
-                          >
-                            <div class="pbminfotech-post-item">
-                              <div class="pbmit-box-content-wrap">
-                                <div class="pbmit-service-image-wrapper">
-                                  <div class="pbmit-featured-img-wrapper">
-                                    <div class="pbmit-featured-wrapper bg-size">
-                                      <img
-                                        t-att-src="website.image_url(product, 'image_1024')"
-                                        class="img-fluid"
-                                        t-att-alt="product.name"
-                                      />
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="pbmit-service-icon elementor-icon">
-                                  <i class=""></i>
-                                </div>
-                                <div class="pbmit-box-content-inner">
-                                  <div class="pbmit-content-box">
-                                    <div
-                                      class="pbminfotech-box-number"
-                                      t-out="'Canapes'"
-                                    />
-                                    <div class="pbmit-serv-cat">
-                                      <a
-                                        t-att-href="'/shop/category/%s' % slug(bureau_category)"
-                                        t-esc="bureau_category.name"
-                                      />
-                                    </div>
-                                    <h3 class="pbmit-service-title">
-                                      <a
-                                        t-att-href="product.website_url"
-                                        t-esc="product.name"
-                                      />
-                                    </h3>
-                                    <div class="pbmit-service-description">
-                                      <p>
-                                        <span
-                                          t-field="product.list_price"
-                                          t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"
-                                        />
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <a
-                                class="pbmit-service-btn"
-                                t-att-href="product.website_url"
-                                t-att-title="product.name"
-                              >
-                                <span class="pbmit-button-icon">
-                                  <i class="pbmit-base-icon-pbmit-up-arrow"></i>
-                                </span>
-                              </a>
-                            </div>
-                          </article>
-                        </t>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <!-- Service section 5 End -->
-          <!-- About Start -->
-          <section class="section-xl">
-            <div class="container">
-              <div class="row g-0">
-                <div class="col-md-12 col-xl-6">
-                  <div class="about-two-leftbox">
-                    <img
-                      src="/theme_kdmobilier/static/src/images/homepage-2/about-mask1.jpg"
-                      class="about-two-img img-fluid"
-                      alt=""
-                    />
-                    <div class="ihbox-style-area">
-                      <div class="pbmit-ihbox-style-11">
-                        <div class="pbmit-ihbox-headingicon">
-                          <div class="pbmit-ihbox-icon">
-                            <div
-                              class="pbmit-ihbox-icon-wrapper pbmit-ihbox-icon-type-text"
-                            >
-                              100<span>%</span>
-                            </div>
-                          </div>
-                          <div class="pbmit-ihbox-contents">
-                            <h2 class="pbmit-element-title">
-                              Satisfaction<br />
-                              Guarantee
-                            </h2>
-                          </div>
-                          <div
-                            class="pbmit-sticky-corner pbmit-bottom-left-corner"
-                          >
-                            <svg
-                              width="30"
-                              height="30"
-                              viewBox="0 0 30 30"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path d="M30 30V0C30 16 16 30 0 30H30Z"></path>
-                            </svg>
-                          </div>
-                          <div
-                            class="pbmit-sticky-corner pbmit-top-right-corner"
-                          >
-                            <svg
-                              width="30"
-                              height="30"
-                              viewBox="0 0 30 30"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path d="M30 30V0C30 16 16 30 0 30H30Z"></path>
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-12 col-xl-6">
-                  <div class="about-two-content">
-                    <div class="pbmit-heading-subheading blue animation-style3">
-                      <h4 class="pbmit-subtitle" style="color: #1b3669">
-                        Expert en Mobilier de Luxe
-                      </h4>
-                      <h2 class="pbmit-title">
-                        Nous créons des espaces de vie exceptionnels
-                      </h2>
-                      <div class="pbmit-heading-desc">
-                        Chez KD Mobilier, nous nous engageons à transformer
-                        votre intérieur avec des meubles d'exception. Notre
-                        expertise nous permet de vous offrir des pièces uniques
-                        qui allient confort, élégance et durabilité.
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <ul class="list-group list-group-borderless">
-                          <li class="list-group-item">
-                            <span class="pbmit-icon-list-icon">
-                              <i
-                                aria-hidden="true"
-                                class="pbmit-xinterio-icon pbmit-xinterio-icon-tick-mark"
-                              ></i>
-                            </span>
-                            <span class="pbmit-icon-list-text"
-                              >Matériaux Premium</span
-                            >
-                          </li>
-                          <li class="list-group-item">
-                            <span class="pbmit-icon-list-icon">
-                              <i
-                                aria-hidden="true"
-                                class="pbmit-xinterio-icon pbmit-xinterio-icon-tick-mark"
-                              ></i>
-                            </span>
-                            <span class="pbmit-icon-list-text"
-                              >Garantie Qualité</span
-                            >
-                          </li>
-                          <li class="list-group-item">
-                            <span class="pbmit-icon-list-icon">
-                              <i
-                                aria-hidden="true"
-                                class="pbmit-xinterio-icon pbmit-xinterio-icon-tick-mark"
-                              ></i>
-                            </span>
-                            <span class="pbmit-icon-list-text"
-                              >Design Contemporain</span
-                            >
-                          </li>
-                        </ul>
-                        <div class="pbmit-animation-style1 pb-2">
-                          <img
-                            src="/theme_kdmobilier/static/src/images/homepage-2/sign.png"
-                            alt=""
-                          />
-                        </div>
-                        <h2 class="pbmit-text-editor">
-                          @ Directeur KD Mobilier
-                        </h2>
-                      </div>
-                      <div class="col-md-6 pbmit-fid-style-one">
-                        <div class="pbminfotech-ele-fid-style-1 mb-2">
-                          <div
-                            class="pbmit-fld-contents d-flex align-items-center"
-                          >
-                            <div
-                              class="pbmit-circle-outer"
-                              data-digit="100"
-                              data-fill="#1b3669"
-                              data-emptyfill="100"
-                              data-before="100"
-                              data-after="&lt;span&gt;%&lt;/span&gt;"
-                              data-thickness="1"
-                              data-size="100"
-                            >
-                              <div class="pbmit-circle">
-                                <div class="pbmit-fid-inner">
-                                  <span class="pbmit-fid-before"></span>
-                                  <span
-                                    class="pbmit-number-rotate numinate"
-                                    data-from="100"
-                                    data-to="100"
-                                    data-interval="5"
-                                    data-before="100"
-                                    data-before-style="100"
-                                    data-after="100"
-                                    data-after-style="100"
-                                    >100</span
-                                  >
-                                  <span class="pbmit-fid">
-                                    <span>%</span>
-                                  </span>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="pbmit-fid-sub">
-                              <h3 class="pbmit-fid-title">
-                                Satisfaction Client
-                              </h3>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="pbminfotech-ele-fid-style-1">
-                          <div
-                            class="pbmit-fld-contents d-flex align-items-center"
-                          >
-                            <div
-                              class="pbmit-circle-outer"
-                              data-digit="95"
-                              data-fill="#1b3669"
-                              data-emptyfill="100"
-                              data-before=""
-                              data-after="&lt;span&gt;%&lt;/span&gt;"
-                              data-thickness="1"
-                              data-size="127"
-                            >
-                              <div class="pbmit-circle">
-                                <div class="pbmit-fid-inner">
-                                  <span class="pbmit-fid-before"></span>
-                                  <span
-                                    class="pbmit-number-rotate numinate"
-                                    data-from="0"
-                                    data-to="95"
-                                    data-interval="5"
-                                    data-before=""
-                                    data-before-style=""
-                                    data-after=""
-                                    data-after-style=""
-                                    >100</span
-                                  >
-                                  <span class="pbmit-fid">
-                                    <span>%</span>
-                                  </span>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="pbmit-fid-sub">
-                              <h3 class="pbmit-fid-title">Excellence Design</h3>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <!-- About End -->
-
-          <!-- Service Start -->
-          <!-- Product Section -->
-          <section
-            class="section-xl pbmit-bg-color-secondary pbmit-extend-animation rounded-5"
-          >
+          <!-- NOS SALONS ET CANAPÉS -->
+          <div class="oe_structure oe_empty" />
+          <section class="salon-products py-5">
             <div class="container">
               <div
-                class="pbmit-heading-subheading text-center animation-style3"
+                class="section-header border-bottom border-2 d-flex justify-content-between align-items-center mb-4"
               >
-                <h4 class="pbmit-subtitle">Collection Prestige</h4>
-                <h2 class="pbmit-title">
-                  Élégance &amp; Confort pour votre Intérieur
-                </h2>
+                <div class="pbmit-heading-subheading blue animation-style4">
+                  <h4 class="pbmit-subtitle" style="color: #1b3669">
+                    Notre Collection
+                  </h4>
+                  <h2 class="pbmit-title" style="color: #1b3669">
+                    Nos salons et canapés
+                  </h2>
+                </div>
+                <a
+                  href="/shop/category/salons-canapes-21"
+                  class="text-decoration-none"
+                  >→</a
+                >
               </div>
 
-              <!-- Get latest category and its products -->
-              <t
-                t-set="latest_category"
-                t-value="request.env['product.public.category'].search([], order='create_date desc', limit=1)"
-              />
-              <t
-                t-set="category_products"
-                t-value="request.env['product.template'].search([('public_categ_ids', 'in', latest_category.ids), ('website_published', '=', True)], limit=6)"
-              />
+              <div class="products-grid" id="salonProductsGrid">
+                <t
+                  t-set="canapes_category"
+                  t-value="request.env['product.public.category'].search([('name', '=', 'Canapes')], limit=1)"
+                />
+                <t
+                  t-set="products"
+                  t-value="request.env['product.template'].search([
+                        ('public_categ_ids', 'in', canapes_category.ids),
+                        ('website_published', '=', True)
+                    ], limit=6)"
+                />
 
-              <div
-                t-if="category_products"
-                class="swiper-slider"
-                data-autoplay="false"
-                data-loop="true"
-                data-dots="false"
-                data-arrows="false"
-                data-columns="3"
-                data-margin="30"
-                data-effect="slide"
-              >
-                <div class="swiper-wrapper">
-                  <!-- Product Items -->
-                  <t t-foreach="category_products" t-as="product">
-                    <article
-                      class="pbmit-ele-service pbmit-service-style-1 swiper-slide"
-                    >
-                      <div class="pbminfotech-post-item">
-                        <div class="pbmit-box-content-wrap">
-                          <div class="pbmit-service-image-wrapper">
-                            <div class="pbmit-featured-img-wrapper">
-                              <div class="pbmit-featured-wrapper bg-size">
-                                <img
-                                  t-att-src="website.image_url(product, 'image_1024')"
-                                  class="img-fluid"
-                                  t-att-alt="product.name"
-                                />
-                              </div>
-                            </div>
-                          </div>
-                          <div class="pbmit-box-content-inner">
-                            <div class="pbmit-content-box">
-                              <div
-                                class="pbminfotech-box-number"
-                                t-esc="'BUREAUX'"
-                              />
-                              <div class="pbmit-serv-cat">
-                                <a
-                                  t-att-href="'/shop/category/%s' % slug(latest_category)"
-                                  t-esc="latest_category.name"
-                                />
-                              </div>
-                              <h3 class="pbmit-service-title">
-                                <a
-                                  t-att-href="product.website_url"
-                                  t-esc="product.name"
-                                />
-                              </h3>
-                              <div class="pbmit-service-description">
-                                <div
-                                  class="product_price"
-                                  t-if="product.list_price"
-                                >
-                                  <span
-                                    t-field="product.list_price"
-                                    t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"
-                                  />
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+                <div class="row g-4">
+                  <t t-foreach="products" t-as="product">
+                    <div class="col-12 col-sm-6 col-lg-4">
+                      <div class="product-card">
                         <a
-                          class="pbmit-service-btn"
                           t-att-href="product.website_url"
-                          t-att-title="product.name"
+                          class="product-link"
                         >
-                          <span class="pbmit-button-icon">
-                            <i class="pbmit-base-icon-pbmit-up-arrow" />
-                          </span>
+                          <div class="product-image">
+                            <img
+                              t-att-src="website.image_url(product, 'image_1024')"
+                              class="img-fluid"
+                              t-att-alt="product.name"
+                            />
+                          </div>
+                          <div class="product-info text-center">
+                            <h3 class="product-title" t-esc="product.name" />
+                            <div
+                              class="product-category"
+                              t-esc="product.public_categ_ids[0].name"
+                            />
+                            <div class="product-price">
+                              <span
+                                t-field="product.list_price"
+                                t-options="{'widget': 'monetary', 
+                                                                 'display_currency': website.currency_id}"
+                              />
+                            </div>
+                          </div>
                         </a>
                       </div>
-                    </article>
+                    </div>
                   </t>
                 </div>
               </div>
             </div>
           </section>
-          <!-- Service End -->
-
-          <!-- Service Start -->
-          <section class="service-section-four">
-            <div class="container pbmit-col-stretched-yes pbmit-col-right">
-              <div class="row">
-                <div class="col-md-8 col-lg-6">
-                  <div class="pbmit-heading-subheading blue animation-style4">
-                    <h4 class="pbmit-subtitle" style="color: #1b3669">
-                      Notre Collection
-                    </h4>
-                    <h2 class="pbmit-title" style="color: #1b3669">
-                      Table à manger
-                    </h2>
-                  </div>
+          <div class="oe_structure oe_empty" />
+          <!-- NOS SALONS ET CANAPÉS -->
+          <!-- COMPOSITIONS MURALES -->
+          <div
+            class="section-header border-bottom border-2"
+            style="border-color: #1b3669 !important"
+          />
+          <div class="oe_structure oe_empty" />
+          <section class="salon-products py-5">
+            <div class="container">
+              <div
+                class="section-header border-bottom border-2 d-flex justify-content-between align-items-center mb-4"
+              >
+                <div class="pbmit-heading-subheading blue animation-style4">
+                  <h4 class="pbmit-subtitle" style="color: #1b3669">
+                    Notre Collection
+                  </h4>
+                  <h2 class="pbmit-title" style="color: #1b3669">
+                    Compositions murales
+                  </h2>
                 </div>
-                <div class="col-md-4 col-lg-6 text-end">
-                  <div
-                    class="service-four-swiper-arrow swiper-btn-custom d-inline-flex flex-row-reverse"
-                  ></div>
-                </div>
+                <a
+                  href="/shop/category/salons-bibliotheques-compositions-murales-20"
+                  class="text-decoration-none"
+                  >→</a
+                >
               </div>
 
-              <!-- Get Bureaux category and its products -->
-              <t
-                t-set="bureau_category"
-                t-value="request.env['product.public.category'].search([('name', '=', 'Table à manger')], limit=1)"
-              />
-              <t
-                t-set="category_products"
-                t-value="request.env['product.template'].search([
-                  ('public_categ_ids', 'in', bureau_category.ids),
-                  ('website_published', '=', True)
-              ], limit=6)"
-              />
+              <div class="products-grid" id="salonProductsGrid">
+                <t
+                  t-set="canapes_category"
+                  t-value="request.env['product.public.category'].search([('name', '=', 'Compositions murales')], limit=1)"
+                />
+                <t
+                  t-set="products"
+                  t-value="request.env['product.template'].search([
+                        ('public_categ_ids', 'in', canapes_category.ids),
+                        ('website_published', '=', True)
+                    ], limit=6)"
+                />
 
-              <!-- Alternative detailed debugging -->
-
-              <div class="pbmit-col-stretched-right">
-                <div
-                  class="swiper-slider"
-                  data-arrows-class="service-four-swiper-arrow"
-                  data-autoplay="false"
-                  data-loop="true"
-                  data-dots="false"
-                  data-arrows="true"
-                  data-columns="2.1"
-                  data-margin="40"
-                  data-effect="slide"
-                >
-                  <div class="swiper-wrapper">
-                    <t t-foreach="category_products" t-as="product">
-                      <article
-                        class="pbmit-ele-service pbmit-service-style-4 swiper-slide"
-                      >
-                        <div class="pbminfotech-post-item">
-                          <div class="pbminfotech-box-content">
-                            <div class="pbmit-service-image-wrapper">
-                              <div class="pbmit-featured-img-wrapper">
-                                <div class="pbmit-featured-wrapper bg-size">
-                                  <img
-                                    t-att-src="website.image_url(product, 'image_1024')"
-                                    class="img-fluid"
-                                    t-att-alt="product.name"
-                                  />
-                                </div>
-                              </div>
-                            </div>
-                            <div class="pbmit-service-icon">
-                              <i class=""></i>
-                            </div>
-                            <div class="pbmit-content-box">
-                              <div class="pbmit-serv-cat">
-                                <a
-                                  t-att-href="'/shop/category/%s' % slug(bureau_category)"
-                                  t-esc="bureau_category.name"
-                                />
-                              </div>
-                              <h3 class="pbmit-service-title">
-                                <a
-                                  t-att-href="product.website_url"
-                                  t-esc="product.name"
-                                />
-                              </h3>
-                              <div class="pbmit-service-description">
-                                <p>
-                                  <span
-                                    t-field="product.list_price"
-                                    t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"
-                                  />
-                                </p>
-                              </div>
+                <div class="row g-4">
+                  <t t-foreach="products" t-as="product">
+                    <div class="col-12 col-sm-6 col-lg-4">
+                      <div class="product-card">
+                        <a
+                          t-att-href="product.website_url"
+                          class="product-link"
+                        >
+                          <div class="product-image">
+                            <img
+                              t-att-src="website.image_url(product, 'image_1024')"
+                              class="img-fluid"
+                              t-att-alt="product.name"
+                            />
+                          </div>
+                          <div class="product-info text-center">
+                            <h3 class="product-title" t-esc="product.name" />
+                            <div
+                              class="product-category"
+                              t-esc="product.public_categ_ids[0].name"
+                            />
+                            <div class="product-price">
+                              <span
+                                t-field="product.list_price"
+                                t-options="{'widget': 'monetary', 
+                                                                 'display_currency': website.currency_id}"
+                              />
                             </div>
                           </div>
-                          <a
-                            class="pbmit-service-btn"
-                            t-att-href="product.website_url"
-                            t-att-title="product.name"
-                          >
-                            <span class="pbmit-button-icon">
-                              <i class="pbmit-base-icon-pbmit-up-arrow"></i>
-                            </span>
-                          </a>
-                        </div>
-                      </article>
-                    </t>
-                  </div>
+                        </a>
+                      </div>
+                    </div>
+                  </t>
                 </div>
               </div>
             </div>
           </section>
+          <div class="oe_structure oe_empty" />
+          <!-- COMPOSITION MURALES END -->
+
+          <!-- Service Start -->
+          <!-- Product Section -->
+          <div class="oe_structure oe_empty" />
+          <section class="salon-products py-5">
+            <div class="container">
+              <div
+                class="section-header border-bottom border-2 d-flex justify-content-between align-items-center mb-4"
+              >
+                <div class="pbmit-heading-subheading blue animation-style4">
+                  <h4 class="pbmit-subtitle" style="color: #1b3669">
+                    Notre Collection
+                  </h4>
+                  <h2 class="pbmit-title" style="color: #1b3669">
+                    Table à manger
+                  </h2>
+                </div>
+                <a
+                  href="/shop/category/salles-a-manger-table-a-manger-27"
+                  class="text-decoration-none"
+                  >→</a
+                >
+              </div>
+
+              <div class="products-grid" id="salonProductsGrid">
+                <t
+                  t-set="canapes_category"
+                  t-value="request.env['product.public.category'].search([('name', '=', 'Table à manger')], limit=1)"
+                />
+                <t
+                  t-set="products"
+                  t-value="request.env['product.template'].search([
+                        ('public_categ_ids', 'in', canapes_category.ids),
+                        ('website_published', '=', True)
+                    ], limit=6)"
+                />
+
+                <div class="row g-4">
+                  <t t-foreach="products" t-as="product">
+                    <div class="col-12 col-sm-6 col-lg-4">
+                      <div class="product-card">
+                        <a
+                          t-att-href="product.website_url"
+                          class="product-link"
+                        >
+                          <div class="product-image">
+                            <img
+                              t-att-src="website.image_url(product, 'image_1024')"
+                              class="img-fluid"
+                              t-att-alt="product.name"
+                            />
+                          </div>
+                          <div class="product-info text-center">
+                            <h3 class="product-title" t-esc="product.name" />
+                            <div
+                              class="product-category"
+                              t-esc="product.public_categ_ids[0].name"
+                            />
+                            <div class="product-price">
+                              <span
+                                t-field="product.list_price"
+                                t-options="{'widget': 'monetary', 
+                                                                 'display_currency': website.currency_id}"
+                              />
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </t>
+                </div>
+              </div>
+            </div>
+          </section>
+          <div class="oe_structure oe_empty" />
           <!-- Service End -->
+
+          <!-- Collection Buffet -->
+          <div class="oe_structure oe_empty" />
+          <section class="salon-products py-5">
+            <div class="container">
+              <div
+                class="section-header border-bottom border-2 d-flex justify-content-between align-items-center mb-4"
+              >
+                <div class="pbmit-heading-subheading blue animation-style4">
+                  <h4 class="pbmit-subtitle" style="color: #1b3669">
+                    Notre Collection
+                  </h4>
+                  <h2 class="pbmit-title" style="color: #1b3669">Buffets</h2>
+                </div>
+                <a
+                  href="/shop/category/salles-a-manger-buffets-26"
+                  class="text-decoration-none"
+                  >→</a
+                >
+              </div>
+
+              <div class="products-grid" id="salonProductsGrid">
+                <t
+                  t-set="canapes_category"
+                  t-value="request.env['product.public.category'].search([('name', '=', 'Buffets')], limit=1)"
+                />
+                <t
+                  t-set="products"
+                  t-value="request.env['product.template'].search([
+                        ('public_categ_ids', 'in', canapes_category.ids),
+                        ('website_published', '=', True)
+                    ], limit=6)"
+                />
+
+                <div class="row g-4">
+                  <t t-foreach="products" t-as="product">
+                    <div class="col-12 col-sm-6 col-lg-4">
+                      <div class="product-card">
+                        <a
+                          t-att-href="product.website_url"
+                          class="product-link"
+                        >
+                          <div class="product-image">
+                            <img
+                              t-att-src="website.image_url(product, 'image_1024')"
+                              class="img-fluid"
+                              t-att-alt="product.name"
+                            />
+                          </div>
+                          <div class="product-info text-center">
+                            <h3 class="product-title" t-esc="product.name" />
+                            <div
+                              class="product-category"
+                              t-esc="product.public_categ_ids[0].name"
+                            />
+                            <div class="product-price">
+                              <span
+                                t-field="product.list_price"
+                                t-options="{'widget': 'monetary', 
+                                                                 'display_currency': website.currency_id}"
+                              />
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </t>
+                </div>
+              </div>
+            </div>
+          </section>
+          <div class="oe_structure oe_empty" />
+          <!-- Collection Buffet -->
 
           <!-- Marquee Start -->
           <section class="marquee-one">
@@ -732,159 +363,80 @@
           <!-- Marquee End -->
 
           <!-- Portfolio Start -->
-          <section class="px-xl-4 px-2 pbmit-sortable-yes">
+          <div class="oe_structure oe_empty" />
+          <section class="salon-products py-5">
             <div class="container-fluid">
-              <div class="pf-six-header-area pbmit-bg-color-blackish">
-                <div
-                  class="pbmit-heading-subheading text-center animation-style4"
-                >
-                  <h2 class="pbmit-title">Découvrez Notre Collection</h2>
-                </div>
-                <div class="pbmit-sortable-list">
-                  <ul class="pbmit-sortable-list-ul">
-                    <li>
-                      <a
-                        href="#"
-                        class="pbmit-sortable-link pbmit-selected"
-                        data-sortby="*"
-                        >Tous</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        class="pbmit-sortable-link"
-                        data-sortby="Canapes"
-                        >Canapes</a
-                      >
-                    </li>
-                    <li>
-                      <a href="#" class="pbmit-sortable-link" data-sortby="Lits"
-                        >Lits</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        class="pbmit-sortable-link"
-                        data-sortby="Fauteuils"
-                        >Fauteuils</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        class="pbmit-sortable-link"
-                        data-sortby="Chevets"
-                        >Chevets</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        class="pbmit-sortable-link"
-                        data-sortby="Consoles"
-                        >Consoles</a
-                      >
-                    </li>
-                    <!-- <li>
-                      <a href="#" class="pbmit-sortable-link" data-sortby="Buffets">Buffets</a
-                      >
-                    </li> -->
-                  </ul>
-                </div>
-              </div>
               <div
-                class="pbmit-element-posts-wrapper row g-0 pbmit-column-three"
+                class="section-header border-bottom border-2 d-flex justify-content-between align-items-center mb-4 container"
               >
-                <!-- Get all furniture categories and their products -->
-                <t
-                  t-foreach="['Canapes', 'Lits', 'Fauteuils', 'Chevets', 'Consoles', 'Table à manger']"
-                  t-as="category_name"
+                <div
+                  class="pbmit-heading-subheading blue animation-style mx-auto text-center"
                 >
-                  <t
-                    t-set="category"
-                    t-value="request.env['product.public.category'].search([('name', '=', category_name)], limit=1)"
-                  />
-                  <t
-                    t-set="products"
-                    t-value="request.env['product.template'].search([
-          ('public_categ_ids', 'in', category.ids),
-          ('website_published', '=', True),
-          ('sale_ok', '=', True)
-        ], limit=1)"
-                  />
+                  <h4 class="pbmit-subtitle" style="color: #1b3669">
+                    Notre Collection
+                  </h4>
+                  <h2 class="pbmit-title" style="color: #1b3669">
+                    Chambre à coucher - Lits
+                  </h2>
+                </div>
+                <a
+                  href="/shop/category/chambres-a-coucher-lits-29"
+                  class="text-decoration-none"
+                  >→</a
+                >
+              </div>
 
+              <div class="products-grid" id="salonProductsGrid">
+                <t
+                  t-set="canapes_category"
+                  t-value="request.env['product.public.category'].search([('name', '=', 'Lits')], limit=1)"
+                />
+                <t
+                  t-set="products"
+                  t-value="request.env['product.template'].search([
+                        ('public_categ_ids', 'in', canapes_category.ids),
+                        ('website_published', '=', True)
+                    ], limit=6)"
+                />
+
+                <div class="row g-4">
                   <t t-foreach="products" t-as="product">
-                    <article
-                      t-attf-class="pbmit-ele pbmit-portfolio-style-5 #{category_name} col-md-4"
-                    >
-                      <div class="pbminfotech-post-content">
-                        <!-- Product Image -->
-                        <div class="pbmit-featured-img-wrapper">
-                          <div class="pbmit-featured-wrapper">
-                            <t t-if="product.image_1920">
-                              <img
-                                t-att-src="website.image_url(product, 'image_1024')"
-                                class="img-fluid"
-                                t-att-alt="product.name"
-                              />
-                            </t>
-                            <t t-else="">
-                              <img
-                                src="/web/static/src/img/placeholder.png"
-                                class="img-fluid"
-                                alt="Pas d'image disponible"
-                              />
-                            </t>
+                    <div class="col-12 col-sm-6 col-lg-4">
+                      <div class="product-card">
+                        <a
+                          t-att-href="product.website_url"
+                          class="product-link"
+                        >
+                          <div class="product-image">
+                            <img
+                              t-att-src="website.image_url(product, 'image_1024')"
+                              class="img-fluid"
+                              t-att-alt="product.name"
+                            />
                           </div>
-                        </div>
-
-                        <!-- Product Details -->
-                        <div class="pbminfotech-box-content">
-                          <div class="pbminfotech-titlebox">
-                            <div class="pbmit-port-cat">
-                              <a
-                                t-att-href="'/shop/category/%s' % slug(category)"
-                                t-esc="category.name"
+                          <div class="product-info text-center">
+                            <h3 class="product-title" t-esc="product.name" />
+                            <div
+                              class="product-category"
+                              t-esc="product.public_categ_ids[0].name"
+                            />
+                            <div class="product-price">
+                              <span
+                                t-field="product.list_price"
+                                t-options="{'widget': 'monetary', 
+                                                                 'display_currency': website.currency_id}"
                               />
                             </div>
-                            <h3 class="pbmit-portfolio-title">
-                              <a
-                                t-att-href="product.website_url"
-                                t-esc="product.name"
-                              />
-                            </h3>
-                            <!-- Price Display with Conditional Check -->
-                            <div class="pbmit-portfolio-price">
-                              <t
-                                t-if="product.list_price and product.list_price > 0"
-                              >
-                                <span
-                                  t-field="product.list_price"
-                                  t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"
-                                />
-                              </t>
-                              <t t-else="">
-                                <span class="price-on-request"
-                                  >Prix sur demande</span
-                                >
-                              </t>
-                            </div>
                           </div>
-                          <div class="pbmit-portfolio-btn">
-                            <a t-att-href="product.website_url">
-                              <i class="pbmit-base-icon-pbmit-up-arrow"></i>
-                            </a>
-                          </div>
-                        </div>
+                        </a>
                       </div>
-                    </article>
+                    </div>
                   </t>
-                </t>
+                </div>
               </div>
             </div>
           </section>
+          <div class="oe_structure oe_empty" />
           <!-- Portfolio End -->
 
           <!-- Ihbox Start -->

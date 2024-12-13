@@ -24,6 +24,177 @@
 /* Default style for larger screens (≥1200px) */
 
 /* HOMEPAGE PRODUCT CARDS */
+/*  */
+/* Section Header */
+/* Section Header */
+.salon-products .section-header {
+  border-color: #1b3669 !important;
+}
+
+.salon-products .section-header a {
+  color: #1b3669;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.salon-products .section-header a:hover {
+  transform: translateX(5px);
+}
+
+/* Product Card */
+.product-card {
+  background: #fff;
+  border: 1px solid #eee;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.product-card:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Product Image */
+.product-image {
+  position: relative;
+  padding-top: 75%;
+  overflow: hidden;
+  background: #fff;
+}
+
+.product-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.05);
+}
+
+/* Product Info */
+.product-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.product-info {
+  padding: 0.5rem;
+}
+
+.product-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.product-category {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+}
+
+.product-price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1b3669;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991.98px) {
+  .product-info {
+    padding: 1rem;
+  }
+
+  .product-title {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .product-card {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+/*  */
+
+/*  */
+/* Category Cards Styling */
+.furniture-categories {
+  background-color: #fff;
+}
+
+.category-card {
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-img-wrapper {
+  position: relative;
+  padding-top: 70%; /* Maintain aspect ratio */
+  overflow: hidden;
+  background-color: #f8f9fa;
+  margin-bottom: 40px;
+}
+
+.card-img-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.category-card:hover .card-img-wrapper img {
+  transform: scale(1.05);
+}
+
+.category-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #002147;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991.98px) {
+  .category-card {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .card-img-wrapper {
+    padding-top: 60%;
+  }
+
+  .category-label {
+    font-size: 12px;
+    padding: 8px;
+  }
+}
+/*  */
 
 .pbmit-featured-wrapper.bg-size {
   min-height: 342px !important;

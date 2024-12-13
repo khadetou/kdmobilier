@@ -1,0 +1,79 @@
+// static/src/scss/primary_variables.scss
+
+// Define your color palette
+$o-color-palettes: map-merge(
+  $o-color-palettes,
+  (
+    "kdmobilier": (
+      "o-color-1": #1b3669,
+      // Primary
+      "o-color-2": #666666,
+      // Secondary
+      "o-color-3": #f2f2f2,
+      // Extra
+      "o-color-4": #ffffff,
+      // Whitish
+      "o-color-5": #000000,
+
+      // Blackish
+      // Color combinations for various components
+      "o-cc1-bg": "o-color-4",
+      "o-cc1-text": "o-color-5",
+      "o-cc1-headings": "o-color-1",
+      "o-cc1-link": "o-color-1",
+      "o-cc1-btn-primary": "o-color-1",
+      "o-cc1-btn-secondary": "o-color-2",
+
+      "o-cc2-bg": "o-color-1",
+      "o-cc2-text": "o-color-4",
+      "o-cc2-headings": "o-color-4",
+      "o-cc2-link": "o-color-4",
+      "o-cc2-btn-primary": "o-color-4",
+      "o-cc2-btn-secondary": "o-color-3",
+
+      "o-cc3-bg": "o-color-3",
+      "o-cc3-text": "o-color-5",
+      "o-cc3-headings": "o-color-1",
+      "o-cc3-link": "o-color-1",
+      "o-cc3-btn-primary": "o-color-1",
+      "o-cc3-btn-secondary": "o-color-2",
+
+      "o-cc4-bg": "o-color-2",
+      "o-cc4-text": "o-color-4",
+      "o-cc4-headings": "o-color-4",
+      "o-cc4-link": "o-color-4",
+      "o-cc4-btn-primary": "o-color-4",
+      "o-cc4-btn-secondary": "o-color-3",
+
+      "o-cc5-bg": "o-color-5",
+      "o-cc5-text": "o-color-4",
+      "o-cc5-headings": "o-color-4",
+      "o-cc5-link": "o-color-4",
+      "o-cc5-btn-primary": "o-color-4",
+      "o-cc5-btn-secondary": "o-color-1",
+    ),
+  )
+);
+
+// Select your palette as default
+$o-website-values-palettes: (
+  (
+    "color-palettes-name": "kdmobilier",
+  )
+);
+
+// Add your palette to the list of palettes the user can choose from
+$o-selected-color-palettes-names: append(
+  $o-selected-color-palettes-names,
+  "kdmobilier"
+);
+
+// Set bootstrap colors to match your palette
+$o-enterprise-primary-color: map-get(
+  map-get($o-color-palettes, "kdmobilier"),
+  "o-color-1"
+);
+$o-enterprise-secondary-color: map-get(
+  map-get($o-color-palettes, "kdmobilier"),
+  "o-color-2"
+);
