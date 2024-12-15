@@ -82,6 +82,8 @@
             # "theme_kdmobilier/static/src/js/jquery-validate/jquery.validate.min.js",
             # "theme_kdmobilier/static/src/js/scripts.js",
             "theme_kdmobilier/static/src/js/salon_products.js",
+            "theme_kdmobilier/static/src/js/wishlist.js",
+            "theme_kdmobilier/static/src/js/dropdown_extension.js",
         ],
         "web.assets_primary_variables": [
             ("prepend", "theme_kdmobilier/static/src/scss/primary_variables.scss"),
