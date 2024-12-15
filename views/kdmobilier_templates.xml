@@ -1223,7 +1223,9 @@
               t-value="single and ptal.product_template_value_ids._only_active()[0].is_custom"
             />
 
-            <t t-if="ptal.attribute_id.name == 'Couleur'">
+            <t
+              t-if="ptal.attribute_id.name == 'Couleur' and 'Canape' in product.name"
+            >
               <div class="row">
                 <div class="col-5">
                   <strong class="attribute_name">Type de cuirs</strong>
@@ -1291,10 +1293,10 @@
                         class="col-4 col-md-3 col-lg-4 text-right offset-md-2"
                       >
                         <span class="text-right">
-                          <img
+                          <!-- <img
                             class="img-fluid"
                             src="/theme_kdmobilier/static/src/images/bamboo.jpeg"
-                          />
+                          /> -->
                         </span>
                       </div>
                     </label>
