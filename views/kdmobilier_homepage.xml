@@ -81,7 +81,7 @@
               </div>
 
               <div
-                class="section-header d-flex justify-content-between align-items-center mt-4"
+                class="section-header d-flex justify-content-center align-items-center mt-4"
               >
                 <div
                   class="pbmit-heading-subheading blue animation-style4"
@@ -172,7 +172,7 @@
               </div>
 
               <div
-                class="section-header d-flex justify-content-between align-items-center mt-4"
+                class="section-header d-flex justify-content-center align-items-center mt-4"
               >
                 <div
                   class="pbmit-heading-subheading blue animation-style4"
@@ -261,7 +261,7 @@
               </div>
 
               <div
-                class="section-header d-flex justify-content-between align-items-center mt-4"
+                class="section-header d-flex justify-content-center align-items-center mt-4"
               >
                 <div
                   class="pbmit-heading-subheading blue animation-style4"
@@ -347,7 +347,7 @@
               </div>
 
               <div
-                class="section-header d-flex justify-content-between align-items-center mt-4"
+                class="section-header d-flex justify-content-center align-items-center mt-4"
               >
                 <div
                   class="pbmit-heading-subheading blue animation-style4"

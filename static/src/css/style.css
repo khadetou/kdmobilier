@@ -147,6 +147,7 @@
   overflow: hidden;
   background-color: #f8f9fa;
   margin-bottom: 40px;
+  border: solid 3px #1a1e4d;
 }
 
 .card-img-wrapper img {
