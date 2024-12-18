@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="theme_kdmobilier.services" model="website.page">
+      <field name="name">Services</field>
+      <field name="type">qweb</field>
+      <field name="url">/services</field>
+      <field name="key">theme_kdmobilier.services</field>
+      <field name="arch" type="xml">
+        <t t-name="theme_kdmobilier.services">
+          <t t-call="website.layout">
+            <div id="wrap" class="oe_structure oe_empty"></div>
+            <!-- Title Bar -->
+            <div class="pbmit-title-bar-wrapper">
+              <div class="container">
+                <div class="pbmit-title-bar-content">
+                  <div class="pbmit-title-bar-content-inner">
+                    <div class="pbmit-tbar">
+                      <div class="pbmit-tbar-inner container">
+                        <h1 class="pbmit-tbar-title">Design &amp; Planning</h1>
+                      </div>
+                    </div>
+                    <div class="pbmit-breadcrumb">
+                      <div class="pbmit-breadcrumb-inner">
+                        <span>
+                          <a title="" href="#" class="home">
+                            <span>KD Mobilier</span>
+                          </a>
+                        </span>
+                        <span class="sep">
+                          <i class="pbmit-base-icon-angle-right"></i>
+                        </span>
+                        <span>
+                          <a title="" href="#" class="home">
+                            <span>Services</span>
+                          </a>
+                        </span>
+                        <span class="sep">
+                          <i class="pbmit-base-icon-angle-right"></i>
+                        </span>
+                        <span>
+                          <span class="post-root post post-post current-item">Design &amp; Planning</span
+                          >
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Title Bar End-->
+            <div id="wrap2" class="oe_structure oe_empty"></div>
+            <!-- Page Content -->
+            <div class="page-content">
+              <!-- Service Details -->
+              <section class="site-content service-details">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-lg-9 service-right-col">
+                      <div class="pbmit-service-feature-image">
+                        <img src="/theme_kdmobilier/static/src/images/service/service-det-01.jpg" class="img-fluid w-100" alt="Service Feature" />
+                      </div>
+                      <div class="pbmit-entry-content">
+                        <div class="pbmit-service-content">
+                          <div class="pbmit-heading animation-style2">
+                            <h3 class="pbmit-title mb-3">
+                              Des professionnels qualifiés pour vous conseiller
+                            </h3>
+                          </div>
+                          <p class="pbmit-firstletter">
+                            A travers le service conseil décoration KD Mobilier,
+                            des équipes de jeunes sénégalais dynamiques et
+                            volontaires vous accompagnent dans la
+                            personnalisation et la matérialisation de
+                            l'intérieur de vos rêves.
+                          </p>
+                          <p>
+                            Ils sont décorateurs, designers, experts 3D et ont
+                            pour seule mission de faire de votre intérieur, un
+                            reflet fidèle de votre personnalité.
+                          </p>
+                          <p>
+                            Le service conseil décoration KD Mobilier vous
+                            accompagne, en écoute et en conseils, de l'idée
+                            d'aménagement au dernier acte de décoration.
+                          </p>
+
+                          <div class="service-det-img">
+                            <div class="row">
+                              <div class="col-md-12 text-center">
+                                <div class="pbmit-animation-style1">
+                                  <img src="/theme_kdmobilier/static/src/images/service/service-det-02.jpeg" class="img-fluid" alt="Service Detail" />
+                                </div>
+                              </div>
+                              <!-- <div class="col-md-6 text-center">
+                                <div class="pbmit-animation-style2">
+                                  <img src="/theme_kdmobilier/static/src/images/service/service-det-03.jpg" class="img-fluid" alt="Service Detail" />
+                                </div>
+                              </div> -->
+                            </div>
+                          </div>
+
+                          <div class="pbmit-heading animation-style2">
+                            <h3 class="pbmit-title">
+                              Une force de proposition et d'écoute à la mesure
+                              de votre individualité
+                            </h3>
+                          </div>
+                          <p>
+                            La décoration d'intérieur ne se résume pas à une
+                            simple entreprise d'achat et de rassemblement
+                            d'objets et de mobiliers. C'est tout un projet, des
+                            idées auxquelles il faut donner corps et vie. L'idée
+                            peut être vague au début. Vague mais exploitable. Ce
+                            projet, ces idées, les experts 3D du service conseil
+                            KD Mobilier les écoutent, les modélisent et, au
+                            besoin, vous aident à les ajuster, à les
+                            perfectionner. Avant la matérialisation, nous
+                            visualisons et nous assurons, avec vous, que votre
+                            projet de décoration correspond bien, à tous points
+                            de vue, à vos goûts, besoins et aspirations.
+                          </p>
+
+                          <div class="fid-style-rea">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <div class="pbminfotech-ele-fid-style-3">
+                                  <div class="pbmit-fld-contents">
+                                    <div class="pbmit-circle-outer" data-digit="87" data-fill="#bb9a65" data-thickness="1.5" data-size="153">
+                                      <div class="pbmit-circle">
+                                        <div class="pbmit-fid-inner">
+                                          <span class="pbmit-number-rotate">87</span
+                                          >
+                                          <span class="pbmit-fid">%</span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="pbmit-fid-sub">
+                                      <h3 class="pbmit-fid-title">
+                                        Modélisation 3D
+                                      </h3>
+                                      <div class="pbmit-heading-desc">
+                                        Visualisation réaliste de votre projet
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="pbminfotech-ele-fid-style-3">
+                                  <div class="pbmit-fld-contents">
+                                    <div class="pbmit-circle-outer" data-digit="95" data-fill="#bb9a65" data-thickness="1.5" data-size="153">
+                                      <div class="pbmit-circle">
+                                        <div class="pbmit-fid-inner">
+                                          <span class="pbmit-number-rotate">95</span
+                                          >
+                                          <span class="pbmit-fid">%</span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="pbmit-fid-sub">
+                                      <h3 class="pbmit-fid-title">
+                                        Satisfaction Client
+                                      </h3>
+                                      <div class="pbmit-heading-desc">
+                                        Des clients satisfaits de nos services
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="pbminfotech-ele-fid-style-3">
+                                  <div class="pbmit-fld-contents">
+                                    <div class="pbmit-circle-outer" data-digit="100" data-fill="#bb9a65" data-thickness="1.5" data-size="153">
+                                      <div class="pbmit-circle">
+                                        <div class="pbmit-fid-inner">
+                                          <span class="pbmit-number-rotate">100</span
+                                          >
+                                          <span class="pbmit-fid">%</span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="pbmit-fid-sub">
+                                      <h3 class="pbmit-fid-title">
+                                        Personnalisation
+                                      </h3>
+                                      <div class="pbmit-heading-desc">
+                                        Des solutions adaptées à vos besoins
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="pbmit-heading animation-style2">
+                            <h3 class="pbmit-title">Notre processus</h3>
+                          </div>
+
+                          <div class="accordion" id="serviceAccordion">
+                            <div class="accordion-item">
+                              <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
+                                  1- Dites-nous tout
+                                </button>
+                              </h2>
+                              <div id="collapse1" class="accordion-collapse collapse show" data-bs-parent="#serviceAccordion">
+                                <div class="accordion-body">
+                                  <p>
+                                    Pour les professionnels de KD Mobilier, Vous
+                                    êtes le point de départ et la constante du
+                                    projet. Il est donc important que vous nous
+                                    disiez en détail ce que vous voulez
+                                    vraiment. En présentiel ou sur nos
+                                    plateformes, un conseiller notera
+                                    scrupuleusement les spécificités de votre
+                                    espace, vos goûts et attentes etc.
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="accordion-item">
+                              <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
+                                  2- Nous peaufinons avec vous
+                                </button>
+                              </h2>
+                              <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#serviceAccordion">
+                                <div class="accordion-body">
+                                  <p>
+                                    Le service conseil décoration KD Mobilier
+                                    vous revient, dans les meilleurs délais,
+                                    avec une première proposition de plan
+                                    d'aménagement et une suggestion des produits
+                                    qui tiennent le mieux compte des données et
+                                    informations précédemment collectées auprès
+                                    de vous. Ces propositions et suggestions
+                                    sont amendées, retravaillées et finalisées
+                                    en fonction de vos différents retours.
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="accordion-item">
+                              <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
+                                  3- La 3D pour y voir plus clair
+                                </button>
+                              </h2>
+                              <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#serviceAccordion">
+                                <div class="accordion-body">
+                                  <p>
+                                    Une fois les premiers schémas validés, les
+                                    experts de KD Mobilier vous donnent la
+                                    possibilité de visualiser votre intérieur
+                                    dans les moindres détails. Des équipements à
+                                    la pointe de la technologie mettent chaque
+                                    meuble, chaque objet, chaque teinte et
+                                    chaque ombre en situation réelle pour vous
+                                    permettre de vous assurer que le projet
+                                    cadre bien avec vos attentes.
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="accordion-item">
+                              <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4">
+                                  4- Un suivi de bout en bout
+                                </button>
+                              </h2>
+                              <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#serviceAccordion">
+                                <div class="accordion-body">
+                                  <p>
+                                    Une fois le projet définitivement validé, le
+                                    service conseil décoration KD Mobilier
+                                    assure le suivi jusqu'à l'installation du
+                                    dernier produit. Il veille à ce que chaque
+                                    objet de votre espace soit confectionné dans
+                                    les meilleurs ateliers, livré et monté par
+                                    des professionnels.
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="pbmit-heading animation-style2 mt-5">
+                            <h3 class="pbmit-title">Notre offre</h3>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-md-6">
+                              <div class="pbmit-heading animation-style2">
+                                <h4 class="pbmit-title">Le choix</h4>
+                              </div>
+                              <ul class="list-group list-group-borderless">
+                                <li class="list-group-item">
+                                  <i class="pbmit-base-icon-check"></i>
+                                  150 modèles de canapés et fauteuils
+                                </li>
+                                <li class="list-group-item">
+                                  <i class="pbmit-base-icon-check"></i>
+                                  20 modèles de lits
+                                </li>
+                                <li class="list-group-item">
+                                  <i class="pbmit-base-icon-check"></i>
+                                  30 Bibliothèques et compositions murales
+                                </li>
+                                <li class="list-group-item">
+                                  <i class="pbmit-base-icon-check"></i>
+                                  50 tables à manger
+                                </li>
+                              </ul>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="pbmit-heading animation-style2">
+                                <h4 class="pbmit-title">La personnalisation</h4>
+                              </div>
+                              <p>
+                                Tous les produits sont personnalisables à
+                                l'exception d'une vingtaine de produits :
+                              </p>
+                              <ul class="list-group list-group-borderless">
+                                <li class="list-group-item">
+                                  <i class="pbmit-base-icon-check"></i>
+                                  Dimensions sur-mesure
+                                </li>
+                                <li class="list-group-item">
+                                  <i class="pbmit-base-icon-check"></i>
+                                  Possibilité de choisir le matériau de
+                                  conception (cuir ou tissu...)
+                                </li>
+                                <li class="list-group-item">
+                                  <i class="pbmit-base-icon-check"></i>
+                                  Une finition de qualité
+                                </li>
+                                <li class="list-group-item">
+                                  <i class="pbmit-base-icon-check"></i>
+                                  Une collection pour chaque modèle de produit
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+
+                          <div class="text-center mt-5">
+                            <a href="/appointment" class="pbmit-btn pbmit-btn-outline">
+                              <span class="pbmit-button-content-wrapper">
+                                <span class="pbmit-button-text">Prendre rendez-vous</span
+                                >
+                              </span>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 service-left-col sidebar">
+                      <aside class="service-sidebar">
+                        <aside class="widget post-list">
+                          <h2 class="widget-title">Nos Services</h2>
+                          <div class="all-post-list">
+                            <ul>
+                              <li>
+                                <a href="service-details.html">
+                                  Conseil en Décoration
+                                </a>
+                              </li>
+                              <li>
+                                <a href="service-details.html">
+                                  Design d'Intérieur
+                                </a>
+                              </li>
+                              <li>
+                                <a href="service-details.html">
+                                  Modélisation 3D
+                                </a>
+                              </li>
+                              <li>
+                                <a href="service-details.html">
+                                  Ameublement sur Mesure
+                                </a>
+                              </li>
+                              <li>
+                                <a href="service-details.html">
+                                  Plans d'Aménagement
+                                </a>
+                              </li>
+                              <li>
+                                <a href="service-details.html">
+                                  Visualisation 2D/3D
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </aside>
+
+                        <aside class="widget pbmit-service-ad">
+                          <div class="textwidget">
+                            <div class="pbmit-service-ads">
+                              <h5 class="pbmit-ads-subheding">
+                                Newsletter KD Mobilier
+                              </h5>
+                              <h4 class="pbmit-ads-subtitle">
+                                Prêt à transformer votre intérieur ?
+                              </h4>
+                              <h3 class="pbmit-ads-title">Inscrivez-vous!</h3>
+                              <div class="pbmit-ads-desc">
+                                <i class="pbmit-base-icon-phone-call-1"></i>
+                                +221 78 533 28 28
+                              </div>
+                              <a class="pbmit-btn pbmit-btn-hover-white" href="#">
+                                <span class="pbmit-button-content-wrapper">
+                                  <span class="pbmit-button-text">S'inscrire maintenant</span
+                                  >
+                                </span>
+                              </a>
+                            </div>
+                          </div>
+                        </aside>
+
+                        <aside class="widget pbmit-download-content">
+                          <h2 class="widget-title">Documents utiles</h2>
+                          <div class="textwidget">
+                            <div class="download">
+                              <div class="item-download">
+                                <a href="#" target="_blank" rel="noopener noreferrer">
+                                  <span class="pbmit-download-content">
+                                    <i class="pbmit-base-icon-pdf-file-format-symbol-1"></i>
+                                    Catalogue 2024
+                                  </span>
+                                  <span class="pbmit-download-item">
+                                    <i class="pbminfotech-base-icons pbmit-righticon pbmit-base-icon-download"></i>
+                                  </span>
+                                </a>
+                              </div>
+                              <div class="item-download">
+                                <a href="#" target="_blank" rel="noopener noreferrer">
+                                  <span class="pbmit-download-content">
+                                    <i class="pbmit-base-icon-pdf-file-format-symbol-1"></i>
+                                    Guide des mesures
+                                  </span>
+                                  <span class="pbmit-download-item">
+                                    <i class="pbminfotech-base-icons pbmit-righticon pbmit-base-icon-download"></i>
+                                  </span>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </aside>
+                      </aside>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <!-- Service Details End -->
+            </div>
+            <!-- Page Content End -->
+            <div id="wrap3" class="oe_structure oe_empty"></div>
+          </t>
+        </t>
+      </field>
+    </record>
+  </data>
+</odoo>

@@ -23,6 +23,9 @@
         "views/contact_us.xml",
         "views/auth_templage.xml",
         "views/services.xml",
+        "views/design-planning.xml",
+        "views/entretien-canape.xml",
+        "views/conseil-decoration.xml",
         # "views/aboutus_page.xml",
     ],
     "assets": {

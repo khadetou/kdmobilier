@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="theme_kdmobilier.service_conseil" model="website.page">
+            <field name="name">Conseil en Décoration</field>
+            <field name="type">qweb</field>
+            <field name="url">/services/conseil-decoration</field>
+            <field name="website_published">True</field>
+            <field name="key">theme_kdmobilier.service_conseil</field>
+            <field name="arch" type="xml">
+                <t t-name="theme_kdmobilier.service_conseil">
+                    <t t-call="website.layout">
+                        <div id="wrap" class="oe_structure oe_empty"></div>
+                        <!-- Title Bar -->
+                        <div class="pbmit-title-bar-wrapper mb-5 parallax">
+                            <div class="o_we_bg_filter bg-black-50"></div>
+                            <div class="container">
+                                <div class="pbmit-title-bar-content">
+                                    <div class="pbmit-title-bar-content-inner">
+                                        <div class="pbmit-tbar">
+                                            <div class="pbmit-tbar-inner container">
+                                                <h1 class="pbmit-tbar-title">Conseil en Décoration</h1>
+                                            </div>
+                                        </div>
+                                        <div class="pbmit-breadcrumb">
+                                            <div class="pbmit-breadcrumb-inner">
+                                                <span>
+                                                    <a href="/" class="home">KD Mobilier</a>
+                                                </span>
+                                                <span class="sep">
+                                                    <i class="pbmit-base-icon-angle-right"></i>
+                                                </span>
+                                                <span>
+                                                    <a href="/services">Services</a>
+                                                </span>
+                                                <span class="sep">
+                                                    <i class="pbmit-base-icon-angle-right"></i>
+                                                </span>
+                                                <span class="current">Conseil en Décoration</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="page-content">
+                            <section class="service-details">
+                                <div class="container">
+                                    <div class="row">
+                                        <!-- Main Content -->
+                                        <div class="col-lg-9 service-right-col">
+                                            <div class="pbmit-service-feature-image">
+                                                <img src="/theme_kdmobilier/static/src/images/service/conseil-decoration.jpg" class="img-fluid" alt="Conseil en Décoration d'intérieur"/>
+                                            </div>
+
+                                            <div class="pbmit-service-content">
+                                                <!-- Introduction -->
+                                                <div class="pbmit-heading animation-style2">
+                                                    <h2>Un accompagnement personnalisé pour votre intérieur</h2>
+                                                </div>
+                                                <p class="pbmit-firstletter">
+                                                    Chez KD Mobilier, notre service de conseil en décoration vous accompagne dans la création d'un intérieur qui vous ressemble. Notre équipe de décorateurs professionnels allie créativité et expertise pour transformer vos espaces selon vos envies et votre style de vie.
+                                                </p>
+
+                                                <!-- Notre Expertise -->
+                                                <div class="pbmit-heading animation-style2 mt-5">
+                                                    <h3>Notre expertise décorative</h3>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="pbmit-service-box">
+                                                            <h4>Styles maîtrisés</h4>
+                                                            <ul class="list-unstyled">
+                                                                <li>
+                                                                    <i class="pbmit-base-icon-check"></i> Style contemporain</li>
+                                                                <li>
+                                                                    <i class="pbmit-base-icon-check"></i> Design moderne</li>
+                                                                <li>
+                                                                    <i class="pbmit-base-icon-check"></i> Fusion afro-contemporaine</li>
+                                                                <li>
+                                                                    <i class="pbmit-base-icon-check"></i> Style traditionnel</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="pbmit-service-box">
+                                                            <h4>Domaines d'intervention</h4>
+                                                            <ul class="list-unstyled">
+                                                                <li>
+                                                                    <i class="pbmit-base-icon-check"></i> Résidences privées</li>
+                                                                <li>
+                                                                    <i class="pbmit-base-icon-check"></i> Bureaux professionnels</li>
+                                                                <li>
+                                                                    <i class="pbmit-base-icon-check"></i> Espaces commerciaux</li>
+                                                                <li>
+                                                                    <i class="pbmit-base-icon-check"></i> Hôtels et restaurants</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Notre Processus -->
+                                                <div class="pbmit-heading animation-style2 mt-5">
+                                                    <h3>Notre processus de conseil</h3>
+                                                </div>
+                                                <div class="accordion" id="processAccordion">
+                                                    <div class="accordion-item">
+                                                        <h2 class="accordion-header">
+                                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#step1">
+                                                                1. Consultation initiale
+                                                            </button>
+                                                        </h2>
+                                                        <div id="step1" class="accordion-collapse collapse show">
+                                                            <div class="accordion-body">
+                                                                Nous débutons par une rencontre pour comprendre vos goûts, vos besoins et vos aspirations. Cette étape est cruciale pour définir votre style et vos objectifs décoratifs.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="accordion-item">
+                                                        <h2 class="accordion-header">
+                                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#step2">
+                                                                2. Proposition décorative
+                                                            </button>
+                                                        </h2>
+                                                        <div id="step2" class="accordion-collapse collapse">
+                                                            <div class="accordion-body">
+                                                                Nous élaborons une proposition complète incluant les palettes de couleurs, les matériaux, le mobilier et les accessoires adaptés à votre espace et votre budget.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="accordion-item">
+                                                        <h2 class="accordion-header">
+                                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#step3">
+                                                                3. Sélection et planning
+                                                            </button>
+                                                        </h2>
+                                                        <div id="step3" class="accordion-collapse collapse">
+                                                            <div class="accordion-body">
+                                                                Nous vous accompagnons dans la sélection finale des éléments et établissons un planning détaillé pour la mise en place de votre projet décoratif.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="accordion-item">
+                                                        <h2 class="accordion-header">
+                                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#step4">
+                                                                4. Suivi et finalisation
+                                                            </button>
+                                                        </h2>
+                                                        <div id="step4" class="accordion-collapse collapse">
+                                                            <div class="accordion-body">
+                                                                Nous supervisons la mise en place de chaque élément et assurons les ajustements nécessaires pour un résultat parfait.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Nos Garanties -->
+                                                <div class="pbmit-heading animation-style2 mt-5">
+                                                    <h3>Nos garanties</h3>
+                                                </div>
+                                                <div class="row mb-5">
+                                                    <div class="col-md-12">
+                                                        <ul class="list-unstyled">
+                                                            <li>
+                                                                <i class="pbmit-base-icon-check"></i> Accompagnement personnalisé</li>
+                                                            <li>
+                                                                <i class="pbmit-base-icon-check"></i> Expertise professionnelle</li>
+                                                            <li>
+                                                                <i class="pbmit-base-icon-check"></i> Respect de votre budget</li>
+                                                            <li>
+                                                                <i class="pbmit-base-icon-check"></i> Satisfaction garantie</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+
+                                        <!-- Sidebar -->
+                                        <div class="col-lg-3 service-left-col sidebar">
+                                            <t t-call="theme_kdmobilier.services_sidebar"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+
+                        <div id="wrap" class="oe_structure oe_empty"></div>
+                    </t>
+                </t>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="theme_kdmobilier.services_main" model="website.page">
+            <field name="name">Nos Services</field>
+            <field name="type">qweb</field>
+            <field name="url">/services</field>
+            <field name="website_published">True</field>
+            <field name="key">theme_kdmobilier.services_main</field>
+            <field name="arch" type="xml">
+                <t t-name="theme_kdmobilier.services_main">
+                    <t t-call="website.layout">
+                        <div id="wrap" class="oe_structure oe_empty"></div>
+                        <!-- Title Bar -->
+                        <div class="pbmit-title-bar-wrapper">
+                            <div class="container">
+                                <div class="pbmit-title-bar-content">
+                                    <div class="pbmit-title-bar-content-inner">
+                                        <div class="pbmit-tbar">
+                                            <div class="pbmit-tbar-inner container">
+                                                <h1 class="pbmit-tbar-title">Nos Services</h1>
+                                            </div>
+                                        </div>
+                                        <div class="pbmit-breadcrumb">
+                                            <div class="pbmit-breadcrumb-inner">
+                                                <span>
+                                                    <a href="/" class="home">
+                                                        <span>KD Mobilier</span>
+                                                    </a>
+                                                </span>
+                                                <span class="sep">
+                                                    <i class="pbmit-base-icon-angle-right"></i>
+                                                </span>
+                                                <span>
+                                                    <span class="post-root post post-post current-item">Services</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="wrap" class="oe_structure oe_empty"></div>
+                        <div class="page-content">
+                            <!-- Services Grid -->
+                            <section class="section-md">
+                                <div class="container-fluid px-4">
+                                    <div class="row pbmit-element-posts-wrapper">
+                                        <!-- Design & Planning -->
+                                        <article class="pbmit-ele-blog pbmit-blog-style-1 col-md-6 col-lg-3">
+                                            <div class="post-item">
+                                                <div class="pbminfotech-box-content">
+                                                    <div class="pbmit-featured-container">
+                                                        <div class="pbmit-featured-img-wrapper">
+                                                            <div class="pbmit-featured-wrapper">
+                                                                <img src="theme_kdmobilier/static/src/images/service/design-planning.jpg" class="img-fluid" alt="Design et Planning KD Mobilier" />
+                                                            </div>
+                                                        </div>
+                                                        <a class="pbmit-blog-btn" href="/services/design-planning">
+                                                            <span class="pbmit-button-icon">
+                                                                <i class="pbmit-base-icon-pbmit-up-arrow"></i>
+                                                            </span>
+                                                        </a>
+                                                        <a class="pbmit-link" href="/services/design-planning"></a>
+                                                    </div>
+                                                    <div class="pbmit-content-wrapper">
+                                                        <h3 class="pbmit-post-title">
+                                                            <a href="/services/design-planning">Design &amp; Planning</a>
+                                                        </h3>
+                                                        <div class="pbminfotech-box-desc">
+                                                            Conception et planification personnalisées pour créer des espaces qui vous ressemblent. Notre équipe d'experts vous accompagne dans chaque étape.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+
+                                        <!-- Entretien de Canapé -->
+                                        <article class="pbmit-ele-blog pbmit-blog-style-1 col-md-6 col-lg-3">
+                                            <div class="post-item">
+                                                <div class="pbminfotech-box-content">
+                                                    <div class="pbmit-featured-container">
+                                                        <div class="pbmit-featured-img-wrapper">
+                                                            <div class="pbmit-featured-wrapper">
+                                                                <img src="/theme_kdmobilier/static/src/images/service/entretien-canape.jpg" class="img-fluid" alt="Entretien de Canapé KD Mobilier" />
+                                                            </div>
+                                                        </div>
+                                                        <a class="pbmit-blog-btn" href="/services/entretien-canape">
+                                                            <span class="pbmit-button-icon">
+                                                                <i class="pbmit-base-icon-pbmit-up-arrow"></i>
+                                                            </span>
+                                                        </a>
+                                                        <a class="pbmit-link" href="/services/entretien-canape"></a>
+                                                    </div>
+                                                    <div class="pbmit-content-wrapper">
+                                                        <h3 class="pbmit-post-title">
+                                                            <a href="/services/entretien-canape">Entretien de Canapé</a>
+                                                        </h3>
+                                                        <div class="pbminfotech-box-desc">
+                                                            Service professionnel d'entretien et de restauration pour vos canapés en cuir. Redonnez vie à vos meubles avec nos soins experts.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+
+                                        <!-- Modélisation 3D -->
+                                        <article class="pbmit-ele-blog pbmit-blog-style-1 col-md-6 col-lg-3">
+                                            <div class="post-item">
+                                                <div class="pbminfotech-box-content">
+                                                    <div class="pbmit-featured-container">
+                                                        <div class="pbmit-featured-img-wrapper">
+                                                            <div class="pbmit-featured-wrapper">
+                                                                <img src="/theme_kdmobilier/static/src/images/service/modelisation-3d.jpg" class="img-fluid" alt="Modélisation 3D KD Mobilier" />
+                                                            </div>
+                                                        </div>
+                                                        <a class="pbmit-blog-btn" href="/services/modelisation-3d">
+                                                            <span class="pbmit-button-icon">
+                                                                <i class="pbmit-base-icon-pbmit-up-arrow"></i>
+                                                            </span>
+                                                        </a>
+                                                        <a class="pbmit-link" href="/services/modelisation-3d"></a>
+                                                    </div>
+                                                    <div class="pbmit-content-wrapper">
+                                                        <h3 class="pbmit-post-title">
+                                                            <a href="/services/modelisation-3d">Modélisation 3D</a>
+                                                        </h3>
+                                                        <div class="pbminfotech-box-desc">
+                                                            Visualisez votre futur intérieur en trois dimensions avant sa réalisation. Une expérience immersive pour des décisions éclairées.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+
+                                        <!-- Conseil en Décoration -->
+                                        <article class="pbmit-ele-blog pbmit-blog-style-1 col-md-6 col-lg-3">
+                                            <div class="post-item">
+                                                <div class="pbminfotech-box-content">
+                                                    <div class="pbmit-featured-container">
+                                                        <div class="pbmit-featured-img-wrapper">
+                                                            <div class="pbmit-featured-wrapper">
+                                                                <img src="/theme_kdmobilier/static/src/images/service/conseil-decoration.jpg" class="img-fluid" alt="Conseil en Décoration KD Mobilier" />
+                                                            </div>
+                                                        </div>
+                                                        <a class="pbmit-blog-btn" href="/services/conseil-decoration">
+                                                            <span class="pbmit-button-icon">
+                                                                <i class="pbmit-base-icon-pbmit-up-arrow"></i>
+                                                            </span>
+                                                        </a>
+                                                        <a class="pbmit-link" href="/services/conseil-decoration"></a>
+                                                    </div>
+                                                    <div class="pbmit-content-wrapper">
+                                                        <h3 class="pbmit-post-title">
+                                                            <a href="/services/conseil-decoration">Conseil en Décoration</a>
+                                                        </h3>
+                                                        <div class="pbminfotech-box-desc">
+                                                            Un accompagnement personnalisé pour sublimer votre intérieur. Nos décorateurs vous guident dans vos choix esthétiques.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+
+                                        <!-- Ameublement sur Mesure -->
+                                        <article class="pbmit-ele-blog pbmit-blog-style-1 col-md-6 col-lg-3">
+                                            <div class="post-item">
+                                                <div class="pbminfotech-box-content">
+                                                    <div class="pbmit-featured-container">
+                                                        <div class="pbmit-featured-img-wrapper">
+                                                            <div class="pbmit-featured-wrapper">
+                                                                <img src="/theme_kdmobilier/static/src/images/service/ameublement-mesure.jpg" class="img-fluid" alt="Ameublement sur Mesure KD Mobilier" />
+                                                            </div>
+                                                        </div>
+                                                        <a class="pbmit-blog-btn" href="/services/ameublement-mesure">
+                                                            <span class="pbmit-button-icon">
+                                                                <i class="pbmit-base-icon-pbmit-up-arrow"></i>
+                                                            </span>
+                                                        </a>
+                                                        <a class="pbmit-link" href="/services/ameublement-mesure"></a>
+                                                    </div>
+                                                    <div class="pbmit-content-wrapper">
+                                                        <h3 class="pbmit-post-title">
+                                                            <a href="/services/ameublement-mesure">Ameublement sur Mesure</a>
+                                                        </h3>
+                                                        <div class="pbminfotech-box-desc">
+                                                            Des meubles uniques créés spécialement pour vous. Une fabrication artisanale de qualité adaptée à vos besoins.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- Call to Action Section -->
+                            <section class="pbmit-cta-section pbmit-bg-color-secondary">
+                                <div class="container text-center py-5">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-8">
+                                            <h2 class="text-white mb-4">Transformez votre espace avec KD Mobilier</h2>
+                                            <p class="text-white mb-4">Nos experts sont à votre disposition pour donner vie à vos projets d'aménagement</p>
+                                            <a href="/contactus" class="pbmit-btn">Contactez-nous</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div id="wrap" class="oe_structure oe_empty"></div>
+                    </t>
+                </t>
+            </field>
+        </record>
+    </data>
+</odoo>

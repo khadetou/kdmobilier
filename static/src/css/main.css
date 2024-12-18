@@ -1,0 +1,169 @@
+/* Variables KD Mobilier */
+:root {
+  --kd-primary: #14213d; /* Bleu marine */
+  --kd-secondary: #bb9a65; /* Or/Bronze */
+  --kd-gray: #e5e5e5; /* Gris clair */
+  --kd-dark: #282828; /* Gris foncé */
+  --kd-white: #ffffff; /* Blanc */
+}
+
+/* Global Styles */
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--kd-dark);
+  line-height: 1.6;
+}
+
+/* Hero Section */
+.kd-hero {
+  background: linear-gradient(rgba(20, 33, 61, 0.85), rgba(20, 33, 61, 0.85)),
+    var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  padding: 120px 0 80px;
+  color: var(--kd-white);
+}
+
+.kd-hero h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+/* Breadcrumb */
+.kd-breadcrumb {
+  background: transparent;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.kd-breadcrumb a {
+  color: var(--kd-secondary);
+  text-decoration: none;
+}
+
+/* Section Headers */
+.kd-section-title {
+  position: relative;
+  margin-bottom: 3rem;
+  padding-bottom: 1rem;
+}
+
+.kd-section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 3px;
+  background-color: var(--kd-secondary);
+}
+
+/* Service Cards */
+.kd-service-card {
+  background: var(--kd-white);
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.kd-service-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Stats Section */
+.kd-stat-card {
+  text-align: center;
+  padding: 2rem;
+  background: var(--kd-primary);
+  color: var(--kd-white);
+  border-radius: 8px;
+}
+
+.kd-stat-number {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--kd-secondary);
+}
+
+/* Process Steps */
+.kd-process-step {
+  position: relative;
+  padding: 2rem;
+  padding-left: 4rem;
+  margin-bottom: 2rem;
+  border-left: 3px solid var(--kd-secondary);
+}
+
+.kd-process-step::before {
+  content: "";
+  position: absolute;
+  left: -12px;
+  top: 2.5rem;
+  width: 24px;
+  height: 24px;
+  background: var(--kd-secondary);
+  border-radius: 50%;
+}
+
+/* Sidebar */
+.kd-sidebar {
+  background: var(--kd-gray);
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.kd-sidebar-list a {
+  display: block;
+  padding: 1rem;
+  color: var(--kd-dark);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+.kd-sidebar-list a:hover {
+  background: var(--kd-secondary);
+  color: var(--kd-white);
+}
+
+/* CTA Section */
+.kd-cta {
+  background: var(--kd-primary);
+  color: var(--kd-white);
+  padding: 4rem 0;
+}
+
+.kd-btn {
+  background: var(--kd-secondary);
+  color: var(--kd-white);
+  padding: 12px 30px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+  border: none;
+}
+
+.kd-btn:hover {
+  background: var(--kd-primary);
+  color: var(--kd-white);
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .kd-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .kd-process-step {
+    padding-left: 2rem;
+  }
+
+  .kd-sidebar {
+    margin-top: 2rem;
+  }
+}
