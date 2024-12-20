@@ -915,9 +915,11 @@
       </div>
     </xpath>
   </template>
+
   <!-- PRODUCT PAGE CUSTOM GENERAL CONDITONS AND SHARE-->
 
   <!-- PRODUCT QUATITY INSIDE OF PRODUCT PAGE CUSTOM NEXT TO ADD TO CART -->
+
   <template
     id="product_quantity"
     inherit_id="theme_kdmobilier.custom_product"
@@ -928,6 +930,7 @@
     </xpath>
     <xpath expr="//div[@id='add_to_cart_wrap']" position="before">
       <div
+        t-if="product_variant.detailed_type != 'service'"
         t-attf-class="css_quantity input-group {{'d-none' if combination_info['prevent_zero_price_sale'] else 'd-inline-flex'}} me-2 mb-2 align-middle"
         contenteditable="false"
       >
@@ -1293,10 +1296,7 @@
                         class="col-4 col-md-3 col-lg-4 text-right offset-md-2"
                       >
                         <span class="text-right">
-                          <!-- <img
-                            class="img-fluid"
-                            src="/theme_kdmobilier/static/src/images/bamboo.jpeg"
-                          /> -->
+                          <!-- <img class="img-fluid" src="/theme_kdmobilier/static/src/images/bamboo.jpeg" /> -->
                         </span>
                       </div>
                     </label>
@@ -1716,9 +1716,7 @@
                   Catalogue 2024
                 </span>
                 <span class="pbmit-download-item">
-                  <i
-                    class="pbminfotech-base-icons pbmit-righticon pbmit-base-icon-download"
-                  ></i>
+                  <i class="pbminfotech-base-icons pbmit-righticon pbmit-base-icon-download"></i>
                 </span>
               </a>
             </div>
@@ -1729,9 +1727,7 @@
                   Guide des mesures
                 </span>
                 <span class="pbmit-download-item">
-                  <i
-                    class="pbminfotech-base-icons pbmit-righticon pbmit-base-icon-download"
-                  ></i>
+                  <i class="pbminfotech-base-icons pbmit-righticon pbmit-base-icon-download"></i>
                 </span>
               </a>
             </div>
@@ -1794,4 +1790,23 @@
   </template>
 
   <!-- SERVIECE SIDEBAR TEMPLATE -->
+  <!-- WEBSITE SALE SUBSCRIPTION -->
+  <template
+    id="hide_subscription_products_item"
+    inherit_id="website_sale_subscription.products_item"
+  >
+    <xpath expr="//span[@class='o_subscription_unit']" position="attributes">
+      <attribute name="t-if">False</attribute>
+    </xpath>
+  </template>
+
+  <template
+    id="hide_subscription_product_price"
+    inherit_id="website_sale_subscription.subscription_product_price"
+  >
+    <xpath expr="//span[@class='o_subscription_unit']" position="attributes">
+      <attribute name="t-if">False</attribute>
+    </xpath>
+  </template>
+  <!-- WEBSITE SALE SUBSCRIPTION -->
 </odoo>

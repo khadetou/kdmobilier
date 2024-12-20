@@ -1,257 +1,361 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
-        <record id="theme_kdmobilier.service_entretien" model="website.page">
-            <field name="name">Entretien de Canapé en Cuir</field>
-            <field name="type">qweb</field>
-            <field name="url">/services/entretien-canape</field>
-            <field name="website_published">True</field>
-            <field name="key">theme_kdmobilier.service_entretien</field>
-            <field name="arch" type="xml">
-                <t t-name="theme_kdmobilier.service_entretien">
-                    <t t-call="website.layout">
-                        <div id="wrap" class="oe_structure oe_empty"></div>
-                        <!-- Title Bar -->
-                        <div class="pbmit-title-bar-wrapper mb-5 parallax">
-                            <div class="o_we_bg_filter bg-black-50"></div>
+  <data>
+    <record id="theme_kdmobilier.service_entretien" model="website.page">
+      <field name="name">Entretien de Canapé en Cuir</field>
+      <field name="type">qweb</field>
+      <field name="url">/services/entretien-canape</field>
+      <field name="website_published">True</field>
+      <field name="key">theme_kdmobilier.service_entretien</field>
+      <field name="arch" type="xml">
+        <t t-name="theme_kdmobilier.service_entretien">
+          <t t-call="website.layout">
+            <div id="wrap" class="oe_structure oe_empty"></div>
+            <!-- Title Bar -->
+            <div class="pbmit-title-bar-wrapper mb-5 parallax">
+              <div class="o_we_bg_filter bg-black-50"></div>
+              <div class="container">
+                <div class="pbmit-title-bar-content">
+                  <div class="pbmit-title-bar-content-inner">
+                    <div class="pbmit-tbar">
+                      <div class="pbmit-tbar-inner container">
+                        <h1 class="pbmit-tbar-title">
+                          Entretien Professionnel de Canapé en Cuir
+                        </h1>
+                      </div>
+                    </div>
+                    <div class="pbmit-breadcrumb">
+                      <div class="pbmit-breadcrumb-inner">
+                        <span>
+                          <a href="/" class="home">KD Mobilier</a>
+                        </span>
+                        <span class="sep">
+                          <i class="pbmit-base-icon-angle-right"></i>
+                        </span>
+                        <span>
+                          <a href="/services">Services</a>
+                        </span>
+                        <span class="sep">
+                          <i class="pbmit-base-icon-angle-right"></i>
+                        </span>
+                        <span class="current">Entretien de Canapé</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="page-content">
+              <section class="service-details">
+                <div class="container">
+                  <div class="row">
+                    <!-- Main Content -->
+                    <div class="col-lg-9 service-right-col">
+                      <div class="pbmit-service-feature-image">
+                        <img
+                          src="/theme_kdmobilier/static/src/images/service/entretien-canape.jpg"
+                          class="img-fluid"
+                          alt="Conseil en Décoration d'intérieur"
+                        />
+                      </div>
+                      <!-- Introduction -->
+                      <div class="pbmit-service-content">
+                        <div class="pbmit-heading animation-style2">
+                          <h2>Redonnez vie à votre canapé en cuir</h2>
+                        </div>
+                        <p class="pbmit-firstletter">
+                          Un canapé en cuir bien entretenu est le symbole de
+                          l'élégance et de la durabilité. Chez KD Mobilier, nous
+                          savons que le cuir est un matériau noble qui mérite
+                          une attention particulière pour préserver son aspect
+                          luxueux et sa longévité.
+                        </p>
+
+                        <!-- Forfaits -->
+                        <div class="pbmit-heading animation-style2 mt-5">
+                          <h3>Nos forfaits d'entretien</h3>
+                        </div>
+                        <div class="row">
+                          <div class="pricing-section py-5">
                             <div class="container">
-                                <div class="pbmit-title-bar-content">
-                                    <div class="pbmit-title-bar-content-inner">
-                                        <div class="pbmit-tbar">
-                                            <div class="pbmit-tbar-inner container">
-                                                <h1 class="pbmit-tbar-title">Entretien Professionnel de Canapé en Cuir</h1>
-                                            </div>
-                                        </div>
-                                        <div class="pbmit-breadcrumb">
-                                            <div class="pbmit-breadcrumb-inner">
-                                                <span>
-                                                    <a href="/" class="home">KD Mobilier</a>
-                                                </span>
-                                                <span class="sep">
-                                                    <i class="pbmit-base-icon-angle-right"></i>
-                                                </span>
-                                                <span>
-                                                    <a href="/services">Services</a>
-                                                </span>
-                                                <span class="sep">
-                                                    <i class="pbmit-base-icon-angle-right"></i>
-                                                </span>
-                                                <span class="current">Entretien de Canapé</span>
-                                            </div>
-                                        </div>
+                              <div class="row">
+                                <!-- Forfait Excellence -->
+                                <div class="col-md-4 mb-4">
+                                  <div
+                                    class="card h-100 shadow-sm pricing-card"
+                                  >
+                                    <div
+                                      class="card-header text-center bg-white py-4 border-0"
+                                    >
+                                      <h4 class="mb-3">Forfait Excellence</h4>
+                                      <div class="price-amount">
+                                        <span class="text-muted">F CFA</span>
+                                        <span class="h2 fw-bold">160 000</span>
+                                      </div>
+                                      <div class="salon-type mt-2">
+                                        <span class="badge bg-primary p-2"
+                                          >Salon 7 Places</span
+                                        >
+                                      </div>
                                     </div>
+                                    <div class="card-body">
+                                      <ul class="list-unstyled">
+                                        <li class="mb-3">
+                                          <i
+                                            class="bi bi-check-circle-fill text-success me-2"
+                                          ></i>
+                                          Nettoyage en profondeur
+                                        </li>
+                                        <li class="mb-3">
+                                          <i
+                                            class="bi bi-check-circle-fill text-success me-2"
+                                          ></i>
+                                          Réparation des fissures marquées
+                                        </li>
+                                        <li class="mb-3">
+                                          <i
+                                            class="bi bi-check-circle-fill text-success me-2"
+                                          ></i>
+                                          Protection avancée contre les UV
+                                        </li>
+                                        <li class="mb-3">
+                                          <i
+                                            class="bi bi-check-circle-fill text-success me-2"
+                                          ></i>
+                                          Finition haut de gamme
+                                        </li>
+                                      </ul>
+                                      <p class="text-muted text-center mt-4">
+                                        Un entretien exclusif qui restaure et
+                                        améliore la texture et l'apparence du
+                                        cuir. Idéal pour les grands salons de 7
+                                        places.
+                                      </p>
+                                    </div>
+                                    <div
+                                      class="card-footer bg-white text-center border-0 pb-4"
+                                    >
+                                      <a
+                                        href="/shop/forfait-essentiel-3561"
+                                        class="btn btn-outline-primary w-75"
+                                        >Choisir ce forfait</a
+                                      >
+                                    </div>
+                                  </div>
                                 </div>
+
+                                <!-- Forfait Premium -->
+                                <div class="col-md-4 mb-4">
+                                  <div
+                                    class="card h-100 shadow pricing-card featured"
+                                  >
+                                    <div
+                                      class="card-header text-center bg-primary text-white py-4 border-0"
+                                    >
+                                      <h4 class="mb-3 text-white">
+                                        Forfait Premium
+                                      </h4>
+                                      <div class="price-amount">
+                                        <span>F CFA</span>
+                                        <span class="h2 fw-bold">110 000</span>
+                                      </div>
+                                      <div class="salon-type mt-2">
+                                        <span
+                                          class="badge bg-white p-2 text-primary"
+                                          >Salon 5 Places</span
+                                        >
+                                      </div>
+                                    </div>
+                                    <div class="card-body">
+                                      <ul class="list-unstyled">
+                                        <li class="mb-3">
+                                          <i
+                                            class="bi bi-check-circle-fill text-success me-2"
+                                          ></i>
+                                          Nettoyage approfondi
+                                        </li>
+                                        <li class="mb-3">
+                                          <i
+                                            class="bi bi-check-circle-fill text-success me-2"
+                                          ></i>
+                                          Traitement des fissures légères
+                                        </li>
+                                        <li class="mb-3">
+                                          <i
+                                            class="bi bi-check-circle-fill text-success me-2"
+                                          ></i>
+                                          Application d'un produit nourrissant
+                                        </li>
+                                      </ul>
+                                      <p class="text-muted text-center mt-4">
+                                        Révèle l'éclat naturel du cuir et
+                                        prolonge sa durée de vie. Parfait pour
+                                        les salons de 5 places.
+                                      </p>
+                                    </div>
+                                    <div
+                                      class="card-footer bg-white text-center border-0 pb-4"
+                                    >
+                                      <a
+                                        href="/shop/forfait-premium-3565"
+                                        class="btn btn-primary w-75"
+                                        >Choisir ce forfait</a
+                                      >
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <!-- Forfait Essentiel -->
+                                <div class="col-md-4 mb-4">
+                                  <div
+                                    class="card h-100 shadow-sm pricing-card"
+                                  >
+                                    <div
+                                      class="card-header text-center bg-white py-4 border-0"
+                                    >
+                                      <h4 class="mb-3">Forfait Essentiel</h4>
+                                      <div class="price-amount">
+                                        <span class="text-muted">F CFA</span>
+                                        <span class="h2 fw-bold">60 000</span>
+                                      </div>
+                                      <div class="salon-type mt-2">
+                                        <span class="badge bg-primary p-2"
+                                          >1 Canapé</span
+                                        >
+                                      </div>
+                                    </div>
+                                    <div class="card-body">
+                                      <ul class="list-unstyled">
+                                        <li class="mb-3">
+                                          <i
+                                            class="bi bi-check-circle-fill text-success me-2"
+                                          ></i>
+                                          Nettoyage en surface
+                                        </li>
+                                        <li class="mb-3">
+                                          <i
+                                            class="bi bi-check-circle-fill text-success me-2"
+                                          ></i>
+                                          Traitement anti-taches
+                                        </li>
+                                        <li class="mb-3">
+                                          <i
+                                            class="bi bi-check-circle-fill text-success me-2"
+                                          ></i>
+                                          Hydratation basique du cuir
+                                        </li>
+                                      </ul>
+                                      <p class="text-muted text-center mt-4">
+                                        Idéal pour un entretien régulier et
+                                        prévenir les signes précoces d'usure.
+                                        Parfait pour un canapé individuel.
+                                      </p>
+                                    </div>
+                                    <div
+                                      class="card-footer bg-white text-center border-0 pb-4"
+                                    >
+                                      <a
+                                        href="/shop/forfait-excellence-3566"
+                                        class="btn btn-outline-primary w-75"
+                                        >Choisir ce forfait</a
+                                      >
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
+                          </div>
                         </div>
 
-                        <!-- Content -->
-                        <div class="page-content">
-                            <section class="service-details">
-                                <div class="container">
-                                    <div class="row">
-                                        <!-- Main Content -->
-                                        <div class="col-lg-9 service-right-col">
-                                            <div class="pbmit-service-feature-image">
-                                                <img src="/theme_kdmobilier/static/src/images/service/entretien-canape.jpg" class="img-fluid" alt="Conseil en Décoration d'intérieur"/>
-                                            </div>
-                                            <!-- Introduction -->
-                                            <div class="pbmit-service-content">
-                                                <div class="pbmit-heading animation-style2">
-                                                    <h2>Redonnez vie à votre canapé en cuir</h2>
-                                                </div>
-                                                <p class="pbmit-firstletter">
-                                                    Un canapé en cuir bien entretenu est le symbole de l'élégance et de la durabilité. Chez KD Mobilier, nous savons que le cuir est un matériau noble qui mérite une attention particulière pour préserver son aspect luxueux et sa longévité.
-                                                </p>
-
-                                                <!-- Forfaits -->
-                                                <div class="pbmit-heading animation-style2 mt-5">
-                                                    <h3>Nos forfaits d'entretien</h3>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="pricing-section py-5">
-                                                        <div class="container">
-                                                            <div class="row">
-                                                                <!-- Forfait Essentiel -->
-                                                                <div class="col-md-4 mb-4">
-                                                                    <div class="card h-100 shadow-sm pricing-card">
-                                                                        <div class="card-header text-center bg-white py-4 border-0">
-                                                                            <h4 class="mb-3">Forfait Essentiel</h4>
-                                                                            <div class="price-amount">
-                                                                                <span class="text-muted">F CFA</span>
-                                                                                <span class="h2 fw-bold">60 000</span>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="card-body">
-                                                                            <ul class="list-unstyled">
-                                                                                <li class="mb-3">
-                                                                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
-                                Nettoyage en surface
-                                                                                </li>
-                                                                                <li class="mb-3">
-                                                                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
-                                Traitement anti-taches
-                                                                                </li>
-                                                                                <li class="mb-3">
-                                                                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
-                                Hydratation basique du cuir
-                                                                                </li>
-                                                                            </ul>
-                                                                            <p class="text-muted text-center mt-4">
-                            Idéal pour un entretien régulier et prévenir les signes précoces d'usure.
-                                                                            </p>
-                                                                        </div>
-                                                                        <div class="card-footer bg-white text-center border-0 pb-4">
-                                                                            <a href="/contactus" class="btn btn-outline-primary w-75">Choisir ce forfait</a>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-
-                                                                <!-- Forfait Premium -->
-                                                                <div class="col-md-4 mb-4">
-                                                                    <div class="card h-100 shadow pricing-card featured">
-                                                                        <div class="card-header text-center bg-primary text-white py-4 border-0">
-                                                                            <h4 class="mb-3 text-white">Forfait Premium</h4>
-                                                                            <div class="price-amount">
-                                                                                <span>F CFA</span>
-                                                                                <span class="h2 fw-bold">110 000</span>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="card-body">
-                                                                            <ul class="list-unstyled">
-                                                                                <li class="mb-3">
-                                                                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
-                                Nettoyage approfondi
-                                                                                </li>
-                                                                                <li class="mb-3">
-                                                                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
-                                Traitement des fissures légères
-                                                                                </li>
-                                                                                <li class="mb-3">
-                                                                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
-                                Application d'un produit nourrissant
-                                                                                </li>
-                                                                            </ul>
-                                                                            <p class="text-muted text-center mt-4">
-                            Révèle l'éclat naturel du cuir et prolonge sa durée de vie.
-                                                                            </p>
-                                                                        </div>
-                                                                        <div class="card-footer bg-white text-center border-0 pb-4">
-                                                                            <a href="/contactus" class="btn btn-primary w-75">Choisir ce forfait</a>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-
-                                                                <!-- Forfait Excellence -->
-                                                                <div class="col-md-4 mb-4">
-                                                                    <div class="card h-100 shadow-sm pricing-card">
-                                                                        <div class="card-header text-center bg-white py-4 border-0">
-                                                                            <h4 class="mb-3">Forfait Excellence</h4>
-                                                                            <div class="price-amount">
-                                                                                <span class="text-muted">F CFA</span>
-                                                                                <span class="h2 fw-bold">160 000</span>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="card-body">
-                                                                            <ul class="list-unstyled">
-                                                                                <li class="mb-3">
-                                                                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
-                                Nettoyage en profondeur
-                                                                                </li>
-                                                                                <li class="mb-3">
-                                                                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
-                                Réparation des fissures marquées
-                                                                                </li>
-                                                                                <li class="mb-3">
-                                                                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
-                                Protection avancée contre les UV
-                                                                                </li>
-                                                                                <li class="mb-3">
-                                                                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
-                                Finition haut de gamme
-                                                                                </li>
-                                                                            </ul>
-                                                                            <p class="text-muted text-center mt-4">
-                            Un entretien exclusif qui restaure et améliore la texture et l'apparence du cuir.
-                                                                            </p>
-                                                                        </div>
-                                                                        <div class="card-footer bg-white text-center border-0 pb-4">
-                                                                            <a href="/contactus" class="btn btn-outline-primary w-75">Choisir ce forfait</a>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-
-                                                <!-- Techniques et Produits -->
-                                                <div class="pbmit-heading animation-style2 mt-5">
-                                                    <h3>Nos techniques et produits</h3>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="pbmit-service-box">
-                                                            <h4>Techniques professionnelles</h4>
-                                                            <ul class="list-unstyled">
-                                                                <li>
-                                                                    <i class="pbmit-base-icon-check"></i> Nettoyage spécialisé sans altération</li>
-                                                                <li>
-                                                                    <i class="pbmit-base-icon-check"></i> Application précise des traitements</li>
-                                                                <li>
-                                                                    <i class="pbmit-base-icon-check"></i> Manipulation experte du cuir</li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="pbmit-service-box">
-                                                            <h4>Produits de qualité</h4>
-                                                            <ul class="list-unstyled">
-                                                                <li>
-                                                                    <i class="pbmit-base-icon-check"></i> Produits professionnels certifiés</li>
-                                                                <li>
-                                                                    <i class="pbmit-base-icon-check"></i> Solutions adaptées à chaque type de cuir</li>
-                                                                <li>
-                                                                    <i class="pbmit-base-icon-check"></i> Protection UV longue durée</li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <!-- Garanties -->
-                                                <div class="pbmit-heading animation-style2 mt-5">
-                                                    <h3>Nos garanties</h3>
-                                                </div>
-                                                <div class="row mb-5">
-                                                    <div class="col-md-12">
-                                                        <ul class="list-unstyled">
-                                                            <li>
-                                                                <i class="pbmit-base-icon-check"></i> Satisfaction garantie ou intervention gratuite</li>
-                                                            <li>
-                                                                <i class="pbmit-base-icon-check"></i> Équipe expérimentée et certifiée</li>
-                                                            <li>
-                                                                <i class="pbmit-base-icon-check"></i> Produits respectueux du cuir</li>
-                                                            <li>
-                                                                <i class="pbmit-base-icon-check"></i> Service après-vente réactif</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Sidebar -->
-                                        <div class="col-lg-3 service-left-col sidebar">
-                                            <t t-call="theme_kdmobilier.services_sidebar"/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
+                        <!-- Techniques et Produits -->
+                        <div class="pbmit-heading animation-style2 mt-5">
+                          <h3>Nos techniques et produits</h3>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="pbmit-service-box">
+                              <h4>Techniques professionnelles</h4>
+                              <ul class="list-unstyled">
+                                <li>
+                                  <i class="pbmit-base-icon-check"></i>
+                                  Nettoyage spécialisé sans altération
+                                </li>
+                                <li>
+                                  <i class="pbmit-base-icon-check"></i>
+                                  Application précise des traitements
+                                </li>
+                                <li>
+                                  <i class="pbmit-base-icon-check"></i>
+                                  Manipulation experte du cuir
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="pbmit-service-box">
+                              <h4>Produits de qualité</h4>
+                              <ul class="list-unstyled">
+                                <li>
+                                  <i class="pbmit-base-icon-check"></i> Produits
+                                  professionnels certifiés
+                                </li>
+                                <li>
+                                  <i class="pbmit-base-icon-check"></i>
+                                  Solutions adaptées à chaque type de cuir
+                                </li>
+                                <li>
+                                  <i class="pbmit-base-icon-check"></i>
+                                  Protection UV longue durée
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
                         </div>
 
-                        <div id="wrap" class="oe_structure oe_empty"></div>
-                    </t>
-                </t>
-            </field>
-        </record>
-    </data>
+                        <!-- Garanties -->
+                        <div class="pbmit-heading animation-style2 mt-5">
+                          <h3>Nos garanties</h3>
+                        </div>
+                        <div class="row mb-5">
+                          <div class="col-md-12">
+                            <ul class="list-unstyled">
+                              <li>
+                                <i class="pbmit-base-icon-check"></i>
+                                Satisfaction garantie ou intervention gratuite
+                              </li>
+                              <li>
+                                <i class="pbmit-base-icon-check"></i> Équipe
+                                expérimentée et certifiée
+                              </li>
+                              <li>
+                                <i class="pbmit-base-icon-check"></i> Produits
+                                respectueux du cuir
+                              </li>
+                              <li>
+                                <i class="pbmit-base-icon-check"></i> Service
+                                après-vente réactif
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Sidebar -->
+                    <div class="col-lg-3 service-left-col sidebar">
+                      <t t-call="theme_kdmobilier.services_sidebar" />
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+
+            <div id="wrap" class="oe_structure oe_empty"></div>
+          </t>
+        </t>
+      </field>
+    </record>
+  </data>
 </odoo>

@@ -48,6 +48,35 @@
                             <section class="section-md">
                                 <div class="container">
                                     <div class="row pbmit-element-posts-wrapper">
+                                        <!-- Conseil en Décoration -->
+                                        <article class="pbmit-ele-blog pbmit-blog-style-1 col-md-4">
+                                            <div class="post-item">
+                                                <div class="pbminfotech-box-content">
+                                                    <div class="pbmit-featured-container">
+                                                        <div class="pbmit-featured-img-wrapper">
+                                                            <div class="pbmit-featured-wrapper">
+                                                                <img src="/theme_kdmobilier/static/src/images/service/conseil-decoration.jpg" class="img-fluid" alt="Conseil en Décoration"/>
+                                                            </div>
+                                                        </div>
+                                                        <a class="pbmit-link" href="/services/conseil-decoration"></a>
+                                                        <a class="pbmit-blog-btn" href="/services/conseil-decoration">
+                                                            <span class="pbmit-button-icon">
+                                                                <i class="pbmit-base-icon-pbmit-up-arrow"></i>
+                                                            </span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="pbmit-content-wrapper">
+                                                        <h3 class="pbmit-post-title">
+                                                            <a href="/services/conseil-decoration">Conseil en Décoration</a>
+                                                        </h3>
+                                                        <div class="pbminfotech-box-desc">
+                                                            Des conseils personnalisés pour créer l'intérieur de vos rêves.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+
                                         <!-- Design et Architecture d'intérieur -->
                                         <article class="pbmit-ele-blog pbmit-blog-style-1 col-md-4">
                                             <div class="post-item">
@@ -106,34 +135,7 @@
                                             </div>
                                         </article>
 
-                                        <!-- Conseil en Décoration -->
-                                        <article class="pbmit-ele-blog pbmit-blog-style-1 col-md-4">
-                                            <div class="post-item">
-                                                <div class="pbminfotech-box-content">
-                                                    <div class="pbmit-featured-container">
-                                                        <div class="pbmit-featured-img-wrapper">
-                                                            <div class="pbmit-featured-wrapper">
-                                                                <img src="/theme_kdmobilier/static/src/images/service/conseil-decoration.jpg" class="img-fluid" alt="Conseil en Décoration"/>
-                                                            </div>
-                                                        </div>
-                                                        <a class="pbmit-link" href="/services/conseil-decoration"></a>
-                                                        <a class="pbmit-blog-btn" href="/services/conseil-decoration">
-                                                            <span class="pbmit-button-icon">
-                                                                <i class="pbmit-base-icon-pbmit-up-arrow"></i>
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                    <div class="pbmit-content-wrapper">
-                                                        <h3 class="pbmit-post-title">
-                                                            <a href="/services/conseil-decoration">Conseil en Décoration</a>
-                                                        </h3>
-                                                        <div class="pbminfotech-box-desc">
-                                                            Des conseils personnalisés pour créer l'intérieur de vos rêves.
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </article>
+
                                     </div>
                                 </div>
                             </section>

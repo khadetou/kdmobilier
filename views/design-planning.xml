@@ -52,7 +52,7 @@
                     <!-- Main Content -->
                     <div class="col-lg-9 service-right-col pb-5">
                       <div class="pbmit-service-feature-image">
-                        <img src="/theme_kdmobilier/static/src/images/service/design-planning.jpg" class="img-fluid" alt="Design et Architecture d'intérieur"/>
+                        <img src="/theme_kdmobilier/static/src/images/service/design-planning.jpg" class="img-fluid" alt="Design et Architecture d'intérieur" />
                       </div>
 
                       <div class="pbmit-service-content">

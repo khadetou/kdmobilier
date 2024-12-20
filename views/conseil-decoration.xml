@@ -52,7 +52,7 @@
                                         <!-- Main Content -->
                                         <div class="col-lg-9 service-right-col">
                                             <div class="pbmit-service-feature-image">
-                                                <img src="/theme_kdmobilier/static/src/images/service/conseil-decoration.jpg" class="img-fluid" alt="Conseil en Décoration d'intérieur"/>
+                                                <img src="/theme_kdmobilier/static/src/images/service/conseil-decoration.jpg" class="img-fluid" alt="Conseil en Décoration d'intérieur" />
                                             </div>
 
                                             <div class="pbmit-service-content">

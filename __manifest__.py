@@ -11,6 +11,7 @@
         "website_sale_wishlist",
         "website_helpdesk",
         "website_mass_mailing",
+        "website_sale_subscription",
     ],
     "data": [
         "views/layout.xml",
