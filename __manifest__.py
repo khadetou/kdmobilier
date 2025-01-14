@@ -28,6 +28,7 @@
         "views/entretien-canape.xml",
         "views/conseil-decoration.xml",
         # "views/aboutus_page.xml",
+        "data/website_data.xml",
     ],
     "assets": {
         "web.assets_frontend": [

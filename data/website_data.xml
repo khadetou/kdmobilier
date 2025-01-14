@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- Override the default "Not Available For Sale" text -->
+        <record id="website_sale_text_override" model="ir.config_parameter">
+            <field name="key">website.prevent_zero_price_sale_text</field>
+            <field name="value">✨ Produit sur mesure - Visitez notre showroom pour découvrir nos collections exclusives ✨</field>
+        </record>
+
+
+    </data>
+</odoo> 

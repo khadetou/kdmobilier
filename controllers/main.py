@@ -1,118 +1,158 @@
+# -*- coding: utf-8 -*-
+
+import logging
 from odoo import http
 from odoo.http import request
 from odoo.addons.website_sale.controllers.main import WebsiteSale, TableCompute
-from odoo.addons.website.controllers.main import QueryURL
 from odoo.addons.http_routing.models.ir_http import slug
-from odoo.osv import expression
+from odoo.tools import float_round
+from werkzeug.exceptions import NotFound
+
+_logger = logging.getLogger(__name__)
 
 
-class KdWebsiteSale(WebsiteSale):
+class WebsiteSaleInfiniteScroll(WebsiteSale):
 
-    @http.route(["/shop/products/load_more"], type="json", auth="public", website=True)
-    def load_more_products(self, page=1, category=None, search="", attrib=None, **post):
-        print("\n=== LOADING MORE PRODUCTS ===")
-        print(f"Page requested: {page}")
+    @http.route(["/shop/infinite_scroll"], type="json", auth="public", website=True)
+    def infinite_scroll(
+        self, page=0, ppg=False, search="", category="", attrib="", **post
+    ):
+        try:
+            page = int(page)
+            if page < 1:
+                page = 1
+        except (TypeError, ValueError):
+            page = 1
+            _logger.warning("Invalid page number received, defaulting to 1")
 
         try:
-            if not page:
-                return {"products_html": ""}
+            ppg = int(ppg)
+        except (TypeError, ValueError):
+            ppg = request.env["website"].get_current_website().shop_ppg or 20
+            _logger.warning("Invalid PPG received, defaulting to %s", ppg)
 
-            website = request.env["website"].get_current_website()
-            ppg = website.shop_ppg or 20
+        website = request.env["website"].get_current_website()
+        Category = request.env["product.public.category"]
 
-            # Build domain
-            domain = website.sale_product_domain()
+        # Handle category exactly like shop controller
+        if category:
+            category = Category.search([("id", "=", int(category))], limit=1)
+            if not category or not category.can_access_from_current_website():
+                raise NotFound()
+        else:
+            category = Category
 
-            # Search domain
-            if search:
-                for srch in search.split(" "):
-                    domain = expression.AND(
-                        [
-                            domain,
-                            [
-                                "|",
-                                "|",
-                                "|",
-                                ("name", "ilike", srch),
-                                ("description", "ilike", srch),
-                                ("description_sale", "ilike", srch),
-                                ("product_variant_ids.default_code", "ilike", srch),
-                            ],
-                        ]
-                    )
+        # Get attribute values
+        attrib_list = request.httprequest.args.getlist("attrib")
+        attrib_values = [[int(x) for x in v.split("-")] for v in attrib_list if v]
+        attributes_ids = {v[0] for v in attrib_values}
+        attrib_set = {v[1] for v in attrib_values}
 
-            # Category domain
-            if category:
-                domain = expression.AND(
-                    [domain, [("public_categ_ids", "child_of", int(category))]]
-                )
+        domain = website.sale_product_domain()
+        if search:
+            for srch in search.split(" "):
+                domain += [
+                    "|",
+                    "|",
+                    "|",
+                    ("name", "ilike", srch),
+                    ("description", "ilike", srch),
+                    ("description_sale", "ilike", srch),
+                    ("product_variant_ids.default_code", "ilike", srch),
+                ]
 
-            # Attribute domain
-            attrib_list = []
-            if attrib:
-                if isinstance(attrib, str):
-                    attrib_list = [int(x) for x in attrib.split("-")]
+        if category:
+            domain += [("public_categ_ids", "child_of", int(category))]
+
+        if attrib_values:
+            attrib = None
+            ids = []
+            for value in attrib_values:
+                if not attrib:
+                    attrib = value[0]
+                    ids.append(value[1])
+                elif value[0] == attrib:
+                    ids.append(value[1])
                 else:
-                    attrib_list = [int(x) for x in attrib]
+                    domain += [("attribute_line_ids.value_ids", "in", ids)]
+                    attrib = value[0]
+                    ids = [value[1]]
+            if attrib:
+                domain += [("attribute_line_ids.value_ids", "in", ids)]
 
-                attrib = None
-                if attrib_list:
-                    attrib = attrib_list[0]
-                    if attrib:
-                        for value in attrib_list[1:]:
-                            domain = expression.AND(
-                                [
-                                    domain,
-                                    [("attribute_line_ids.value_ids", "in", value)],
-                                ]
-                            )
+        # Get products
+        Product = request.env["product.template"].with_context(bin_size=True)
+        search_product = Product.search(domain, order=self._get_search_order(post))
+        total_products = len(search_product)
 
-            # Search products
-            Product = request.env["product.template"].with_context(bin_size=True)
-            product_count = Product.search_count(domain)
+        # Calculate pagination
+        offset = (page - 1) * ppg
+        products = search_product[offset : offset + ppg]
 
-            pager = website.pager(
-                url="/shop", total=product_count, page=page, step=ppg, scope=7
-            )
+        if not products:
+            return {"products": [], "has_more": False, "remaining": 0}
 
-            # Get default sort order
-            order = post.get("order", "website_sequence ASC")
-            if not order:
-                order = "website_sequence ASC"
+        # Get fiscal position and pricelist
+        fiscal_position = website.fiscal_position_id.sudo()
+        pricelist = website.pricelist_id
 
-            # Search products
-            products = Product.search(
-                domain, limit=ppg, offset=pager["offset"], order=order
-            )
+        # Prepare product data
+        products_data = []
+        for product in products:
+            prices = product._get_sales_prices(pricelist, fiscal_position)[product.id]
+            image_url = f"/web/image/product.template/{product.id}/image_1024"
 
-            if not products:
-                return {"products_html": "", "has_more": False}
+            # Handle prices safely with fallbacks
+            price = prices.get("price_reduce", 0.0)
+            if not price:
+                price = prices.get("price", 0.0)
+            if not price:
+                price = product.list_price
 
-            values = {
-                "bins": TableCompute().process(products, ppg),
-                "products": products,
+            list_price = prices.get("base_price", product.list_price)
+
+            product_data = {
+                "id": product.id,
+                "name": product.name,
+                "website_url": f"/shop/product/{slug(product)}",
+                "image_url": image_url,
+                "price": price,
+                "list_price": list_price,
+                "has_discounted_price": bool(list_price and list_price > price),
+                "currency": {
+                    "name": pricelist.currency_id.name,
+                    "symbol": pricelist.currency_id.symbol,
+                    "position": pricelist.currency_id.position,
+                },
+                "website_published": product.website_published,
+                "ribbon": {
+                    "html": (
+                        product.website_ribbon_id.html
+                        if product.website_ribbon_id
+                        else ""
+                    ),
+                    "text_color": (
+                        product.website_ribbon_id.text_color
+                        if product.website_ribbon_id
+                        else "#FFFFFF"
+                    ),
+                    "bg_color": (
+                        product.website_ribbon_id.bg_color
+                        if product.website_ribbon_id
+                        else "#FF0000"
+                    ),
+                    "html_class": (
+                        product.website_ribbon_id.html_class
+                        if product.website_ribbon_id
+                        else ""
+                    ),
+                },
             }
+            products_data.append(product_data)
 
-            # Render only products
-            products_html = (
-                request.env["ir.ui.view"]
-                ._render_template("website_sale.products_list_view", values)
-                .decode("utf-8")
-            )
-
-            has_more = len(products) >= ppg
-            remaining = product_count - (page * ppg)
-
-            return {
-                "products_html": products_html,
-                "has_more": has_more,
-                "remaining": remaining,
-                "products_count": len(products),
-            }
-
-        except Exception as e:
-            print(f"Error occurred: {str(e)}")
-            import traceback
-
-            print(traceback.format_exc())
-            return {"error": str(e), "products_html": ""}
+        remaining = total_products - (offset + ppg)
+        return {
+            "products": products_data,
+            "has_more": remaining > 0,
+            "remaining": remaining if remaining > 0 else 0,
+        }

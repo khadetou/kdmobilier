@@ -1,447 +1,309 @@
-// /** @odoo-module **/
-// import publicWidget from "@web/legacy/js/public/public_widget";
-// import { jsonrpc } from "@web/core/network/rpc_service";
-// import { debounce } from "@web/core/utils/timing";
+/** @odoo-module **/
 
-// publicWidget.registry.KDMobilierInfiniteScroll = publicWidget.Widget.extend({
-//   selector: ".o_wsale_products_page",
-//   events: {
-//     "click .retry-load": "_onRetryClick",
-//   },
+import publicWidget from "@web/legacy/js/public/public_widget";
+import { jsonrpc } from "@web/core/network/rpc_service";
 
-//   /**
-//    * @override
-//    */
-//   init() {
-//     console.log("🚀 Initializing Infinite Scroll");
-//     this._super(...arguments);
-//     this.page = 1;
-//     this.isLoading = false;
-//     this.hasMoreProducts = true;
-//     this.productsContainer = null;
-//     this.loadingElement = null;
-//     this.errorElement = null;
-//     this.retryCount = 0;
-//     this.maxRetries = 3;
-//     this.scrollCount = 0;
-//     this.initialLoad = true; // Flag pour le premier chargement
+const DEBUG = true;
 
-//     // Test if debounce is working
-//     try {
-//       const testDebounce = debounce(() => {}, 100);
-//       console.log("✅ Debounce function test successful");
-//     } catch (e) {
-//       console.error("❌ Debounce function test failed:", e);
-//     }
+function log(...args) {
+  if (DEBUG) {
+    console.log("[Infinite Scroll]", ...args);
+  }
+}
 
-//     this._boundScrollHandler = debounce(() => this._onScroll(), 200);
-//     console.log("✅ Scroll handler bound");
+function warn(...args) {
+  if (DEBUG) {
+    console.warn("[Infinite Scroll]", ...args);
+  }
+}
 
-//     console.log("✅ Initialization complete", {
-//       page: this.page,
-//       isLoading: this.isLoading,
-//       hasMoreProducts: this.hasMoreProducts,
-//     });
-//   },
+function error(...args) {
+  if (DEBUG) {
+    console.error("[Infinite Scroll]", ...args);
+  }
+}
 
-//   /**
-//    * @override
-//    */
-//   start() {
-//     console.log("🏁 Starting Infinite Scroll setup");
-//     this._super(...arguments);
+publicWidget.registry.WebsiteSaleInfiniteScroll = publicWidget.Widget.extend({
+  selector: ".oe_website_sale",
 
-//     this.productsContainer = this.el.querySelector("#products_grid .row");
-//     console.log("Looking for products container:", "#products_grid .row");
+  _createLoadingElement() {
+    return $(`
+      <div class="o_wsale_infinite_scroll_loading d-none">
+        <div class="d-flex justify-content-center py-4">
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Chargement...</span>
+          </div>
+          <div class="ms-3 text-primary">Chargement des produits...</div>
+        </div>
+      </div>
+    `);
+  },
 
-//     if (!this.productsContainer) {
-//       console.error("❌ Products container not found!");
-//       return;
-//     }
-//     console.log("✅ Products container found");
+  start() {
+    log("Widget starting...");
+    this.page = 1;
+    this.ppg = this.$el.data("ppg") || 20;
+    this.isLoading = false;
+    this.allLoaded = false;
+    this.threshold =
+      parseInt(this.$el.data("infinite-scroll-threshold")) || 300;
 
-//     const initialProducts =
-//       this.productsContainer.querySelectorAll(".pbmit-ele-blog").length;
-//     console.log(`📦 Initial products count: ${initialProducts}`);
+    // Convert string 'True'/'False' to boolean
+    const isEnabled = true;
+    const enabled =
+      isEnabled === true || isEnabled === "true" || isEnabled === "True";
 
-//     this._setupUI();
-//     this._bindScrollEvent();
+    const config = {
+      page: this.page,
+      ppg: this.ppg,
+      threshold: this.threshold,
+      isEnabled: enabled,
+      gridFound: this.$("#products_grid").length > 0,
+    };
+    log("Configuration:", config);
 
-//     // Délai initial pour éviter le chargement immédiat
-//     setTimeout(() => {
-//       this.initialLoad = false;
-//       console.log("🔄 Initial delay completed, scroll detection active");
-//     }, 1000);
+    if (!enabled) {
+      warn("Infinite scroll is not enabled in website settings");
+      return this._super.apply(this, arguments);
+    }
 
-//     return this._super(...arguments);
-//   },
+    if (!config.gridFound) {
+      warn("Products grid not found");
+      return this._super.apply(this, arguments);
+    }
 
-//   /**
-//    * @override
-//    */
-//   destroy() {
-//     console.log("🗑️ Destroying Infinite Scroll");
-//     this._unbindScrollEvent();
-//     if (this.loadingElement) {
-//       this.loadingElement.remove();
-//       console.log("✅ Loading element removed");
-//     }
-//     if (this.errorElement) {
-//       this.errorElement.remove();
-//       console.log("✅ Error element removed");
-//     }
-//     this._super(...arguments);
-//   },
+    // Hide pagination if infinite scroll is enabled
+    this.$(".products_pager").addClass("d-none");
 
-//   //--------------------------------------------------------------------------
-//   // Private
-//   //--------------------------------------------------------------------------
+    // Add loading spinner
+    const $productsGrid = this.$("#products_grid");
+    if (!this.$(".o_wsale_infinite_scroll_loading").length) {
+      const $loading = this._createLoadingElement();
+      $productsGrid.after($loading);
+    }
 
-//   /**
-//    * Set up UI elements
-//    * @private
-//    */
-//   _setupUI() {
-//     console.log("🎨 Setting up UI elements");
-//     this._removePager();
-//     this._createLoadingElement();
-//     this._createErrorElement();
-//     console.log("✅ UI setup complete");
-//   },
+    // Store the handler so we can remove it later
+    this._onScrollHandler = this._onScroll.bind(this);
 
-//   /**
-//    * Remove existing pager
-//    * @private
-//    */
-//   _removePager() {
-//     const pagerContainer = this.el.querySelector(".products_pager");
-//     console.log("Looking for pager:", pagerContainer);
-//     if (pagerContainer) {
-//       pagerContainer.remove();
-//       console.log("✅ Pager removed");
-//     } else {
-//       console.log("ℹ️ No pager found");
-//     }
-//   },
+    // Bind scroll event to #wrapwrap instead of window
+    $("#wrapwrap").on("scroll", this._onScrollHandler);
 
-//   /**
-//    * Create loading spinner element
-//    * @private
-//    */
-//   _createLoadingElement() {
-//     console.log("Creating loading element");
-//     this.loadingElement = document.createElement("div");
-//     this.loadingElement.className = "text-center py-4 products_loading";
-//     this.loadingElement.innerHTML = `
-//             <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
-//                 <span class="visually-hidden">Loading more products...</span>
-//             </div>
-//         `;
-//     this.productsContainer.closest("#products_grid").after(this.loadingElement);
-//     this.loadingElement.style.display = "none";
-//     console.log("✅ Loading element created");
-//   },
+    log("Widget successfully initialized");
+    return this._super.apply(this, arguments);
+  },
 
-//   /**
-//    * Create error message element
-//    * @private
-//    */
-//   _createErrorElement() {
-//     console.log("Creating error element");
-//     this.errorElement = document.createElement("div");
-//     this.errorElement.className =
-//       "alert alert-danger text-center my-3 products_error";
-//     this.errorElement.innerHTML = `
-//             <p class="mb-0">Failed to load more products. <button class="btn btn-link p-0 retry-load">Try again</button></p>
-//         `;
-//     this.loadingElement.after(this.errorElement);
-//     this.errorElement.style.display = "none";
-//     console.log("✅ Error element created");
-//   },
+  destroy() {
+    // Clean up scroll event when widget is destroyed
+    if (this._onScrollHandler) {
+      $("#wrapwrap").off("scroll", this._onScrollHandler);
+    }
+    return this._super.apply(this, arguments);
+  },
 
-//   /**
-//    * Bind scroll event listener
-//    * @private
-//    */
-//   _bindScrollEvent() {
-//     console.log("🎯 Binding scroll event");
-//     window.addEventListener("scroll", this._boundScrollHandler, {
-//       passive: true,
-//     });
-//     console.log("✅ Scroll event bound");
-//   },
+  _onScroll() {
+    if (this.isLoading || this.allLoaded) {
+      log(
+        this.isLoading
+          ? "Skip scroll - already loading"
+          : "Skip scroll - all products loaded"
+      );
+      return;
+    }
 
-//   /**
-//    * Unbind scroll event listener
-//    * @private
-//    */
-//   _unbindScrollEvent() {
-//     console.log("Unbinding scroll event");
-//     window.removeEventListener("scroll", this._boundScrollHandler);
-//     console.log("✅ Scroll event unbound");
-//   },
+    const $wrapwrap = $("#wrapwrap");
+    const $footer = $("#footer");
+    const scrollPosition = $wrapwrap.scrollTop() + $wrapwrap.height();
+    const documentHeight = $wrapwrap[0].scrollHeight;
+    const footerHeight = $footer.outerHeight() || 0;
 
-//   /**
-//    * Check if we should load more products
-//    * @private
-//    * @returns {boolean}
-//    */
-//   _checkScroll() {
-//     // Ignorer le check pendant le chargement initial
-//     if (this.initialLoad) {
-//       console.log("⏳ Initial load - ignoring scroll check");
-//       return false;
-//     }
+    // Calculate remaining scroll including footer height
+    const remainingScroll = documentHeight - scrollPosition;
+    // Adjust threshold to include footer height plus some extra space
+    const adjustedThreshold = this.threshold + footerHeight;
 
-//     const scrollY = window.scrollY;
-//     const viewportHeight = window.innerHeight;
-//     const documentHeight = document.documentElement.offsetHeight;
-//     const bottomOffset = 200;
-//     const remainingScroll = documentHeight - (scrollY + viewportHeight);
+    log("Checking scroll position:", {
+      scrollPosition,
+      documentHeight,
+      remainingScroll,
+      footerHeight,
+      threshold: adjustedThreshold,
+    });
 
-//     console.log("📊 Scroll Metrics:", {
-//       scrollY,
-//       viewportHeight,
-//       documentHeight,
-//       bottomOffset,
-//       remainingScroll,
-//       shouldLoadMore: remainingScroll <= bottomOffset,
-//     });
+    if (remainingScroll <= adjustedThreshold) {
+      log("Near bottom, loading more products...");
+      this._loadMoreProducts();
+    }
+  },
 
-//     return !this.initialLoad && remainingScroll <= bottomOffset;
-//   },
-//   /**
-//    * Handle scroll event
-//    * @private
-//    */
-//   _onScroll() {
-//     console.log("📜 Scroll handler called", {
-//       scrollCount: ++this.scrollCount,
-//       isLoading: this.isLoading,
-//       hasMoreProducts: this.hasMoreProducts,
-//       initialLoad: this.initialLoad,
-//     });
+  _formatPrice(price, currency) {
+    const formattedPrice = price.toFixed(2);
+    return currency.position === "before"
+      ? `${currency.symbol}${formattedPrice}`
+      : `${formattedPrice}${currency.symbol}`;
+  },
 
-//     if (this.isLoading || !this.hasMoreProducts || this.initialLoad) {
-//       console.log("🛑 Scroll ignored", {
-//         reason: this.isLoading
-//           ? "loading"
-//           : this.initialLoad
-//           ? "initial load"
-//           : "no more products",
-//       });
-//       return;
-//     }
+  _createProductElement(product) {
+    // Get CSRF token from meta tag
+    const csrf_token = $('meta[name="csrf-token"]').attr("content") || "";
 
-//     if (this._checkScroll()) {
-//       console.log("🎯 Loading threshold reached");
-//       this._loadMoreProducts();
-//     }
-//   },
+    return `
+      <article class="pbmit-ele-blog pbmit-blog-style-1 col-md-6 col-lg-3">
+        <div class="post-item">
+          <div class="pbminfotech-box-content">
+            <form action="/shop/cart/update" method="post" class="oe_product_cart h-100 d-flex pbminfotech-box-content" itemscope="itemscope" itemtype="http://schema.org/Product" data-publish="${
+              product.website_published ? "on" : "off"
+            }">
+              <div class="oe_product_image position-relative h-100 flex-grow-0 overflow-hidden pbmit-featured-container">
+                <input type="hidden" name="csrf_token" value="${csrf_token}"/>
+                <a class="oe_product_image_link d-block h-100 position-relative pbmit-featured-img-wrapper" itemprop="url" contenteditable="false" href="${
+                  product.website_url
+                }">
+                  <span class="oe_product_image_img_wrapper d-flex h-100 justify-content-center align-items-center position-absolute pbmit-featured-wrapper">
+                    <img src="${product.image_url}" 
+                         itemprop="image" 
+                         class="img img-fluid h-100 w-100 position-absolute" 
+                         alt="${product.name}" 
+                         loading="lazy"/>
+                  </span>
+                </a>
+                <a class="pbmit-link" href="${product.website_url}"></a>
+                ${
+                  product.ribbon.html
+                    ? `<span class="o_ribbon ${product.ribbon.html_class}" style="color: ${product.ribbon.text_color}; background-color: ${product.ribbon.bg_color}">${product.ribbon.html}</span>`
+                    : `<span class="o_ribbon o_not_editable" style=""></span>`
+                }
+              </div>
+              <div class="o_wsale_product_information position-relative d-flex flex-column flex-grow-1 flex-shrink-1">
+                <div class="o_wsale_product_information_text flex-grow-1">
+                  <h6 class="o_wsale_products_item_title mb-2">
+                    <a href="${
+                      product.website_url
+                    }" class="text-primary text-decoration-none" itemprop="name">${
+      product.name
+    }</a>
+                  </h6>
+                </div>
+                <div class="o_wsale_product_sub d-flex justify-content-between align-items-end gap-2 flex-wrap pb-1">
+                  <div class="o_wsale_product_btn">
+                    <button type="button" role="button" class="btn btn-outline-primary bg-white o_add_wishlist" title="Add to Wishlist" data-action="o_wishlist" data-product-template-id="${
+                      product.id
+                    }">
+                      <span role="img" aria-label="Add to wishlist" class="fa fa-heart-o"></span>
+                    </button>
+                  </div>
+                  <div class="product_price" itemprop="offers" itemscope="itemscope" itemtype="http://schema.org/Offer">
+                    ${
+                      product.has_discounted_price
+                        ? `<del class="text-muted me-2">
+                        <span class="oe_currency_value">${this._formatPrice(
+                          product.list_price,
+                          product.currency
+                        )}</span>
+                       </del>
+                       <span class="h6 mb-0 text-primary">
+                        <span class="oe_currency_value">${this._formatPrice(
+                          product.price,
+                          product.currency
+                        )}</span>
+                       </span>`
+                        : `<span class="h6 mb-0 text-primary">
+                        <span class="oe_currency_value">${this._formatPrice(
+                          product.price,
+                          product.currency
+                        )}</span>
+                       </span>`
+                    }
+                    <span itemprop="price" style="display:none">${
+                      product.price
+                    }</span>
+                    <span itemprop="priceCurrency" style="display:none">${
+                      product.currency.name
+                    }</span>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </article>
+    `;
+  },
 
-//   /**
-//    * Load more products via AJAX
-//    * @private
-//    */
-//   async _loadMoreProducts() {
-//     if (this.isLoading) {
-//       console.log("⏳ Already loading products");
-//       return;
-//     }
+  async _loadMoreProducts() {
+    try {
+      log("Loading more products - Page:", this.page + 1);
+      this.isLoading = true;
 
-//     console.log("📦 Starting to load more products", {
-//       currentPage: this.page,
-//       nextPage: this.page + 1,
-//     });
+      // Show loading indicator
+      this.$(".o_wsale_infinite_scroll_loading").removeClass("d-none");
 
-//     this._showLoading();
-//     this._hideError();
-//     this.isLoading = true;
+      // Get current URL parameters
+      const urlParams = new URLSearchParams(window.location.search);
 
-//     try {
-//       const params = {
-//         page: this.page + 1,
-//         category: this._getCategoryId(),
-//         search: this._getSearchQuery(),
-//         attrib: this._getAttributes(),
-//         ppg: 20, // products per page
-//       };
-//       console.log("🚀 Request params:", params);
+      // Get category from URL path if we're in a category page
+      let category = "";
+      const categoryMatch = window.location.pathname.match(
+        /\/shop\/category\/[^/]+-(\d+)/
+      );
+      if (categoryMatch) {
+        category = categoryMatch[1];
+      }
 
-//       const response = await jsonrpc("/shop/products/load_more", params);
-//       console.log("📩 Response:", response);
+      const params = {
+        page: this.page + 1,
+        ppg: this.ppg,
+        search: urlParams.get("search") || "",
+        category: category,
+        attrib: urlParams.get("attrib") || "",
+      };
 
-//       if (response.error) {
-//         throw new Error(response.error);
-//       }
+      log("Request parameters:", params);
 
-//       if (response.products_html && response.products_html.trim()) {
-//         const tempDiv = document.createElement("div");
-//         tempDiv.innerHTML = response.products_html;
+      const result = await jsonrpc("/shop/infinite_scroll", params);
+      log("Server response:", result);
 
-//         // Get all products from the response
-//         const newProducts = tempDiv.querySelectorAll("article");
-//         console.log(`Found ${newProducts.length} new products`);
+      if (result && result.products) {
+        if (result.products.length > 0) {
+          // Find the products container
+          const $productsGrid = this.$("#products_grid .row");
+          if (!$productsGrid.length) {
+            error("Products grid not found");
+            return;
+          }
 
-//         if (newProducts.length > 0) {
-//           for (const product of newProducts) {
-//             // Add required classes if they don't exist
-//             if (!product.classList.contains("pbmit-ele-blog")) {
-//               product.classList.add(
-//                 "pbmit-ele-blog",
-//                 "pbmit-blog-style-1",
-//                 "col-md-6",
-//                 "col-lg-3"
-//               );
-//             }
+          // Add each product directly to the grid
+          result.products.forEach((product) => {
+            $productsGrid.append(this._createProductElement(product));
+          });
 
-//             // Create wrapper structure if needed
-//             if (!product.querySelector(".post-item")) {
-//               // Save original content
-//               const originalContent = product.innerHTML;
+          this.page++;
+          log(
+            "Products added successfully - New page:",
+            this.page,
+            "Remaining:",
+            result.remaining
+          );
 
-//               // Create wrapper structure
-//               const postItem = document.createElement("div");
-//               postItem.className = "post-item";
+          if (!result.has_more) {
+            this.allLoaded = true;
+            log("No more products available");
+          }
+        } else {
+          this.allLoaded = true;
+          log("No more products to load");
+        }
+      } else {
+        warn("Invalid response format:", result);
+        this.allLoaded = true;
+      }
+    } catch (err) {
+      error("Failed to load products:", err);
+      this.allLoaded = true;
+    } finally {
+      this.isLoading = false;
+      this.$(".o_wsale_infinite_scroll_loading").addClass("d-none");
+    }
+  },
+});
 
-//               const boxContent = document.createElement("div");
-//               boxContent.className = "pbminfotech-box-content";
-
-//               // Insert original content in new structure
-//               boxContent.innerHTML = originalContent;
-//               postItem.appendChild(boxContent);
-//               product.innerHTML = ""; // Clear original content
-//               product.appendChild(postItem);
-//             }
-
-//             // Add the product to container
-//             this.productsContainer.appendChild(product);
-//           }
-
-//           this.page++;
-//           this.retryCount = 0;
-//           this.hasMoreProducts = response.has_more;
-
-//           console.log("✅ Products added", {
-//             addedCount: newProducts.length,
-//             newPage: this.page,
-//             hasMore: this.hasMoreProducts,
-//             totalProducts:
-//               this.productsContainer.querySelectorAll(".pbmit-ele-blog").length,
-//           });
-//         } else {
-//           console.log("No products found in response");
-//           this.hasMoreProducts = false;
-//         }
-//       } else {
-//         console.log("No product HTML in response");
-//         this.hasMoreProducts = false;
-//       }
-//     } catch (error) {
-//       console.error("❌ Error:", error);
-//       this._showError();
-
-//       if (++this.retryCount >= this.maxRetries) {
-//         console.log("🛑 Max retries reached");
-//         this.hasMoreProducts = false;
-//       }
-//     } finally {
-//       this.isLoading = false;
-//       this._hideLoading();
-//       console.log("⏹️ Load operation completed", {
-//         page: this.page,
-//         hasMore: this.hasMoreProducts,
-//         retryCount: this.retryCount,
-//         totalProducts:
-//           this.productsContainer.querySelectorAll(".pbmit-ele-blog").length,
-//       });
-//     }
-//   },
-
-//   /**
-//    * Show loading spinner
-//    * @private
-//    */
-//   _showLoading() {
-//     console.log("⏳ Showing loading spinner");
-//     this.loadingElement.style.display = "flex";
-//     this.loadingElement.style.justifyContent = "center";
-//   },
-
-//   /**
-//    * Hide loading spinner
-//    * @private
-//    */
-//   _hideLoading() {
-//     console.log("Hiding loading spinner");
-//     this.loadingElement.style.display = "none";
-//   },
-
-//   /**
-//    * Show error message
-//    * @private
-//    */
-//   _showError() {
-//     console.log("❌ Showing error message");
-//     this.errorElement.style.display = "block";
-//   },
-
-//   /**
-//    * Hide error message
-//    * @private
-//    */
-//   _hideError() {
-//     console.log("✅ Hiding error message");
-//     this.errorElement.style.display = "none";
-//   },
-
-//   /**
-//    * Get category ID from URL
-//    * @private
-//    * @returns {number}
-//    */
-//   _getCategoryId() {
-//     const categoryMatch = window.location.pathname.match(/category\/.*?(\d+)/);
-//     const categoryId = categoryMatch ? parseInt(categoryMatch[1]) : 0;
-//     console.log("📁 Category ID:", categoryId);
-//     return categoryId;
-//   },
-
-//   /**
-//    * Get search query from URL
-//    * @private
-//    * @returns {string}
-//    */
-//   _getSearchQuery() {
-//     const search =
-//       new URLSearchParams(window.location.search).get("search") || "";
-//     console.log("🔍 Search query:", search);
-//     return search;
-//   },
-
-//   /**
-//    * Get attributes from URL
-//    * @private
-//    * @returns {Array}
-//    */
-//   _getAttributes() {
-//     const attribs = new URLSearchParams(window.location.search).getAll(
-//       "attrib"
-//     );
-//     console.log("🏷️ Attributes:", attribs);
-//     return attribs;
-//   },
-
-//   /**
-//    * Handle retry button click
-//    * @private
-//    * @param {Event} ev
-//    */
-//   _onRetryClick(ev) {
-//     console.log("🔄 Retry button clicked");
-//     ev.preventDefault();
-//     this._loadMoreProducts();
-//   },
-// });
-
-// export default publicWidget.registry.KDMobilierInfiniteScroll;
+export default publicWidget.registry.WebsiteSaleInfiniteScroll;
