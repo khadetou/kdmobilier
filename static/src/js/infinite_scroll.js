@@ -136,15 +136,28 @@ publicWidget.registry.WebsiteSaleInfiniteScroll = publicWidget.Widget.extend({
   },
 
   _formatPrice(price, currency) {
-    const formattedPrice = price.toFixed(2);
-    return currency.position === "before"
-      ? `${currency.symbol}${formattedPrice}`
-      : `${formattedPrice}${currency.symbol}`;
+    if (price <= 1) {
+      return "Sur commande";
+    }
+    return (
+      new Intl.NumberFormat("fr-FR", {
+        style: "decimal",
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0,
+      }).format(price) + " CFA"
+    );
   },
 
   _createProductElement(product) {
     // Get CSRF token from meta tag
     const csrf_token = $('meta[name="csrf-token"]').attr("content") || "";
+
+    const priceHtml =
+      product.price <= 1
+        ? `<span class="oe_currency_value">Sur commande</span>`
+        : `<span class="oe_currency_value">${this._formatPrice(
+            product.price
+          )}</span>`;
 
     return `
       <article class="pbmit-ele-blog pbmit-blog-style-1 col-md-6 col-lg-3">

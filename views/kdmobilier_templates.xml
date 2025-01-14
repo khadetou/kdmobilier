@@ -508,7 +508,8 @@
     </a>
     <br />
     <!-- 30-day money-back guarantee<br /> -->
-        Expédition : 45 jours ouvrables
+    <!-- Expédition : 45 jours ouvrables -->
+        Expédition: Plus tot possible
   </p>
 </xpath>
 </template>
@@ -1046,4 +1047,25 @@
 </template>
 
 <!-- WEBSITE CHECKOUT STYLING CHANGE -->
+
+
+<!-- CUSTOM PRODUCT PRICE -->
+
+<template id="custom_product_price" inherit_id="website_sale.product_price" name="Custom Product Price">
+<xpath expr="//div[@id='product_unavailable']" position="replace">
+  <div id="product_unavailable" t-attf-class="{{'d-flex' if combination_info['prevent_zero_price_sale'] else 'd-none'}}">
+    <h3 class="fst-italic" t-out="'Sur commande'"/>
+  </div>
+</xpath>
+
+</template>
+<!-- CUSTOM PRODUCT PRICE END -->
+
+<!-- CUSTOM BADGE EXTRA PRICE -->
+<template id="custom_badge_extra_price" name="Custom Badge Extra Price" inherit_id="website_sale.badge_extra_price">
+<xpath expr="//span[@class='badge rounded-pill text-bg-light border']" position="replace">
+  <!-- LEAVE IT EMPTY TO REMOVE THE BADGE EXTRA PRICE -->
+</xpath>
+</template>
+<!-- CUSTOM BADGE EXTRA PRICE END  -->
 </odoo>
