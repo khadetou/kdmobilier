@@ -205,7 +205,7 @@ publicWidget.registry.WebsiteSaleInfiniteScroll = publicWidget.Widget.extend({
                     </button>
                   </div>
                   <div class="product_price" itemprop="offers" itemscope="itemscope" itemtype="http://schema.org/Offer">
-                    ${
+                    <!-- ${
                       product.has_discounted_price
                         ? `<del class="text-muted me-2">
                         <span class="oe_currency_value">${this._formatPrice(
@@ -225,7 +225,7 @@ publicWidget.registry.WebsiteSaleInfiniteScroll = publicWidget.Widget.extend({
                           product.currency
                         )}</span>
                        </span>`
-                    }
+                    }-->
                     <span itemprop="price" style="display:none">${
                       product.price
                     }</span>

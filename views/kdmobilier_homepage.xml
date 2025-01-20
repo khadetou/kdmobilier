@@ -6,6 +6,46 @@
         <t t-set="pageName" t-value="'homepage'" />
         <!-- BANNER -->
         <div class="oe_structure oe_empty" />
+        <section
+          class="s_cover bg-black-50 o_colored_level s_parallax_no_overflow_hidden pt256 pb256 oe_img_bg o_bg_img_center o_background_video"
+          data-scroll-background-ratio="0"
+          data-snippet="s_cover"
+          data-name="Couverture"
+          style="
+            background-image: url('/web/image/44100-00aecc7d/Capture%20d%E2%80%99e%CC%81cran%202024-12-28%20a%CC%80%2016.47.05.webp');
+          "
+          data-mimetype="image/webp"
+          data-original-id="44099"
+          data-original-src="/web/image/44099-81ac9f7f/Capture%20d%E2%80%99e%CC%81cran%202024-12-28%20a%CC%80%2016.47.05.jpg"
+          data-mimetype-before-conversion="image/jpeg"
+          data-resize-width="1920"
+          data-bg-video-src="https://player.vimeo.com/video/1039090966?autoplay=1&amp;muted=1&amp;autopause=0&amp;controls=0&amp;loop=1"
+        >
+          <div class="o_bg_video_container">
+            <iframe
+              class="o_bg_video_iframe fade show"
+              frameborder="0"
+              aria-label="Background video"
+              id="o_bg_video_iframe_1"
+              src="https://player.vimeo.com/video/1039090966?autoplay=1&amp;muted=1&amp;autopause=0&amp;controls=0&amp;loop=1"
+              style="
+                width: 100%;
+                height: 152.469%;
+                inset-inline-start: 0px;
+                inset-block-start: -26.2345%;
+              "
+            ></iframe>
+          </div>
+
+          <div class="s_allow_columns container">
+            <h1 class="display-3" style="text-align: center; font-weight: bold">
+              <br />
+            </h1>
+            <p class="lead" style="text-align: center">
+              <br />
+            </p>
+          </div>
+        </section>
         <section class="header-style-3"></section>
         <div class="oe_structure oe_empty" />
         <div class="page-content">
@@ -66,11 +106,9 @@
                               t-esc="product.public_categ_ids[0].name"
                             />
                             <div class="product-price">
-                              <span
-                                t-field="product.list_price"
-                                t-options="{'widget': 'monetary', 
-                                                                 'display_currency': website.currency_id}"
-                              />
+                              <!-- <span t-field="product.list_price" t-options="{'widget': 'monetary', 
+                                                                 'display_currency': website.currency_id}" /> -->
+                              <!-- <span>Sur commande</span> -->
                             </div>
                           </div>
                         </a>
@@ -157,11 +195,9 @@
                               t-esc="product.public_categ_ids[0].name"
                             />
                             <div class="product-price">
-                              <span
-                                t-field="product.list_price"
-                                t-options="{'widget': 'monetary', 
-                                                                 'display_currency': website.currency_id}"
-                              />
+                              <!-- <span t-field="product.list_price" t-options="{'widget': 'monetary', 
+                                                                 'display_currency': website.currency_id}" /> -->
+                              <!-- <span>Sur commande</span> -->
                             </div>
                           </div>
                         </a>
@@ -183,6 +219,65 @@
                   >Voir plus</a
                 >
               </div>
+            </div>
+          </section>
+
+          <section
+            class="s_cover bg-black-50 o_colored_level pt184 pb208 o_background_video s_parallax_no_overflow_hidden oe_img_bg o_bg_img_center"
+            data-scroll-background-ratio="0"
+            data-snippet="s_cover"
+            data-name="Couverture"
+            style="
+              background-image: url('/web/image/42533-50d71794/vid_img.webp');
+            "
+            data-bg-video-src="https://www.youtube.com/embed/hkmFIOsS0ws?rel=0&amp;autoplay=1&amp;mute=1&amp;enablejsapi=1&amp;controls=0&amp;loop=1&amp;playlist=hkmFIOsS0ws&amp;fs=0"
+            data-mimetype="image/webp"
+            data-original-id="42532"
+            data-original-src="/web/image/42532-775c022c/vid_img.png"
+            data-mimetype-before-conversion="image/png"
+            data-resize-width="1920"
+          >
+            <div class="o_bg_video_container">
+              <iframe
+                class="o_bg_video_iframe fade show"
+                frameborder="0"
+                aria-label="Background video"
+                id="o_bg_video_iframe_2"
+                src="https://www.youtube.com/embed/hkmFIOsS0ws?rel=0&amp;autoplay=1&amp;mute=1&amp;enablejsapi=1&amp;controls=0&amp;loop=1&amp;playlist=hkmFIOsS0ws&amp;fs=0"
+                style="
+                  width: 100%;
+                  height: 165.78%;
+                  inset-inline-start: 0px;
+                  inset-block-start: -32.8901%;
+                "
+              ></iframe>
+            </div>
+
+            <div class="o_we_bg_filter bg-black-50"></div>
+            <div class="s_allow_columns container">
+              <h1
+                class="display-3"
+                style="text-align: center; font-weight: bold"
+              >
+                Des salles à manger d'exception
+              </h1>
+              <ul class="lead" style="text-align: center">
+                <li>
+                  Des tables, chaises et buffets qui donne à la salle à manger
+                  un style chic et tendance
+                </li>
+                <li>
+                  &#160;grâce à d'extraordinaire combinaison de matières et de
+                  coloris.
+                </li>
+              </ul>
+              <p style="text-align: center">
+                ﻿<a
+                  class="btn btn-primary o_default_snippet_text"
+                  href="/contactus"
+                  >﻿Contactez-nous﻿</a
+                >﻿
+              </p>
             </div>
           </section>
           <div class="oe_structure oe_empty" />
@@ -246,11 +341,9 @@
                               t-esc="product.public_categ_ids[0].name"
                             />
                             <div class="product-price">
-                              <span
-                                t-field="product.list_price"
-                                t-options="{'widget': 'monetary', 
-                                                                 'display_currency': website.currency_id}"
-                              />
+                              <!-- <span t-field="product.list_price" t-options="{'widget': 'monetary', 
+                                                                 'display_currency': website.currency_id}" /> -->
+                              <!-- <span>Sur commande</span> -->
                             </div>
                           </div>
                         </a>
@@ -332,11 +425,9 @@
                               t-esc="product.public_categ_ids[0].name"
                             />
                             <div class="product-price">
-                              <span
-                                t-field="product.list_price"
-                                t-options="{'widget': 'monetary', 
-                                                                 'display_currency': website.currency_id}"
-                              />
+                              <!-- <span t-field="product.list_price" t-options="{'widget': 'monetary', 
+                                                                 'display_currency': website.currency_id}" /> -->
+                              <!-- <span>Sur commande</span> -->
                             </div>
                           </div>
                         </a>
@@ -361,6 +452,65 @@
             </div>
           </section>
           <div class="oe_structure oe_empty" />
+
+          <section
+            class="s_cover bg-black-50 o_colored_level pt176 pb168 o_background_video s_parallax_no_overflow_hidden oe_img_bg o_bg_img_center"
+            data-scroll-background-ratio="0"
+            data-snippet="s_cover"
+            data-name="Couverture"
+            style="
+              background-image: url('/web/image/42537-e85c6f47/img_2.webp');
+            "
+            data-bg-video-src="https://www.youtube.com/embed/qzkoVRYEc4A?rel=0&amp;autoplay=1&amp;mute=1&amp;enablejsapi=1&amp;controls=0&amp;loop=1&amp;playlist=qzkoVRYEc4A&amp;fs=0"
+            data-mimetype="image/webp"
+            data-original-id="42536"
+            data-original-src="/web/image/42536-96b60894/img_2.png"
+            data-mimetype-before-conversion="image/png"
+            data-resize-width="1759"
+          >
+            <div class="o_bg_video_container">
+              <iframe
+                class="o_bg_video_iframe fade show"
+                frameborder="0"
+                aria-label="Background video"
+                id="o_bg_video_iframe_3"
+                src="https://www.youtube.com/embed/qzkoVRYEc4A?rel=0&amp;autoplay=1&amp;mute=1&amp;enablejsapi=1&amp;controls=0&amp;loop=1&amp;playlist=qzkoVRYEc4A&amp;fs=0"
+                style="
+                  width: 100%;
+                  height: 189.685%;
+                  inset-inline-start: 0px;
+                  inset-block-start: -44.8424%;
+                "
+              ></iframe>
+            </div>
+
+            <div class="o_we_bg_filter bg-black-50"></div>
+            <div class="container s_allow_columns">
+              <ul>
+                <li>
+                  <h1
+                    class="display-3"
+                    style="text-align: center; font-weight: bold"
+                  >
+                    Des chambres à coucher de rêve
+                  </h1>
+                </li>
+              </ul>
+              <ul class="lead" style="text-align: center">
+                <li>
+                  Des chambres à coucher de haute qualité, design et conçues
+                  pour améliorer votre bien-être.
+                </li>
+              </ul>
+              <p style="text-align: center">
+                ﻿<a
+                  class="btn btn-primary o_default_snippet_text"
+                  href="/contactus"
+                  >﻿Contactez-nous﻿</a
+                >﻿
+              </p>
+            </div>
+          </section>
           <!-- Collection Buffet -->
 
           <!-- Marquee Start -->
@@ -473,11 +623,9 @@
                               t-esc="product.public_categ_ids[0].name"
                             />
                             <div class="product-price">
-                              <span
-                                t-field="product.list_price"
-                                t-options="{'widget': 'monetary', 
-                                                                 'display_currency': website.currency_id}"
-                              />
+                              <!-- <span t-field="product.list_price" t-options="{'widget': 'monetary', 
+                                                                 'display_currency': website.currency_id}" /> -->
+                              <!-- <span>Sur commande</span> -->
                             </div>
                           </div>
                         </a>
