@@ -39,7 +39,7 @@
             "/theme_kdmobilier/static/src/js/dev_mode.js",
             # Production assets
             # CSS
-            # "/theme_kdmobilier/static/src/css/main.css",
+            # "/theme_kdmobilier/static/src/css/main_1.css",
             # "/theme_kdmobilier/static/build/css/styles.css",
             # "/theme_kdmobilier/static/src/css/custom.css",
             # CSS
@@ -57,6 +57,8 @@
             # "theme_kdmobilier/static/src/css/bootstrap.min.css",
             "theme_kdmobilier/static/src/scss/_fonts.scss",
             "theme_kdmobilier/static/src/css/style.css",
+            "theme_kdmobilier/static/src/css/style_1.css",
+            # "theme_kdmobilier/static/src/css/lodas-site.css",
             # JAVA SCRIPT
             "/theme_kdmobilier/static/build/js/main.js",
             "theme_kdmobilier/static/src/js/attributes.js",
@@ -88,6 +90,8 @@
             # "theme_kdmobilier/static/src/js/scripts.js",
             "theme_kdmobilier/static/src/js/salon_products.js",
             "theme_kdmobilier/static/src/js/wishlist.js",
+            "theme_kdmobilier/static/src/js/custom.js",
+            "theme_kdmobilier/static/src/js/main.js",
             "theme_kdmobilier/static/src/js/dropdown_extension.js",
         ],
         "web.assets_primary_variables": [

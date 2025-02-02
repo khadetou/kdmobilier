@@ -1,1024 +1,811 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-  <template id="kdmobilier_homepage" inherit_id="website.homepage" name="Home">
+  <template
+    id="kdmobilier_homepage"
+    inherit_id="website.homepage"
+    name="Homepage"
+  >
     <xpath expr="//t[@t-call='website.layout']" position="replace">
       <t t-call="website.layout">
         <t t-set="pageName" t-value="'homepage'" />
-        <!-- BANNER -->
+        <!-- <section class="header-style-3"></section> -->
         <div class="oe_structure oe_empty" />
-        <section
-          class="s_cover bg-black-50 o_colored_level s_parallax_no_overflow_hidden pt256 pb256 oe_img_bg o_bg_img_center o_background_video"
-          data-scroll-background-ratio="0"
-          data-snippet="s_cover"
-          data-name="Couverture"
-          style="
-            background-image: url('/web/image/44100-00aecc7d/Capture%20d%E2%80%99e%CC%81cran%202024-12-28%20a%CC%80%2016.47.05.webp');
-          "
-          data-mimetype="image/webp"
-          data-original-id="44099"
-          data-original-src="/web/image/44099-81ac9f7f/Capture%20d%E2%80%99e%CC%81cran%202024-12-28%20a%CC%80%2016.47.05.jpg"
-          data-mimetype-before-conversion="image/jpeg"
-          data-resize-width="1920"
-          data-bg-video-src="https://player.vimeo.com/video/1039090966?autoplay=1&amp;muted=1&amp;autopause=0&amp;controls=0&amp;loop=1"
-        >
-          <div class="o_bg_video_container">
-            <iframe
-              class="o_bg_video_iframe fade show"
-              frameborder="0"
-              aria-label="Background video"
-              id="o_bg_video_iframe_1"
-              src="https://player.vimeo.com/video/1039090966?autoplay=1&amp;muted=1&amp;autopause=0&amp;controls=0&amp;loop=1"
-              style="
-                width: 100%;
-                height: 152.469%;
-                inset-inline-start: 0px;
-                inset-block-start: -26.2345%;
-              "
-            ></iframe>
-          </div>
-
-          <div class="s_allow_columns container">
-            <h1 class="display-3" style="text-align: center; font-weight: bold">
-              <br />
-            </h1>
-            <p class="lead" style="text-align: center">
-              <br />
-            </p>
-          </div>
-        </section>
-        <section class="header-style-3"></section>
-        <div class="oe_structure oe_empty" />
-        <div class="page-content">
-          <!-- NOS SALONS ET CANAPÉS -->
-          <div class="oe_structure oe_empty" />
-          <section class="salon-products py-5">
-            <div class="container">
-              <div
-                class="section-header border-bottom border-2 d-flex justify-content-between align-items-center mb-4"
+        <div class="all-content">
+          <!-- CUSTOM CODE START -->
+          <section class="video-section-alt">
+            <div class="video-container">
+              <video
+                autoplay="true"
+                loop="true"
+                muted="true"
+                playsinline="true"
               >
-                <div class="pbmit-heading-subheading blue animation-style4">
-                  <h4 class="pbmit-subtitle" style="color: #1b3669">
-                    Notre Collection
-                  </h4>
-                  <h2 class="pbmit-title" style="color: #1b3669">
-                    Nos salons et canapés
-                  </h2>
-                </div>
-                <a
-                  href="/shop/category/salons-canapes-21"
-                  class="text-decoration-none"
-                  >→</a
-                >
-              </div>
-
-              <div class="products-grid" id="salonProductsGrid">
-                <t
-                  t-set="canapes_category"
-                  t-value="request.env['product.public.category'].search([('name', '=', 'Canapes')], limit=1)"
+                <source
+                  src="https://saloni.furniture/wp-content/uploads/air-cavalli-v1.mp4"
+                  type="video/mp4"
                 />
-                <t
-                  t-set="products"
-                  t-value="request.env['product.template'].search([
-                        ('public_categ_ids', 'in', canapes_category.ids),
-                        ('website_published', '=', True)
-                    ], limit=6)"
-                />
-
-                <div class="row g-4">
-                  <t t-foreach="products" t-as="product">
-                    <div class="col-12 col-sm-6 col-lg-4">
-                      <div class="product-card">
-                        <a
-                          t-att-href="product.website_url"
-                          class="product-link"
-                        >
-                          <div class="product-image">
-                            <img
-                              t-att-src="website.image_url(product, 'image_1024')"
-                              class="img-fluid"
-                              t-att-alt="product.name"
-                            />
-                          </div>
-                          <div class="product-info text-center">
-                            <h3 class="product-title" t-esc="product.name" />
-                            <div
-                              class="product-category"
-                              t-esc="product.public_categ_ids[0].name"
-                            />
-                            <div class="product-price">
-                              <!-- <span t-field="product.list_price" t-options="{'widget': 'monetary', 
-                                                                 'display_currency': website.currency_id}" /> -->
-                              <!-- <span>Sur commande</span> -->
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                  </t>
-                </div>
+              </video>
+            </div>
+            <div class="video-overlay"></div>
+            <div class="corner-content">
+              <div class="left-text">
+                <h2 class="corner-title">
+                  COLLECTION DE MOBILIER HAUT DE GAMME
+                </h2>
+                <p class="corner-description">
+                  Un design moderne et élégant pour un intérieur raffiné
+                </p>
               </div>
-
-              <div
-                class="section-header d-flex justify-content-center align-items-center mt-4"
-              >
-                <div
-                  class="pbmit-heading-subheading blue animation-style4"
-                ></div>
-                <a
-                  href="/shop/category/salons-canapes-21"
-                  class="pbmit-subtitle h6 text-decoration-underline"
-                  >Voir plus</a
-                >
-              </div>
+              <a href="/shop" class="corner-link">Voir les produits</a>
             </div>
           </section>
-          <div class="oe_structure oe_empty" />
-          <!-- NOS SALONS ET CANAPÉS -->
-          <!-- COMPOSITIONS MURALES -->
-          <div
-            class="section-header border-bottom border-2"
-            style="border-color: #1b3669 !important"
-          />
-          <div class="oe_structure oe_empty" />
-          <section class="salon-products py-5">
-            <div class="container">
-              <div
-                class="section-header border-bottom border-2 d-flex justify-content-between align-items-center mb-4"
-              >
-                <div class="pbmit-heading-subheading blue animation-style4">
-                  <h4 class="pbmit-subtitle" style="color: #1b3669">
-                    Notre Collection
-                  </h4>
-                  <h2 class="pbmit-title" style="color: #1b3669">
-                    Compositions murales
-                  </h2>
-                </div>
-                <a
-                  href="/shop/category/salons-bibliotheques-compositions-murales-20"
-                  class="text-decoration-none"
-                  >→</a
-                >
-              </div>
+          <!-- CUSTOM CODE END -->
 
-              <div class="products-grid" id="salonProductsGrid">
-                <t
-                  t-set="canapes_category"
-                  t-value="request.env['product.public.category'].search([('name', '=', 'Compositions murales')], limit=1)"
-                />
-                <t
-                  t-set="products"
-                  t-value="request.env['product.template'].search([
-                        ('public_categ_ids', 'in', canapes_category.ids),
-                        ('website_published', '=', True)
-                    ], limit=6)"
-                />
+          <section class="products-section mt-40">
+            <h2 class="section-title">TENDANCE 2025<br />PRODUITS</h2>
 
-                <div class="row g-4">
-                  <t t-foreach="products" t-as="product">
-                    <div class="col-12 col-sm-6 col-lg-4">
-                      <div class="product-card">
-                        <a
-                          t-att-href="product.website_url"
-                          class="product-link"
-                        >
-                          <div class="product-image">
-                            <img
-                              t-att-src="website.image_url(product, 'image_1024')"
-                              class="img-fluid"
-                              t-att-alt="product.name"
-                            />
-                          </div>
-                          <div class="product-info text-center">
-                            <h3 class="product-title" t-esc="product.name" />
-                            <div
-                              class="product-category"
-                              t-esc="product.public_categ_ids[0].name"
-                            />
-                            <div class="product-price">
-                              <!-- <span t-field="product.list_price" t-options="{'widget': 'monetary', 
-                                                                 'display_currency': website.currency_id}" /> -->
-                              <!-- <span>Sur commande</span> -->
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                  </t>
-                </div>
-              </div>
-
-              <div
-                class="section-header d-flex justify-content-center align-items-center mt-4"
-              >
-                <div
-                  class="pbmit-heading-subheading blue animation-style4"
-                ></div>
-                <a
-                  href="/shop/category/salons-bibliotheques-compositions-murales-20"
-                  class="pbmit-subtitle h6 text-decoration-underline"
-                  >Voir plus</a
-                >
-              </div>
-            </div>
-          </section>
-
-          <section
-            class="s_cover bg-black-50 o_colored_level pt184 pb208 o_background_video s_parallax_no_overflow_hidden oe_img_bg o_bg_img_center"
-            data-scroll-background-ratio="0"
-            data-snippet="s_cover"
-            data-name="Couverture"
-            style="
-              background-image: url('/web/image/42533-50d71794/vid_img.webp');
-            "
-            data-bg-video-src="https://www.youtube.com/embed/hkmFIOsS0ws?rel=0&amp;autoplay=1&amp;mute=1&amp;enablejsapi=1&amp;controls=0&amp;loop=1&amp;playlist=hkmFIOsS0ws&amp;fs=0"
-            data-mimetype="image/webp"
-            data-original-id="42532"
-            data-original-src="/web/image/42532-775c022c/vid_img.png"
-            data-mimetype-before-conversion="image/png"
-            data-resize-width="1920"
-          >
-            <div class="o_bg_video_container">
-              <iframe
-                class="o_bg_video_iframe fade show"
-                frameborder="0"
-                aria-label="Background video"
-                id="o_bg_video_iframe_2"
-                src="https://www.youtube.com/embed/hkmFIOsS0ws?rel=0&amp;autoplay=1&amp;mute=1&amp;enablejsapi=1&amp;controls=0&amp;loop=1&amp;playlist=hkmFIOsS0ws&amp;fs=0"
-                style="
-                  width: 100%;
-                  height: 165.78%;
-                  inset-inline-start: 0px;
-                  inset-block-start: -32.8901%;
-                "
-              ></iframe>
-            </div>
-
-            <div class="o_we_bg_filter bg-black-50"></div>
-            <div class="s_allow_columns container">
-              <h1
-                class="display-3"
-                style="text-align: center; font-weight: bold"
-              >
-                Des salles à manger d'exception
-              </h1>
-              <ul class="lead" style="text-align: center">
-                <li>
-                  Des tables, chaises et buffets qui donne à la salle à manger
-                  un style chic et tendance
-                </li>
-                <li>
-                  &#160;grâce à d'extraordinaire combinaison de matières et de
-                  coloris.
-                </li>
-              </ul>
-              <p style="text-align: center">
-                ﻿<a
-                  class="btn btn-primary o_default_snippet_text"
-                  href="/contactus"
-                  >﻿Contactez-nous﻿</a
-                >﻿
-              </p>
-            </div>
-          </section>
-          <div class="oe_structure oe_empty" />
-          <!-- COMPOSITION MURALES END -->
-
-          <!-- Service Start -->
-          <!-- Product Section -->
-          <div class="oe_structure oe_empty" />
-          <section class="salon-products py-5">
-            <div class="container">
-              <div
-                class="section-header border-bottom border-2 d-flex justify-content-between align-items-center mb-4"
-              >
-                <div class="pbmit-heading-subheading blue animation-style4">
-                  <h4 class="pbmit-subtitle" style="color: #1b3669">
-                    Notre Collection
-                  </h4>
-                  <h2 class="pbmit-title" style="color: #1b3669">
-                    Table à manger
-                  </h2>
-                </div>
-                <a
-                  href="/shop/category/salles-a-manger-table-a-manger-27"
-                  class="text-decoration-none"
-                  >→</a
-                >
-              </div>
-
-              <div class="products-grid" id="salonProductsGrid">
-                <t
-                  t-set="canapes_category"
-                  t-value="request.env['product.public.category'].search([('name', '=', 'Table à manger')], limit=1)"
-                />
-                <t
-                  t-set="products"
-                  t-value="request.env['product.template'].search([
-                        ('public_categ_ids', 'in', canapes_category.ids),
-                        ('website_published', '=', True)
-                    ], limit=6)"
-                />
-
-                <div class="row g-4">
-                  <t t-foreach="products" t-as="product">
-                    <div class="col-12 col-sm-6 col-lg-4">
-                      <div class="product-card">
-                        <a
-                          t-att-href="product.website_url"
-                          class="product-link"
-                        >
-                          <div class="product-image">
-                            <img
-                              t-att-src="website.image_url(product, 'image_1024')"
-                              class="img-fluid"
-                              t-att-alt="product.name"
-                            />
-                          </div>
-                          <div class="product-info text-center">
-                            <h3 class="product-title" t-esc="product.name" />
-                            <div
-                              class="product-category"
-                              t-esc="product.public_categ_ids[0].name"
-                            />
-                            <div class="product-price">
-                              <!-- <span t-field="product.list_price" t-options="{'widget': 'monetary', 
-                                                                 'display_currency': website.currency_id}" /> -->
-                              <!-- <span>Sur commande</span> -->
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                  </t>
-                </div>
-              </div>
-
-              <div
-                class="section-header d-flex justify-content-center align-items-center mt-4"
-              >
-                <div
-                  class="pbmit-heading-subheading blue animation-style4"
-                ></div>
-                <a
-                  href="/shop/category/salles-a-manger-table-a-manger-27"
-                  class="pbmit-subtitle h6 text-decoration-underline"
-                  >Voir plus</a
-                >
-              </div>
-            </div>
-          </section>
-          <div class="oe_structure oe_empty" />
-          <!-- Service End -->
-
-          <!-- Collection Buffet -->
-          <div class="oe_structure oe_empty" />
-          <section class="salon-products py-5">
-            <div class="container">
-              <div
-                class="section-header border-bottom border-2 d-flex justify-content-between align-items-center mb-4"
-              >
-                <div class="pbmit-heading-subheading blue animation-style4">
-                  <h4 class="pbmit-subtitle" style="color: #1b3669">
-                    Notre Collection
-                  </h4>
-                  <h2 class="pbmit-title" style="color: #1b3669">Buffets</h2>
-                </div>
-                <a
-                  href="/shop/category/salles-a-manger-buffets-26"
-                  class="text-decoration-none"
-                  >→</a
-                >
-              </div>
-
-              <div class="products-grid" id="salonProductsGrid">
-                <t
-                  t-set="canapes_category"
-                  t-value="request.env['product.public.category'].search([('name', '=', 'Buffets')], limit=1)"
-                />
-                <t
-                  t-set="products"
-                  t-value="request.env['product.template'].search([
-                        ('public_categ_ids', 'in', canapes_category.ids),
-                        ('website_published', '=', True)
-                    ], limit=6)"
-                />
-
-                <div class="row g-4">
-                  <t t-foreach="products" t-as="product">
-                    <div class="col-12 col-sm-6 col-lg-4">
-                      <div class="product-card">
-                        <a
-                          t-att-href="product.website_url"
-                          class="product-link"
-                        >
-                          <div class="product-image">
-                            <img
-                              t-att-src="website.image_url(product, 'image_1024')"
-                              class="img-fluid"
-                              t-att-alt="product.name"
-                            />
-                          </div>
-                          <div class="product-info text-center">
-                            <h3 class="product-title" t-esc="product.name" />
-                            <div
-                              class="product-category"
-                              t-esc="product.public_categ_ids[0].name"
-                            />
-                            <div class="product-price">
-                              <!-- <span t-field="product.list_price" t-options="{'widget': 'monetary', 
-                                                                 'display_currency': website.currency_id}" /> -->
-                              <!-- <span>Sur commande</span> -->
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                  </t>
-                </div>
-              </div>
-
-              <div
-                class="section-header d-flex justify-content-center align-items-center mt-4"
-              >
-                <div
-                  class="pbmit-heading-subheading blue animation-style4"
-                ></div>
-                <a
-                  href="/shop/category/salles-a-manger-buffets-26"
-                  class="pbmit-subtitle h6 text-decoration-underline"
-                  >Voir plus</a
-                >
-              </div>
-            </div>
-          </section>
-          <div class="oe_structure oe_empty" />
-
-          <section
-            class="s_cover bg-black-50 o_colored_level pt176 pb168 o_background_video s_parallax_no_overflow_hidden oe_img_bg o_bg_img_center"
-            data-scroll-background-ratio="0"
-            data-snippet="s_cover"
-            data-name="Couverture"
-            style="
-              background-image: url('/web/image/42537-e85c6f47/img_2.webp');
-            "
-            data-bg-video-src="https://www.youtube.com/embed/qzkoVRYEc4A?rel=0&amp;autoplay=1&amp;mute=1&amp;enablejsapi=1&amp;controls=0&amp;loop=1&amp;playlist=qzkoVRYEc4A&amp;fs=0"
-            data-mimetype="image/webp"
-            data-original-id="42536"
-            data-original-src="/web/image/42536-96b60894/img_2.png"
-            data-mimetype-before-conversion="image/png"
-            data-resize-width="1759"
-          >
-            <div class="o_bg_video_container">
-              <iframe
-                class="o_bg_video_iframe fade show"
-                frameborder="0"
-                aria-label="Background video"
-                id="o_bg_video_iframe_3"
-                src="https://www.youtube.com/embed/qzkoVRYEc4A?rel=0&amp;autoplay=1&amp;mute=1&amp;enablejsapi=1&amp;controls=0&amp;loop=1&amp;playlist=qzkoVRYEc4A&amp;fs=0"
-                style="
-                  width: 100%;
-                  height: 189.685%;
-                  inset-inline-start: 0px;
-                  inset-block-start: -44.8424%;
-                "
-              ></iframe>
-            </div>
-
-            <div class="o_we_bg_filter bg-black-50"></div>
-            <div class="container s_allow_columns">
-              <ul>
-                <li>
-                  <h1
-                    class="display-3"
-                    style="text-align: center; font-weight: bold"
-                  >
-                    Des chambres à coucher de rêve
-                  </h1>
-                </li>
-              </ul>
-              <ul class="lead" style="text-align: center">
-                <li>
-                  Des chambres à coucher de haute qualité, design et conçues
-                  pour améliorer votre bien-être.
-                </li>
-              </ul>
-              <p style="text-align: center">
-                ﻿<a
-                  class="btn btn-primary o_default_snippet_text"
-                  href="/contactus"
-                  >﻿Contactez-nous﻿</a
-                >﻿
-              </p>
-            </div>
-          </section>
-          <!-- Collection Buffet -->
-
-          <!-- Marquee Start -->
-          <section class="marquee-one">
-            <div class="container-fluid p-0">
-              <div class="swiper-slider marquee">
-                <div class="swiper-wrapper">
-                  <article class="pbmit-marquee-effect-style-1 swiper-slide">
-                    <div class="pbmit-tag-wrapper">
-                      <h2
-                        class="pbmit-element-title"
-                        data-text="Salons Luxueux"
-                      >
-                        Salons Luxueux
-                      </h2>
-                    </div>
-                  </article>
-                  <article class="pbmit-marquee-effect-style-1 swiper-slide">
-                    <div class="pbmit-tag-wrapper">
-                      <h2
-                        class="pbmit-element-title"
-                        data-text="Canapés Design"
-                      >
-                        Canapés Design
-                      </h2>
-                    </div>
-                  </article>
-                  <article class="pbmit-marquee-effect-style-1 swiper-slide">
-                    <div class="pbmit-tag-wrapper">
-                      <h2
-                        class="pbmit-element-title"
-                        data-text="Fauteuils Premium"
-                      >
-                        Fauteuils Premium
-                      </h2>
-                    </div>
-                  </article>
-                  <article class="pbmit-marquee-effect-style-1 swiper-slide">
-                    <div class="pbmit-tag-wrapper">
-                      <h2
-                        class="pbmit-element-title"
-                        data-text="Collections Exclusives"
-                      >
-                        Collections Exclusives
-                      </h2>
-                    </div>
-                  </article>
-                </div>
-              </div>
-            </div>
-          </section>
-          <!-- Marquee End -->
-
-          <!-- Portfolio Start -->
-          <div class="oe_structure oe_empty" />
-          <section class="salon-products py-5">
-            <div class="container-fluid">
-              <div
-                class="section-header border-bottom border-2 d-flex justify-content-between align-items-center mb-4 container"
-              >
-                <div
-                  class="pbmit-heading-subheading blue animation-style mx-auto text-center"
-                >
-                  <h4 class="pbmit-subtitle" style="color: #1b3669">
-                    Notre Collection
-                  </h4>
-                  <h2 class="pbmit-title" style="color: #1b3669">
-                    Chambre à coucher - Lits
-                  </h2>
-                </div>
-                <a
-                  href="/shop/category/chambres-a-coucher-lits-29"
-                  class="text-decoration-none"
-                  >→</a
-                >
-              </div>
-
-              <div class="products-grid" id="salonProductsGrid">
-                <t
-                  t-set="canapes_category"
-                  t-value="request.env['product.public.category'].search([('name', '=', 'Lits')], limit=1)"
-                />
-                <t
-                  t-set="products"
-                  t-value="request.env['product.template'].search([
-                        ('public_categ_ids', 'in', canapes_category.ids),
-                        ('website_published', '=', True)
-                    ], limit=6)"
-                />
-
-                <div class="row g-4">
-                  <t t-foreach="products" t-as="product">
-                    <div class="col-12 col-sm-6 col-lg-4">
-                      <div class="product-card">
-                        <a
-                          t-att-href="product.website_url"
-                          class="product-link"
-                        >
-                          <div class="product-image">
-                            <img
-                              t-att-src="website.image_url(product, 'image_1024')"
-                              class="img-fluid"
-                              t-att-alt="product.name"
-                            />
-                          </div>
-                          <div class="product-info text-center">
-                            <h3 class="product-title" t-esc="product.name" />
-                            <div
-                              class="product-category"
-                              t-esc="product.public_categ_ids[0].name"
-                            />
-                            <div class="product-price">
-                              <!-- <span t-field="product.list_price" t-options="{'widget': 'monetary', 
-                                                                 'display_currency': website.currency_id}" /> -->
-                              <!-- <span>Sur commande</span> -->
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                  </t>
-                </div>
-              </div>
-
-              <div
-                class="section-header border-bottom border-2 d-flex justify-content-between align-items-center mt-4 container"
-              >
-                <div
-                  class="pbmit-heading-subheading blue animation-style4"
-                ></div>
-                <a
-                  href="/shop/category/chambres-a-coucher-lits-29"
-                  class="pbmit-subtitle h6 text-decoration-underline"
-                  >Voir plus</a
-                >
-              </div>
-            </div>
-          </section>
-          <div class="oe_structure oe_empty" />
-          <!-- Portfolio End -->
-
-          <!-- Ihbox Start -->
-          <section>
-            <div class="container p-0">
-              <div class="ihbox-style-10-bg-area pbmit-bg-color-light-2">
-                <div
-                  class="pbmit-heading-subheading blue text-center animation-style2"
-                >
-                  <h4 class="pbmit-subtitle" style="color: #1b3669">
-                    Pourquoi Nous Choisir ?
-                  </h4>
-                  <h2 class="pbmit-title">
-                    L'Excellence du Mobilier <br />
-                    à Votre Service
-                  </h2>
+            <div id="custom-swiper" class="swiper custom-swiper">
+              <div class="swiper-wrapper custom-swiper-wrapper">
+                <div class="swiper-slide custom-swiper-slide">
+                  <img
+                    src="https://www.kdmobilier.sn/web/image/product.product/8229/image_1920/CANAPES%20MODUS?unique=000e460"
+                    alt="Modern living room with natural light"
+                  />
+                  <div class="slide-content custom-slide-content">
+                    <h3 class="slide-title">Élégance Intemporelle</h3>
+                    <p class="slide-subtitle">
+                      Une harmonie parfaite entre luxe et confort
+                    </p>
+                  </div>
                 </div>
                 <div
-                  class="swiper-slider"
-                  data-autoplay="false"
-                  data-loop="true"
-                  data-dots="false"
-                  data-arrows="false"
-                  data-columns="4"
-                  data-margin="30"
-                  data-effect="slide"
+                  class="swiper-slide custom-swiper-slide custom-swiper-slide"
                 >
-                  <div class="swiper-wrapper">
-                    <!-- Slide1 -->
-                    <article class="pbmit-miconheading-style-17 swiper-slide">
-                      <div class="pbmit-ihbox-style-17">
-                        <div class="pbmit-ihbox-box">
-                          <div class="pbmit-ihbox-icon">
-                            <div
-                              class="pbmit-ihbox-icon-wrapper pbmit-icon-type-icon"
-                            >
-                              <i
-                                class="pbmit-xinterio-icon pbmit-xinterio-icon-living-room"
-                              ></i>
-                            </div>
-                          </div>
-                          <h2 class="pbmit-element-title">Garantie Qualité</h2>
-                          <div class="pbmit-heading-desc">
-                            Nous garantissons la qualité exceptionnelle de nos
-                            meubles avec un service après-vente irréprochable.
-                          </div>
-                        </div>
-                        <div class="pbmit-box-number-wrap">
-                          <div class="pbmit-ihbox-box-number">01</div>
-                        </div>
-                      </div>
-                    </article>
-                    <!-- Slide2 -->
-                    <article class="pbmit-miconheading-style-17 swiper-slide">
-                      <div class="pbmit-ihbox-style-17">
-                        <div class="pbmit-ihbox-box">
-                          <div class="pbmit-ihbox-icon">
-                            <div
-                              class="pbmit-ihbox-icon-wrapper pbmit-icon-type-icon"
-                            >
-                              <i
-                                class="pbmit-xinterio-icon pbmit-xinterio-icon-house"
-                              ></i>
-                            </div>
-                          </div>
-                          <h2 class="pbmit-element-title">Matériaux Premium</h2>
-                          <div class="pbmit-heading-desc">
-                            Sélection rigoureuse des meilleurs matériaux pour
-                            une durabilité et un confort optimal.
-                          </div>
-                        </div>
-                        <div class="pbmit-box-number-wrap">
-                          <div class="pbmit-ihbox-box-number">02</div>
-                        </div>
-                      </div>
-                    </article>
-                    <!-- Slide3 -->
-                    <article class="pbmit-miconheading-style-17 swiper-slide">
-                      <div class="pbmit-ihbox-style-17">
-                        <div class="pbmit-ihbox-box">
-                          <div class="pbmit-ihbox-icon">
-                            <div
-                              class="pbmit-ihbox-icon-wrapper pbmit-icon-type-icon"
-                            >
-                              <i
-                                class="pbmit-xinterio-icon pbmit-xinterio-icon-brickwall-1"
-                              ></i>
-                            </div>
-                          </div>
-                          <h2 class="pbmit-element-title">Design Exclusif</h2>
-                          <div class="pbmit-heading-desc">
-                            Des collections uniques alliant élégance
-                            contemporaine et confort absolu.
-                          </div>
-                        </div>
-                        <div class="pbmit-box-number-wrap">
-                          <div class="pbmit-ihbox-box-number">03</div>
-                        </div>
-                      </div>
-                    </article>
-                    <!-- Slide4 -->
-                    <article class="pbmit-miconheading-style-17 swiper-slide">
-                      <div class="pbmit-ihbox-style-17">
-                        <div class="pbmit-ihbox-box">
-                          <div class="pbmit-ihbox-icon">
-                            <div
-                              class="pbmit-ihbox-icon-wrapper pbmit-icon-type-icon"
-                            >
-                              <i
-                                class="pbmit-xinterio-icon pbmit-xinterio-icon-hard-hat"
-                              ></i>
-                            </div>
-                          </div>
-                          <h2 class="pbmit-element-title">Prix Transparent</h2>
-                          <div class="pbmit-heading-desc">
-                            Une politique de prix claire et des facilités de
-                            paiement adaptées à vos besoins.
-                          </div>
-                        </div>
-                        <div class="pbmit-box-number-wrap">
-                          <div class="pbmit-ihbox-box-number">04</div>
-                        </div>
-                      </div>
-                    </article>
-                    <!-- Slide5 -->
-                    <article class="pbmit-miconheading-style-17 swiper-slide">
-                      <div class="pbmit-ihbox-style-17">
-                        <div class="pbmit-ihbox-box">
-                          <div class="pbmit-ihbox-icon">
-                            <div
-                              class="pbmit-ihbox-icon-wrapper pbmit-icon-type-icon"
-                            >
-                              <i
-                                class="pbmit-xinterio-icon pbmit-xinterio-icon-3d"
-                              ></i>
-                            </div>
-                          </div>
-                          <h2 class="pbmit-element-title">
-                            Service Personnalisé
-                          </h2>
-                          <div class="pbmit-heading-desc">
-                            Un accompagnement sur mesure pour créer l'intérieur
-                            de vos rêves.
-                          </div>
-                        </div>
-                        <div class="pbmit-box-number-wrap">
-                          <div class="pbmit-ihbox-box-number">05</div>
-                        </div>
-                      </div>
-                    </article>
+                  <img
+                    src="https://www.kdmobilier.sn/web/image/product.image/3067/image_1920/kd%20product%20image?unique=e7e4158"
+                    alt="Contemporary living space"
+                  />
+                  <div class="slide-content custom-slide-content">
+                    <h3 class="slide-title">Design Contemporain</h3>
+                    <p class="slide-subtitle">
+                      L'art de vivre moderne redéfini
+                    </p>
+                  </div>
+                </div>
+                <div class="swiper-slide custom-swiper-slide">
+                  <img
+                    src="https://www.kdmobilier.sn/web/image/product.image/4845/image_1920/kd%20product%20image?unique=d208abd"
+                    alt="Minimalist living room"
+                  />
+                  <div class="slide-content custom-slide-content">
+                    <h3 class="slide-title">Luxe Minimaliste</h3>
+                    <p class="slide-subtitle">
+                      La sophistication dans sa forme la plus pure
+                    </p>
+                  </div>
+                </div>
+                <div class="swiper-slide custom-swiper-slide">
+                  <img
+                    src="https://www.kdmobilier.sn/web/image/product.image/5058/image_1920/kd%20product%20image?unique=b9a486c"
+                    alt="Modern interior design"
+                  />
+                  <div class="slide-content custom-slide-content">
+                    <h3 class="slide-title">Excellence Raffinée</h3>
+                    <p class="slide-subtitle">
+                      Un équilibre parfait de style et de fonction
+                    </p>
+                  </div>
+                </div>
+                <div class="swiper-slide custom-swiper-slide">
+                  <img
+                    src="https://www.kdmobilier.sn/web/image/product.image/3071/image_1920/kd%20product%20image?unique=e7e4158"
+                    alt="Elegant living room"
+                  />
+                  <div class="slide-content custom-slide-content">
+                    <h3 class="slide-title">Prestige Moderne</h3>
+                    <p class="slide-subtitle">L'essence du luxe contemporain</p>
                   </div>
                 </div>
               </div>
+              <div class="swiper-button-next customs-swiper-button-next"></div>
+              <div class="swiper-button-prev customs-swiper-button-prev"></div>
+            </div>
+
+            <p class="description">
+              Nous sommes ravis de vous présenter une gamme de pièces élégantes
+              et fonctionnelles qui ne manqueront pas de rehausser votre espace.
+              Des modèles modernes aux modèles classiques, nous en avons pour
+              tous les goûts et toutes les préférences.
+            </p>
+
+            <a href="/shop" class="cta-button">Découvrir les produits</a>
+          </section>
+          <!-- HERO SCREEN START -->
+          <!-- <div
+            class="heroscreen mob-pd-tb"
+            style="padding-left: 0; padding-right: 0px"
+          >
+            <div
+              class="swiper mySwiperyear homepageslider mt-32"
+              id="homeslider"
+            >
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img
+                    src="/theme_kdmobilier/static/src/images/4907-b-domo-yilbasi.webp"
+                    alt=""
+                    class="desktopslider img"
+                    loading="lazy"
+                  />
+                  <img
+                    src="/theme_kdmobilier/static/src/images/4907-b-domo-yilbasi.webp"
+                    alt=" mobil"
+                    class="mobileslider img"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <div class="swiper-button-next d-none"></div>
+              <div class="swiper-button-prev d-none"></div>
+            </div>
+          </div> -->
+          <!-- HERO SCREEN END -->
+
+          <!-- VIDEO SCREEN START -->
+          <!-- <div
+            class="background-vid-wrapper h-100-vh bg-video"
+            style="
+              background: #fff
+                url('https://cloud.loda.com.tr/img/42/4120-b-web-savana-solara-palmo-video.webp');
+              background-size: cover;
+            "
+          >
+            <iframe
+              data-src="https://player.vimeo.com/video/967566690?h=6a52880ad7?&amp;autoplay=1&amp;loop=1&amp;title=0&amp;byline=0&amp;portrait=0&amp;muted=1&amp;background=1&amp;app_id=58479"
+              width="1920"
+              height="1080"
+              frameborder="0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen=""
+              title="Modern Tasarım Mobilyalar - Loda"
+            ></iframe>
+          </div> -->
+          <!-- VIDEO SCREEN END -->
+          <!-- Hero Screen 1 -->
+          <div
+            class="heroscreen mob-pd-tb py-40"
+            style="padding-left: 0; padding-right: 0px"
+          >
+            <div class="swiper mySwiper homepageslider" id="homeslider">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img
+                    src="theme_kdmobilier/static/src/images/4938-b-modo-tv.webp"
+                    alt=""
+                    class="desktopslider img"
+                    loading="lazy"
+                  />
+                  <img
+                    src="theme_kdmobilier/static/src/images/4938-b-modo-tv.webp"
+                    alt=" mobil"
+                    class="mobileslider img"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <div class="swiper-button-next d-none"></div>
+              <div class="swiper-button-prev d-none"></div>
+            </div>
+          </div>
+          <!-- Hero Screen 1 END -->
+
+          <section class="saloni-video-section">
+            <div class="saloni-video-container">
+              <video
+                autoplay="true"
+                loop="true"
+                muted="true"
+                playsinline="true"
+              >
+                <source
+                  src="https://saloni.furniture/wp-content/uploads/valencia-sofa-video.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+            <div class="saloni-video-overlay"></div>
+            <div class="saloni-video-text">
+              <h2 class="saloni-video-title">L'Art de Vivre</h2>
+              <p class="saloni-video-description">
+                Découvrez notre collection Valencia, où le design moderne
+                rencontre le confort intemporel. Chaque pièce est
+                méticuleusement conçue pour créer un espace de vie qui reflète
+                votre style unique.
+              </p>
             </div>
           </section>
-          <!-- Ihbox End -->
 
-          <!-- Video Start -->
-          <section
-            class="pbmit-bg-color-secondary video-section-one fadeIn animated animated-slow"
+          <!-- Hero Screen 2 -->
+          <div
+            class="heroscreen mob-pd-tb pt-4"
+            style="
+              padding-left: 0;
+              padding-right: 0px;
+              padding-top: 0;
+              padding-bottom: 0px;
+            "
           >
-            <div class="pbmit-bg-overlay"></div>
-            <div class="container">
-              <div class="text-center">
-                <div class="pbmit-heading-subheading-style-1 animation-style4">
-                  <h4 class="pbmit-subtitle" style="color: #ffffff">
-                    Appelez-nous au +221 78 533 28 28
-                  </h4>
-                  <h2 class="pbmit-title">
-                    Créateur d'Intérieurs <br />
-                    Spécialiste en
-                    <span id="js-rotating">
-                      mobilier de luxe, salons design, canapés sur mesure,
-                      aménagement d'espaces
-                    </span>
-                  </h2>
+            <div class="swiper mySwiper homepageslider" id="homeslider">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img
+                    src="theme_kdmobilier/static/src/images/4932-b-pavon-banner.webp"
+                    alt=""
+                    class="desktopslider img"
+                    loading="lazy"
+                  />
+                  <img
+                    src="theme_kdmobilier/static/src/images/4932-b-pavon-banner.webp"
+                    alt=" mobil"
+                    class="mobileslider img"
+                    loading="lazy"
+                  />
                 </div>
-                <div class="play-button">
-                  <a
-                    class="pbmit-icon pbmin-lightbox-video"
-                    href="https://www.youtube.com/watch?v=dixUIdLPw0k"
+              </div>
+              <div class="swiper-button-next d-none"></div>
+              <div class="swiper-button-prev d-none"></div>
+            </div>
+          </div>
+          <!-- Hero Screen 2 END -->
+
+          <!-- Hero Screen 3 -->
+          <!-- <div
+            class="heroscreen mob-pd-tb py-40"
+            style="padding-left: 0; padding-right: 0px"
+          >
+            <div class="swiper mySwiper3 homepageslider" id="homeslider">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img
+                    src="/theme_kdmobilier/static/src/images/4369-b-kesfet-tr.webp"
+                    alt=""
+                    class="desktopslider img"
+                    loading="lazy"
+                  />
+                  <img
+                    src="/theme_kdmobilier/static/src/images/4369-b-kesfet-tr.webp"
+                    alt=" mobil"
+                    class="mobileslider img"
+                    loading="lazy"
+                  />
+
+                  <div class="text-discover">
+                    <a href="tr/indirimli-urunler.html"> DÉCOUVRIR </a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-button-next d-none"></div>
+              <div class="swiper-button-prev d-none"></div>
+            </div>
+          </div> -->
+          <!-- Hero Screen 3 END -->
+
+          <!-- Hero Screen 4 -->
+          <!-- <div
+            class="background-vid-wrapper h-100-vh bg-video"
+            style="
+              background: #fff
+                url('https://cloud.loda.com.tr/img/41/4073-b-hSYFcdRHSuSdosnFfMJm.webp');
+              background-size: cover;
+            "
+          >
+            <iframe
+              data-src="https://player.vimeo.com/video/946885922?h=6a52880ad7?&amp;autoplay=1&amp;loop=1&amp;title=0&amp;byline=0&amp;portrait=0&amp;muted=1&amp;background=1&amp;app_id=58479"
+              width="1920"
+              height="1080"
+              frameborder="0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen=""
+              title="Modern Tasarım Mobilyalar - Loda"
+            ></iframe>
+          </div> -->
+          <!-- Hero Screen 4 end -->
+
+          <!-- Nova Collection -->
+          <!-- <div class="section without-padding" style="margin-top: 50px">
+            <div class="card-container space">
+              <div class="card xl-space">
+                <div class="content top-bottom">
+                  <div class="content-xs paddin-left-50">
+                    <div
+                      class="overline"
+                      style="width: 200px; text-align: right; font-size: 0.9em"
+                    >
+                      PRODUITS EN VEDETTE
+                    </div>
+                    <p style="width: 200px; text-align: right">
+                      Découvrez de près la collection Nova !
+                    </p>
+                  </div>
+                  <p
+                    class="introduction big no-styles mb-0"
+                    style="font-weight: 400; font-size: 16px; margin: auto"
                   >
-                    <i class="fa fa-play"></i>
+                    La collection Nova brille comme une étoile avec son design
+                    élégant, devenant la favorite des espaces grâce à ses
+                    détails scintillants !
+                  </p>
+                </div>
+                <div class="background-color white-smoke"></div>
+              </div>
+              <div class="card xl-space module-one">
+                <div
+                  class="slider _2 w-slider swiper mySwiper"
+                  data-delay="4000"
+                  data-animation="slide"
+                >
+                  <div class="mask-visible w-slider-mask swiper-wrapper">
+                    <div class="swiper-slide w-slide">
+                      <div class="slide-zoom-wrapper">
+                        <div class="collection-list-wrapper w-dyn-list">
+                          <div role="list" class="collection-list w-dyn-items">
+                            <div
+                              role="listitem"
+                              class="collection-item _1x w-dyn-item"
+                            >
+                              <a
+                                href="tr/nova-kose-koltuk.html"
+                                class="product-link w-inline-block"
+                              >
+                                <div class="content">
+                                  <div class="image-wrapper big module-1-img">
+                                    <div
+                                      class="background-color gainsboro"
+                                    ></div>
+                                    <div
+                                      data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_main_image_4dr.url%22%2C%22to%22%3A%22style.background-image%22%7D%5D"
+                                      style="
+                                        background-image: url(https://cloud.loda.com.tr/img/29/2854-b-ZOI5tp0E7dpWb6CCTzsS.webp);
+                                      "
+                                      class="background-image"
+                                      loading="lazy"
+                                    ></div>
+                                  </div>
+                                  <div class="product-description bottom">
+                                    <div
+                                      class="overline no-styles"
+                                      style="font-size: 0.7em"
+                                    >
+                                      Produit vedette de la semaine
+                                    </div>
+                                    <h6
+                                      class="product-title"
+                                      style="
+                                        font-size: 1.5em;
+                                        margin-bottom: 18px;
+                                        line-height: initial;
+                                        color: #5a5a5a;
+                                        font-weight: 400;
+                                      "
+                                    >
+                                      NOVA
+                                    </h6>
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide w-slide">
+                      <div class="slide-zoom-wrapper">
+                        <div class="collection-list-wrapper w-dyn-list">
+                          <div role="list" class="collection-list w-dyn-items">
+                            <div
+                              role="listitem"
+                              class="collection-item _1x w-dyn-item"
+                            >
+                              <a
+                                href="tr/nova-yemek-odasi.html"
+                                class="product-link w-inline-block"
+                              >
+                                <div class="content">
+                                  <div class="image-wrapper big module-1-img">
+                                    <div
+                                      class="background-color gainsboro"
+                                    ></div>
+                                    <div
+                                      data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_main_image_4dr.url%22%2C%22to%22%3A%22style.background-image%22%7D%5D"
+                                      style="
+                                        background-image: url(https://cloud.loda.com.tr/img/29/2852-b-cfCC5W0F5f1EmkR3ekH9.webp);
+                                      "
+                                      class="background-image"
+                                      loading="lazy"
+                                    ></div>
+                                  </div>
+                                  <div class="product-description bottom">
+                                    <div
+                                      class="overline no-styles"
+                                      style="font-size: 0.7em"
+                                    >
+                                      Produit vedette de la semaine
+                                    </div>
+                                    <h6
+                                      class="product-title"
+                                      style="
+                                        font-size: 1.5em;
+                                        margin-bottom: 18px;
+                                        line-height: initial;
+                                        color: #5a5a5a;
+                                        font-weight: 400;
+                                      "
+                                    >
+                                      NOVA
+                                    </h6>
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide w-slide">
+                      <div class="slide-zoom-wrapper">
+                        <div class="collection-list-wrapper w-dyn-list">
+                          <div role="list" class="collection-list w-dyn-items">
+                            <div
+                              role="listitem"
+                              class="collection-item _1x w-dyn-item"
+                            >
+                              <a
+                                href="tr/nova-yatak-odasi.html"
+                                class="product-link w-inline-block"
+                              >
+                                <div class="content">
+                                  <div class="image-wrapper big module-1-img">
+                                    <div
+                                      class="background-color gainsboro"
+                                    ></div>
+                                    <div
+                                      data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_main_image_4dr.url%22%2C%22to%22%3A%22style.background-image%22%7D%5D"
+                                      style="
+                                        background-image: url(https://cloud.loda.com.tr/img/29/2850-b-1KzYm67o37YWYvbk62Ag.webp);
+                                      "
+                                      class="background-image"
+                                      loading="lazy"
+                                    ></div>
+                                  </div>
+                                  <div class="product-description bottom">
+                                    <div
+                                      class="overline no-styles"
+                                      style="font-size: 0.7em"
+                                    >
+                                      Produit vedette de la semaine
+                                    </div>
+                                    <h6
+                                      class="product-title"
+                                      style="
+                                        font-size: 1.5em;
+                                        margin-bottom: 18px;
+                                        line-height: initial;
+                                        color: #5a5a5a;
+                                        font-weight: 400;
+                                      "
+                                    >
+                                      NOVA
+                                    </h6>
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide w-slide">
+                      <div class="slide-zoom-wrapper">
+                        <div class="collection-list-wrapper w-dyn-list">
+                          <div role="list" class="collection-list w-dyn-items">
+                            <div
+                              role="listitem"
+                              class="collection-item _1x w-dyn-item"
+                            >
+                              <a
+                                href="tr/nova-berjer.html"
+                                class="product-link w-inline-block"
+                              >
+                                <div class="content">
+                                  <div class="image-wrapper big module-1-img">
+                                    <div
+                                      class="background-color gainsboro"
+                                    ></div>
+                                    <div
+                                      data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_main_image_4dr.url%22%2C%22to%22%3A%22style.background-image%22%7D%5D"
+                                      style="
+                                        background-image: url(https://cloud.loda.com.tr/img/29/2851-b-CUTuIWJNbXATQC8GtPQB.webp);
+                                      "
+                                      class="background-image"
+                                      loading="lazy"
+                                    ></div>
+                                  </div>
+                                  <div class="product-description bottom">
+                                    <div
+                                      class="overline no-styles"
+                                      style="font-size: 0.7em"
+                                    >
+                                      Produit vedette de la semaine
+                                    </div>
+                                    <h6
+                                      class="product-title"
+                                      style="
+                                        font-size: 1.5em;
+                                        margin-bottom: 18px;
+                                        line-height: initial;
+                                        color: #5a5a5a;
+                                        font-weight: 400;
+                                      "
+                                    >
+                                      NOVA
+                                    </h6>
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-button-next custom"></div>
+                  <div class="swiper-button-prev custom"></div>
+                  <div class="swiper-pagination d-none"></div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+          <!-- Nova Collection END -->
+          <div class="oe_structure oe_empty" />
+          <section class="valencia-products py-5">
+            <div class="valencia-section-header">
+              <div class="valencia-section-subtitle">Collection exclusive</div>
+              <h2 class="valencia-section-title">
+                Salons Et <span>Canapé</span>
+              </h2>
+            </div>
+
+            <div class="valencia-products-grid">
+              <t
+                t-set="canapes_category"
+                t-value="request.env['product.public.category'].search([('name', '=', 'Canapes')], limit=1)"
+              />
+              <t
+                t-set="products"
+                t-value="request.env['product.template'].search([
+                        ('public_categ_ids', 'in', canapes_category.ids),
+                        ('website_published', '=', True)
+                    ], limit=6)"
+              />
+
+              <t t-foreach="products" t-as="product">
+                <div class="valencia-product-card">
+                  <a t-att-href="product.website_url" class="product-link">
+                    <div class="valencia-product-image">
+                      <img
+                        t-att-src="website.image_url(product, 'image_1024')"
+                        t-att-alt="product.name"
+                      />
+                      <div class="valencia-product-overlay">
+                        <button class="valencia-quick-view">Découvrir</button>
+                      </div>
+                    </div>
+                  </a>
+                  <a t-att-href="product.website_url" class="product-link">
+                    <div class="valencia-product-info">
+                      <div
+                        class="valencia-product-category"
+                        t-esc="product.public_categ_ids[0].name"
+                      />
+                      <h3 class="valencia-product-name" t-esc="product.name" />
+                    </div>
                   </a>
                 </div>
-              </div>
+              </t>
+            </div>
+            <div class="valencia-discover-more">
+              <a
+                href="/shop/category/salons-canapes-21"
+                class="valencia-discover-link"
+                >Découvrir Plus</a
+              >
             </div>
           </section>
-          <!-- Video Start -->
+          <!-- Sophia Collection -->
 
-          <!-- Blog Start -->
-          <section class="section-md">
-            <div class="container">
-              <!-- Header Section -->
-              <div class="row align-items-center">
-                <div class="col-md-6">
-                  <div class="pbmit-heading-subheading blue animation-style4">
-                    <h4 class="pbmit-subtitle" style="color: #1b3669">
-                      Ce que nous faisons
-                    </h4>
-                    <h2 class="pbmit-title">
-                      Derniers articles et publications
-                    </h2>
-                  </div>
+          <!-- Sophia Collection END -->
+
+          <!--  -->
+          <!-- Loda About -->
+          <!-- <div class="section without-padding">
+            <div class="card-container space">
+              <div class="card xl-space">
+                <div class="content-xs" style="margin: auto">
+                  <div class="overline" style="font-size: 1em">Çünkü Loda,</div>
+                  <h3
+                    class="title no-bottom"
+                    style="
+                      font-weight: 400;
+                      font-size: 1.2vw;
+                      letter-spacing: -0.03125rem;
+                    "
+                  >
+                    Benzersiz tasarımlarıyla yaşam alanlarınıza zenginlik katar.
+                  </h3>
                 </div>
-                <div class="col-md-6">
-                  <div class="blog-btn">
-                    <a class="pbmit-btn pbmit-btn-outline" href="/blog">
-                      <span class="pbmit-button-content-wrapper">
-                        <span class="pbmit-button-text">Tous Nos Blogs</span>
-                      </span>
+                <div class="background-color white-smoke"></div>
+              </div>
+              <div class="card xl-space">
+                <div class="content stretch">
+                  <div class="product-link">
+                    <a
+                      href="tr/nova-berjer.html"
+                      class="card l-bg-image w-inline-block"
+                    >
+                      <div class="content bottom">
+                        <h5 class="font-white no-styles">Nova Koleksiyonu</h5>
+                        <div class="overline font-white"></div>
+                      </div>
+                      <div class="background-wrapper">
+                        <div
+                          class="background-image team-08"
+                          style="
+                            background-image: url(https://cloud.loda.com.tr/img/29/2856-b-kyhQ4GQ38JsWp7aAQDrD.webp);
+                          "
+                          loading="lazy"
+                        ></div>
+                        <div class="background-color gainsboro"></div>
+                      </div>
                     </a>
                   </div>
                 </div>
+                <div class="background-color white-smoke"></div>
               </div>
+              <div class="card xl-space">
+                <div class="background-color gainsboro"></div>
+                <div
+                  class="background-image why-we-i"
+                  style="
+                    background-image: url(https://cloud.loda.com.tr/img/30/2947-b-nova-konsol-3.webp);
+                  "
+                  loading="lazy"
+                ></div>
+              </div>
+            </div>
+          </div> -->
+          <!-- Loda About END -->
 
-              <!-- Blog Posts Section -->
-              <div class="row g-0 align-items-center">
-                <t
-                  t-set="posts"
-                  t-value="env['blog.post'].search([], limit=4, order='post_date desc')"
-                />
+          <div class="horizontal-rule"></div>
+          <!-- Newsletter -->
+          <section class="newsletter-section">
+            <div class="newsletter-bg"></div>
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-9 newsletter-content text-center">
+                  <h3 class="kdmbolier-section-title">Notre Newsletter</h3>
+                  <div class="gold-line mx-auto"></div>
+                  <h2 class="newsletter-title">
+                    Kdmobilier : Mobilier de haute gamme
+                  </h2>
+                  <p class="newsletter-description">
+                    Rejoignez notre cercle privilégié et découvrez en
+                    avant-première nos créations, nos inspirations et nos
+                    invitations aux événements exclusifs dédiés à l'art de
+                    vivre.
+                  </p>
 
-                <!-- Featured Post (First Post) -->
-                <div class="col-md-12 col-xl-7">
-                  <t t-if="posts">
-                    <article class="pbmit-ele-blog pbmit-blog-style-3">
-                      <div class="post-item d-flex">
-                        <div class="pbmit-featured-container">
-                          <t
-                            t-set="cover_properties"
-                            t-value="json.loads(posts[0].cover_properties)"
-                          />
-                          <div
-                            class="pbmit-bg-image"
-                            t-attf-style="background-image: url(#{cover_properties.get('background-image', '').replace('url(', '').replace(')', '').replace('&quot;', '')})"
-                          >
-                            <div class="pbmit-featured-img-wrapper">
-                              <div class="pbmit-featured-wrapper">
-                                <img
-                                  t-att-src="cover_properties.get('background-image', '').replace('url(', '').replace(')', '').replace('&quot;', '')"
-                                  class="img-fluid"
-                                  t-att-alt="posts[0].name"
-                                />
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="pbminfotech-box-wrap">
-                          <div class="pbminfotech-box-content">
-                            <div
-                              class="pbmit-date-admin-wraper d-flex align-items-center"
-                            >
-                              <div class="pbmit-meta-date pbmit-meta-line">
-                                <span class="pbmit-post-date">
-                                  <i class="pbmit-base-icon-calendar-3"></i>
-                                  <span
-                                    t-field="posts[0].post_date"
-                                    t-options='{"format": "MMM dd. YYYY"}'
-                                  />
-                                </span>
-                              </div>
-                              <div class="pbmit-meta-author pbmit-meta-line">
-                                <span class="pbmit-post-author">
-                                  <i class="pbmit-base-icon-user-3"></i>
-                                  <span>By </span>
-                                  <!-- <t t-esc="posts[0].author_id.name" /> -->
-                                  KD Mobilier
-                                </span>
-                              </div>
-                            </div>
-                            <h3 class="pbmit-post-title">
-                              <a
-                                t-att-href="posts[0].website_url"
-                                t-esc="posts[0].name"
-                              />
-                            </h3>
-                            <div
-                              class="pbminfotech-box-desc"
-                              t-esc="posts[0].subtitle"
-                            />
-                          </div>
-                          <a
-                            class="pbmit-blog-btn"
-                            t-att-href="posts[0].website_url"
-                          >
-                            <span class="pbmit-button-icon">
-                              <i class="pbmit-base-icon-pbmit-up-arrow"></i>
-                            </span>
-                          </a>
-                        </div>
+                  <form class="newsletter-form mx-auto">
+                    <div class="row g-3">
+                      <div class="col-md-8">
+                        <input
+                          type="email"
+                          class="form-control"
+                          placeholder="Votre adresse email"
+                          required="required"
+                        />
                       </div>
-                    </article>
-                  </t>
+                      <div class="col-md-4">
+                        <button type="submit" class="submit-btn w-100">
+                          S'inscrire
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+
+                  <p class="privacy-text">
+                    En vous inscrivant, vous acceptez notre
+                    <a href="#">politique de confidentialité</a>.<br />
+                    Vous pouvez vous désinscrire à tout moment.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Newsletter END -->
+
+          <!-- Customer Services -->
+          <section class="bg-black">
+            <div class="container py-5">
+              <div class="row g-5">
+                <!-- Left side - Hero Image -->
+                <div class="col-lg-7">
+                  <div class="hero-section">
+                    <div class="hero-overlay"></div>
+                    <img
+                      src="https://saloni-furniture.b-cdn.net/spio/ret_img,q_orig,to_auto,s_webp:avif/https://saloni.furniture/wp-content/uploads/slider-f7-1797x1200.jpg"
+                      alt="Luxury Canapé"
+                      class="w-100 h-100 object-fit-cover"
+                    />
+                    <div class="hero-content">
+                      <h1 class="hero-title">EXCELLENCE</h1>
+                      <p class="hero-subtitle">Artisanal Craftsmanship</p>
+                    </div>
+                  </div>
                 </div>
 
-                <!-- Other Posts -->
-                <div class="col-md-12 col-xl-5">
-                  <div class="blog-three-right-col">
-                    <div class="row">
-                      <t t-foreach="posts[1:4]" t-as="post">
-                        <article
-                          class="pbmit-ele-blog pbmit-blog-style-2 col-md-12"
-                        >
-                          <div class="post-item">
-                            <div class="pbminfotech-box-content">
-                              <div class="pbminfotech-content-inner">
-                                <div class="pbmit-featured-img-wrapper">
-                                  <div class="pbmit-featured-wrapper">
-                                    <t
-                                      t-set="cover_properties"
-                                      t-value="json.loads(post.cover_properties)"
-                                    />
-                                    <img
-                                      t-att-src="cover_properties.get('background-image', '').replace('url(', '').replace(')', '').replace('&quot;', '')"
-                                      class="img-fluid"
-                                      t-att-alt="post.name"
-                                    />
-                                  </div>
-                                </div>
-                                <div class="pbmit-meta-wraper">
-                                  <div
-                                    class="pbmit-meta-date-wrapper pbmit-meta-line"
-                                  >
-                                    <div class="pbmit-meta-date">
-                                      <span class="pbmit-post-date">
-                                        <i
-                                          class="pbmit-base-icon-calendar-3"
-                                        ></i>
-                                        <span
-                                          t-field="post.post_date"
-                                          t-options='{"format": "MMM dd. YYYY"}'
-                                        />
-                                      </span>
-                                    </div>
-                                  </div>
-                                  <div
-                                    class="pbmit-meta-author pbmit-meta-line"
-                                  >
-                                    <span class="pbmit-post-author">
-                                      <i class="pbmit-base-icon-user-3"></i>
-                                      <span>By </span>
-                                      <!-- <t t-esc="post.author_id.name" /> -->
-                                      KD MOBILIER
-                                    </span>
-                                  </div>
-                                  <div class="pbmit-content-wrapper">
-                                    <h3 class="pbmit-post-title">
-                                      <a
-                                        t-att-href="post.website_url"
-                                        t-esc="post.name"
-                                      />
-                                    </h3>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </article>
-                      </t>
+                <!-- Right side - Services -->
+                <div class="col-lg-5">
+                  <div>
+                    <h2 class="services-title mb-0">NOS SERVICES</h2>
+                    <div class="gold-line"></div>
+
+                    <div class="service-item">
+                      <div class="service-header">
+                        <div class="service-line"></div>
+                        <h3 class="service-title mb-0">
+                          CONSEIL EN DÉCORATION
+                        </h3>
+                      </div>
+                      <p class="service-description">
+                        Notre service de conseil en décoration vous aide à créer
+                        des espaces personnalisés qui reflètent votre style.
+                      </p>
                     </div>
+
+                    <div class="service-item">
+                      <div class="service-header">
+                        <div class="service-line"></div>
+                        <h3 class="service-title mb-0">
+                          DESIGN ET ARCHITECTURE D'INTÉRIEUR
+                        </h3>
+                      </div>
+                      <p class="service-description">
+                        Design et architecture d'intérieur alliant élégance et
+                        fonctionnalité, créant des espaces harmonieux et
+                        accueillants.
+                      </p>
+                    </div>
+
+                    <div class="service-item">
+                      <div class="service-header">
+                        <div class="service-line"></div>
+                        <h3 class="service-title mb-0">ENTRETIEN DE CANAPÉ</h3>
+                      </div>
+                      <p class="service-description">
+                        Service personnalisé pour une expérience d'achat unique.
+                      </p>
+                    </div>
+
+                    <button class="discover-btn">
+                      DÉCOUVRIR NOTRE COLLECTION
+                      <div class="discover-line"></div>
+                    </button>
                   </div>
                 </div>
               </div>
             </div>
           </section>
-          <!-- Blog End -->
-
-          <div class="oe_structure oe_empty" />
+          <!-- Customer Services END -->
         </div>
       </t>
     </xpath>
