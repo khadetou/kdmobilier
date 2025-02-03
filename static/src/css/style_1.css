@@ -1914,7 +1914,7 @@ img.img {
   }
 
   .heroscreen {
-    min-height: 50vh;
+    /* min-height: 50vh; */
     padding-top: 60px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -3276,7 +3276,7 @@ img.img {
 .video-section-alt {
   position: relative;
   width: 100%;
-  height: 80vh;
+  height: 80vh !important;
   overflow: hidden;
 }
 
@@ -4094,4 +4094,10 @@ img.img {
 
 .mt-40 {
   margin-top: 40px;
+}
+
+@media (max-width: 500px) {
+  .valencia-products-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

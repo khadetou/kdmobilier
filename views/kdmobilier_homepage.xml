@@ -21,7 +21,7 @@
                 playsinline="true"
               >
                 <source
-                  src="https://saloni.furniture/wp-content/uploads/air-cavalli-v1.mp4"
+                  src="/theme_kdmobilier/static/src/videos/vid2.mp4"
                   type="video/mp4"
                 />
               </video>
@@ -41,7 +41,7 @@
           </section>
           <!-- CUSTOM CODE END -->
 
-          <section class="products-section mt-40">
+          <section class="products-section mt-4">
             <h2 class="section-title">TENDANCE 2025<br />PRODUITS</h2>
 
             <div id="custom-swiper" class="swiper custom-swiper">
@@ -172,9 +172,16 @@
           </div> -->
           <!-- VIDEO SCREEN END -->
           <!-- Hero Screen 1 -->
-          <div
-            class="heroscreen mob-pd-tb py-40"
-            style="padding-left: 0; padding-right: 0px"
+
+          <!-- Hero Screen 1 END -->
+          <!-- <div
+            class="heroscreen mob-pd-tb py-4"
+            style="
+              padding-left: 0;
+              padding-right: 0px;
+              padding-top: 0;
+              padding-bottom: 0px;
+            "
           >
             <div class="swiper mySwiper homepageslider" id="homeslider">
               <div class="swiper-wrapper">
@@ -196,10 +203,27 @@
               <div class="swiper-button-next d-none"></div>
               <div class="swiper-button-prev d-none"></div>
             </div>
+          </div> -->
+          <div
+            class="heroscreen mob-pd-tb py-4"
+            style="
+              padding-left: 0;
+              padding-right: 0px;
+              padding-top: 0;
+              padding-bottom: 0px;
+            "
+          >
+            <div>
+              <img
+                src="theme_kdmobilier/static/src/images/4938-b-modo-tv.webp"
+                alt=" mobil"
+                class="mobileslider img"
+                loading="lazy"
+              />
+            </div>
           </div>
-          <!-- Hero Screen 1 END -->
-
-          <section class="saloni-video-section">
+          <!-- Hero Screen 2 START -->
+          <section class="saloni-video-section py-4">
             <div class="saloni-video-container">
               <video
                 autoplay="true"
@@ -226,38 +250,37 @@
           </section>
 
           <!-- Hero Screen 2 -->
-          <div
-            class="heroscreen mob-pd-tb pt-4"
-            style="
-              padding-left: 0;
-              padding-right: 0px;
-              padding-top: 0;
-              padding-bottom: 0px;
-            "
-          >
-            <div class="swiper mySwiper homepageslider" id="homeslider">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img
-                    src="theme_kdmobilier/static/src/images/4932-b-pavon-banner.webp"
-                    alt=""
-                    class="desktopslider img"
-                    loading="lazy"
-                  />
-                  <img
-                    src="theme_kdmobilier/static/src/images/4932-b-pavon-banner.webp"
-                    alt=" mobil"
-                    class="mobileslider img"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-              <div class="swiper-button-next d-none"></div>
-              <div class="swiper-button-prev d-none"></div>
-            </div>
-          </div>
+
           <!-- Hero Screen 2 END -->
 
+          <section class="video-section-alt mt-4">
+            <div class="video-container">
+              <video
+                autoplay="true"
+                loop="true"
+                muted="true"
+                playsinline="true"
+              >
+                <source
+                  src="/theme_kdmobilier/static/src/videos/vid3.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+            <div class="video-overlay"></div>
+            <div class="corner-content">
+              <div class="left-text">
+                <h2 class="corner-title">
+                  EXPLOREZ NOTRE NOUVELLE COLLECTION DE MOBILIER
+                </h2>
+                <p class="corner-description">
+                  Un style contemporain et sophistiqué pour un espace de vie
+                  raffiné
+                </p>
+              </div>
+              <a href="/shop" class="corner-link">Voir les produits</a>
+            </div>
+          </section>
           <!-- Hero Screen 3 -->
           <!-- <div
             class="heroscreen mob-pd-tb py-40"
