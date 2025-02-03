@@ -151,26 +151,6 @@
           </div> -->
           <!-- HERO SCREEN END -->
 
-          <!-- VIDEO SCREEN START -->
-          <!-- <div
-            class="background-vid-wrapper h-100-vh bg-video"
-            style="
-              background: #fff
-                url('https://cloud.loda.com.tr/img/42/4120-b-web-savana-solara-palmo-video.webp');
-              background-size: cover;
-            "
-          >
-            <iframe
-              data-src="https://player.vimeo.com/video/967566690?h=6a52880ad7?&amp;autoplay=1&amp;loop=1&amp;title=0&amp;byline=0&amp;portrait=0&amp;muted=1&amp;background=1&amp;app_id=58479"
-              width="1920"
-              height="1080"
-              frameborder="0"
-              allow="autoplay; fullscreen; picture-in-picture"
-              allowfullscreen=""
-              title="Modern Tasarım Mobilyalar - Loda"
-            ></iframe>
-          </div> -->
-          <!-- VIDEO SCREEN END -->
           <!-- Hero Screen 1 -->
 
           <!-- Hero Screen 1 END -->
@@ -253,7 +233,7 @@
 
           <!-- Hero Screen 2 END -->
 
-          <section class="video-section-alt mt-4">
+          <!-- <section class="video-section-alt mt-4">
             <div class="video-container">
               <video
                 autoplay="true"
@@ -280,7 +260,42 @@
               </div>
               <a href="/shop" class="corner-link">Voir les produits</a>
             </div>
-          </section>
+          </section> -->
+
+          <!-- VIDEO SCREEN START -->
+          <div
+            class="background-vid-wrapper saloni-video-wrapper mt-4 h-100-vh bg-video"
+            style="
+              background: #fff
+                url('https://cloud.loda.com.tr/img/42/4120-b-web-savana-solara-palmo-video.webp');
+              background-size: cover;
+            "
+          >
+            <iframe
+              data-src="https://player.vimeo.com/video/1053152815?h=6a52880ad7?&amp;autoplay=1&amp;loop=1&amp;title=0&amp;byline=0&amp;portrait=0&amp;muted=1&amp;background=1&amp;app_id=58479"
+              width="1920"
+              height="1080"
+              frameborder="0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen=""
+              title="Modern Tasarım Mobilyalar - Loda"
+            ></iframe>
+            <div class="saloni-video-overlay"></div>
+            <div class="corner-content">
+              <div class="left-text">
+                <h2 class="corner-title">
+                  EXPLOREZ NOTRE NOUVELLE COLLECTION DE MOBILIER
+                </h2>
+                <p class="corner-description">
+                  Un style contemporain et sophistiqué pour un espace de vie
+                  raffiné
+                </p>
+              </div>
+              <a href="/shop" class="corner-link">Voir les produits</a>
+            </div>
+          </div>
+          <!-- VIDEO SCREEN END -->
+
           <!-- Hero Screen 3 -->
           <!-- <div
             class="heroscreen mob-pd-tb py-40"
