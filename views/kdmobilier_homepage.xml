@@ -297,7 +297,7 @@
           <!-- VIDEO SCREEN END -->
 
           <!-- Hero Screen 3 -->
-          <!-- <div
+          <div
             class="heroscreen mob-pd-tb py-40"
             style="padding-left: 0; padding-right: 0px"
           >
@@ -305,28 +305,51 @@
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <img
-                    src="/theme_kdmobilier/static/src/images/4369-b-kesfet-tr.webp"
+                    src="/theme_kdmobilier/static/src/images/5146-b-anasayfa-test.webp"
                     alt=""
                     class="desktopslider img"
                     loading="lazy"
                   />
                   <img
-                    src="/theme_kdmobilier/static/src/images/4369-b-kesfet-tr.webp"
+                    src="/theme_kdmobilier/static/src/images/5148-b-anasayfa-test.webp"
                     alt=" mobil"
                     class="mobileslider img"
                     loading="lazy"
                   />
-
-                  <div class="text-discover">
-                    <a href="tr/indirimli-urunler.html"> DÉCOUVRIR </a>
-                  </div>
                 </div>
               </div>
               <div class="swiper-button-next d-none"></div>
               <div class="swiper-button-prev d-none"></div>
             </div>
-          </div> -->
+          </div>
           <!-- Hero Screen 3 END -->
+          <!-- Hero Screen 4 -->
+          <div
+            class="heroscreen mob-pd-tb pb-40"
+            style="padding-left: 0; padding-right: 0px"
+          >
+            <div class="swiper mySwiper3 homepageslider" id="homeslider">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img
+                    src="/theme_kdmobilier/static/src/images/5141-b-anasayfa-test.webp"
+                    alt=""
+                    class="desktopslider img"
+                    loading="lazy"
+                  />
+                  <img
+                    src="/theme_kdmobilier/static/src/images/5140-b-anasayfa-test.webp"
+                    alt=" mobil"
+                    class="mobileslider img"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <div class="swiper-button-next d-none"></div>
+              <div class="swiper-button-prev d-none"></div>
+            </div>
+          </div>
+          <!-- Hero Screen 4 END -->
 
           <!-- Hero Screen 4 -->
           <!-- <div
