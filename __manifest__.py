@@ -93,6 +93,7 @@
             "theme_kdmobilier/static/src/js/custom.js",
             "theme_kdmobilier/static/src/js/main.js",
             "theme_kdmobilier/static/src/js/dropdown_extension.js",
+            "theme_kdmobilier/static/src/js/recaptcha_loader.js",
         ],
         "web.assets_primary_variables": [
             ("prepend", "theme_kdmobilier/static/src/scss/primary_variables.scss"),

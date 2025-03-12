@@ -63,18 +63,32 @@ $("#pcon").click(function (e) {
 });
 
 $(document).on("submit", ".contact-form", function (e) {
-  var response = grecaptcha.getResponse();
-  if (response.length == 0) {
-    e.preventDefault();
-    alert("Doğrulamayı yapınız.");
+  if (typeof grecaptcha !== "undefined") {
+    var response = grecaptcha.getResponse();
+    if (response.length == 0) {
+      e.preventDefault();
+      alert("Doğrulamayı yapınız.");
+    }
+  } else {
+    // If grecaptcha is not defined, log error and continue form submission
+    console.warn(
+      "reCAPTCHA not loaded properly. Form will be submitted without verification."
+    );
   }
 });
 
 $(document).on("submit", ".contact-form-designer", function (e) {
-  var response = grecaptcha.getResponse();
-  if (response.length == 0) {
-    e.preventDefault();
-    alert("Doğrulamayı yapınız.");
+  if (typeof grecaptcha !== "undefined") {
+    var response = grecaptcha.getResponse();
+    if (response.length == 0) {
+      e.preventDefault();
+      alert("Doğrulamayı yapınız.");
+    }
+  } else {
+    // If grecaptcha is not defined, log error and continue form submission
+    console.warn(
+      "reCAPTCHA not loaded properly. Form will be submitted without verification."
+    );
   }
 });
 

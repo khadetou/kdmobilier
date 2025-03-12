@@ -23,12 +23,12 @@ if (currentDate >= showDate && currentDate <= hideDate) {
   document.querySelector(".popup-div-one").style.display = "block";
 }
 
-setTimeout(function () {
-  document.querySelector(".popup-div-bg").style.display = "none";
-  document.querySelector(".popup-div-one").style.display = "none";
-  document.cookie =
-    "cookiePopup=yes; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-}, hideDate - currentDate);
+// setTimeout(function () {
+//   document.querySelector(".popup-div-bg").style.display = "none";
+//   document.querySelector(".popup-div-one").style.display = "none";
+//   document.cookie =
+//     "cookiePopup=yes; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+// }, hideDate - currentDate);
 
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";

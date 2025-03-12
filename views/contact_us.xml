@@ -251,7 +251,7 @@
                       <div class="pbmit-heading animation-style2">
                         <h2 class="pbmit-title">Envoyez-nous un message</h2>
                       </div>
-                      <form action="/website/form/" method="post" enctype="multipart/form-data" data-mark="*" data-model_name="mail.mail" data-success-mode="redirect" data-success-page="/contactus-thank-you" data-pre-fill="true" class="contact-form" id="contact-form">
+                      <form action="/website/form/" method="post" enctype="multipart/form-data" data-mark="*" data-model_name="mail.mail" data-success-mode="redirect" data-success-page="/contactus-thank-you" data-pre-fill="true" class="contact-form" id="contact-form" t-att-data-recaptcha-sitekey="request.env['ir.config_parameter'].sudo().get_param('recaptcha_public_key')">
                         <div class="row">
                           <div class="col-md-12">
                             <textarea name="message" cols="40" rows="10" class="form-control" placeholder="Votre message (détaillez votre projet ou vos questions)" required=""></textarea>
@@ -276,6 +276,9 @@
                                 demandes.
                               </label>
                             </div>
+                          </div>
+                          <div class="col-md-12">
+                            <div class="g-recaptcha mb-3"></div>
                           </div>
                           <div class="col-md-12">
                             <button type="submit" class="pbmit-btn pbmit-btn-outline">
