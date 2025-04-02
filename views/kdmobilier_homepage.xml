@@ -1,815 +1,528 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-  <template
-    id="kdmobilier_homepage"
-    inherit_id="website.homepage"
-    name="Homepage"
-  >
+  <template id="kdmobilier_homepage" inherit_id="website.homepage" name="Homepage">
     <xpath expr="//t[@t-call='website.layout']" position="replace">
       <t t-call="website.layout">
         <t t-set="pageName" t-value="'homepage'" />
-        <!-- <section class="header-style-3"></section> -->
+
         <div class="oe_structure oe_empty" />
         <div class="all-content">
-          <!-- CUSTOM CODE START -->
+          <!-- Hero Video Section -->
           <section class="video-section-alt">
             <div class="video-container">
-              <video
-                autoplay="true"
-                loop="true"
-                muted="true"
-                playsinline="true"
-              >
-                <source
-                  src="/theme_kdmobilier/static/src/videos/vid2.mp4"
-                  type="video/mp4"
-                />
+              <video autoplay="true" loop="true" muted="true" playsinline="true">
+                <source src="https://res.cloudinary.com/do4eujx4o/video/upload/q_auto,f_auto/v1743361363/bwwmouqs3w1kbzvwzefz.mp4" type="video/mp4" />
               </video>
             </div>
-            <div class="video-overlay"></div>
+            <div class="video-overlay" style="
+                background: linear-gradient(
+                  to bottom,
+                  rgba(0, 0, 0, 0.1) 0%,
+                  rgba(0, 0, 0, 0.2) 50%,
+                  rgba(0, 0, 0, 0.4) 100%
+                );
+              ">            </div>
             <div class="corner-content">
               <div class="left-text">
-                <h2 class="corner-title">
+                <h2 class="corner-title" style="
+                    font-family: var(--pbmit-heading-typography-font-family);
+                    font-weight: 300;
+                    letter-spacing: 2px;
+                  ">
                   COLLECTION DE MOBILIER HAUT DE GAMME
                 </h2>
-                <p class="corner-description">
+                <p class="corner-description" style="font-weight: 300; letter-spacing: 1px">
                   Un design moderne et élégant pour un intérieur raffiné
                 </p>
               </div>
-              <a href="/shop" class="corner-link">Voir les produits</a>
+              <a href="/shop" class="corner-link" style="
+                  background-color: var(--pbmit-global-color);
+                  padding: 12px 30px;
+                  border-radius: 30px;
+                  letter-spacing: 1.5px;
+                  font-size: 0.9rem;
+                  transition: all 0.3s ease;
+                ">
+                <span>Voir les produits</span>
+              </a>
             </div>
           </section>
-          <!-- CUSTOM CODE END -->
 
-          <section class="products-section mt-4">
-            <h2 class="section-title">TENDANCE 2025<br />PRODUITS</h2>
-
-            <div id="custom-swiper" class="swiper custom-swiper">
-              <div class="swiper-wrapper custom-swiper-wrapper">
-                <div class="swiper-slide custom-swiper-slide">
-                  <img
-                    src="https://www.kdmobilier.sn/web/image/product.product/8229/image_1920/CANAPES%20MODUS?unique=000e460"
-                    alt="Modern living room with natural light"
-                  />
-                  <div class="slide-content custom-slide-content">
-                    <h3 class="slide-title">Élégance Intemporelle</h3>
-                    <p class="slide-subtitle">
-                      Une harmonie parfaite entre luxe et confort
-                    </p>
-                  </div>
-                </div>
-                <div
-                  class="swiper-slide custom-swiper-slide custom-swiper-slide"
-                >
-                  <img
-                    src="https://www.kdmobilier.sn/web/image/product.image/3067/image_1920/kd%20product%20image?unique=e7e4158"
-                    alt="Contemporary living space"
-                  />
-                  <div class="slide-content custom-slide-content">
-                    <h3 class="slide-title">Design Contemporain</h3>
-                    <p class="slide-subtitle">
-                      L'art de vivre moderne redéfini
-                    </p>
-                  </div>
-                </div>
-                <div class="swiper-slide custom-swiper-slide">
-                  <img
-                    src="https://www.kdmobilier.sn/web/image/product.image/4845/image_1920/kd%20product%20image?unique=d208abd"
-                    alt="Minimalist living room"
-                  />
-                  <div class="slide-content custom-slide-content">
-                    <h3 class="slide-title">Luxe Minimaliste</h3>
-                    <p class="slide-subtitle">
-                      La sophistication dans sa forme la plus pure
-                    </p>
-                  </div>
-                </div>
-                <div class="swiper-slide custom-swiper-slide">
-                  <img
-                    src="https://www.kdmobilier.sn/web/image/product.image/5058/image_1920/kd%20product%20image?unique=b9a486c"
-                    alt="Modern interior design"
-                  />
-                  <div class="slide-content custom-slide-content">
-                    <h3 class="slide-title">Excellence Raffinée</h3>
-                    <p class="slide-subtitle">
-                      Un équilibre parfait de style et de fonction
-                    </p>
-                  </div>
-                </div>
-                <div class="swiper-slide custom-swiper-slide">
-                  <img
-                    src="https://www.kdmobilier.sn/web/image/product.image/3071/image_1920/kd%20product%20image?unique=e7e4158"
-                    alt="Elegant living room"
-                  />
-                  <div class="slide-content custom-slide-content">
-                    <h3 class="slide-title">Prestige Moderne</h3>
-                    <p class="slide-subtitle">L'essence du luxe contemporain</p>
-                  </div>
-                </div>
+          <!-- Console Banner -->
+          <div class="position-relative overflow-hidden" style="margin-top: 2rem; margin-bottom: 2rem">
+            <img src="theme_kdmobilier/static/src/images/4938-b-modo-tv.webp" alt="Console Design" class="img-fluid w-100" style="object-fit: cover; height: auto; max-height: 80vh" loading="lazy" />
+            <div class="position-absolute" style="
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(
+                  to bottom,
+                  rgba(0, 0, 0, 0.1) 0%,
+                  rgba(0, 0, 0, 0.2) 50%,
+                  rgba(0, 0, 0, 0.4) 100%
+                );
+              ">            </div>
+            <div class="position-absolute" style="
+                bottom: 50px;
+                width: 100%;
+                padding: 0 50px;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+                z-index: 2;
+              ">
+              <div style="max-width: 400px">
+                <h2 style="
+                    color: #fff;
+                    font-size: 1.8rem;
+                    font-weight: 300;
+                    margin-bottom: 1rem;
+                    letter-spacing: 2px;
+                    font-family: var(--pbmit-heading-typography-font-family);
+                  ">
+                  CONSOLES &amp; MEUBLES TV
+                </h2>
+                <p style="
+                    color: #fff;
+                    font-size: 1rem;
+                    font-weight: 300;
+                    line-height: 1.6;
+                    letter-spacing: 0.5px;
+                  ">
+                  Une élégance intemporelle pour votre espace de vie
+                </p>
               </div>
-              <div class="swiper-button-next customs-swiper-button-next"></div>
-              <div class="swiper-button-prev customs-swiper-button-prev"></div>
-            </div>
-
-            <p class="description">
-              Nous sommes ravis de vous présenter une gamme de pièces élégantes
-              et fonctionnelles qui ne manqueront pas de rehausser votre espace.
-              Des modèles modernes aux modèles classiques, nous en avons pour
-              tous les goûts et toutes les préférences.
-            </p>
-
-            <a href="/shop" class="cta-button">Découvrir les produits</a>
-          </section>
-          <!-- HERO SCREEN START -->
-          <!-- <div
-            class="heroscreen mob-pd-tb"
-            style="padding-left: 0; padding-right: 0px"
-          >
-            <div
-              class="swiper mySwiperyear homepageslider mt-32"
-              id="homeslider"
-            >
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img
-                    src="/theme_kdmobilier/static/src/images/4907-b-domo-yilbasi.webp"
-                    alt=""
-                    class="desktopslider img"
-                    loading="lazy"
-                  />
-                  <img
-                    src="/theme_kdmobilier/static/src/images/4907-b-domo-yilbasi.webp"
-                    alt=" mobil"
-                    class="mobileslider img"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-              <div class="swiper-button-next d-none"></div>
-              <div class="swiper-button-prev d-none"></div>
-            </div>
-          </div> -->
-          <!-- HERO SCREEN END -->
-
-          <!-- Hero Screen 1 -->
-
-          <!-- Hero Screen 1 END -->
-          <!-- <div
-            class="heroscreen mob-pd-tb py-4"
-            style="
-              padding-left: 0;
-              padding-right: 0px;
-              padding-top: 0;
-              padding-bottom: 0px;
-            "
-          >
-            <div class="swiper mySwiper homepageslider" id="homeslider">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img
-                    src="theme_kdmobilier/static/src/images/4938-b-modo-tv.webp"
-                    alt=""
-                    class="desktopslider img"
-                    loading="lazy"
-                  />
-                  <img
-                    src="theme_kdmobilier/static/src/images/4938-b-modo-tv.webp"
-                    alt=" mobil"
-                    class="mobileslider img"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-              <div class="swiper-button-next d-none"></div>
-              <div class="swiper-button-prev d-none"></div>
-            </div>
-          </div> -->
-          <div
-            class="heroscreen mob-pd-tb py-4"
-            style="
-              padding-left: 0;
-              padding-right: 0px;
-              padding-top: 0;
-              padding-bottom: 0px;
-            "
-          >
-            <div>
-              <img
-                src="theme_kdmobilier/static/src/images/4938-b-modo-tv.webp"
-                alt=" mobil"
-                class="mobileslider img"
-                loading="lazy"
-              />
+              <a href="/shop/category/consoles-tv-22" class="corner-link" style="
+                  background-color: var(--pbmit-global-color);
+                  padding: 12px 30px;
+                  border-radius: 30px;
+                  color: #fff;
+                  text-decoration: none;
+                  letter-spacing: 1.5px;
+                  font-size: 0.9rem;
+                  transition: all 0.3s ease;
+                ">
+                <span>DÉCOUVRIR</span>
+              </a>
             </div>
           </div>
-          <!-- Hero Screen 2 START -->
-          <section class="saloni-video-section py-4">
+
+          <!-- Art De Vivre Video Section -->
+          <section class="saloni-video-section">
             <div class="saloni-video-container">
-              <video
-                autoplay="true"
-                loop="true"
-                muted="true"
-                playsinline="true"
-              >
-                <source
-                  src="https://saloni.furniture/wp-content/uploads/valencia-sofa-video.mp4"
-                  type="video/mp4"
-                />
+              <video autoplay="true" loop="true" muted="true" playsinline="true">
+                <source src="https://res.cloudinary.com/do4eujx4o/video/upload/q_auto,f_auto/v1743361469/zovllz7juaegd4xful5l.mp4" type="video/mp4" />
               </video>
             </div>
-            <div class="saloni-video-overlay"></div>
+            <div class="saloni-video-overlay" style="
+                background: linear-gradient(
+                  to bottom,
+                  rgba(0, 0, 0, 0.1) 0%,
+                  rgba(0, 0, 0, 0.2) 50%,
+                  rgba(0, 0, 0, 0.4) 100%
+                );
+              ">            </div>
             <div class="saloni-video-text">
-              <h2 class="saloni-video-title">L'Art de Vivre</h2>
-              <p class="saloni-video-description">
-                Découvrez notre collection Valencia, où le design moderne
+              <h2 class="saloni-video-title" style="
+                  font-family: var(--pbmit-heading-typography-font-family);
+                  font-weight: 200;
+                ">
+                L'ART DE VIVRE
+              </h2>
+              <p class="saloni-video-description" style="font-weight: 300; margin-bottom: 2rem">
+                Découvrez notre collection exclusive, où le design moderne
                 rencontre le confort intemporel. Chaque pièce est
                 méticuleusement conçue pour créer un espace de vie qui reflète
                 votre style unique.
               </p>
+              <a href="/shop" class="corner-link" style="
+                  background-color: var(--pbmit-global-color);
+                  padding: 12px 30px;
+                  border-radius: 30px;
+                  color: #fff;
+                  text-decoration: none;
+                  letter-spacing: 1.5px;
+                  font-size: 0.9rem;
+                  transition: all 0.3s ease;
+                  display: inline-block;
+                  margin-top: 1rem;
+                ">
+                <span>EXPLORER</span>
+              </a>
             </div>
           </section>
 
-          <!-- Hero Screen 2 -->
+          <!-- Bedroom Banner -->
+          <div class="position-relative overflow-hidden" style="margin-top: 2rem; margin-bottom: 2rem">
+            <img src="/theme_kdmobilier/static/src/images/5141-b-anasayfa-test.webp" alt="Chambre Moderne" class="img-fluid w-100" style="object-fit: cover; height: auto; max-height: 80vh" loading="lazy" />
+            <div class="position-absolute" style="
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(
+                  to bottom,
+                  rgba(0, 0, 0, 0.1) 0%,
+                  rgba(0, 0, 0, 0.2) 50%,
+                  rgba(0, 0, 0, 0.4) 100%
+                );
+              ">            </div>
+            <div class="position-absolute" style="
+                bottom: 50px;
+                width: 100%;
+                padding: 0 50px;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+                z-index: 2;
+              ">
+              <div style="max-width: 400px">
+                <h2 style="
+                    color: #fff;
+                    font-size: 1.8rem;
+                    font-weight: 300;
+                    margin-bottom: 1rem;
+                    letter-spacing: 2px;
+                    font-family: var(--pbmit-heading-typography-font-family);
+                  ">
+                  CHAMBRES ÉLÉGANTES
+                </h2>
+                <p style="
+                    color: #fff;
+                    font-size: 1rem;
+                    font-weight: 300;
+                    line-height: 1.6;
+                    letter-spacing: 0.5px;
+                  ">
+                  Créez un sanctuaire de sérénité et de style
+                </p>
+              </div>
+              <a href="/shop/category/chambres-a-coucher-23" class="corner-link" style="
+                  background-color: var(--pbmit-global-color);
+                  padding: 12px 30px;
+                  border-radius: 30px;
+                  color: #fff;
+                  text-decoration: none;
+                  letter-spacing: 1.5px;
+                  font-size: 0.9rem;
+                  transition: all 0.3s ease;
+                ">
+                <span>DÉCOUVRIR</span>
+              </a>
+            </div>
+          </div>
 
-          <!-- Hero Screen 2 END -->
-
-          <!-- <section class="video-section-alt mt-4">
+          <!-- Second Video Section -->
+          <section class="video-section-alt">
             <div class="video-container">
-              <video
-                autoplay="true"
-                loop="true"
-                muted="true"
-                playsinline="true"
-              >
-                <source
-                  src="/theme_kdmobilier/static/src/videos/vid3.mp4"
-                  type="video/mp4"
-                />
+              <video autoplay="true" loop="true" muted="true" playsinline="true">
+                <source src="https://res.cloudinary.com/do4eujx4o/video/upload/q_auto,f_auto/v1743361326/ra1zklploim5p5jyyjzu.mp4" type="video/mp4" />
               </video>
             </div>
-            <div class="video-overlay"></div>
+            <div class="video-overlay" style="
+                background: linear-gradient(
+                  to bottom,
+                  rgba(0, 0, 0, 0.1) 0%,
+                  rgba(0, 0, 0, 0.2) 50%,
+                  rgba(0, 0, 0, 0.4) 100%
+                );
+              ">            </div>
             <div class="corner-content">
               <div class="left-text">
-                <h2 class="corner-title">
-                  EXPLOREZ NOTRE NOUVELLE COLLECTION DE MOBILIER
+                <h2 class="corner-title" style="
+                    font-family: var(--pbmit-heading-typography-font-family);
+                    font-weight: 300;
+                    letter-spacing: 2px;
+                  ">
+                  DESIGN &amp; ÉLÉGANCE
                 </h2>
-                <p class="corner-description">
-                  Un style contemporain et sophistiqué pour un espace de vie
-                  raffiné
+                <p class="corner-description" style="font-weight: 300; letter-spacing: 1px">
+                  Des espaces de vie qui inspirent et impressionnent
                 </p>
               </div>
-              <a href="/shop" class="corner-link">Voir les produits</a>
-            </div>
-          </section> -->
-
-          <!-- VIDEO SCREEN START -->
-          <div
-            class="background-vid-wrapper saloni-video-wrapper mt-4 h-100-vh bg-video"
-            style="
-              background: #fff
-                url('https://cloud.loda.com.tr/img/42/4120-b-web-savana-solara-palmo-video.webp');
-              background-size: cover;
-            "
-          >
-            <iframe
-              data-src="https://player.vimeo.com/video/1053152815?h=6a52880ad7?&amp;autoplay=1&amp;loop=1&amp;title=0&amp;byline=0&amp;portrait=0&amp;muted=1&amp;background=1&amp;app_id=58479"
-              width="1920"
-              height="1080"
-              frameborder="0"
-              allow="autoplay; fullscreen; picture-in-picture"
-              allowfullscreen=""
-              title="Modern Tasarım Mobilyalar - Loda"
-            ></iframe>
-            <div class="saloni-video-overlay"></div>
-            <div class="corner-content">
-              <div class="left-text">
-                <h2 class="corner-title">
-                  EXPLOREZ NOTRE NOUVELLE COLLECTION DE MOBILIER
-                </h2>
-                <p class="corner-description">
-                  Un style contemporain et sophistiqué pour un espace de vie
-                  raffiné
-                </p>
-              </div>
-              <a href="/shop" class="corner-link">Voir les produits</a>
-            </div>
-          </div>
-          <!-- VIDEO SCREEN END -->
-
-          <!-- Hero Screen 3 -->
-          <div
-            class="heroscreen mob-pd-tb py-40"
-            style="padding-left: 0; padding-right: 0px"
-          >
-            <div class="swiper mySwiper3 homepageslider" id="homeslider">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img
-                    src="/theme_kdmobilier/static/src/images/5146-b-anasayfa-test.webp"
-                    alt=""
-                    class="desktopslider img"
-                    loading="lazy"
-                  />
-                  <img
-                    src="/theme_kdmobilier/static/src/images/5148-b-anasayfa-test.webp"
-                    alt=" mobil"
-                    class="mobileslider img"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-              <div class="swiper-button-next d-none"></div>
-              <div class="swiper-button-prev d-none"></div>
-            </div>
-          </div>
-          <!-- Hero Screen 3 END -->
-          <!-- Hero Screen 4 -->
-          <div
-            class="heroscreen mob-pd-tb pb-40"
-            style="padding-left: 0; padding-right: 0px"
-          >
-            <div class="swiper mySwiper3 homepageslider" id="homeslider">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img
-                    src="/theme_kdmobilier/static/src/images/5141-b-anasayfa-test.webp"
-                    alt=""
-                    class="desktopslider img"
-                    loading="lazy"
-                  />
-                  <img
-                    src="/theme_kdmobilier/static/src/images/5140-b-anasayfa-test.webp"
-                    alt=" mobil"
-                    class="mobileslider img"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-              <div class="swiper-button-next d-none"></div>
-              <div class="swiper-button-prev d-none"></div>
-            </div>
-          </div>
-          <!-- Hero Screen 4 END -->
-
-          <!-- Hero Screen 4 -->
-          <!-- <div
-            class="background-vid-wrapper h-100-vh bg-video"
-            style="
-              background: #fff
-                url('https://cloud.loda.com.tr/img/41/4073-b-hSYFcdRHSuSdosnFfMJm.webp');
-              background-size: cover;
-            "
-          >
-            <iframe
-              data-src="https://player.vimeo.com/video/946885922?h=6a52880ad7?&amp;autoplay=1&amp;loop=1&amp;title=0&amp;byline=0&amp;portrait=0&amp;muted=1&amp;background=1&amp;app_id=58479"
-              width="1920"
-              height="1080"
-              frameborder="0"
-              allow="autoplay; fullscreen; picture-in-picture"
-              allowfullscreen=""
-              title="Modern Tasarım Mobilyalar - Loda"
-            ></iframe>
-          </div> -->
-          <!-- Hero Screen 4 end -->
-
-          <!-- Nova Collection -->
-          <!-- <div class="section without-padding" style="margin-top: 50px">
-            <div class="card-container space">
-              <div class="card xl-space">
-                <div class="content top-bottom">
-                  <div class="content-xs paddin-left-50">
-                    <div
-                      class="overline"
-                      style="width: 200px; text-align: right; font-size: 0.9em"
-                    >
-                      PRODUITS EN VEDETTE
-                    </div>
-                    <p style="width: 200px; text-align: right">
-                      Découvrez de près la collection Nova !
-                    </p>
-                  </div>
-                  <p
-                    class="introduction big no-styles mb-0"
-                    style="font-weight: 400; font-size: 16px; margin: auto"
-                  >
-                    La collection Nova brille comme une étoile avec son design
-                    élégant, devenant la favorite des espaces grâce à ses
-                    détails scintillants !
-                  </p>
-                </div>
-                <div class="background-color white-smoke"></div>
-              </div>
-              <div class="card xl-space module-one">
-                <div
-                  class="slider _2 w-slider swiper mySwiper"
-                  data-delay="4000"
-                  data-animation="slide"
-                >
-                  <div class="mask-visible w-slider-mask swiper-wrapper">
-                    <div class="swiper-slide w-slide">
-                      <div class="slide-zoom-wrapper">
-                        <div class="collection-list-wrapper w-dyn-list">
-                          <div role="list" class="collection-list w-dyn-items">
-                            <div
-                              role="listitem"
-                              class="collection-item _1x w-dyn-item"
-                            >
-                              <a
-                                href="tr/nova-kose-koltuk.html"
-                                class="product-link w-inline-block"
-                              >
-                                <div class="content">
-                                  <div class="image-wrapper big module-1-img">
-                                    <div
-                                      class="background-color gainsboro"
-                                    ></div>
-                                    <div
-                                      data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_main_image_4dr.url%22%2C%22to%22%3A%22style.background-image%22%7D%5D"
-                                      style="
-                                        background-image: url(https://cloud.loda.com.tr/img/29/2854-b-ZOI5tp0E7dpWb6CCTzsS.webp);
-                                      "
-                                      class="background-image"
-                                      loading="lazy"
-                                    ></div>
-                                  </div>
-                                  <div class="product-description bottom">
-                                    <div
-                                      class="overline no-styles"
-                                      style="font-size: 0.7em"
-                                    >
-                                      Produit vedette de la semaine
-                                    </div>
-                                    <h6
-                                      class="product-title"
-                                      style="
-                                        font-size: 1.5em;
-                                        margin-bottom: 18px;
-                                        line-height: initial;
-                                        color: #5a5a5a;
-                                        font-weight: 400;
-                                      "
-                                    >
-                                      NOVA
-                                    </h6>
-                                  </div>
-                                </div>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide w-slide">
-                      <div class="slide-zoom-wrapper">
-                        <div class="collection-list-wrapper w-dyn-list">
-                          <div role="list" class="collection-list w-dyn-items">
-                            <div
-                              role="listitem"
-                              class="collection-item _1x w-dyn-item"
-                            >
-                              <a
-                                href="tr/nova-yemek-odasi.html"
-                                class="product-link w-inline-block"
-                              >
-                                <div class="content">
-                                  <div class="image-wrapper big module-1-img">
-                                    <div
-                                      class="background-color gainsboro"
-                                    ></div>
-                                    <div
-                                      data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_main_image_4dr.url%22%2C%22to%22%3A%22style.background-image%22%7D%5D"
-                                      style="
-                                        background-image: url(https://cloud.loda.com.tr/img/29/2852-b-cfCC5W0F5f1EmkR3ekH9.webp);
-                                      "
-                                      class="background-image"
-                                      loading="lazy"
-                                    ></div>
-                                  </div>
-                                  <div class="product-description bottom">
-                                    <div
-                                      class="overline no-styles"
-                                      style="font-size: 0.7em"
-                                    >
-                                      Produit vedette de la semaine
-                                    </div>
-                                    <h6
-                                      class="product-title"
-                                      style="
-                                        font-size: 1.5em;
-                                        margin-bottom: 18px;
-                                        line-height: initial;
-                                        color: #5a5a5a;
-                                        font-weight: 400;
-                                      "
-                                    >
-                                      NOVA
-                                    </h6>
-                                  </div>
-                                </div>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide w-slide">
-                      <div class="slide-zoom-wrapper">
-                        <div class="collection-list-wrapper w-dyn-list">
-                          <div role="list" class="collection-list w-dyn-items">
-                            <div
-                              role="listitem"
-                              class="collection-item _1x w-dyn-item"
-                            >
-                              <a
-                                href="tr/nova-yatak-odasi.html"
-                                class="product-link w-inline-block"
-                              >
-                                <div class="content">
-                                  <div class="image-wrapper big module-1-img">
-                                    <div
-                                      class="background-color gainsboro"
-                                    ></div>
-                                    <div
-                                      data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_main_image_4dr.url%22%2C%22to%22%3A%22style.background-image%22%7D%5D"
-                                      style="
-                                        background-image: url(https://cloud.loda.com.tr/img/29/2850-b-1KzYm67o37YWYvbk62Ag.webp);
-                                      "
-                                      class="background-image"
-                                      loading="lazy"
-                                    ></div>
-                                  </div>
-                                  <div class="product-description bottom">
-                                    <div
-                                      class="overline no-styles"
-                                      style="font-size: 0.7em"
-                                    >
-                                      Produit vedette de la semaine
-                                    </div>
-                                    <h6
-                                      class="product-title"
-                                      style="
-                                        font-size: 1.5em;
-                                        margin-bottom: 18px;
-                                        line-height: initial;
-                                        color: #5a5a5a;
-                                        font-weight: 400;
-                                      "
-                                    >
-                                      NOVA
-                                    </h6>
-                                  </div>
-                                </div>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide w-slide">
-                      <div class="slide-zoom-wrapper">
-                        <div class="collection-list-wrapper w-dyn-list">
-                          <div role="list" class="collection-list w-dyn-items">
-                            <div
-                              role="listitem"
-                              class="collection-item _1x w-dyn-item"
-                            >
-                              <a
-                                href="tr/nova-berjer.html"
-                                class="product-link w-inline-block"
-                              >
-                                <div class="content">
-                                  <div class="image-wrapper big module-1-img">
-                                    <div
-                                      class="background-color gainsboro"
-                                    ></div>
-                                    <div
-                                      data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_main_image_4dr.url%22%2C%22to%22%3A%22style.background-image%22%7D%5D"
-                                      style="
-                                        background-image: url(https://cloud.loda.com.tr/img/29/2851-b-CUTuIWJNbXATQC8GtPQB.webp);
-                                      "
-                                      class="background-image"
-                                      loading="lazy"
-                                    ></div>
-                                  </div>
-                                  <div class="product-description bottom">
-                                    <div
-                                      class="overline no-styles"
-                                      style="font-size: 0.7em"
-                                    >
-                                      Produit vedette de la semaine
-                                    </div>
-                                    <h6
-                                      class="product-title"
-                                      style="
-                                        font-size: 1.5em;
-                                        margin-bottom: 18px;
-                                        line-height: initial;
-                                        color: #5a5a5a;
-                                        font-weight: 400;
-                                      "
-                                    >
-                                      NOVA
-                                    </h6>
-                                  </div>
-                                </div>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="swiper-button-next custom"></div>
-                  <div class="swiper-button-prev custom"></div>
-                  <div class="swiper-pagination d-none"></div>
-                </div>
-              </div>
-            </div>
-          </div> -->
-          <!-- Nova Collection END -->
-          <div class="oe_structure oe_empty" />
-          <section class="valencia-products py-5">
-            <div class="valencia-section-header">
-              <div class="valencia-section-subtitle">Collection exclusive</div>
-              <h2 class="valencia-section-title">
-                Salons Et <span>Canapé</span>
-              </h2>
-            </div>
-
-            <div class="valencia-products-grid">
-              <t
-                t-set="canapes_category"
-                t-value="request.env['product.public.category'].search([('name', '=', 'Canapes')], limit=1)"
-              />
-              <t
-                t-set="products"
-                t-value="request.env['product.template'].search([
-                        ('public_categ_ids', 'in', canapes_category.ids),
-                        ('website_published', '=', True)
-                    ], limit=6)"
-              />
-
-              <t t-foreach="products" t-as="product">
-                <div class="valencia-product-card">
-                  <a t-att-href="product.website_url" class="product-link">
-                    <div class="valencia-product-image">
-                      <img
-                        t-att-src="website.image_url(product, 'image_1024')"
-                        t-att-alt="product.name"
-                      />
-                      <div class="valencia-product-overlay">
-                        <button class="valencia-quick-view">Découvrir</button>
-                      </div>
-                    </div>
-                  </a>
-                  <a t-att-href="product.website_url" class="product-link">
-                    <div class="valencia-product-info">
-                      <div
-                        class="valencia-product-category"
-                        t-esc="product.public_categ_ids[0].name"
-                      />
-                      <h3 class="valencia-product-name" t-esc="product.name" />
-                    </div>
-                  </a>
-                </div>
-              </t>
-            </div>
-            <div class="valencia-discover-more">
-              <a
-                href="/shop/category/salons-canapes-21"
-                class="valencia-discover-link"
-                >Découvrir Plus</a
-              >
+              <a href="/shop" class="corner-link" style="
+                  background-color: var(--pbmit-global-color);
+                  padding: 12px 30px;
+                  border-radius: 30px;
+                  letter-spacing: 1.5px;
+                  font-size: 0.9rem;
+                  transition: all 0.3s ease;
+                ">
+                <span>EXPLORER</span>
+              </a>
             </div>
           </section>
-          <!-- Sophia Collection -->
 
-          <!-- Sophia Collection END -->
-
-          <!--  -->
-          <!-- Loda About -->
-          <!-- <div class="section without-padding">
-            <div class="card-container space">
-              <div class="card xl-space">
-                <div class="content-xs" style="margin: auto">
-                  <div class="overline" style="font-size: 1em">Çünkü Loda,</div>
-                  <h3
-                    class="title no-bottom"
-                    style="
-                      font-weight: 400;
-                      font-size: 1.2vw;
-                      letter-spacing: -0.03125rem;
-                    "
-                  >
-                    Benzersiz tasarımlarıyla yaşam alanlarınıza zenginlik katar.
-                  </h3>
-                </div>
-                <div class="background-color white-smoke"></div>
+          <!-- Second Bedroom Banner -->
+          <div class="position-relative overflow-hidden" style="margin-top: 2rem; margin-bottom: 2rem">
+            <img src="/theme_kdmobilier/static/src/images/5146-b-anasayfa-test.webp" alt="Chambre Luxueuse" class="img-fluid w-100" style="object-fit: cover; height: auto; max-height: 80vh" loading="lazy" />
+            <div class="position-absolute" style="
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(
+                  to bottom,
+                  rgba(0, 0, 0, 0.1) 0%,
+                  rgba(0, 0, 0, 0.2) 50%,
+                  rgba(0, 0, 0, 0.4) 100%
+                );
+              ">            </div>
+            <div class="position-absolute" style="
+                bottom: 50px;
+                width: 100%;
+                padding: 0 50px;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+                z-index: 2;
+              ">
+              <div style="max-width: 400px">
+                <h2 style="
+                    color: #fff;
+                    font-size: 1.8rem;
+                    font-weight: 300;
+                    margin-bottom: 1rem;
+                    letter-spacing: 2px;
+                    font-family: var(--pbmit-heading-typography-font-family);
+                  ">
+                  LITS CONFORTABLES
+                </h2>
+                <p style="
+                    color: #fff;
+                    font-size: 1rem;
+                    font-weight: 300;
+                    line-height: 1.6;
+                    letter-spacing: 0.5px;
+                  ">
+                  Dormez dans le confort et l'élégance absolue
+                </p>
               </div>
-              <div class="card xl-space">
-                <div class="content stretch">
-                  <div class="product-link">
-                    <a
-                      href="tr/nova-berjer.html"
-                      class="card l-bg-image w-inline-block"
-                    >
-                      <div class="content bottom">
-                        <h5 class="font-white no-styles">Nova Koleksiyonu</h5>
-                        <div class="overline font-white"></div>
+              <a href="/shop/category/lits-24" class="corner-link" style="
+                  background-color: var(--pbmit-global-color);
+                  padding: 12px 30px;
+                  border-radius: 30px;
+                  color: #fff;
+                  text-decoration: none;
+                  letter-spacing: 1.5px;
+                  font-size: 0.9rem;
+                  transition: all 0.3s ease;
+                ">
+                <span>DÉCOUVRIR</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Products Section -->
+          <section class="valencia-products py-5" style="
+              background-color: #fcfaf7;
+              margin-top: 2rem;
+              padding-top: 4rem !important;
+              padding-bottom: 4rem !important;
+            ">
+            <div class="container">
+              <div class="valencia-section-header">
+                <div class="valencia-section-subtitle" style="color: var(--pbmit-global-color)">
+                  COLLECTION EXCLUSIVE
+                </div>
+                <h2 class="valencia-section-title">
+                  SALONS ET <span>CANAPÉS</span>
+                </h2>
+                <div style="
+                    width: 60px;
+                    height: 3px;
+                    background-color: var(--pbmit-global-color);
+                    margin: 1.5rem auto;
+                  ">                </div>
+              </div>
+
+              <div class="valencia-products-grid">
+                <t t-set="canapes_category" t-value="request.env['product.public.category'].search([('name', '=', 'Canapes')], limit=1)" />
+                <t t-set="products" t-value="request.env['product.template'].search([
+                          ('public_categ_ids', 'in', canapes_category.ids),
+                          ('website_published', '=', True)
+                      ], limit=6)" />
+
+                <t t-foreach="products" t-as="product">
+                  <div class="valencia-product-card">
+                    <a t-att-href="product.website_url" class="product-link">
+                      <div class="valencia-product-image">
+                        <img t-att-src="website.image_url(product, 'image_1024')" t-att-alt="product.name" />
+                        <div class="valencia-product-overlay">
+                          <button class="valencia-quick-view" style="
+                              background-color: var(--pbmit-global-color);
+                              color: white;
+                              border: none;
+                            ">
+                            Découvrir
+                          </button>
+                        </div>
                       </div>
-                      <div class="background-wrapper">
-                        <div
-                          class="background-image team-08"
-                          style="
-                            background-image: url(https://cloud.loda.com.tr/img/29/2856-b-kyhQ4GQ38JsWp7aAQDrD.webp);
-                          "
-                          loading="lazy"
-                        ></div>
-                        <div class="background-color gainsboro"></div>
+                    </a>
+                    <a t-att-href="product.website_url" class="product-link">
+                      <div class="valencia-product-info">
+                        <div class="valencia-product-category" t-esc="product.public_categ_ids[0].name" style="color: var(--pbmit-global-color)" />
+                        <h3 class="valencia-product-name" t-esc="product.name" style="
+                            font-family: var(
+                              --pbmit-heading-typography-font-family
+                            );
+                          " />
                       </div>
                     </a>
                   </div>
-                </div>
-                <div class="background-color white-smoke"></div>
+                </t>
               </div>
-              <div class="card xl-space">
-                <div class="background-color gainsboro"></div>
-                <div
-                  class="background-image why-we-i"
-                  style="
-                    background-image: url(https://cloud.loda.com.tr/img/30/2947-b-nova-konsol-3.webp);
-                  "
-                  loading="lazy"
-                ></div>
+              <div class="valencia-discover-more">
+                <a href="/shop/category/salons-canapes-21" class="valencia-discover-link" style="font-weight: 500">
+                  <span>DÉCOUVRIR PLUS</span>
+                </a>
               </div>
             </div>
-          </div> -->
-          <!-- Loda About END -->
+          </section>
 
-          <div class="horizontal-rule"></div>
-          <!-- Newsletter -->
-          <section class="newsletter-section">
-            <div class="newsletter-bg"></div>
+          <!-- Newsletter Section -->
+          <section class="newsletter-section" style="position: relative; background-color: #fff; margin-top: 2rem">
+            <div class="newsletter-bg" style="
+                background: url('/theme_kdmobilier/static/src/images/5146-b-anasayfa-test.webp')
+                  center/cover;
+                opacity: 0.1;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+              ">            </div>
             <div class="container">
               <div class="row justify-content-center">
-                <div class="col-lg-9 newsletter-content text-center">
-                  <h3 class="kdmbolier-section-title">Notre Newsletter</h3>
-                  <div class="gold-line mx-auto"></div>
-                  <h2 class="newsletter-title">
-                    Kdmobilier : Mobilier de haute gamme
+                <div class="col-lg-9 newsletter-content text-center py-5">
+                  <h3 class="kdmobilier-section-title" style="
+                      font-size: 1.2rem;
+                      text-transform: uppercase;
+                      letter-spacing: 2px;
+                      color: var(--pbmit-global-color);
+                      margin-bottom: 1rem;
+                    ">
+                    NOTRE NEWSLETTER
+                  </h3>
+                  <div class="gold-line mx-auto" style="
+                      width: 60px;
+                      height: 3px;
+                      background-color: var(--pbmit-global-color);
+                      margin-bottom: 2rem;
+                    ">                  </div>
+                  <h2 class="newsletter-title" style="
+                      font-size: 2.5rem;
+                      font-weight: 300;
+                      margin-bottom: 1.5rem;
+                      font-family: var(--pbmit-heading-typography-font-family);
+                      letter-spacing: 1px;
+                      color: var(--pbmit-heading-color);
+                    ">
+                    Kdmobilier : Mobilier Haut de Gamme
                   </h2>
-                  <p class="newsletter-description">
+                  <p class="newsletter-description" style="
+                      font-size: 1.1rem;
+                      line-height: 1.8;
+                      margin-bottom: 2rem;
+                      color: #666;
+                      font-weight: 300;
+                    ">
                     Rejoignez notre cercle privilégié et découvrez en
                     avant-première nos créations, nos inspirations et nos
                     invitations aux événements exclusifs dédiés à l'art de
                     vivre.
                   </p>
 
-                  <form class="newsletter-form mx-auto">
-                    <div class="row g-3">
+                  <form class="newsletter-form mx-auto" style="max-width: 600px">
+                    <div class="row g-3 s_newsletter_subscribe_form s_newsletter_list js_subscribe" data-list-id="1">
                       <div class="col-md-8">
-                        <input
-                          type="email"
-                          class="form-control"
-                          placeholder="Votre adresse email"
-                          required="required"
-                        />
+                        <input type="email" name="email" class="form-control js_subscribe_value" placeholder="Votre adresse email" style="
+                            height: 50px;
+                            border-radius: 25px;
+                            border: 1px solid #ddd;
+                            padding-left: 20px;
+                          " />
                       </div>
                       <div class="col-md-4">
-                        <button type="submit" class="submit-btn w-100">
+                        <button type="submit" class="submit-btn w-100 js_subscribe_btn" style="
+                            height: 50px;
+                            border-radius: 25px;
+                            background-color: var(--pbmit-global-color);
+                            color: white;
+                            border: none;
+                            font-weight: 500;
+                            letter-spacing: 1px;
+                            text-transform: uppercase;
+                          ">
                           S'inscrire
+                        </button>
+                        <button type="submit" class="submit-btn w-100 js_subscribed_btn d-none" disabled="disabled" style="
+                            height: 50px;
+                            border-radius: 25px;
+                            background-color: var(--pbmit-global-color);
+                            color: white;
+                            border: none;
+                            font-weight: 500;
+                            letter-spacing: 1px;
+                          ">
+                          Merci
                         </button>
                       </div>
                     </div>
                   </form>
 
-                  <p class="privacy-text">
+                  <p class="privacy-text" style="margin-top: 1.5rem; font-size: 0.9rem; color: #888">
                     En vous inscrivant, vous acceptez notre
-                    <a href="#">politique de confidentialité</a>.<br />
+                    <a href="#" style="color: var(--pbmit-global-color)">politique de confidentialité</a
+                    >.                    <br />
                     Vous pouvez vous désinscrire à tout moment.
                   </p>
                 </div>
               </div>
             </div>
           </section>
-          <!-- Newsletter END -->
 
-          <!-- Customer Services -->
-          <section class="bg-black">
-            <div class="container py-5">
+          <!-- Services Section -->
+          <section style="background-color: #fcfaf7; padding: 5rem 15px;">
+            <div class="container">
               <div class="row g-5">
                 <!-- Left side - Hero Image -->
                 <div class="col-lg-7">
-                  <div class="hero-section">
-                    <div class="hero-overlay"></div>
-                    <img
-                      src="https://saloni-furniture.b-cdn.net/spio/ret_img,q_orig,to_auto,s_webp:avif/https://saloni.furniture/wp-content/uploads/slider-f7-1797x1200.jpg"
-                      alt="Luxury Canapé"
-                      class="w-100 h-100 object-fit-cover"
-                    />
-                    <div class="hero-content">
-                      <h1 class="hero-title">EXCELLENCE</h1>
-                      <p class="hero-subtitle">Artisanal Craftsmanship</p>
+                  <div class="position-relative overflow-hidden" style="height: 100%; min-height: 500px">
+                    <img src="https://saloni-furniture.b-cdn.net/spio/ret_img,q_orig,to_auto,s_webp:avif/https://saloni.furniture/wp-content/uploads/slider-f7-1797x1200.jpg" alt="Luxury Canapé" class="w-100 h-100 object-fit-cover" style="position: absolute; top: 0; left: 0" />
+                    <div class="position-absolute" style="
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        background: linear-gradient(
+                          to bottom,
+                          rgba(0, 0, 0, 0.1) 0%,
+                          rgba(0, 0, 0, 0.2) 50%,
+                          rgba(0, 0, 0, 0.5) 100%
+                        );
+                      ">                    </div>
+                    <div class="position-absolute" style="bottom: 50px; left: 50px; max-width: 80%">
+                      <h1 style="
+                          color: #fff;
+                          font-size: 3rem;
+                          font-weight: 200;
+                          letter-spacing: 4px;
+                          font-family: var(
+                            --pbmit-heading-typography-font-family
+                          );
+                        ">
+                        EXCELLENCE
+                      </h1>
+                      <p style="
+                          color: rgba(255, 255, 255, 0.9);
+                          font-size: 1.2rem;
+                          font-weight: 300;
+                          letter-spacing: 2px;
+                        ">
+                        Artisanat d'Exception
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -817,56 +530,128 @@
                 <!-- Right side - Services -->
                 <div class="col-lg-5">
                   <div>
-                    <h2 class="services-title mb-0">NOS SERVICES</h2>
-                    <div class="gold-line"></div>
+                    <h2 style="
+                        font-size: 1.8rem;
+                        margin-bottom: 0.5rem;
+                        font-weight: 500;
+                        letter-spacing: 2px;
+                        color: #000;
+                        font-family: var(
+                          --pbmit-heading-typography-font-family
+                        );
+                      ">
+                      NOS SERVICES
+                    </h2>
+                    <div style="
+                        width: 60px;
+                        height: 3px;
+                        background-color: var(--pbmit-global-color);
+                        margin: 1rem 0 2rem;
+                      ">                    </div>
 
-                    <div class="service-item">
-                      <div class="service-header">
-                        <div class="service-line"></div>
-                        <h3 class="service-title mb-0">
+                    <div style="
+                        margin-bottom: 2rem;
+                        border-left: 3px solid var(--pbmit-global-color);
+                        padding-left: 1.5rem;
+                      ">
+                      <div style="margin-bottom: 1rem">
+                        <h3 style="
+                            font-size: 1.3rem;
+                            margin-bottom: 0.5rem;
+                            font-weight: 500;
+                            letter-spacing: 1px;
+                            color: #000;
+                            font-family: var(
+                              --pbmit-heading-typography-font-family
+                            );
+                          ">
                           CONSEIL EN DÉCORATION
                         </h3>
                       </div>
-                      <p class="service-description">
+                      <p style="color: #666; line-height: 1.8; font-weight: 300">
                         Notre service de conseil en décoration vous aide à créer
                         des espaces personnalisés qui reflètent votre style.
                       </p>
                     </div>
 
-                    <div class="service-item">
-                      <div class="service-header">
-                        <div class="service-line"></div>
-                        <h3 class="service-title mb-0">
-                          DESIGN ET ARCHITECTURE D'INTÉRIEUR
+                    <div style="
+                        margin-bottom: 2rem;
+                        border-left: 3px solid var(--pbmit-global-color);
+                        padding-left: 1.5rem;
+                      ">
+                      <div style="margin-bottom: 1rem">
+                        <h3 style="
+                            font-size: 1.3rem;
+                            margin-bottom: 0.5rem;
+                            font-weight: 500;
+                            letter-spacing: 1px;
+                            color: #000;
+                            font-family: var(
+                              --pbmit-heading-typography-font-family
+                            );
+                          ">
+                          DESIGN &amp; ARCHITECTURE D'INTÉRIEUR
                         </h3>
                       </div>
-                      <p class="service-description">
+                      <p style="color: #666; line-height: 1.8; font-weight: 300">
                         Design et architecture d'intérieur alliant élégance et
                         fonctionnalité, créant des espaces harmonieux et
                         accueillants.
                       </p>
                     </div>
 
-                    <div class="service-item">
-                      <div class="service-header">
-                        <div class="service-line"></div>
-                        <h3 class="service-title mb-0">ENTRETIEN DE CANAPÉ</h3>
+                    <div style="
+                        margin-bottom: 2rem;
+                        border-left: 3px solid var(--pbmit-global-color);
+                        padding-left: 1.5rem;
+                      ">
+                      <div style="margin-bottom: 1rem">
+                        <h3 style="
+                            font-size: 1.3rem;
+                            margin-bottom: 0.5rem;
+                            font-weight: 500;
+                            letter-spacing: 1px;
+                            color: #000;
+                            font-family: var(
+                              --pbmit-heading-typography-font-family
+                            );
+                          ">
+                          ENTRETIEN DE CANAPÉ
+                        </h3>
                       </div>
-                      <p class="service-description">
+                      <p style="color: #666; line-height: 1.8; font-weight: 300">
                         Service personnalisé pour une expérience d'achat unique.
                       </p>
                     </div>
 
-                    <button class="discover-btn">
-                      DÉCOUVRIR NOTRE COLLECTION
-                      <div class="discover-line"></div>
-                    </button>
+                    <a href="/shop" style="
+                        display: inline-block;
+                        position: relative;
+                        color: #000;
+                        text-decoration: none;
+                        font-weight: 500;
+                        font-size: 1rem;
+                        text-transform: uppercase;
+                        letter-spacing: 2px;
+                        padding-bottom: 5px;
+                        margin-top: 1rem;
+                      ">
+                      <span>DÉCOUVRIR NOTRE COLLECTION</span>
+                      <div style="
+                          width: 100%;
+                          height: 2px;
+                          background-color: var(--pbmit-global-color);
+                          position: absolute;
+                          bottom: 0;
+                          left: 0;
+                          transition: width 0.3s ease;
+                        ">                      </div>
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
           </section>
-          <!-- Customer Services END -->
         </div>
       </t>
     </xpath>

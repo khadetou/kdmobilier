@@ -989,6 +989,7 @@
       </div>
     </xpath>
   </template>
+
   <!-- PRODUCT QUATITY INSIDE OF PRODUCT PAGE CUSTOM NEXT TO ADD TO CART -->
   <template
     id="custom_product_share_buttons"
@@ -1017,6 +1018,7 @@
       </div>
     </xpath>
   </template>
+
   <!-- CONDITIONS GÉNÉRALES -->
   <template
     inherit_id="website_sale.product_custom_text"
@@ -1121,6 +1123,7 @@
     </xpath>
   </template>
   <!-- Header 1 KD mobilier -->
+
   <!-- Called in `website_sale.reduction_code`. -->
   <template
     id="custom_coupon"
@@ -2023,4 +2026,30 @@
     </xpath>
   </template>
   <!-- CUSTOM PRODUCT PRICE END -->
+
+  <!-- USER SIGN IN WITH ICON -->
+  <template
+    id="user_sign_in"
+    name="User Sign In"
+    inherit_id="portal.user_sign_in"
+  >
+    <xpath expr="//li" position="replace">
+      <li
+        t-nocache="Profile session and user group can change unrelated to parent caches."
+        t-nocache-_item_class="_item_class"
+        t-nocache-_link_class="_link_class"
+        groups="base.group_public"
+        t-attf-class="#{_item_class} o_no_autohide_item"
+      >
+        <a t-attf-href="/web/login" t-attf-class="#{_link_class}">
+          <span
+            t-if="request.session.profile_session"
+            class="text-danger fa fa-circle"
+          />
+          <i class="fa fa-user" aria-label="Sign in"></i>
+        </a>
+      </li>
+    </xpath>
+  </template>
+  <!-- USER SIGN IN WITH ICON END -->
 </odoo>

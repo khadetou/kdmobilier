@@ -1,0 +1,325 @@
+/* Mobile text improvements for banners */
+@media (max-width: 767px) {
+  /* Corner content improvements */
+  .corner-content {
+    padding: 0 20px !important;
+    bottom: 30px !important;
+  }
+
+  .corner-content .corner-title {
+    font-size: 1.4rem !important;
+    line-height: 1.4 !important;
+    letter-spacing: 1px !important;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  .corner-content .corner-description {
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 1.5rem !important;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  .corner-content .corner-link {
+    padding: 10px 25px !important;
+    font-size: 0.8rem !important;
+  }
+
+  /* Banner content improvements */
+  .position-absolute[style*="bottom: 50px"] {
+    bottom: 30px !important;
+    padding: 0 20px !important;
+  }
+
+  .position-absolute[style*="bottom: 50px"] h2 {
+    font-size: 1.4rem !important;
+    margin-bottom: 0.5rem !important;
+    line-height: 1.4 !important;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  .position-absolute[style*="bottom: 50px"] p {
+    font-size: 0.85rem !important;
+    line-height: 1.4 !important;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  /* Video content improvements */
+  .saloni-video-text {
+    padding: 0 25px !important;
+  }
+
+  .saloni-video-title {
+    font-size: 1.8rem !important;
+    line-height: 1.4 !important;
+    letter-spacing: 2px !important;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  .saloni-video-description {
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 1.5rem !important;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  /* Newsletter improvements */
+  .newsletter-title {
+    font-size: 1.8rem !important;
+    line-height: 1.3 !important;
+  }
+
+  .newsletter-description {
+    font-size: 0.9rem !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Services section improvements */
+  .col-lg-5 h2 {
+    font-size: 1.6rem !important;
+    line-height: 1.3 !important;
+  }
+
+  .col-lg-5 h3 {
+    font-size: 1.1rem !important;
+    line-height: 1.4 !important;
+  }
+
+  .col-lg-5 p {
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Products grid improvements */
+  .valencia-products-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 15px !important;
+    margin-bottom: 2rem;
+  }
+
+  .valencia-product-card {
+    margin-bottom: 0 !important;
+  }
+
+  .valencia-product-name {
+    font-size: 0.9rem !important;
+    margin-top: 5px !important;
+  }
+
+  .valencia-product-category {
+    font-size: 0.8rem !important;
+  }
+
+  /* Spacing adjustments */
+  .video-section-alt,
+  .saloni-video-section {
+    height: 70vh !important;
+  }
+
+  .position-relative.overflow-hidden {
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .valencia-products {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  .valencia-section-title {
+    font-size: 1.5rem !important;
+    line-height: 1.3 !important;
+  }
+
+  .valencia-section-subtitle {
+    font-size: 0.9rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  /* Form improvements */
+  .newsletter-form {
+    padding: 0 15px !important;
+  }
+
+  .form-control {
+    height: 45px !important;
+  }
+
+  .submit-btn {
+    height: 45px !important;
+    font-size: 0.8rem !important;
+  }
+
+  /* Services section at the bottom */
+  .row.g-5 .col-lg-7 {
+    margin-bottom: 2rem !important;
+    min-height: 400px !important;
+  }
+
+  .row.g-5 .col-lg-7 h1 {
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  .row.g-5 .col-lg-7 p {
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  .row.g-5 .col-lg-5 > div {
+    padding: 0 15px !important;
+  }
+
+  .row.g-5 .col-lg-5 > div > h2 {
+    font-size: 1.4rem !important;
+    letter-spacing: 1px !important;
+  }
+
+  .row.g-5 .col-lg-5 div[style*="border-left"] {
+    margin-bottom: 1.5rem !important;
+    padding-left: 1rem !important;
+  }
+
+  .row.g-5 .col-lg-5 div[style*="border-left"] h3 {
+    font-size: 1.1rem !important;
+    letter-spacing: 0.5px !important;
+    margin-bottom: 0.3rem !important;
+  }
+
+  .row.g-5 .col-lg-5 div[style*="border-left"] p {
+    font-size: 0.85rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .row.g-5 .col-lg-5 a[style*="display: inline-block"] {
+    font-size: 0.85rem !important;
+    letter-spacing: 1px !important;
+  }
+
+  /* Improve overlays for better contrast */
+  .video-overlay,
+  .saloni-video-overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.3) 0%,
+      rgba(0, 0, 0, 0.4) 50%,
+      rgba(0, 0, 0, 0.6) 100%
+    ) !important;
+  }
+
+  .position-absolute[style*="background: linear-gradient"] {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.3) 0%,
+      rgba(0, 0, 0, 0.4) 50%,
+      rgba(0, 0, 0, 0.6) 100%
+    ) !important;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .corner-content {
+    padding: 0 15px !important;
+    bottom: 20px !important;
+  }
+
+  .corner-content .corner-title {
+    font-size: 1.2rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .corner-content .corner-description {
+    font-size: 0.8rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .position-absolute[style*="bottom: 50px"] {
+    padding: 0 15px !important;
+    bottom: 20px !important;
+  }
+
+  .position-absolute[style*="bottom: 50px"] h2 {
+    font-size: 1.2rem !important;
+  }
+
+  .position-absolute[style*="bottom: 50px"] p {
+    font-size: 0.8rem !important;
+    margin-bottom: 0.8rem !important;
+  }
+
+  .saloni-video-text {
+    padding: 0 15px !important;
+  }
+
+  .saloni-video-title {
+    font-size: 1.5rem !important;
+  }
+
+  .saloni-video-description {
+    font-size: 0.8rem !important;
+  }
+
+  .col-lg-7 h1 {
+    font-size: 2rem !important;
+  }
+
+  .col-lg-7 p {
+    font-size: 1rem !important;
+  }
+
+  /* Video height adjustment */
+  .video-section-alt,
+  .saloni-video-section {
+    height: 60vh !important;
+  }
+
+  /* Make product grid 1 column on very small devices */
+  .valencia-products-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Newsletter form vertical on small screens */
+  .newsletter-form .row {
+    flex-direction: column !important;
+  }
+
+  .newsletter-form .col-md-8,
+  .newsletter-form .col-md-4 {
+    width: 100% !important;
+    margin-bottom: 10px !important;
+  }
+
+  /* Improved readability for mobile footer */
+  .privacy-text {
+    font-size: 0.75rem !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Even smaller services section */
+  .row.g-5 .col-lg-7 {
+    min-height: 300px !important;
+  }
+
+  .row.g-5 .col-lg-5 > div > h2 {
+    font-size: 1.3rem !important;
+  }
+
+  .row.g-5 .col-lg-5 div[style*="border-left"] h3 {
+    font-size: 1rem !important;
+  }
+
+  .row.g-5 .col-lg-5 div[style*="border-left"] p {
+    font-size: 0.8rem !important;
+  }
+
+  /* Stronger overlay for very small screens */
+  .video-overlay,
+  .saloni-video-overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.4) 0%,
+      rgba(0, 0, 0, 0.5) 50%,
+      rgba(0, 0, 0, 0.7) 100%
+    ) !important;
+  }
+}

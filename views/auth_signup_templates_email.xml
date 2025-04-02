@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="reset_password_email" name="User Reset Password" inherit_id="auth_signup.reset_password_email">
+        <xpath expr="//table" position="replace">
+            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:separate;">
+                <tr>
+                    <td align="center">
+                        <table border="0" cellpadding="0" cellspacing="0" width="600" style="padding: 24px; background-color: white; color: #333333; border-collapse:separate; border: 1px solid #d19d66; border-radius: 8px; margin-top: 20px;">
+                            <tbody>
+                                <!-- HEADER -->
+                                <tr>
+                                    <td align="center" style="min-width: 590px;">
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: white; padding: 0; border-collapse:separate;">
+                                            <tr>
+                                                <td valign="middle" style="padding-bottom: 15px;">
+                                                    <span style="font-size: 12px; color: #8a5830; letter-spacing: 1px; text-transform: uppercase; display: inline-block; padding-bottom: 5px;">Votre Compte</span>
+                                                    <br/>
+                                                    <span style="font-size: 22px; font-weight: 300; letter-spacing: 1px; color: #8a5830; display: inline-block;" t-out="object.name or ''">Marc Demo</span>
+                                                </td>
+                                                <td valign="middle" align="right">
+                                                    <img src="https://res.cloudinary.com/didh3wbru/image/upload/v1743352885/Logo_1_3x_xic1yj.jpg" style="padding: 0px; margin: 0px; height: auto; max-width: 200px; max-height: 36px;" t-att-alt="'%s' % object.company_id.name"/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2" style="text-align:center;">
+                                                    <div style="height: 4px; background-color: #8a5830; margin: 10px 0 30px 0;"></div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <!-- CONTENT -->
+                                <tr>
+                                    <td style="min-width: 590px;">
+                                        <table border="0" cellpadding="0" cellspacing="0" width="590" style="min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-collapse:separate;">
+                                            <tr>
+                                                <td valign="top" style="font-size: 15px; line-height: 1.5; color: #333333;">
+                                                    <div>
+                                                        Cher(e) <t t-out="object.name or ''">Marc Demo</t>,
+                                                        <br />
+                                                        <br />
+                                                        Une réinitialisation de mot de passe a été demandée pour le compte KD Mobilier
+                                                        associé à cet e-mail. Vous pouvez changer votre mot de passe en
+                                                        suivant ce lien qui restera valide pendant 24
+                                                        heures:
+                                                        <br />
+                                                        <div style="margin: 16px 0px 16px 0px">
+                                                            <a t-att-href="object.signup_url" style="
+                                                                    background-color: #8a5830;
+                                                                    padding: 8px 16px 8px 16px;
+                                                                    text-decoration: none;
+                                                                    color: #fff;
+                                                                    border-radius: 5px;
+                                                                    font-size: 13px;
+                                                                ">
+                                                                Changer le mot de passe
+                                                            </a>
+                                                        </div>
+                                                        Si vous n'êtes pas à l'origine de cette demande, vous pouvez ignorer cet
+                                                        e-mail en toute sécurité.<br />
+                                                    <br />
+                                                        Merci,
+                                                    <t t-if="user.signature">
+                                                        <br />
+                                                        <t t-out="user.signature">--                                                            <br />
+                                                                Mitchell Admin</t>
+                                                    </t>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center">
+                                                <div style="height: 3px; background-color: #8a5830; margin: 20px 0 15px 0;"></div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <!-- FOOTER -->
+                            <tr>
+                                <td align="center" style="min-width: 590px; padding: 0 8px 0 8px; font-size:11px;">
+                                    <p style="font-weight: 600; font-size: 14px; color: #8a5830; margin-bottom: 5px;">
+                                        <t t-out="object.company_id.name or ''">YourCompany</t>
+                                    </p>
+                                    <div style="color: #666666; font-size: 12px;">
+                                        <t t-out="object.company_id.phone or ''">+1 650-123-4567</t>
+                                        <t t-if="object.company_id.email">
+                                                |
+                                            <a t-att-href="'mailto:%s' % object.company_id.email" style="text-decoration:none; color: #666666;" t-out="object.company_id.email">info@yourcompany.com</a>
+                                        </t>
+                                        <t t-if="object.company_id.website">
+                                                |
+                                            <a t-att-href="'%s' % object.company_id.website" style="text-decoration:none; color: #666666;" t-out="object.company_id.website">http://www.example.com</a>
+                                        </t>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <!-- POWERED BY REPLACEMENT -->
+            <tr>
+                <td align="center" style="min-width: 590px; padding-top: 10px;">
+                    <div style="color: #555555; font-size:11px;">
+                        <a target="_blank" href="https://www.kdmobilier.sn" style="text-decoration:none; color: #8a5830;">KD Mobilier</a>
+                        <span id="mail_unfollow">
+                                |                            <a href="/mail/unfollow" style="text-decoration:none; color:#555555;">Se désabonner</a>
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </xpath>
+</template>
+
+<template id="alert_login_new_device" name="Alert Login with new Device" inherit_id="auth_signup.alert_login_new_device">
+    <xpath expr="//table" position="replace">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:separate;">
+            <tr>
+                <td align="center">
+                    <table border="0" cellpadding="0" cellspacing="0" width="600" style="padding: 24px; background-color: white; color: #333333; border-collapse:separate; border: 1px solid #d19d66; border-radius: 8px; margin-top: 20px;">
+                        <tbody>
+                            <!-- HEADER -->
+                            <tr>
+                                <td align="center" style="min-width: 590px;">
+                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: white; padding: 0; border-collapse:separate;">
+                                        <tr>
+                                            <td valign="middle" style="padding-bottom: 15px;">
+                                                <span style="font-size: 12px; color: #8a5830; letter-spacing: 1px; text-transform: uppercase; display: inline-block; padding-bottom: 5px;">Alerte de Sécurité</span>
+                                                <br/>
+                                                <span style="font-size: 22px; font-weight: 300; letter-spacing: 1px; color: #8a5830; display: inline-block;" t-out="object.name or ''">Marc Demo</span>
+                                            </td>
+                                            <td valign="middle" align="right">
+                                                <img src="https://res.cloudinary.com/didh3wbru/image/upload/v1743352885/Logo_1_3x_xic1yj.jpg" style="padding: 0px; margin: 0px; height: auto; max-width: 200px; max-height: 36px;" t-att-alt="'%s' % object.company_id.name"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" style="text-align:center;">
+                                                <div style="height: 4px; background-color: #8a5830; margin: 10px 0 30px 0;"></div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <!-- CONTENT -->
+                            <tr>
+                                <td style="min-width: 590px;">
+                                    <table border="0" cellpadding="0" cellspacing="0" width="590" style="min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-collapse:separate;">
+                                        <tr>
+                                            <td valign="top" style="font-size: 15px; line-height: 1.5; color: #333333;">
+                                                <div>
+                                                        Cher(e) <t t-out="object.name or ''">Marc Demo</t>,
+                                                    <br />
+                                                    <br />
+                                                        Un nouvel appareil a été utilisé pour se connecter à votre compte.
+                                                    <br />
+                                                    <br />
+                                                        Voici quelques détails sur cette connexion:
+                                                    <br />
+                                                    <ul style="color: #555555; line-height: 1.7; padding-left: 20px;">
+                                                        <li>
+                                                            <span style="font-weight: bold">Date:</span>
+                                                            <t t-out="format_datetime(login_date, dt_format='long')">day, month dd, yyyy - hh:mm:ss (GMT)</t>
+                                                        </li>
+                                                        <t t-if="location_address">
+                                                            <li>
+                                                                <span style="font-weight: bold">Localisation:</span>
+                                                                <t t-out="location_address">City, Region, Country</t>
+                                                            </li>
+                                                        </t>
+                                                        <t t-if="useros">
+                                                            <li>
+                                                                <span style="font-weight: bold">Plateforme:</span>
+                                                                <t t-out="useros">OS</t>
+                                                            </li>
+                                                        </t>
+                                                        <t t-if="browser">
+                                                            <li>
+                                                                <span style="font-weight: bold">Navigateur:</span>
+                                                                <t t-out="browser">Browser</t>
+                                                            </li>
+                                                        </t>
+                                                        <li>
+                                                            <span style="font-weight: bold">Adresse IP:</span>
+                                                            <t t-out="ip_address">111.222.333.444</t>
+                                                        </li>
+                                                    </ul>
+                                                        Si vous ne reconnaissez pas cette activité, vous devriez changer votre
+                                                        mot de passe immédiatement via ce lien:
+                                                    <br />
+                                                    <div style="margin: 16px 0px 16px 0px">
+                                                        <a t-attf-href="{{object.get_base_url()}}/web/reset_password" style="
+                                                                    background-color: #8a5830;
+                                                                    padding: 8px 16px 8px 16px;
+                                                                    text-decoration: none;
+                                                                    color: #fff;
+                                                                    border-radius: 5px;
+                                                                    font-size: 13px;
+                                                                ">
+                                                                Réinitialiser le mot de passe
+                                                        </a>
+                                                    </div>
+                                                        Dans le cas contraire, vous pouvez ignorer cet e-mail en toute sécurité.
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center">
+                                                <div style="height: 3px; background-color: #8a5830; margin: 20px 0 15px 0;"></div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <!-- FOOTER -->
+                            <tr>
+                                <td align="center" style="min-width: 590px; padding: 0 8px 0 8px; font-size:11px;">
+                                    <p style="font-weight: 600; font-size: 14px; color: #8a5830; margin-bottom: 5px;">
+                                        <t t-out="object.company_id.name or ''">YourCompany</t>
+                                    </p>
+                                    <div style="color: #666666; font-size: 12px;">
+                                        <t t-out="object.company_id.phone or ''">+1 650-123-4567</t>
+                                        <t t-if="object.company_id.email">
+                                                |
+                                            <a t-att-href="'mailto:%s' % object.company_id.email" style="text-decoration:none; color: #666666;" t-out="object.company_id.email">info@yourcompany.com</a>
+                                        </t>
+                                        <t t-if="object.company_id.website">
+                                                |
+                                            <a t-att-href="'%s' % object.company_id.website" style="text-decoration:none; color: #666666;" t-out="object.company_id.website">http://www.example.com</a>
+                                        </t>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <!-- POWERED BY REPLACEMENT -->
+            <tr>
+                <td align="center" style="min-width: 590px; padding-top: 10px;">
+                    <div style="color: #555555; font-size:11px;">
+                        <a target="_blank" href="https://www.kdmobilier.sn" style="text-decoration:none; color: #8a5830;">KD Mobilier</a>
+                        <span id="mail_unfollow">
+                                |                            <a href="/mail/unfollow" style="text-decoration:none; color:#555555;">Se désabonner</a>
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </xpath>
+</template>
+
+</odoo>

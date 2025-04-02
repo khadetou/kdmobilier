@@ -14,6 +14,7 @@
         "website_sale_subscription",
     ],
     "data": [
+        "data/ir_assets.xml",
         "views/layout.xml",
         "views/header_template.xml",
         "views/footer_template.xml",
@@ -27,8 +28,10 @@
         "views/design-planning.xml",
         "views/entretien-canape.xml",
         "views/conseil-decoration.xml",
-        # "views/aboutus_page.xml",
+        "views/aboutus_page.xml",
+        "views/contact_us_thank_you.xml",
         "data/website_data.xml",
+        "views/auth_signup_templates_email.xml",
     ],
     "assets": {
         "web.assets_frontend": [
@@ -58,6 +61,8 @@
             "theme_kdmobilier/static/src/scss/_fonts.scss",
             "theme_kdmobilier/static/src/css/style.css",
             "theme_kdmobilier/static/src/css/style_1.css",
+            "theme_kdmobilier/static/src/css/premium-buttons.css",
+            "theme_kdmobilier/static/src/css/mobile-improvements.css",
             # "theme_kdmobilier/static/src/css/lodas-site.css",
             # JAVA SCRIPT
             "/theme_kdmobilier/static/build/js/main.js",
@@ -94,9 +99,6 @@
             "theme_kdmobilier/static/src/js/main.js",
             "theme_kdmobilier/static/src/js/dropdown_extension.js",
             "theme_kdmobilier/static/src/js/recaptcha_loader.js",
-        ],
-        "web.assets_primary_variables": [
-            ("prepend", "theme_kdmobilier/static/src/scss/primary_variables.scss"),
         ],
     },
     "installable": True,

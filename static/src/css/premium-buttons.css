@@ -1,0 +1,178 @@
+/* Premium Button Effects */
+
+/* Corner Link Button */
+.corner-link {
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.corner-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #8a5830, #d19d66);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  border-radius: 30px;
+  z-index: 0;
+}
+
+.corner-link span {
+  position: relative;
+  z-index: 2;
+}
+
+.corner-link:hover {
+  transform: translateY(-3px) scale(1.02) !important;
+  box-shadow: 0 10px 20px rgba(209, 157, 102, 0.4) !important;
+}
+
+.corner-link:hover::before {
+  opacity: 1;
+}
+
+/* Valencia Quick View Button */
+.valencia-quick-view {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.valencia-quick-view:hover {
+  transform: translateY(-2px) scale(1.05) !important;
+  box-shadow: 0 8px 20px rgba(209, 157, 102, 0.4) !important;
+}
+
+/* Valencia Discover Link */
+.valencia-discover-link {
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.valencia-discover-link span {
+  position: relative;
+  z-index: 2;
+  transition: all 0.4s ease;
+}
+
+.valencia-discover-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #8a5830, #d19d66);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  border-radius: 30px;
+  z-index: 1;
+}
+
+.valencia-discover-link:hover {
+  transform: translateY(-3px) scale(1.02) !important;
+  box-shadow: 0 10px 20px rgba(209, 157, 102, 0.4) !important;
+}
+
+.valencia-discover-link:hover::before {
+  opacity: 1;
+}
+
+.valencia-discover-link::after {
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  position: relative;
+  z-index: 2;
+}
+
+.valencia-discover-link:hover::after {
+  transform: translateX(8px) !important;
+}
+
+/* Submit Button */
+.submit-btn {
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.submit-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #8a5830, #d19d66);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+  border-radius: 30px;
+}
+
+.submit-btn:hover {
+  transform: translateY(-3px) scale(1.02) !important;
+  box-shadow: 0 10px 20px rgba(209, 157, 102, 0.4) !important;
+}
+
+.submit-btn:hover::before {
+  opacity: 1;
+}
+
+/* Discover Button */
+.discover-btn {
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+}
+
+.discover-btn:hover {
+  transform: translateY(-3px) scale(1.02) !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+.discover-line {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+
+.discover-btn:hover .discover-line {
+  width: 3rem !important;
+}
+
+/* JS Subscribe Buttons */
+.js_subscribe_btn,
+.js_subscribed_btn {
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.js_subscribe_btn::before,
+.js_subscribed_btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #8a5830, #d19d66);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  border-radius: 30px;
+  z-index: -1;
+}
+
+.js_subscribe_btn:hover,
+.js_subscribed_btn:hover {
+  transform: translateY(-3px) scale(1.02) !important;
+  box-shadow: 0 10px 20px rgba(209, 157, 102, 0.4) !important;
+}
+
+.js_subscribe_btn:hover::before,
+.js_subscribed_btn:hover::before {
+  opacity: 1;
+}

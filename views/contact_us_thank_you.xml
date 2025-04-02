@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="website.contactus_thanks" model="website.page">
+        <field name="name">Thanks (Contact us)</field>
+        <field name="type">qweb</field>
+        <field name="url">/contactus-thank-you</field>
+        <field name="website_indexed" eval="False"/>
+        <field name="is_published">True</field>
+        <field name="key">website.contactus_thanks</field>
+        <field name="arch" type="xml">
+            <t name="Thanks (Contact us)" t-name="website.contactus_thanks">
+                <t t-call="website.layout">
+                    <div id="wrap" class="oe_structure">
+                        <div class="container mt-5 mb-5">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <div class="card shadow-sm border-0 rounded-3 overflow-hidden" style="border: 1px solid #d19d66 !important;">
+                                        <div class="card-header py-4 text-white w-100" style="background: linear-gradient(135deg, #d19d66, #8a5830);">
+                                            <h2 class="text-center mb-0 fw-light text-white" style="letter-spacing: 1px;" t-out="request.lang and request.lang.code and request.lang.code.startswith('fr') and 'Merci pour votre message' or 'Thank You for Your Message'">Thank You for Your Message</h2>
+                                        </div>
+                                        <div class="card-body p-5 text-center" style="background-color: #fcfaf7;">
+                                            <div class="my-4">
+                                                <i class="fa fa-check-circle fa-5x" style="color: #d19d66;" role="img" aria-label="Success"></i>
+                                            </div>
+                                            <h3 class="mb-4 fw-light" style="color: #8a5830; letter-spacing: 0.5px;" t-out="request.lang and request.lang.code and request.lang.code.startswith('fr') and 'Votre message a bien été reçu' or 'Your message has been received'">Your message has been received</h3>
+
+                                            <div class="p-4 mb-4 rounded-3" style="background-color: #fff; border: 1px solid rgba(209, 157, 102, 0.3);">
+                                                <p class="fs-5 mb-0" style="color: #555; font-weight: 300;" t-out="request.lang and request.lang.code and request.lang.code.startswith('fr') and 'Notre équipe vous contactera dans les plus brefs délais.' or 'Our team will get back to you shortly.'">Our team will get back to you shortly.</p>
+                                            </div>
+
+                                            <div class="contact-info p-4 mt-5 mb-4 rounded-3 text-start" style="background-color: #fff; border: 1px solid rgba(209, 157, 102, 0.3);">
+                                                <h4 class="mb-3 fw-light text-center" style="color: #8a5830; letter-spacing: 0.5px;" t-out="request.lang and request.lang.code and request.lang.code.startswith('fr') and 'Nos coordonnées' or 'Our Contact Information'">Our Contact Information</h4>
+                                                <div class="d-flex align-items-center mb-3">
+                                                    <div class="contact-icon me-3" style="width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #d19d66, #8a5830);">
+                                                        <i class="fa fa-map-marker text-white"></i>
+                                                    </div>
+                                                    <div>
+                                                        <p class="mb-0" style="color: #555; font-weight: 300;">
+                                                            <span class="o_force_ltr" t-out="request.lang and request.lang.code and request.lang.code.startswith('fr') and 'Dakar: C.C Bin Abdallah sacré coeur 3' or 'Dakar: C.C Bin Abdallah sacré coeur 3'">Dakar: C.C Bin Abdallah sacré coeur 3</span>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex align-items-center mb-3">
+                                                    <div class="contact-icon me-3" style="width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #d19d66, #8a5830);">
+                                                        <i class="fa fa-map-marker text-white"></i>
+                                                    </div>
+                                                    <div>
+                                                        <p class="mb-0" style="color: #555; font-weight: 300;">
+                                                            <span class="o_force_ltr" t-out="request.lang and request.lang.code and request.lang.code.startswith('fr') and 'Saly: Musée Khelcom' or 'Saly: Khelcom Museum'">Saly: Musée Khelcom</span>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex align-items-center mb-3">
+                                                    <div class="contact-icon me-3" style="width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #d19d66, #8a5830);">
+                                                        <i class="fa fa-phone text-white"></i>
+                                                    </div>
+                                                    <div>
+                                                        <p class="mb-0" style="color: #555; font-weight: 300;">
+                                                            <span class="o_force_ltr">+221 78 533 28 28</span>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="contact-icon me-3" style="width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #d19d66, #8a5830);">
+                                                        <i class="fa fa-envelope text-white"></i>
+                                                    </div>
+                                                    <div>
+                                                        <p class="mb-0" style="color: #555; font-weight: 300;">
+                                                            <span>contact@kdmobilier.sn</span>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="mt-5">
+                                                <a href="/" class="btn px-5 py-3 rounded-pill" style="background: linear-gradient(135deg, #d19d66, #8a5830); color: white; font-weight: 400; letter-spacing: 0.5px; box-shadow: 0 3px 10px rgba(138, 88, 48, 0.2);">
+                                                    <i class="fa fa-home me-2"></i>
+                                                    <span t-out="request.lang and request.lang.code and request.lang.code.startswith('fr') and &quot;Retour à l'accueil&quot; or 'Back to Homepage'">Back to Homepage</span>
+                                                </a>
+                                                <a href="/shop" class="btn px-5 py-3 rounded-pill ms-2 d-none d-md-inline-block" style="background: white; color: #8a5830; border: 1px solid #d19d66; font-weight: 400; letter-spacing: 0.5px;">
+                                                    <i class="fa fa-shopping-bag me-2"></i>
+                                                    <span t-out="request.lang and request.lang.code and request.lang.code.startswith('fr') and 'Découvrir nos produits' or 'Explore Our Products'">Explore Our Products</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <input t-if='website.plausible_shared_key' type='hidden' class='js_plausible_push' data-event-name='Lead Generation' data-event-params='{"CTA": "Contact Us"}' />
+                </t>
+            </t>
+        </field>
+    </record>
+</odoo>

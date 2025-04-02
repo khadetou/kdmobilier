@@ -115,7 +115,7 @@
                       </button>
                       <button class="pbmit-btn js_subscribed_btn btn btn-success d-none" disabled="disabled">
                         <span class="pbmit-button-content-wrapper">
-                          <span class="pbmit-button-text">Thanks</span>
+                          <span class="pbmit-button-text">Merci</span>
                         </span>
                       </button>
                     </div>

@@ -251,47 +251,109 @@
                       <div class="pbmit-heading animation-style2">
                         <h2 class="pbmit-title">Envoyez-nous un message</h2>
                       </div>
-                      <form action="/website/form/" method="post" enctype="multipart/form-data" data-mark="*" data-model_name="mail.mail" data-success-mode="redirect" data-success-page="/contactus-thank-you" data-pre-fill="true" class="contact-form" id="contact-form" t-att-data-recaptcha-sitekey="request.env['ir.config_parameter'].sudo().get_param('recaptcha_public_key')">
-                        <div class="row">
-                          <div class="col-md-12">
-                            <textarea name="message" cols="40" rows="10" class="form-control" placeholder="Votre message (détaillez votre projet ou vos questions)" required=""></textarea>
-                          </div>
-                          <div class="col-md-6">
-                            <input type="text" class="form-control" placeholder="Votre nom complet *" name="name" required="" data-fill-with="name" style="margin-bottom: 20px" />
-                          </div>
-                          <div class="col-md-6">
-                            <input type="email" class="form-control" placeholder="Votre email *" name="email" required="" data-fill-with="email" style="margin-bottom: 20px" />
-                          </div>
-                          <div class="col-md-6">
-                            <input type="tel" class="form-control" placeholder="Votre téléphone *" name="phone" required="" data-fill-with="phone" style="margin-bottom: 20px" />
-                          </div>
-                          <div class="col-md-6">
-                            <input type="text" class="form-control" placeholder="Sujet de votre message" name="subject" data-fill-with="subject" required="" style="margin-bottom: 20px" />
-                          </div>
-                          <div class="col-md-12">
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" />
-                              <label class="form-check-label">
-                                Enregistrer mes informations pour mes prochaines
-                                demandes.
-                              </label>
+                      <section class="s_website_form" data-vcss="001" data-snippet="s_website_form">
+                        <div class="container">
+                          <form id="contactus_form" action="/website/form/" method="post" enctype="multipart/form-data" class="o_mark_required contact-form s_website_form" data-mark="*" data-model_name="crm.lead" data-success-mode="redirect" data-success-page="/contactus-thank-you" data-pre-fill="true">
+                            <div class="s_website_form_rows row s_col_no_bgcolor">
+                              <!-- Name  Field -->
+                              <div class="mb-3 col-lg-6 s_website_form_field s_website_form_required s_website_form_custom" data-type="char" data-name="Field">
+                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                  <label class="col-form-label col-sm-auto s_website_form_label d-none" style="width: 200px" for="contact1">
+                                    <span class="s_website_form_label_content">Name</span>
+                                    <span class="s_website_form_mark"> *</span>
+                                  </label>
+                                  <div class="col-sm">
+                                    <input id="contact1" type="text" placeholder="Votre nom complet *" class="form-control s_website_form_input" name="name" required="" data-fill-with="name"/>
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- Email Field -->
+                              <div class="mb-3 col-lg-6 s_website_form_field s_website_form_required s_website_form_model_required" data-type="email" data-name="Field">
+                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                  <label class="col-form-label col-sm-auto s_website_form_label d-none" style="width: 200px" for="contact3">
+                                    <span class="s_website_form_label_content">Email</span>
+                                    <span class="s_website_form_mark"> *</span>
+                                  </label>
+                                  <div class="col-sm">
+                                    <input id="contact3" type="email" placeholder="Email" class="form-control s_website_form_input" name="email_from" required="" data-fill-with="email"/>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <!-- Phone field -->
+
+                              <div class="mb-3 col-lg-6 s_website_form_field s_website_form_custom" data-type="char" data-name="Field">
+                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                  <label class="col-form-label col-sm-auto s_website_form_label d-none" style="width: 200px" for="contact2">
+                                    <span class="s_website_form_label_content">Téléphone</span>
+                                  </label>
+                                  <div class="col-sm">
+                                    <input id="contact2" type="tel" placeholder="Téléphone" class="form-control s_website_form_input" name="phone" data-fill-with="phone"/>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <!-- Company Field -->
+                              <div class="mb-3 col-lg-6 s_website_form_field s_website_form_custom" data-type="char" data-name="Field">
+                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                  <label class="ccol-form-label col-sm-auto s_website_form_label d-none" style="width: 200px" for="contact4">
+                                    <span class="s_website_form_label_content">Entreprise</span>
+                                  </label>
+                                  <div class="col-sm">
+                                    <input id="contact4" type="text" placeholder="Entreprise" class="form-control s_website_form_input" name="company" data-fill-with="commercial_company_name"/>
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- Subject Field -->
+                              <div class="mb-3 col-12 s_website_form_field s_website_form_required s_website_form_model_required" data-type="char" data-name="Field">
+                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                  <label class="col-form-label col-sm-auto s_website_form_label d-none" style="width: 200px" for="contact5">
+                                    <span class="s_website_form_label_content">Sujet</span>
+                                    <span class="s_website_form_mark"> *</span>
+                                  </label>
+                                  <div class="col-sm">
+                                    <input id="contact5" type="text" placeholder="Sujet *" class="form-control s_website_form_input" name="subject" required=""/>
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- Message Field -->
+                              <div class="mb-3 col-12 s_website_form_field s_website_form_required s_website_form_custom" data-type="text" data-name="Field">
+                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                  <label class="col-form-label col-sm-auto s_website_form_label d-none" style="width: 200px" for="contact6">
+                                    <span class="s_website_form_label_content">Message</span>
+                                    <span class="s_website_form_mark"> *</span>
+                                  </label>
+                                  <div class="col-sm">
+                                    <textarea id="contact6" placeholder="Votre message *" class="form-control s_website_form_input" name="description" required=""></textarea>
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- Email To Field -->
+                              <div class="mb-0 py-2 col-12 s_website_form_field s_website_form_dnone">
+                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                  <label class="col-form-label col-sm-auto s_website_form_label d-none" style="width: 200px" for="contact7">
+                                    <span class="s_website_form_label_content">Email To</span>
+                                  </label>
+                                  <div class="col-sm">
+                                    <input id="contact7" type="hidden" class="form-control s_website_form_input" name="email_to"/>
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- Submit Button -->
+                              <div class="mb-3 col-12 s_website_form_submit" data-name="Submit Button">
+                                <div style="width: 200px;" class="s_website_form_label"/>
+                                <button type="submit" class="pbmit-btn pbmit-btn-outline s_website_form_send">
+                                  <i class="form-btn-loader fa fa-circle-o-notch fa-spin fa-fw margin-bottom d-none"></i>
+                                  <span class="pbmit-button-content-wrapper">
+                                    <span class="pbmit-button-text">Envoyer le message</span>
+                                  </span>
+                                </button>
+                                <span id="s_website_form_result"></span>
+                              </div>
                             </div>
-                          </div>
-                          <div class="col-md-12">
-                            <div class="g-recaptcha mb-3"></div>
-                          </div>
-                          <div class="col-md-12">
-                            <button type="submit" class="pbmit-btn pbmit-btn-outline">
-                              <i class="form-btn-loader fa fa-circle-o-notch fa-spin fa-fw margin-bottom d-none"></i>
-                              <span class="pbmit-button-content-wrapper">
-                                <span class="pbmit-button-text">Envoyer le message</span
-                                >
-                              </span>
-                            </button>
-                          </div>
-                          <div class="col-md-12 col-lg-12 message-status"></div>
+                          </form>
                         </div>
-                      </form>
+                      </section>
                     </div>
                   </div>
                 </div>

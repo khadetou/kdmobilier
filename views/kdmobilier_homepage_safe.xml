@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <template
+    id="kdmobilier_homepage"
+    inherit_id="website.homepage"
+    name="Homepage"
+  >
+    <xpath expr="//t[@t-call='website.layout']" position="replace">
+      <t t-call="website.layout">
+        <t t-set="pageName" t-value="'homepage'" />
+        <!-- <section class="header-style-3"></section> -->
+        <div class="oe_structure oe_empty" />
+        <div class="all-content">
+          <!-- CUSTOM CODE START Vid 1 -->
+          <section class="video-section-alt">
+            <div class="video-container">
+              <video
+                autoplay="true"
+                loop="true"
+                muted="true"
+                playsinline="true"
+              >
+                <source
+                  src="https://res.cloudinary.com/do4eujx4o/video/upload/q_auto,f_auto/v1743361469/zovllz7juaegd4xful5l.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+            <div class="video-overlay"></div>
+            <div class="corner-content">
+              <div class="left-text">
+                <h2 class="corner-title">
+                  COLLECTION DE MOBILIER HAUT DE GAMME
+                </h2>
+                <p class="corner-description">
+                  Un design moderne et élégant pour un intérieur raffiné
+                </p>
+              </div>
+              <a href="/shop" class="corner-link">Voir les produits</a>
+            </div>
+          </section>
+          <!-- CUSTOM CODE Vid 1 END -->
+
+          <!-- CUSTOM CONSOLE START -->
+          <div
+            class="heroscreen mob-pd-tb py-4"
+            style="
+              padding-left: 0;
+              padding-right: 0px;
+              padding-top: 0;
+              padding-bottom: 0px;
+            "
+          >
+            <div>
+              <img
+                src="theme_kdmobilier/static/src/images/4938-b-modo-tv.webp"
+                alt=" mobil"
+                class="mobileslider img"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <!-- CUSTOM CONSOLE END -->
+
+          <!-- CUSTOM CODE START Vid 2 -->
+          <section class="saloni-video-section py-4">
+            <div class="saloni-video-container">
+              <video
+                autoplay="true"
+                loop="true"
+                muted="true"
+                playsinline="true"
+              >
+                <source
+                  src="https://res.cloudinary.com/do4eujx4o/video/upload/q_auto,f_auto/v1743361469/zovllz7juaegd4xful5l.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+            <div class="saloni-video-overlay"></div>
+            <div class="saloni-video-text">
+              <h2 class="saloni-video-title">L'Art de Vivre</h2>
+              <p class="saloni-video-description">
+                Découvrez notre collection Valencia, où le design moderne
+                rencontre le confort intemporel. Chaque pièce est
+                méticuleusement conçue pour créer un espace de vie qui reflète
+                votre style unique.
+              </p>
+            </div>
+          </section>
+          <!-- CUSTOM CODE END VID 2-->
+
+          <!-- CUSTOM LIT 1 -->
+          <div
+            class="heroscreen mob-pd-tb py-4"
+            style="
+              padding-left: 0;
+              padding-right: 0px;
+              padding-top: 0;
+              padding-bottom: 0px;
+            "
+          >
+            <div>
+              <img
+                src="/theme_kdmobilier/static/src/images/5141-b-anasayfa-test.webp"
+                alt=" mobil"
+                class="mobileslider img"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <!-- CUSTOM LIT 1 END -->
+
+          <!-- CUSTOM CODE START Vid 3 -->
+          <section class="video-section-alt">
+            <div class="video-container">
+              <video
+                autoplay="true"
+                loop="true"
+                muted="true"
+                playsinline="true"
+              >
+                <source
+                  src="https://res.cloudinary.com/do4eujx4o/video/upload/q_auto,f_auto/v1743361326/ra1zklploim5p5jyyjzu.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+            <div class="video-overlay"></div>
+            <div class="corner-content">
+              <div class="left-text">
+                <h2 class="corner-title">
+                  COLLECTION DE MOBILIER HAUT DE GAMME
+                </h2>
+                <p class="corner-description">
+                  Un design moderne et élégant pour un intérieur raffiné
+                </p>
+              </div>
+              <a href="/shop" class="corner-link">Voir les produits</a>
+            </div>
+          </section>
+          <!-- CUSTOM CODE Vid 3 END -->
+
+          <!-- CUSTOM LIT 2 -->
+          <div
+            class="heroscreen mob-pd-tb py-4"
+            style="
+              padding-left: 0;
+              padding-right: 0px;
+              padding-top: 0;
+              padding-bottom: 0px;
+            "
+          >
+            <div>
+              <img
+                src="/theme_kdmobilier/static/src/images/5146-b-anasayfa-test.webp"
+                alt=" mobil"
+                class="mobileslider img"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <!-- CUSTOM LIT 2 END -->
+
+          <!-- Nova Collection END -->
+          <div class="oe_structure oe_empty" />
+          <section class="valencia-products py-5">
+            <div class="valencia-section-header">
+              <div class="valencia-section-subtitle">Collection exclusive</div>
+              <h2 class="valencia-section-title">
+                Salons Et <span>Canapé</span>
+              </h2>
+            </div>
+
+            <div class="valencia-products-grid">
+              <t
+                t-set="canapes_category"
+                t-value="request.env['product.public.category'].search([('name', '=', 'Canapes')], limit=1)"
+              />
+              <t
+                t-set="products"
+                t-value="request.env['product.template'].search([
+                        ('public_categ_ids', 'in', canapes_category.ids),
+                        ('website_published', '=', True)
+                    ], limit=6)"
+              />
+
+              <t t-foreach="products" t-as="product">
+                <div class="valencia-product-card">
+                  <a t-att-href="product.website_url" class="product-link">
+                    <div class="valencia-product-image">
+                      <img
+                        t-att-src="website.image_url(product, 'image_1024')"
+                        t-att-alt="product.name"
+                      />
+                      <div class="valencia-product-overlay">
+                        <button class="valencia-quick-view">Découvrir</button>
+                      </div>
+                    </div>
+                  </a>
+                  <a t-att-href="product.website_url" class="product-link">
+                    <div class="valencia-product-info">
+                      <div
+                        class="valencia-product-category"
+                        t-esc="product.public_categ_ids[0].name"
+                      />
+                      <h3 class="valencia-product-name" t-esc="product.name" />
+                    </div>
+                  </a>
+                </div>
+              </t>
+            </div>
+            <div class="valencia-discover-more">
+              <a
+                href="/shop/category/salons-canapes-21"
+                class="valencia-discover-link"
+                >Découvrir Plus</a
+              >
+            </div>
+          </section>
+          <!-- Sophia Collection -->
+
+          <!-- Loda About END -->
+
+          <div class="horizontal-rule"></div>
+
+          <!-- Newsletter -->
+          <section class="newsletter-section">
+            <div class="newsletter-bg"></div>
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-9 newsletter-content text-center">
+                  <h3 class="kdmbolier-section-title">Notre Newsletter</h3>
+                  <div class="gold-line mx-auto"></div>
+                  <h2 class="newsletter-title">
+                    Kdmobilier : Mobilier de haute gamme
+                  </h2>
+                  <p class="newsletter-description">
+                    Rejoignez notre cercle privilégié et découvrez en
+                    avant-première nos créations, nos inspirations et nos
+                    invitations aux événements exclusifs dédiés à l'art de
+                    vivre.
+                  </p>
+
+                  <form class="newsletter-form mx-auto">
+                    <div
+                      class="row g-3 s_newsletter_subscribe_form s_newsletter_list js_subscribe"
+                      data-list-id="1"
+                    >
+                      <div class="col-md-8">
+                        <input
+                          type="email"
+                          name="email"
+                          class="form-control js_subscribe_value"
+                          placeholder="Votre adresse email"
+                        />
+                      </div>
+                      <div class="col-md-4">
+                        <button
+                          type="submit"
+                          class="submit-btn w-100 js_subscribe_btn"
+                        >
+                          S'inscrire
+                        </button>
+                        <button
+                          type="submit"
+                          class="submit-btn w-100 js_subscribed_btn d-none"
+                          disabled="disabled"
+                        >
+                          Merci
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+
+                  <p class="privacy-text">
+                    En vous inscrivant, vous acceptez notre
+                    <a href="#">politique de confidentialité</a>. <br />
+                    Vous pouvez vous désinscrire à tout moment.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Newsletter END -->
+
+          <!-- Customer Services -->
+          <section class="bg-black">
+            <div class="container py-5">
+              <div class="row g-5">
+                <!-- Left side - Hero Image -->
+                <div class="col-lg-7">
+                  <div class="hero-section">
+                    <div class="hero-overlay"></div>
+                    <img
+                      src="https://saloni-furniture.b-cdn.net/spio/ret_img,q_orig,to_auto,s_webp:avif/https://saloni.furniture/wp-content/uploads/slider-f7-1797x1200.jpg"
+                      alt="Luxury Canapé"
+                      class="w-100 h-100 object-fit-cover"
+                    />
+                    <div class="hero-content">
+                      <h1 class="hero-title">EXCELLENCE</h1>
+                      <p class="hero-subtitle">Artisanal Craftsmanship</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Right side - Services -->
+                <div class="col-lg-5">
+                  <div>
+                    <h2 class="services-title mb-0">NOS SERVICES</h2>
+                    <div class="gold-line"></div>
+
+                    <div class="service-item">
+                      <div class="service-header">
+                        <div class="service-line"></div>
+                        <h3 class="service-title mb-0">
+                          CONSEIL EN DÉCORATION
+                        </h3>
+                      </div>
+                      <p class="service-description">
+                        Notre service de conseil en décoration vous aide à créer
+                        des espaces personnalisés qui reflètent votre style.
+                      </p>
+                    </div>
+
+                    <div class="service-item">
+                      <div class="service-header">
+                        <div class="service-line"></div>
+                        <h3 class="service-title mb-0">
+                          DESIGN ET ARCHITECTURE D'INTÉRIEUR
+                        </h3>
+                      </div>
+                      <p class="service-description">
+                        Design et architecture d'intérieur alliant élégance et
+                        fonctionnalité, créant des espaces harmonieux et
+                        accueillants.
+                      </p>
+                    </div>
+
+                    <div class="service-item">
+                      <div class="service-header">
+                        <div class="service-line"></div>
+                        <h3 class="service-title mb-0">ENTRETIEN DE CANAPÉ</h3>
+                      </div>
+                      <p class="service-description">
+                        Service personnalisé pour une expérience d'achat unique.
+                      </p>
+                    </div>
+
+                    <button class="discover-btn">
+                      DÉCOUVRIR NOTRE COLLECTION
+                      <div class="discover-line"></div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Customer Services END -->
+        </div>
+      </t>
+    </xpath>
+  </template>
+</odoo>

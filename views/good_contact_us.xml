@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <template id="contact_us" inherit_id="website.contactus" name="Contact Us">
+    <xpath expr="//div[hasclass('oe_structure')]" position="replace">
+      <div class="oe_structure" />
+    </xpath>
+    <xpath expr="//div[hasclass('oe_structure')]" position="after">
+      <div id="wrap" class="oe_structure oe_empty">
+        <!-- Title Bar -->
+        <div class="pbmit-title-bar-wrapper parallax">
+          <div class="o_we_bg_filter bg-black-50"></div>
+          <div class="container">
+            <div class="pbmit-title-bar-content">
+              <div class="pbmit-title-bar-content-inner">
+                <div class="pbmit-tbar">
+                  <div class="pbmit-tbar-inner container">
+                    <h1 class="pbmit-tbar-title">Contactez nous</h1>
+                  </div>
+                </div>
+                <div class="pbmit-breadcrumb">
+                  <div class="pbmit-breadcrumb-inner">
+                    <span>
+                      <a title="" href="/" class="home">
+                        <span>Accueil</span>
+                      </a>
+                    </span>
+                    <span class="sep">
+                      <i class="pbmit-base-icon-angle-right"></i>
+                    </span>
+                    <span>
+                      <span class="post-root post post-post current-item">
+                        Contactez nous</span
+                      >
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Title Bar End-->
+
+        <div class="page-content">
+          <!-- Ihbox -->
+          <section class="ihbox-section-two">
+            <div class="container-fluid p-0">
+              <div class="swiper-slider" data-autoplay="false" data-loop="true" data-dots="false" data-arrows="false" data-columns="4" data-margin="30" data-effect="slide">
+                <div class="swiper-wrapper">
+                  <!-- Slide1 -->
+                  <article class="pbmit-miconheading-style-7 swiper-slide">
+                    <div class="pbmit-ihbox-style-7">
+                      <div class="pbmit-ihbox-box">
+                        <div class="pbmit-icon-wrapper d-flex align-items-center">
+                          <div class="pbmit-ihbox-icon">
+                            <div class="pbmit-ihbox-icon-wrapper">
+                              <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
+                                <i class="pbmit-xinterio-icon pbmit-xinterio-icon-living-room"></i>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="pbmit-title-wrap">
+                            <h2 class="pbmit-element-title">Salon de Luxe</h2>
+                          </div>
+                        </div>
+                        <div class="pbmit-content-wrapper">
+                          <div class="pbmit-heading-desc">
+                            Découvrez nos collections de fauteuils et salons
+                            haut de gamme pour un confort incomparable.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="pbmit-ihbox-btn">
+                        <a class="pbmit-button-inner" href="#">
+                          <span class="pbmit-button-wrapper">
+                            <span class="pbmit-button-text">En savoir plus</span
+                            >
+                          </span>
+                        </a>
+                      </div>
+                    </div>
+                  </article>
+                  <!-- Slide2 -->
+                  <article class="pbmit-miconheading-style-7 swiper-slide">
+                    <div class="pbmit-ihbox-style-7">
+                      <div class="pbmit-ihbox-box">
+                        <div class="pbmit-icon-wrapper d-flex align-items-center">
+                          <div class="pbmit-ihbox-icon">
+                            <div class="pbmit-ihbox-icon-wrapper">
+                              <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
+                                <i class="pbmit-xinterio-icon pbmit-xinterio-icon-house"></i>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="pbmit-title-wrap">
+                            <h2 class="pbmit-element-title">
+                              Design Sur Mesure
+                            </h2>
+                          </div>
+                        </div>
+                        <div class="pbmit-content-wrapper">
+                          <div class="pbmit-heading-desc">
+                            Créations personnalisées selon vos goûts et l'espace
+                            de votre intérieur.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="pbmit-ihbox-btn">
+                        <a class="pbmit-button-inner" href="#">
+                          <span class="pbmit-button-wrapper">
+                            <span class="pbmit-button-text">En savoir plus</span
+                            >
+                          </span>
+                        </a>
+                      </div>
+                    </div>
+                  </article>
+                  <!-- Slide3 -->
+                  <article class="pbmit-miconheading-style-7 swiper-slide">
+                    <div class="pbmit-ihbox-style-7">
+                      <div class="pbmit-ihbox-box">
+                        <div class="pbmit-icon-wrapper d-flex align-items-center">
+                          <div class="pbmit-ihbox-icon">
+                            <div class="pbmit-ihbox-icon-wrapper">
+                              <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
+                                <i class="pbmit-xinterio-icon pbmit-xinterio-icon-3d"></i>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="pbmit-title-wrap">
+                            <h2 class="pbmit-element-title">
+                              Collection Exclusive
+                            </h2>
+                          </div>
+                        </div>
+                        <div class="pbmit-content-wrapper">
+                          <div class="pbmit-heading-desc">
+                            Les plus belles pièces de mobilier, sélectionnées
+                            pour leur qualité exceptionnelle.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="pbmit-ihbox-btn">
+                        <a class="pbmit-button-inner" href="#">
+                          <span class="pbmit-button-wrapper">
+                            <span class="pbmit-button-text">En savoir plus</span
+                            >
+                          </span>
+                        </a>
+                      </div>
+                    </div>
+                  </article>
+                  <!-- Slide4 -->
+                  <article class="pbmit-miconheading-style-7 swiper-slide">
+                    <div class="pbmit-ihbox-style-7">
+                      <div class="pbmit-ihbox-box">
+                        <div class="pbmit-icon-wrapper d-flex align-items-center">
+                          <div class="pbmit-ihbox-icon">
+                            <div class="pbmit-ihbox-icon-wrapper">
+                              <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
+                                <i class="pbmit-xinterio-icon pbmit-xinterio-icon-brickwall-1"></i>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="pbmit-title-wrap">
+                            <h2 class="pbmit-element-title">Service Premium</h2>
+                          </div>
+                        </div>
+                        <div class="pbmit-content-wrapper">
+                          <div class="pbmit-heading-desc">
+                            Livraison soignée et installation professionnelle
+                            partout au Sénégal.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="pbmit-ihbox-btn">
+                        <a class="pbmit-button-inner" href="#">
+                          <span class="pbmit-button-wrapper">
+                            <span class="pbmit-button-text">En savoir plus</span
+                            >
+                          </span>
+                        </a>
+                      </div>
+                    </div>
+                  </article>
+                  <!-- Slide5 -->
+                  <article class="pbmit-miconheading-style-7 swiper-slide">
+                    <div class="pbmit-ihbox-style-7">
+                      <div class="pbmit-ihbox-box">
+                        <div class="pbmit-icon-wrapper d-flex align-items-center">
+                          <div class="pbmit-ihbox-icon">
+                            <div class="pbmit-ihbox-icon-wrapper">
+                              <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
+                                <i class="pbmit-xinterio-icon pbmit-xinterio-icon-hard-hat"></i>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="pbmit-title-wrap">
+                            <h2 class="pbmit-element-title">
+                              Garantie Qualité
+                            </h2>
+                          </div>
+                        </div>
+                        <div class="pbmit-content-wrapper">
+                          <div class="pbmit-heading-desc">
+                            Leader au Sénégal avec plus de 1000 clients
+                            satisfaits de nos meubles.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="pbmit-ihbox-btn">
+                        <a class="pbmit-button-inner" href="#">
+                          <span class="pbmit-button-wrapper">
+                            <span class="pbmit-button-text">En savoir plus</span
+                            >
+                          </span>
+                        </a>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Ihbox End -->
+
+          <!-- Contact Form -->
+          <section class="pbmit-sticky-section">
+            <div class="container">
+              <div class="contact-us-bg">
+                <div class="row">
+                  <div class="col-md-12 col-xl-5">
+                    <div class="pbmit-sticky-col">
+                      <div class="contact-us-left-area">
+                        <div class="pbmit-heading-subheading animation-style2">
+                          <h4 class="pbmit-subtitle">Contactez-nous</h4>
+                          <h2 class="pbmit-title">
+                            À l'écoute de tous vos projets d'aménagement
+                          </h2>
+                          <div class="pbmit-heading-desc">
+                            Leader du mobilier haut de gamme au Sénégal, notre
+                            équipe est à votre disposition pour vous accompagner
+                            dans le choix de vos meubles et la création de votre
+                            intérieur de rêve.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12 col-xl-7">
+                    <div class="contact-form-area">
+                      <div class="pbmit-heading animation-style2">
+                        <h2 class="pbmit-title">Envoyez-nous un message</h2>
+                      </div>
+                      <form id="contactus_form" action="/website/form/" method="post" enctype="multipart/form-data" class="o_mark_required contact-form s_website_form" data-mark="*" data-model_name="mail.mail" data-success-mode="redirect" data-success-page="/contactus-thank-you" data-pre-fill="true" t-att-data-recaptcha-sitekey="request.env['ir.config_parameter'].sudo().get_param('recaptcha_public_key')">
+                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                        <span class="hidden" data-for="contactus_form" t-att-data-values="contactus_form_values"/>
+                        <input type="hidden" name="website_form_model_name" value="mail.mail"/>
+                        <div class="row s_website_form_rows">
+                          <!-- Name field -->
+                          <div class="mb-3 col-lg-6 s_website_form_field s_website_form_required s_website_form_custom" data-type="char" data-name="Field">
+                            <div class="row s_col_no_resize s_col_no_bgcolor">
+                              <label class="col-form-label col-sm-auto s_website_form_label d-none" style="width: 200px">
+                                <span class="s_website_form_label_content">Nom</span>
+                                <span class="s_website_form_mark"> *</span>
+                              </label>
+                              <div class="col-sm">
+                                <input type="text" class="form-control s_website_form_input" placeholder="Votre nom complet *" name="name" required="" data-fill-with="name" />
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- Email field -->
+                          <div class="mb-3 col-lg-6 s_website_form_field s_website_form_required s_website_form_model_required" data-type="email" data-name="Field">
+                            <div class="row s_col_no_resize s_col_no_bgcolor">
+                              <label class="col-form-label col-sm-auto s_website_form_label d-none" style="width: 200px">
+                                <span class="s_website_form_label_content">Email</span>
+                                <span class="s_website_form_mark"> *</span>
+                              </label>
+                              <div class="col-sm">
+                                <input type="email" class="form-control s_website_form_input" placeholder="Votre email *" name="email_from" required="" data-fill-with="email" />
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- Phone field -->
+                          <div class="mb-3 col-lg-6 s_website_form_field s_website_form_custom" data-type="char" data-name="Field">
+                            <div class="row s_col_no_resize s_col_no_bgcolor">
+                              <label class="col-form-label col-sm-auto s_website_form_label d-none" style="width: 200px">
+                                <span class="s_website_form_label_content">Téléphone</span>
+                              </label>
+                              <div class="col-sm">
+                                <input type="tel" class="form-control s_website_form_input" placeholder="Votre téléphone" name="phone" data-fill-with="phone" />
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- Company field -->
+                          <div class="mb-3 col-lg-6 s_website_form_field s_website_form_custom" data-type="char" data-name="Field">
+                            <div class="row s_col_no_resize s_col_no_bgcolor">
+                              <label class="col-form-label col-sm-auto s_website_form_label d-none" style="width: 200px">
+                                <span class="s_website_form_label_content">Entreprise</span>
+                              </label>
+                              <div class="col-sm">
+                                <input type="text" class="form-control s_website_form_input" placeholder="Votre entreprise" name="company" data-fill-with="commercial_company_name" />
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- Subject field -->
+                          <div class="mb-3 col-12 s_website_form_field s_website_form_required s_website_form_model_required" data-type="char" data-name="Field">
+                            <div class="row s_col_no_resize s_col_no_bgcolor">
+                              <label class="col-form-label col-sm-auto s_website_form_label d-none" style="width: 200px">
+                                <span class="s_website_form_label_content">Sujet</span>
+                                <span class="s_website_form_mark"> *</span>
+                              </label>
+                              <div class="col-sm">
+                                <input type="text" class="form-control s_website_form_input" placeholder="Sujet de votre message *" name="subject" required="" />
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- Message field -->
+                          <div class="mb-3 col-12 s_website_form_field s_website_form_required s_website_form_custom" data-type="text" data-name="Field">
+                            <div class="row s_col_no_resize s_col_no_bgcolor">
+                              <label class="col-form-label col-sm-auto s_website_form_label d-none" style="width: 200px">
+                                <span class="s_website_form_label_content">Message</span>
+                                <span class="s_website_form_mark"> *</span>
+                              </label>
+                              <div class="col-sm">
+                                <textarea name="description" rows="5" class="form-control s_website_form_input" placeholder="Votre message (détaillez votre projet ou vos questions) *" required=""></textarea>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- Email To field (hidden) -->
+                          <div class="mb-3 col-12 s_website_form_field s_website_form_dnone" data-name="Field">
+                            <div class="row s_col_no_resize s_col_no_bgcolor">
+                              <label class="col-form-label col-sm-auto s_website_form_label d-none" style="width: 200px">
+                                <span class="s_website_form_label_content">Email To</span>
+                              </label>
+                              <div class="col-sm">
+                                <input id="email_to" type="hidden" class="form-control s_website_form_input" name="email_to" t-att-value="res_company.email" />
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- Save info checkbox -->
+                          <div class="mb-3 col-12">
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" id="saveInfo" />
+                              <label class="form-check-label" for="saveInfo">
+                                Enregistrer mes informations pour mes prochaines demandes.
+                              </label>
+                            </div>
+                          </div>
+
+                          <!-- reCAPTCHA -->
+                          <div class="mb-3 col-12">
+                            <div class="g-recaptcha"></div>
+                          </div>
+
+                          <!-- Submit button -->
+                          <div class="mb-3 col-12 s_website_form_submit" data-name="Submit Button">
+                            <div style="width: 200px;" class="s_website_form_label"/>
+                            <button type="submit" class="pbmit-btn pbmit-btn-outline s_website_form_send">
+                              <i class="form-btn-loader fa fa-circle-o-notch fa-spin fa-fw margin-bottom d-none"></i>
+                              <span class="pbmit-button-content-wrapper">
+                                <span class="pbmit-button-text">Envoyer le message</span>
+                              </span>
+                            </button>
+                            <span id="s_website_form_result"></span>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Contact Form -->
+
+          <!-- Client -->
+          <section class="client-three">
+            <div class="container">
+              <div class="swiper-slider" data-autoplay="true" data-loop="true" data-dots="false" data-arrows="false" data-columns="6" data-margin="0" data-effect="slide">
+                <div class="swiper-wrapper">
+                  <!-- Slide1 -->
+                  <article class="pbmit-client-style-1 swiper-slide">
+                    <div class="pbmit-border-wrapper">
+                      <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
+                        <h4 class="pbmit-hide">Client 12</h4>
+                        <div class="pbmit-client-hover-img">
+                          <img src="/theme_kdmobilier/static/src/images/homepage-3/client/client-global-01.png" class="img-fluid" alt="" />
+                        </div>
+                        <div class="pbmit-featured-img-wrapper">
+                          <div class="pbmit-featured-wrapper">
+                            <img src="/theme_kdmobilier/static/src/images/homepage-3/client/client-grey-01.png" class="img-fluid" alt="" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                  <!-- Slide2 -->
+                  <article class="pbmit-client-style-1 swiper-slide">
+                    <div class="pbmit-border-wrapper">
+                      <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
+                        <h4 class="pbmit-hide">Client 12</h4>
+                        <div class="pbmit-client-hover-img">
+                          <img src="/theme_kdmobilier/static/src/images/homepage-3/client/client-global-02.png" class="img-fluid" alt="" />
+                        </div>
+                        <div class="pbmit-featured-img-wrapper">
+                          <div class="pbmit-featured-wrapper">
+                            <img src="/theme_kdmobilier/static/src/images/homepage-3/client/client-grey-02.png" class="img-fluid" alt="" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                  <!-- Slide3 -->
+                  <article class="pbmit-client-style-1 swiper-slide">
+                    <div class="pbmit-border-wrapper">
+                      <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
+                        <h4 class="pbmit-hide">Client 12</h4>
+                        <div class="pbmit-client-hover-img">
+                          <img src="/theme_kdmobilier/static/src/images/homepage-3/client/client-global-03.png" class="img-fluid" alt="" />
+                        </div>
+                        <div class="pbmit-featured-img-wrapper">
+                          <div class="pbmit-featured-wrapper">
+                            <img src="/theme_kdmobilier/static/src/images/homepage-3/client/client-grey-03.png" class="img-fluid" alt="" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                  <!-- Slide4 -->
+                  <article class="pbmit-client-style-1 swiper-slide">
+                    <div class="pbmit-border-wrapper">
+                      <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
+                        <h4 class="pbmit-hide">Client 12</h4>
+                        <div class="pbmit-client-hover-img">
+                          <img src="/theme_kdmobilier/static/src/images/homepage-3/client/client-global-04.png" class="img-fluid" alt="" />
+                        </div>
+                        <div class="pbmit-featured-img-wrapper">
+                          <div class="pbmit-featured-wrapper">
+                            <img src="/theme_kdmobilier/static/src/images/homepage-3/client/client-grey-04.png" class="img-fluid" alt="" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                  <!-- Slide5 -->
+                  <article class="pbmit-client-style-1 swiper-slide">
+                    <div class="pbmit-border-wrapper">
+                      <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
+                        <h4 class="pbmit-hide">Client 12</h4>
+                        <div class="pbmit-client-hover-img">
+                          <img src="/theme_kdmobilier/static/src/images/homepage-3/client/client-global-05.png" class="img-fluid" alt="" />
+                        </div>
+                        <div class="pbmit-featured-img-wrapper">
+                          <div class="pbmit-featured-wrapper">
+                            <img src="/theme_kdmobilier/static/src/images/homepage-3/client/client-grey-05.png" class="img-fluid" alt="" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                  <!-- Slide6 -->
+                  <article class="pbmit-client-style-1 swiper-slide">
+                    <div class="pbmit-border-wrapper">
+                      <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
+                        <h4 class="pbmit-hide">Client 12</h4>
+                        <div class="pbmit-client-hover-img">
+                          <img src="/theme_kdmobilier/static/src/images/homepage-3/client/client-global-06.png" class="img-fluid" alt="" />
+                        </div>
+                        <div class="pbmit-featured-img-wrapper">
+                          <div class="pbmit-featured-wrapper">
+                            <img src="/theme_kdmobilier/static/src/images/homepage-3/client/client-grey-06.png" class="img-fluid" alt="" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                  <!-- Slide7 -->
+                  <article class="pbmit-client-style-1 swiper-slide">
+                    <div class="pbmit-border-wrapper">
+                      <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
+                        <h4 class="pbmit-hide">Client 12</h4>
+                        <div class="pbmit-client-hover-img">
+                          <img src="/theme_kdmobilier/static/src/images/homepage-3/client/client-global-07.png" class="img-fluid" alt="" />
+                        </div>
+                        <div class="pbmit-featured-img-wrapper">
+                          <div class="pbmit-featured-wrapper">
+                            <img src="/theme_kdmobilier/static/src/images/homepage-3/client/client-grey-07.png" class="img-fluid" alt="" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                  <!-- Slide8 -->
+                  <article class="pbmit-client-style-1 swiper-slide">
+                    <div class="pbmit-border-wrapper">
+                      <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
+                        <h4 class="pbmit-hide">Client 12</h4>
+                        <div class="pbmit-client-hover-img">
+                          <img src="/theme_kdmobilier/static/src/images/homepage-3/client/client-global-08.png" class="img-fluid" alt="" />
+                        </div>
+                        <div class="pbmit-featured-img-wrapper">
+                          <div class="pbmit-featured-wrapper">
+                            <img src="/theme_kdmobilier/static/src/images/homepage-3/client/client-grey-08.png" class="img-fluid" alt="" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Client end -->
+
+          <!-- Iframe -->
+          <section class="section-xl">
+            <div class="container-fluid">
+              <div class="iframe-area">
+                <div id="map" style="width: 100%; height: 450px;"></div>
+                <div id="wrap" class="oe_structure oe_empty"/>
+              </div>
+            </div>
+          </section>
+
+          <!-- Iframe End-->
+        </div>
+      </div>
+    </xpath>
+  </template>
+</odoo>

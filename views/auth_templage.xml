@@ -1,134 +1,661 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
-    <template id="kdmobilier_login_id" name="template_name" inherit_id="web.login">
-        <xpath expr="//form[@class='oe_login_form']" position="replace">
-            <div id="wrap" class="oe_structure oe_empty">
-                <!-- Title Bar -->
-                <div class="pbmit-title-bar-wrapper">
-                    <div class="container">
-                        <div class="pbmit-title-bar-content">
-                            <div class="pbmit-title-bar-content-inner">
-                                <div class="pbmit-tbar">
-                                    <div class="pbmit-tbar-inner container">
-                                        <h1 class="pbmit-tbar-title">Connexion</h1>
-                                    </div>
-                                </div>
-                                <div class="pbmit-breadcrumb">
-                                    <div class="pbmit-breadcrumb-inner">
-                                        <span>
-                                            <a title="" href="/" class="home">
-                                                <span>Accueil</span>
-                                            </a>
-                                        </span>
-                                        <span class="sep">
-                                            <i class="pbmit-base-icon-angle-right"></i>
-                                        </span>
-                                        <span>
-                                            <span class="post-root post post-post current-item">Connexion</span>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+  <!-- Login Template -->
+  <template
+    id="kdmobilier_login_id"
+    name="Login Template"
+    inherit_id="web.login"
+  >
+    <xpath expr="//form[@class='oe_login_form']" position="replace">
+      <div id="wrap" class="oe_structure oe_empty">
+        <!-- Title Bar -->
+        <div class="pbmit-title-bar-wrapper">
+          <div class="container">
+            <div class="pbmit-title-bar-content">
+              <div class="pbmit-title-bar-content-inner">
+                <div class="pbmit-tbar">
+                  <div class="pbmit-tbar-inner container">
+                    <h1 class="pbmit-tbar-title">Connexion</h1>
+                  </div>
                 </div>
-                <!-- Title Bar End -->
-
-                <!-- Login Form Section -->
-                <section class="pbmit-sticky-section">
-                    <div class="container">
-                        <div class="contact-us-bg">
-                            <div class="row">
-                                <div class="col-md-12 col-xl-5">
-                                    <div class="pbmit-sticky-col">
-                                        <div class="contact-us-left-area">
-                                            <div class="pbmit-heading-subheading animation-style2">
-                                                <h4 class="pbmit-subtitle">Bienvenue</h4>
-                                                <h2 class="pbmit-title">Connectez-vous à votre compte</h2>
-                                                <div class="pbmit-heading-desc">
-                                                Accédez à votre espace personnel pour gérer vos commandes et profiter de nos services exclusifs.
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-12 col-xl-7">
-                                    <div class="contact-form-area">
-                                        <div class="pbmit-heading animation-style2">
-                                            <h2 class="pbmit-title">Identifiez-vous</h2>
-                                        </div>
-                                        <form class="contact-form" role="form" t-attf-action="/web/login" method="post" onsubmit="this.action = '/web/login' + location.hash">
-                                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
-                                            <div class="row">
-                                                <!-- Database Selection -->
-                                                <div class="col-md-12" t-if="databases and len(databases) &gt; 1">
-                                                    <div class="form-group">
-                                                        <label for="db">Base de données</label>
-                                                        <div class="row mb-4">
-                                                            <div class="col-md-9">
-                                                                <input type="text" name="db" t-att-value="request.db" id="db" class="form-control" required="required" readonly="readonly"/>
-                                                            </div>
-                                                            <div class="col-md-3">
-                                                                <a role="button" href="/web/database/selector" class="btn btn-secondary mt-2">
-                                                        Sélectionner <i class="fa fa-database" role="img" aria-label="Database" title="Database"></i>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <!-- Email Field -->
-                                                <div class="col-md-12">
-                                                    <input type="text" class="form-control" placeholder="Email *" name="login" t-att-value="login" id="login" required="required" autocomplete="username" autofocus="autofocus" style="margin-bottom: 20px"/>
-                                                </div>
-
-                                                <!-- Password Field -->
-                                                <div class="col-md-12">
-                                                    <input type="password" class="form-control" placeholder="Mot de passe *" name="password" id="password" required="required" autocomplete="current-password" maxlength="4096" style="margin-bottom: 20px"/>
-                                                </div>
-
-                                                <!-- Alert Messages -->
-                                                <div class="col-md-12">
-                                                    <p class="alert alert-danger" t-if="error" role="alert">
-                                                        <t t-esc="error"/>
-                                                    </p>
-                                                    <p class="alert alert-success" t-if="message" role="status">
-                                                        <t t-esc="message"/>
-                                                    </p>
-                                                </div>
-
-                                                <!-- Submit Button -->
-                                                <div class="col-md-12">
-                                                    <button type="submit" class="pbmit-btn pbmit-btn-outline">
-                                                        <span class="pbmit-button-content-wrapper">
-                                                            <span class="pbmit-button-text">Se connecter</span>
-                                                        </span>
-                                                    </button>
-                                                </div>
-
-                                                <!-- Additional Links -->
-                                                <div class="col-md-12 mt-4">
-                                                    <p class="text-center">
-                                                        <a href="/web/reset_password?" class="text-decoration-none">Mot de passe oublié ?</a>
-                                                        <br/>
-                                                        <span class="mt-2 d-block">Pas encore de compte ? 
-                                                            <a href="/web/signup?" class="text-decoration-none">Créer un compte</a>
-                                                        </span>
-                                                    </p>
-                                                </div>
-
-                                                <input type="hidden" name="redirect" t-att-value="redirect"/>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                <div class="pbmit-breadcrumb">
+                  <div class="pbmit-breadcrumb-inner">
+                    <span>
+                      <a title="" href="/" class="home">
+                        <span>Accueil</span>
+                      </a>
+                    </span>
+                    <span class="sep">
+                      <i class="pbmit-base-icon-angle-right"></i>
+                    </span>
+                    <span>
+                      <span class="post-root post post-post current-item"
+                        >Connexion</span
+                      >
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
-        </xpath>
-    </template>
+          </div>
+        </div>
+        <!-- Title Bar End -->
 
+        <!-- Login Form Section -->
+        <section class="pbmit-sticky-section">
+          <div class="container">
+            <div class="contact-us-bg">
+              <div class="row">
+                <div class="col-md-12 col-xl-5">
+                  <div class="pbmit-sticky-col">
+                    <div class="contact-us-left-area">
+                      <div class="pbmit-heading-subheading animation-style2">
+                        <h4 class="pbmit-subtitle">Bienvenue</h4>
+                        <h2 class="pbmit-title">
+                          Connectez-vous à votre compte
+                        </h2>
+                        <div class="pbmit-heading-desc">
+                          Accédez à votre espace personnel pour gérer vos
+                          commandes et profiter de nos services exclusifs.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12 col-xl-7">
+                  <div class="contact-form-area">
+                    <div class="pbmit-heading animation-style2">
+                      <h2 class="pbmit-title">Identifiez-vous</h2>
+                    </div>
+                    <form
+                      class="contact-form"
+                      role="form"
+                      t-attf-action="/web/login"
+                      method="post"
+                      onsubmit="this.action = '/web/login' + location.hash"
+                    >
+                      <input
+                        type="hidden"
+                        name="csrf_token"
+                        t-att-value="request.csrf_token()"
+                      />
+                      <div class="row">
+                        <!-- Database Selection -->
+                        <div
+                          class="col-md-12"
+                          t-if="databases and len(databases) &gt; 1"
+                        >
+                          <div class="form-group">
+                            <label for="db">Base de données</label>
+                            <div class="row mb-4">
+                              <div class="col-md-9">
+                                <input
+                                  type="text"
+                                  name="db"
+                                  t-att-value="request.db"
+                                  id="db"
+                                  class="form-control"
+                                  required="required"
+                                  readonly="readonly"
+                                />
+                              </div>
+                              <div class="col-md-3">
+                                <a
+                                  role="button"
+                                  href="/web/database/selector"
+                                  class="btn btn-secondary mt-2"
+                                >
+                                  Sélectionner
+                                  <i
+                                    class="fa fa-database"
+                                    role="img"
+                                    aria-label="Database"
+                                    title="Database"
+                                  ></i>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Email Field -->
+                        <div class="col-md-12">
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Email *"
+                            name="login"
+                            t-att-value="login"
+                            id="login"
+                            required="required"
+                            autocomplete="username"
+                            autofocus="autofocus"
+                            style="margin-bottom: 20px"
+                          />
+                        </div>
+
+                        <!-- Password Field -->
+                        <div class="col-md-12">
+                          <input
+                            type="password"
+                            class="form-control"
+                            placeholder="Mot de passe *"
+                            name="password"
+                            id="password"
+                            required="required"
+                            autocomplete="current-password"
+                            maxlength="4096"
+                            style="margin-bottom: 20px"
+                          />
+                        </div>
+
+                        <!-- Alert Messages -->
+                        <div class="col-md-12">
+                          <p
+                            class="alert alert-danger"
+                            t-if="error"
+                            role="alert"
+                          >
+                            <t t-esc="error" />
+                          </p>
+                          <p
+                            class="alert alert-success"
+                            t-if="message"
+                            role="status"
+                          >
+                            <t t-esc="message" />
+                          </p>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="col-md-12">
+                          <button
+                            type="submit"
+                            class="pbmit-btn pbmit-btn-outline"
+                          >
+                            <span class="pbmit-button-content-wrapper">
+                              <span class="pbmit-button-text"
+                                >Se connecter</span
+                              >
+                            </span>
+                          </button>
+                        </div>
+
+                        <!-- Additional Links -->
+                        <div class="col-md-12 mt-4">
+                          <p class="text-center">
+                            <a
+                              href="/web/reset_password?"
+                              class="text-decoration-none"
+                              >Mot de passe oublié ?</a
+                            >
+                            <br />
+                            <span class="mt-2 d-block"
+                              >Pas encore de compte ?
+                              <a
+                                href="/web/signup?"
+                                class="text-decoration-none"
+                                >Créer un compte</a
+                              >
+                            </span>
+                          </p>
+                        </div>
+
+                        <input
+                          type="hidden"
+                          name="redirect"
+                          t-att-value="redirect"
+                        />
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </xpath>
+  </template>
+
+  <!-- AUTH SIGNUP FIELDS -->
+  <template
+    id="auth_custom_signup"
+    name="Auth Signup/ResetPassword form fields"
+  >
+    <div class="col-md-12">
+      <label for="login" class="form-label d-none">Your Email *</label>
+      <input
+        type="text"
+        name="login"
+        t-att-value="login"
+        id="login"
+        class="form-control mb-4"
+        placeholder="Email *"
+        autofocus="autofocus"
+        autocapitalize="off"
+        required="required"
+        t-att-readonly="'readonly' if only_passwords else None"
+      />
+    </div>
+
+    <div class="col-md-12">
+      <label for="name" class="form-label d-none">Your Name</label>
+      <input
+        type="text"
+        name="name"
+        t-att-value="name"
+        id="name"
+        class="form-control mb-4"
+        placeholder="ex. Mamadou Ndiaye"
+        required="required"
+        t-att-readonly="'readonly' if only_passwords else None"
+        t-att-autofocus="'autofocus' if login and not only_passwords else None"
+      />
+    </div>
+
+    <div class="col-md-12">
+      <label for="password" class="form-label d-none">Password</label>
+      <input
+        type="password"
+        name="password"
+        id="password"
+        class="form-control mb-4"
+        required="required"
+        t-att-autofocus="'autofocus' if only_passwords else None"
+      />
+    </div>
+    <!--  -->
+    <div class="col-md-12">
+      <label for="confirm_password" class="form-label d-none"
+        >Confirm Password</label
+      >
+      <input
+        type="password"
+        name="confirm_password"
+        id="confirm_password"
+        class="form-control mb-4"
+        required="required"
+      />
+    </div>
+  </template>
+  <!-- Signup Template -->
+  <template
+    id="kdmobilier_signup_id"
+    name="Signup Template"
+    inherit_id="auth_signup.signup"
+  >
+    <xpath expr="//form[@class='oe_signup_form']" position="replace">
+      <div id="wrap" class="oe_structure oe_empty">
+        <!-- Title Bar -->
+        <div class="pbmit-title-bar-wrapper">
+          <div class="container">
+            <div class="pbmit-title-bar-content">
+              <div class="pbmit-title-bar-content-inner">
+                <div class="pbmit-tbar">
+                  <div class="pbmit-tbar-inner container">
+                    <h1 class="pbmit-tbar-title">Créer un compte</h1>
+                  </div>
+                </div>
+                <div class="pbmit-breadcrumb">
+                  <div class="pbmit-breadcrumb-inner">
+                    <span>
+                      <a title="" href="/" class="home">
+                        <span>Accueil</span>
+                      </a>
+                    </span>
+                    <span class="sep">
+                      <i class="pbmit-base-icon-angle-right"></i>
+                    </span>
+                    <span>
+                      <span class="post-root post post-post current-item"
+                        >Créer un compte</span
+                      >
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Title Bar End -->
+
+        <!-- Signup Form Section -->
+        <section class="pbmit-sticky-section">
+          <div class="container">
+            <div class="contact-us-bg">
+              <div class="row">
+                <div class="col-md-12 col-xl-5">
+                  <div class="pbmit-sticky-col">
+                    <div class="contact-us-left-area">
+                      <div class="pbmit-heading-subheading animation-style2">
+                        <h4 class="pbmit-subtitle">Bienvenue</h4>
+                        <h2 class="pbmit-title">
+                          Créez votre compte pour accéder à votre espace
+                          personnel
+                        </h2>
+                        <div class="pbmit-heading-desc">
+                          connectez vous pour gèrer vos commandes, factures et
+                          ticket de support
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12 col-xl-7">
+                  <div class="contact-form-area">
+                    <div class="pbmit-heading animation-style2">
+                      <h2 class="pbmit-title">Créer un compte</h2>
+                    </div>
+                    <form
+                      class="contact-form"
+                      role="form"
+                      method="post"
+                      t-if="not message"
+                    >
+                      <input
+                        type="hidden"
+                        name="csrf_token"
+                        t-att-value="request.csrf_token()"
+                      />
+
+                      <div class="row">
+                        <t t-call="theme_kdmobilier.auth_custom_signup">
+                          <t
+                            t-set="only_passwords"
+                            t-value="bool(token and not invalid_token)"
+                          />
+                        </t>
+                      </div>
+
+                      <p class="alert alert-danger" t-if="error" role="alert">
+                        <t t-esc="error" />
+                      </p>
+                      <input
+                        type="hidden"
+                        name="redirect"
+                        t-att-value="redirect"
+                      />
+                      <input type="hidden" name="token" t-att-value="token" />
+
+                      <!-- Submit Button -->
+                      <div class="col-md-12 pt-3">
+                        <button
+                          type="submit"
+                          class="pbmit-btn pbmit-btn-outline"
+                        >
+                          <span class="pbmit-button-content-wrapper">
+                            <span class="pbmit-button-text"
+                              >Créer un compte</span
+                            >
+                          </span>
+                        </button>
+                        <!-- Already have an account? -->
+
+                        <div class="col-md-12 mt-4">
+                          <p class="text-center">
+                            <a href="/web/login?" class="text-decoration-none"
+                              >Déjà un compte ?</a
+                            >
+                          </p>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </xpath>
+  </template>
+
+  <!-- Reset Password Template -->
+  <template
+    id="kdmobilier_reset_password_id"
+    name="Reset Password Template"
+    inherit_id="auth_signup.reset_password"
+  >
+    <xpath expr="//form[@class='oe_reset_password_form']" position="replace">
+      <div id="wrap" class="oe_structure oe_empty">
+        <!-- Title Bar -->
+        <div class="pbmit-title-bar-wrapper">
+          <div class="container">
+            <div class="pbmit-title-bar-content">
+              <div class="pbmit-title-bar-content-inner">
+                <div class="pbmit-tbar">
+                  <div class="pbmit-tbar-inner container">
+                    <h1 class="pbmit-tbar-title">
+                      Réinitialiser le mot de passe
+                    </h1>
+                  </div>
+                </div>
+                <div class="pbmit-breadcrumb">
+                  <div class="pbmit-breadcrumb-inner">
+                    <span>
+                      <a title="" href="/" class="home">
+                        <span>Accueil</span>
+                      </a>
+                    </span>
+                    <span class="sep">
+                      <i class="pbmit-base-icon-angle-right"></i>
+                    </span>
+                    <span>
+                      <span class="post-root post post-post current-item"
+                        >Réinitialiser le mot de passe</span
+                      >
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Title Bar End -->
+
+        <!-- Reset Password Form Section -->
+        <section class="pbmit-sticky-section">
+          <div class="container">
+            <div class="contact-us-bg">
+              <div class="row">
+                <div class="col-md-12 col-xl-5">
+                  <div class="pbmit-sticky-col">
+                    <div class="contact-us-left-area">
+                      <div class="pbmit-heading-subheading animation-style2">
+                        <h4 class="pbmit-subtitle">Bienvenue</h4>
+                        <h2 class="pbmit-title">
+                          Réinitialiser le mot de passe
+                        </h2>
+                        <p class="pbmit-desc">
+                          Réinitialisez votre mot de passe pour accéder à votre
+                          compte
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12 col-xl-7">
+                  <div class="contact-form-area">
+                    <div class="pbmit-heading animation-style2">
+                      <h2 class="pbmit-title">Réinitialiser le mot de passe</h2>
+                      <p class="pbmit-desc">
+                        Réinitialisez votre mot de passe pour accéder à votre
+                        compte
+                      </p>
+                    </div>
+                    <div t-if="message" class="oe_login_form clearfix">
+                      <p class="alert alert-success" role="status">
+                        <t t-esc="message" />
+                      </p>
+                      <a href="/web/login" class="pbmit-btn pbmit-btn-outline">
+                        <span class="pbmit-button-content-wrapper">
+                          <span class="pbmit-button-text"
+                            >Retour à la connexion</span
+                          >
+                        </span>
+                      </a>
+                    </div>
+                    <form
+                      class="contact-form"
+                      role="form"
+                      method="post"
+                      t-if="not message"
+                    >
+                      <input
+                        type="hidden"
+                        name="csrf_token"
+                        t-att-value="request.csrf_token()"
+                      />
+
+                      <div class="row">
+                        <t t-if="token and not invalid_token">
+                          <t t-call="theme_kdmobilier.auth_custom_signup">
+                            <t t-set="only_passwords" t-value="1" />
+                          </t>
+                        </t>
+
+                        <t t-if="not token">
+                          <div class="mb-3 field-login">
+                            <label for="login" class="col-form-label d-none"
+                              >Your Email</label
+                            >
+                            <input
+                              type="text"
+                              name="login"
+                              t-att-value="login"
+                              id="login"
+                              class="form-control"
+                              autofocus="autofocus"
+                              placeholder="Email *"
+                              required="required"
+                              autocapitalize="off"
+                            />
+                          </div>
+                        </t>
+                      </div>
+
+                      <p class="alert alert-danger" t-if="error" role="alert">
+                        <t t-esc="error" />
+                      </p>
+                      <input
+                        type="hidden"
+                        name="redirect"
+                        t-att-value="redirect"
+                      />
+                      <input type="hidden" name="token" t-att-value="token" />
+                      <!-- Submit Button -->
+                      <div class="col-md-12 pt-3">
+                        <button
+                          type="submit"
+                          class="pbmit-btn pbmit-btn-outline"
+                        >
+                          <span class="pbmit-button-content-wrapper">
+                            <span class="pbmit-button-text"
+                              >Réinitialiser le mot de passe</span
+                            >
+                          </span>
+                        </button>
+                        <!-- Back to Login -->
+                        <div class="col-md-12 mt-2">
+                          <p class="text-center">
+                            <a
+                              t-if="not token"
+                              t-attf-href="/web/login?{{ keep_query() }}"
+                              >Retour à la connexion</a
+                            >
+                            <a t-if="invalid_token" href="/web/login"
+                              >Retour à la connexion</a
+                            >
+                          </p>
+                        </div>
+                        <div class="o_login_auth" />
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </xpath>
+  </template>
+
+  <!-- Toast Message Notification Template -->
+  <template
+    id="kdmobilier_toast_message"
+    inherit_id="auth_signup.reset_password"
+    priority="99"
+  >
+    <xpath
+      expr="//div[@t-if='message' and contains(@class, 'oe_login_form')]"
+      position="attributes"
+    >
+      <attribute name="class">toast-notification-wrapper</attribute>
+      <attribute name="style"
+        >position: fixed; top: 30px; right: 30px; z-index: 9999; max-width:
+        350px; min-width: 250px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        animation: fadeInRight 0.5s ease-in-out;</attribute
+      >
+    </xpath>
+
+    <xpath expr="//div[@t-if='message']//p" position="attributes">
+      <attribute name="class">alert alert-success toast-message</attribute>
+      <attribute name="style"
+        >margin-bottom: 0; border-radius: 5px; padding: 15px; font-weight:
+        500;</attribute
+      >
+    </xpath>
+
+    <xpath
+      expr="//div[@t-if='message']//a[contains(@class, 'btn-link')]"
+      position="attributes"
+    >
+      <attribute name="class">btn btn-sm mt-2</attribute>
+      <attribute name="style"
+        >color: #fff; background-color: #8a5830; border-radius: 3px; margin-top:
+        10px; display: inline-block; padding: 5px 10px; text-decoration:
+        none;</attribute
+      >
+    </xpath>
+  </template>
+
+  <template
+    id="kdmobilier_toast_message_style"
+    inherit_id="web.layout"
+    priority="99"
+  >
+    <xpath expr="//head" position="inside">
+      <style>
+        @keyframes fadeInRight {
+          from {
+            opacity: 0;
+            transform: translateX(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+        .toast-notification-wrapper {
+          position: fixed !important;
+          top: 30px !important;
+          right: 30px !important;
+          z-index: 9999 !important;
+          max-width: 350px;
+          min-width: 250px;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+          animation: fadeInRight 0.5s ease-in-out;
+        }
+        .toast-message {
+          margin-bottom: 0 !important;
+          border-radius: 5px !important;
+          padding: 15px !important;
+          font-weight: 500 !important;
+        }
+      </style>
+    </xpath>
+  </template>
 </odoo>

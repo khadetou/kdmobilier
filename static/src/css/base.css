@@ -14,28 +14,29 @@ INDEX:
 ***************************** */
 
 :root {
-  --pbmit-global-color: #1b3669; /* Navy blue instead of #bb9a65 */
-  --pbmit-secondary-color: #0a1b3b; /* Darker navy instead of #403226 */
-  --pbmit-light-color: #f6f6f6; /* Keep as is */
+  --pbmit-global-color: #d19d66; /* Premium brown/beige instead of navy blue */
+  --pbmit-secondary-color: #8a5830; /* Darker brown instead of darker navy */
+  --pbmit-light-color: #fcfaf7; /* Light beige color */
   --pbmit-light-color-2: #f8f8f8; /* Keep as is */
   --pbmit-white-color: #ffffff; /* Keep as is */
+  --pbmit-black-color: #000000; /* Keep as is */
   --pbmit-white-color-rgb: 255, 255, 255; /* Keep as is */
-  --pbmit-blackish-color: #0a1b3b; /* Darker navy instead of #403226 */
-  --pbmit-blackish-color-rgb: 10, 27, 59; /* RGB values for darker navy */
-  --pbmit-link-color-normal: #0a1b3b; /* Darker navy */
-  --pbmit-link-color-hover: #1b3669; /* Navy blue */
-  --pbmit-global-color-rgb: 27, 54, 105; /* RGB values for navy blue */
-  --pbmit-secondary-color-rgb: 10, 27, 59; /* RGB values for darker navy */
+  --pbmit-blackish-color: #8a5830; /* Darker brown instead of darker navy */
+  --pbmit-blackish-color-rgb: 138, 88, 48; /* RGB values for darker brown */
+  --pbmit-link-color-normal: #8a5830; /* Darker brown */
+  --pbmit-link-color-hover: #d19d66; /* Premium brown/beige */
+  --pbmit-global-color-rgb: 209, 157, 102; /* RGB values for premium brown/beige */
+  --pbmit-secondary-color-rgb: 138, 88, 48; /* RGB values for darker brown */
   --pbmit-responsive-breakpoint: 1200px; /* Keep as is */
 
   --pbmit-body-typography-font-family: "Roboto", sans-serif;
   --pbmit-body-typography-variant: 300;
   --pbmit-body-typography-font-size: 16px;
   --pbmit-body-typography-line-height: 1.6;
-  --pbmit-body-typography-color: #4a5670; /* Changed from #666666 to a blue-tinted gray */
+  --pbmit-body-typography-color: #666666; /* Changed to neutral gray */
 
   --pbmit-heading-typography-font-family: "Space Grotesk", sans-serif;
-  --pbmit-heading-color: #0a1b3b; /* Changed from #403226 to the darker navy we used before */
+  --pbmit-heading-color: #8a5830; /* Changed to darker brown */
   --pbmit-heading-font-variant: 700;
 
   --pbmit-btn-typography-font-family: "Space Grotesk", sans-serif;
@@ -339,7 +340,12 @@ a.link-btn i,
   transition: all 0.3s;
   z-index: 1;
   color: var(--pbmit-blackish-color);
-  background-color: var(--pbmit-white-color);
+  background: linear-gradient(
+    135deg,
+    var(--pbmit-global-color),
+    var(--pbmit-secondary-color)
+  );
+  color: var(--pbmit-white-color);
 }
 .pbmit-btn:after {
   content: "\e8eb";
@@ -349,8 +355,8 @@ a.link-btn i,
   left: auto;
   width: 50px;
   height: 50px;
-  background-color: var(--pbmit-global-color);
-  color: var(--pbmit-white-color);
+  background-color: var(--pbmit-white-color);
+  color: var(--pbmit-secondary-color);
   top: 0;
   border-radius: 50%;
   line-height: 50px;
@@ -359,6 +365,7 @@ a.link-btn i,
   transform: translate3d(0, 0, 0) rotateZ(0);
   transform-style: preserve-3d;
   transition: all 0.5s ease-in-out;
+  box-shadow: 0 3px 10px rgba(var(--pbmit-blackish-color-rgb), 0.1);
 }
 .pbmit-btn .pbmit-button-content-wrapper,
 .pbmit-button .pbmit-button-wrapper,
@@ -399,17 +406,28 @@ a.link-btn i,
     transform: translate3d(0, 0, 0);
   }
 }
+.pbmit-btn:hover {
+  box-shadow: 0 5px 15px rgba(var(--pbmit-global-color-rgb), 0.3);
+  transform: translateY(-2px);
+}
 .pbmit-btn:hover:after,
 .pbmit-static-btn .pbmit-button-inner:hover .pbmit-button-wrapper::after {
   transform: translate3d(10px, 0, 0) rotateZ(45deg);
+  box-shadow: 0 5px 15px rgba(var(--pbmit-blackish-color-rgb), 0.15);
 }
 .pbmit-btn-outline {
   color: var(--pbmit-global-color);
-  background-color: transparent;
+  background: transparent;
   border: 1px solid rgba(var(--pbmit-blackish-color-rgb), 0.2);
 }
 .pbmit-btn-outline:hover {
-  color: var(--pbmit-blackish-color);
+  color: var(--pbmit-white-color);
+  background: linear-gradient(
+    135deg,
+    var(--pbmit-global-color),
+    var(--pbmit-secondary-color)
+  );
+  border-color: transparent;
 }
 .pbmit-btn-color-blackish .pbmit-btn {
   color: var(--pbmit-blackish-color);
@@ -419,22 +437,31 @@ a.link-btn i,
 }
 .pbmit-btn-global {
   color: var(--pbmit-white-color);
-  background-color: var(--pbmit-global-color);
+  background: linear-gradient(
+    135deg,
+    var(--pbmit-global-color),
+    var(--pbmit-secondary-color)
+  );
 }
 .pbmit-btn-global:after {
-  color: var(--pbmit-global-color);
+  color: var(--pbmit-secondary-color);
   background-color: var(--pbmit-white-color);
 }
 .pbmit-btn-global:hover {
   color: var(--pbmit-white-color);
+  box-shadow: 0 5px 15px rgba(var(--pbmit-global-color-rgb), 0.4);
 }
 .pbmit-btn-hover-white {
   color: var(--pbmit-white-color);
-  background-color: var(--pbmit-global-color);
+  background: linear-gradient(
+    135deg,
+    var(--pbmit-global-color),
+    var(--pbmit-secondary-color)
+  );
 }
 .pbmit-btn-hover-white:hover {
   color: var(--pbmit-blackish-color);
-  background-color: var(--pbmit-white-color);
+  background: var(--pbmit-white-color);
 }
 .pbmit-btn:focus {
   color: var(--pbmit-white-color);
@@ -582,7 +609,7 @@ body .pbmit-bg-color-white {
   align-items: center;
   text-transform: none;
   letter-spacing: 0px;
-  color: var(--pbmit-blackish-color);
+  color: var(--pbmit-black-color);
 }
 .site-navigation ul.navigation > li > a:hover:after {
   color: rgba(255, 255, 255, 0.8);

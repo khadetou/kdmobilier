@@ -1,24 +1,198 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
-    <data noupdate="1">
-
-        <record id="theme_kdmobilier.aboutus_page" model="website.page">
+    <data>
+        <!-- Page About Us -->
+        <record id="theme_kdmobilier.aboutus" model="website.page">
             <field name="name">About Us</field>
             <field name="type">qweb</field>
             <field name="url">/about-us</field>
-            <field name="key">theme_kdmobilier.aboutus_page</field>
+            <field name="website_published">True</field>
+            <field name="key">theme_kdmobilier.aboutus</field>
             <field name="arch" type="xml">
-                <t name="About Us" t-name="theme_kdmobilier.aboutus_page">
+                <t t-name="theme_kdmobilier.aboutus">
                     <t t-call="website.layout">
-                        <section>
-                            <h1>Hello world!</h1>
+                        <div class="oe_structure oe_empty"></div>
+
+                        <!-- Hero Section -->
+                        <section class="about-hero-section">
+                            <div class="about-hero-container">
+                                <img src="https://res.cloudinary.com/do4eujx4o/image/upload/q_auto,f_auto/v1743463594/image_fx__dwgat2.png" alt="KD Mobilier" class="about-hero-img"/>
+                                <div class="about-hero-overlay"></div>
+                                <div class="about-hero-content">
+                                    <h1 class="about-hero-title" style="font-family: var(--pbmit-heading-typography-font-family);">Notre Histoire</h1>
+                                    <div class="about-gold-line mx-auto"></div>
+                                    <p class="about-hero-subtitle">L'excellence du design au service de votre intérieur</p>
+                                </div>
+                            </div>
                         </section>
+
+                        <!-- Introduction Section -->
+                        <section class="about-intro-section">
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-10">
+                                        <div class="about-intro-content text-center">
+                                            <h6 class="about-section-subtitle">QUI SOMMES-NOUS</h6>
+                                            <div class="about-gold-line mx-auto"></div>
+                                            <h2 class="about-section-title">L'Art de Vivre, Redéfini</h2>
+                                            <p class="about-section-text">
+                                                KD Mobilier est une boutique de mobilier haut de gamme, fruit d'un partenariat exclusif avec les plus prestigieuses marques italiennes, turques et françaises. Notre sélection méticuleuse de pièces d'exception reflète notre engagement envers l'excellence et l'élégance intemporelle.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Story Section -->
+                        <section class="about-story-section">
+                            <div class="container">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-6">
+                                        <div class="about-story-image-container">
+                                            <img src="https://res.cloudinary.com/do4eujx4o/image/upload/q_auto,f_auto/v1743463583/image_fx__1_f3gmo7.png" alt="Notre Équipe" class="about-story-image"/>
+                                            <div class="about-story-image-accent"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="about-story-content">
+                                            <h6 class="about-section-subtitle">NOTRE RÉCIT</h6>
+                                            <div class="about-gold-line"></div>
+                                            <h2 class="about-section-title">L'Excellence au Cœur du Sénégal</h2>
+                                            <p class="about-story-text">
+                                                KD Mobilier raconte l'histoire inspirante d'un groupe de fils et filles du pays de la Teranga, unis par une vision commune : apporter confort et élégance à l'hospitalité légendaire du Sénégal. Notre équipe, composée de jeunes talents sénégalais passionnés par le design et l'innovation, incarne l'avenir radieux de notre nation.
+                                            </p>
+                                            <p class="about-story-text">
+                                                Chaque meuble que nous proposons est le fruit d'une quête inlassable d'excellence, où savoir-faire traditionnel et design contemporain se rencontrent pour créer des pièces d'exception. Nous ne nous contentons pas de vendre du mobilier — nous créons des expériences qui transforment les espaces et enrichissent la vie quotidienne.
+                                            </p>
+                                            <div class="about-signature">
+                                                <span>La Direction</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Values Section -->
+                        <section class="about-values-section">
+                            <div class="about-values-bg"></div>
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-8 text-center">
+                                        <h6 class="about-section-subtitle">NOS VALEURS</h6>
+                                        <div class="about-gold-line mx-auto"></div>
+                                        <h2 class="about-section-title about-values-title">Ce Qui Nous Définit</h2>
+                                    </div>
+                                </div>
+                                <div class="row about-values-row">
+                                    <div class="col-md-4">
+                                        <div class="about-value-card">
+                                            <div class="about-value-icon">
+                                                <i class="fa fa-star"></i>
+                                            </div>
+                                            <h3 class="about-value-title">Excellence</h3>
+                                            <div class="about-value-line"></div>
+                                            <p class="about-value-text">
+                                                Nous nous engageons à offrir uniquement des produits de la plus haute qualité, sélectionnés avec rigueur pour leur design exceptionnel et leur durabilité inégalée.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="about-value-card">
+                                            <div class="about-value-icon">
+                                                <i class="fa fa-paint-brush"></i>
+                                            </div>
+                                            <h3 class="about-value-title">Créativité</h3>
+                                            <div class="about-value-line"></div>
+                                            <p class="about-value-text">
+                                                Notre approche innovante du design d'intérieur nous permet de créer des espaces uniques qui reflètent la personnalité et les aspirations de chacun de nos clients.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="about-value-card">
+                                            <div class="about-value-icon">
+                                                <i class="fa fa-handshake-o"></i>
+                                            </div>
+                                            <h3 class="about-value-title">Engagement</h3>
+                                            <div class="about-value-line"></div>
+                                            <p class="about-value-text">
+                                                Nous considérons chaque projet comme unique et nous nous engageons à accompagner nos clients avec attention et dévouement tout au long de leur parcours avec nous.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Services Section -->
+                        <section class="about-services-section">
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-8 text-center">
+                                        <h6 class="about-section-subtitle">NOTRE EXPERTISE</h6>
+                                        <div class="about-gold-line mx-auto"></div>
+                                        <h2 class="about-section-title">Services Personnalisés</h2>
+                                        <p class="about-section-text">
+                                            Grâce à l'expertise de nos designers et décorateurs d'intérieur, nous offrons à chaque client la possibilité de transformer son espace de vie en un lieu chaleureux et accueillant, reflet de sa personnalité unique. Nous faisons de la personnalisation de votre intérieur notre priorité absolue.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row about-services-row">
+                                    <div class="col-md-6 col-lg-4">
+                                        <div class="about-service-card">
+                                            <div class="about-service-number">01</div>
+                                            <h3 class="about-service-title">Conseil Personnalisé</h3>
+                                            <p class="about-service-text">
+                                                Notre équipe de designers experts vous accompagne dans la conceptualisation de votre espace idéal, en tenant compte de vos goûts et besoins spécifiques.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-4">
+                                        <div class="about-service-card">
+                                            <div class="about-service-number">02</div>
+                                            <h3 class="about-service-title">Design d'Intérieur</h3>
+                                            <p class="about-service-text">
+                                                Nous créons des intérieurs harmonieux qui reflètent votre style personnel tout en maximisant la fonctionnalité et l'esthétique de chaque espace.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-4">
+                                        <div class="about-service-card">
+                                            <div class="about-service-number">03</div>
+                                            <h3 class="about-service-title">Mobilier Sur Mesure</h3>
+                                            <p class="about-service-text">
+                                                Nous collaborons avec des artisans d'exception pour créer des pièces uniques qui s'intègrent parfaitement à votre espace et répondent à vos exigences spécifiques.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Call to Action -->
+                        <section class="about-cta-section">
+                            <div class="about-cta-overlay"></div>
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-10 text-center">
+                                        <h2 class="about-cta-title">Découvrez Notre Collection</h2>
+                                        <p class="about-cta-text">
+                                            Explorez notre sélection de mobilier haut de gamme et laissez-vous inspirer par l'élégance et le raffinement.
+                                        </p>
+                                        <a href="/shop" class="about-cta-button">
+                                            <span>VOIR LA COLLECTION</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <div class="oe_structure oe_empty"></div>
                     </t>
                 </t>
             </field>
         </record>
-
     </data>
-
 </odoo>

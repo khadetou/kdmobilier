@@ -1,8 +1,8 @@
 /* Core theme variables for consistent styling */
 :root {
-  --kd-primary: #14213d; /* Primary brand color - Navy blue */
-  --kd-secondary: #bb9a65; /* Secondary brand color - Gold/Bronze */
-  --kd-gray: #e5e5e5; /* Light gray for backgrounds */
+  --kd-primary: #8a5830; /* Primary brand color - Dark brown */
+  --kd-secondary: #d19d66; /* Secondary brand color - Light brown/gold */
+  --kd-gray: #fcfaf7; /* Light beige for backgrounds */
   --kd-dark: #282828; /* Dark gray for text */
   --kd-white: #ffffff; /* White for contrast */
 }
@@ -16,7 +16,7 @@ body {
 
 /* Hero Section */
 .kd-hero {
-  background: linear-gradient(rgba(20, 33, 61, 0.85), rgba(20, 33, 61, 0.85)),
+  background: linear-gradient(rgba(138, 88, 48, 0.85), rgba(138, 88, 48, 0.85)),
     var(--bg-image);
   background-size: cover;
   background-position: center;

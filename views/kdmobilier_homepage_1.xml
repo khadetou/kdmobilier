@@ -36,10 +36,10 @@
             <div class="container">
               <div class="section-header border-bottom border-2 d-flex justify-content-between align-items-center mb-4">
                 <div class="pbmit-heading-subheading blue animation-style4">
-                  <h4 class="pbmit-subtitle" style="color: #1b3669">
+                  <h4 class="pbmit-subtitle" style="color: #d19d66">
                     Notre Collection
                   </h4>
-                  <h2 class="pbmit-title" style="color: #1b3669">
+                  <h2 class="pbmit-title" style="color: #8a5830">
                     Nos salons et canapés
                   </h2>
                 </div>
@@ -88,16 +88,16 @@
           <div class="oe_structure oe_empty" />
           <!-- NOS SALONS ET CANAPÉS -->
           <!-- COMPOSITIONS MURALES -->
-          <div class="section-header border-bottom border-2" style="border-color: #1b3669 !important" />
+          <div class="section-header border-bottom border-2" style="border-color: #d19d66 !important" />
           <div class="oe_structure oe_empty" />
           <section class="salon-products py-5">
             <div class="container">
               <div class="section-header border-bottom border-2 d-flex justify-content-between align-items-center mb-4">
                 <div class="pbmit-heading-subheading blue animation-style4">
-                  <h4 class="pbmit-subtitle" style="color: #1b3669">
+                  <h4 class="pbmit-subtitle" style="color: #d19d66">
                     Notre Collection
                   </h4>
-                  <h2 class="pbmit-title" style="color: #1b3669">
+                  <h2 class="pbmit-title" style="color: #8a5830">
                     Compositions murales
                   </h2>
                 </div>
@@ -187,10 +187,10 @@
             <div class="container">
               <div class="section-header border-bottom border-2 d-flex justify-content-between align-items-center mb-4">
                 <div class="pbmit-heading-subheading blue animation-style4">
-                  <h4 class="pbmit-subtitle" style="color: #1b3669">
+                  <h4 class="pbmit-subtitle" style="color: #d19d66">
                     Notre Collection
                   </h4>
-                  <h2 class="pbmit-title" style="color: #1b3669">
+                  <h2 class="pbmit-title" style="color: #8a5830">
                     Table à manger
                   </h2>
                 </div>
@@ -245,10 +245,10 @@
             <div class="container">
               <div class="section-header border-bottom border-2 d-flex justify-content-between align-items-center mb-4">
                 <div class="pbmit-heading-subheading blue animation-style4">
-                  <h4 class="pbmit-subtitle" style="color: #1b3669">
+                  <h4 class="pbmit-subtitle" style="color: #d19d66">
                     Notre Collection
                   </h4>
-                  <h2 class="pbmit-title" style="color: #1b3669">Buffets</h2>
+                  <h2 class="pbmit-title" style="color: #8a5830">Buffets</h2>
                 </div>
                 <a href="/shop/category/salles-a-manger-buffets-26" class="text-decoration-none">→</a
                 >
@@ -374,10 +374,10 @@
             <div class="container-fluid">
               <div class="section-header border-bottom border-2 d-flex justify-content-between align-items-center mb-4 container">
                 <div class="pbmit-heading-subheading blue animation-style mx-auto text-center">
-                  <h4 class="pbmit-subtitle" style="color: #1b3669">
+                  <h4 class="pbmit-subtitle" style="color: #d19d66">
                     Notre Collection
                   </h4>
-                  <h2 class="pbmit-title" style="color: #1b3669">
+                  <h2 class="pbmit-title" style="color: #8a5830">
                     Chambre à coucher - Lits
                   </h2>
                 </div>
@@ -431,7 +431,7 @@
             <div class="container p-0">
               <div class="ihbox-style-10-bg-area pbmit-bg-color-light-2">
                 <div class="pbmit-heading-subheading blue text-center animation-style2">
-                  <h4 class="pbmit-subtitle" style="color: #1b3669">
+                  <h4 class="pbmit-subtitle" style="color: #d19d66">
                     Pourquoi Nous Choisir ?
                   </h4>
                   <h2 class="pbmit-title">
@@ -585,7 +585,7 @@
             <div class="row align-items-center">
               <div class="col-md-6">
                 <div class="pbmit-heading-subheading blue animation-style4">
-                  <h4 class="pbmit-subtitle" style="color: #1b3669">
+                  <h4 class="pbmit-subtitle" style="color: #d19d66">
                       Ce que nous faisons
                   </h4>
                   <h2 class="pbmit-title">

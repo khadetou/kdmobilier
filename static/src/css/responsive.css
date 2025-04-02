@@ -105,7 +105,7 @@ body {
   /*=== Header ===*/
   .header-style-3 .pbmit-pre-header-wrapper .container,
   .header-style-3 .pbmit-main-header-area .container {
-    padding: 0 30px;
+    padding: 0 15px !important;
   }
   .header-style-3.site-header .pbmit-contact-info li:not(:last-child) {
     padding: 0 30px 0 0;
@@ -725,7 +725,7 @@ body {
     position: relative;
   }
   ul.navigation.clearfix {
-    padding: 90px 0;
+    padding: 65px 0;
   }
   .site-header .pbmit-social-links,
   .header-style-1 .pbmit-right-box .pbmit-button-box-second {
@@ -735,7 +735,7 @@ body {
     padding: 0 30px;
   }
   .site-header .pbmit-header-search-btn {
-    margin-right: 40px;
+    margin-right: 0 !important;
   }
   .pbmit-search-overlay .pbmit-search-outer {
     position: absolute;

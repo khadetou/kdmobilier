@@ -123,40 +123,61 @@
                 </nav>
               </div>
 
-              <ul class="d-flex align-items-center gap-3 ">
-                <!-- <t t-call="website_sale.header_cart_link">
-                  <t t-set="_icon" t-value="True" />
-                  <t t-set="_link_class" t-value="'o_navlink_background btn position-relative rounded-circle p-1 text-center text-reset'" />
-                  <t t-set="_badge_class" t-value="'position-absolute top-0 end-0 mt-n1 me-n1 rounded-pill'" />
-                </t> -->
-
-                <t t-call="website_sale_wishlist.header_wishlist_link">
-                  <t t-set="_icon" t-value="True"/>
-                  <t t-set="_link_class" t-value="'o_navlink_background btn position-relative rounded-circle p-1 text-center text-reset'"/>
-                  <t t-set="_badge_class" t-value="'position-absolute top-0 end-0 mt-n1 me-n1 rounded-pill'"/>
-                </t>
-              </ul>
-
-              <ul>
-
-              </ul>
-
-              <div class="pbmit-right-box d-flex align-items-center">
-                <div class="pbmit-header-search-btn">
-                  <a href="#" title="Search">
-                    <i class="pbmit-base-icon-search-1"></i>
-                  </a>
-                </div>
 
 
-                <!-- <div class="pbmit-button-box-second">
+              <!-- CART WISHLIST -->
+              <ul class="d-flex align-items-center gap-3 me-5">
+                <!-- SEARCH BAR -->
+                <div class="pbmit-right-box d-flex align-items-center">
+                  <div class="pbmit-header-search-btn">
+                    <a href="#" title="Search">
+                      <i class="pbmit-base-icon-search-1"></i>
+                    </a>
+                  </div>
+
+
+                  <!-- <div class="pbmit-button-box-second">
                   <a class="pbmit-btn pbmit-btn-outline" href="/contactus">
                     <span class="pbmit-button-content-wrapper">
                       <span class="pbmit-button-text">Consultation</span>
                     </span>
                   </a>
                 </div> -->
-              </div>
+                </div>
+
+
+                <!-- Sign In -->
+                <t t-call="portal.placeholder_user_sign_in">
+                  <t t-set="_item_class" t-valuef="btn btn-link text-decoration-none o_navlink_background rounded-circle sign_in" />
+                  <t t-set="_link_class" t-valuef="p-1" />
+                </t>
+                <!-- User Dropdown -->
+                <t t-call="portal.user_dropdown">
+                  <t t-set="_user_name" t-value="false" />
+                  <t t-set="_avatar" t-value="true" />
+                  <t t-set="_item_class" t-valuef="btn btn-link text-decoration-none p-0 " />
+                  <t t-set="_link_class" t-valuef="tw-flex tw-items-center p-0" />
+                  <t t-set="_user_name_class" t-valuef="small" />
+                  <t t-set="_dropdown_menu_class" t-valuef="dropdown-menu" />
+                </t>
+                <!-- WISHLIST -->
+                <t t-call="website_sale_wishlist.header_wishlist_link">
+                  <t t-set="_icon" t-value="True"/>
+                  <t t-set="_link_class" t-value="'o_navlink_background btn text-primary-color position-relative rounded-circle p-1 text-center text-reset'"/>
+                  <t t-set="_badge_class" t-value="'position-absolute top-0 end-0 mt-n1 me-n1 rounded-pill bg-primary-color'"/>
+                </t>
+
+
+                <t t-call="website_sale.header_cart_link">
+                  <t t-set="_icon" t-value="True" />
+                  <t t-set="_link_class" t-value="'o_navlink_background btn position-relative rounded-circle p-1 text-center text-reset text-primary-color'" />
+                  <t t-set="_badge_class" t-value="'position-absolute top-0 end-0 mt-n1 me-n1 rounded-pill'" />
+                </t>
+              </ul>
+
+
+
+
             </div>
           </div>
         </div>
