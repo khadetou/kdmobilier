@@ -5144,3 +5144,9 @@ img.img {
 .col-sm.o_colored_level {
   flex: 0 0 auto !important;
 }
+
+@media (min-width: 1200px) {
+  .col-sm.o_colored_level {
+    flex: 1 0 0% !important;
+  }
+}
