@@ -1,0 +1,357 @@
+/**
+ * Premium Category Header Styling
+ * Elegant and responsive design for the products category navigation
+ * Brand colors: #8a5830, #1a1a1a, #d19d66, #1a1a1a, #f8f9fa
+ */
+
+/* Main container */
+.products_header {
+  position: relative;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(138, 88, 48, 0.08);
+  background-color: #fff;
+  padding: 0.5rem;
+}
+
+/* Filmstrip container */
+.o_wsale_filmstip_container {
+  position: relative;
+  border-radius: 8px;
+  background: linear-gradient(
+    to right,
+    rgba(248, 249, 250, 0.8),
+    rgba(255, 255, 255, 0.5)
+  );
+  box-shadow: inset 0 0 15px rgba(138, 88, 48, 0.05);
+  min-height: 100px !important;
+  transition: all 0.3s ease;
+}
+
+/* Filmstrip wrapper */
+.o_wsale_filmstip_wrapper {
+  padding: 0.75rem;
+  scrollbar-width: thin;
+  scrollbar-color: #8a5830 #f8f9fa;
+}
+
+/* Customize scrollbar */
+.o_wsale_filmstip_wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+
+.o_wsale_filmstip_wrapper::-webkit-scrollbar-track {
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+
+.o_wsale_filmstip_wrapper::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #8a5830, #d19d66);
+  border-radius: 10px;
+}
+
+/* Filmstrip list */
+.o_wsale_filmstip {
+  gap: 0.75rem !important;
+  padding: 0.25rem !important;
+}
+
+/* Category item */
+.o_wsale_filmstip li {
+  transition: transform 0.3s ease;
+}
+
+.o_wsale_filmstip li:hover {
+  transform: translateY(-3px);
+}
+
+/* Category button */
+.o_wsale_filmstip .btn {
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(138, 88, 48, 0.1);
+  min-height: 90px !important;
+  padding: 0.75rem 1.25rem !important;
+}
+
+.o_wsale_filmstip .btn:hover {
+  box-shadow: 0 5px 15px rgba(138, 88, 48, 0.15);
+  border-color: rgba(138, 88, 48, 0.2);
+}
+
+/* Active category */
+.o_wsale_filmstip .btn.border-primary {
+  border-color: #8a5830 !important;
+  border-width: 2px !important;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.9),
+    rgba(248, 249, 250, 0.5)
+  );
+  box-shadow: 0 5px 15px rgba(138, 88, 48, 0.15);
+}
+
+/* Category image */
+.o_wsale_filmstip .o_image_64_cover {
+  width: 70px !important;
+  height: 70px !important;
+  border-radius: 8px !important;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(138, 88, 48, 0.1);
+  overflow: hidden;
+}
+
+.o_wsale_filmstip .btn:hover .o_image_64_cover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(138, 88, 48, 0.2);
+}
+
+/* Category text */
+.o_wsale_filmstip .fs-5 {
+  font-weight: 500 !important;
+  font-size: 1.1rem !important;
+  color: #1a1a1a;
+  transition: color 0.3s ease;
+  line-height: 1.3;
+}
+
+.o_wsale_filmstip .btn:hover .fs-5 {
+  color: #8a5830;
+}
+
+/* Mobile category header */
+.mobile-category-header {
+  background: linear-gradient(135deg, #8a5830, #d19d66);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 3px 10px rgba(138, 88, 48, 0.2);
+}
+
+.mobile-back-btn {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  border: none !important;
+  color: white !important;
+  border-radius: 6px !important;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.mobile-back-btn:hover {
+  background-color: rgba(255, 255, 255, 0.3) !important;
+  transform: translateX(-3px);
+}
+
+.mobile-category-title {
+  color: white !important;
+  font-weight: 500 !important;
+  font-size: 1.2rem !important;
+  margin-bottom: 0 !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+  .o_wsale_filmstip .btn {
+    min-height: 80px !important;
+    padding: 0.5rem 1rem !important;
+  }
+
+  .o_wsale_filmstip .o_image_64_cover {
+    width: 60px !important;
+    height: 60px !important;
+  }
+
+  .o_wsale_filmstip .fs-5 {
+    font-size: 1rem !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .products_header {
+    padding: 0.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .o_wsale_filmstip_container {
+    min-height: 90px !important;
+  }
+
+  .o_wsale_filmstip .btn {
+    min-height: 70px !important;
+    padding: 0.5rem 0.75rem !important;
+  }
+
+  .o_wsale_filmstip .o_image_64_cover {
+    width: 50px !important;
+    height: 50px !important;
+  }
+
+  .o_wsale_filmstip .fs-5 {
+    font-size: 0.9rem !important;
+  }
+}
+
+/* Pricelist dropdown styling */
+.o_pricelist_dropdown .btn {
+  background: linear-gradient(135deg, #8a5830, #d19d66) !important;
+  border: none !important;
+  color: white !important;
+  border-radius: 6px !important;
+  padding: 0.5rem 1rem !important;
+  font-weight: 500 !important;
+  box-shadow: 0 3px 10px rgba(138, 88, 48, 0.2);
+  transition: all 0.3s ease;
+}
+
+.o_pricelist_dropdown .btn:hover {
+  box-shadow: 0 5px 15px rgba(138, 88, 48, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Special styling for categories without images */
+.o_wsale_filmstip .btn.px-5 {
+  background: linear-gradient(
+    to bottom,
+    rgba(248, 249, 250, 0.8),
+    rgba(255, 255, 255, 0.5)
+  );
+  border: 1px dashed rgba(138, 88, 48, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.o_wsale_filmstip .btn.px-5:hover {
+  background: linear-gradient(
+    to bottom,
+    rgba(248, 249, 250, 0.9),
+    rgba(255, 255, 255, 0.7)
+  );
+  border: 1px dashed rgba(138, 88, 48, 0.4);
+}
+
+/* Add subtle animation to the filmstrip */
+@keyframes subtle-glow {
+  0% {
+    box-shadow: inset 0 0 15px rgba(138, 88, 48, 0.05);
+  }
+  50% {
+    box-shadow: inset 0 0 15px rgba(138, 88, 48, 0.1);
+  }
+  100% {
+    box-shadow: inset 0 0 15px rgba(138, 88, 48, 0.05);
+  }
+}
+
+.o_wsale_filmstip_container {
+  animation: subtle-glow 3s infinite ease-in-out;
+}
+
+/* Keep the original category header styling */
+.category-header-container {
+  position: relative;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.category-image-container {
+  position: relative;
+  overflow: hidden;
+  transition: height 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.category-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  object-position: center;
+}
+
+.category-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(26, 26, 26, 0.5);
+  transition: background-color 0.3s ease;
+}
+
+.category-text-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  padding: 0 1rem;
+  z-index: 2;
+}
+
+.category-title {
+  color: #fff;
+  margin-bottom: 0;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: font-size 0.3s ease;
+}
+
+.category-header-container:hover .category-image {
+  transform: scale(1.05);
+}
+
+.category-header-container:hover .category-overlay {
+  background-color: rgba(26, 26, 26, 0.4);
+}
+
+@media (max-width: 767.98px) {
+  .category-image-container {
+    height: 200px !important;
+  }
+
+  .category-title {
+    font-size: 2rem !important;
+  }
+
+  .category-image {
+    object-position: center;
+  }
+
+  .category-header-container:hover .category-image {
+    transform: scale(1.05) !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .category-image-container {
+    height: 250px !important;
+  }
+
+  .category-title {
+    font-size: 2.5rem !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .category-image-container {
+    height: 300px !important;
+  }
+
+  .category-title {
+    font-size: 3rem !important;
+  }
+}

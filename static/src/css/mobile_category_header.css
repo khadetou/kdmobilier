@@ -1,0 +1,38 @@
+/* Mobile Category Header Text Styling
+   Makes the category title smaller on mobile devices
+*/
+
+@media (max-width: 767.98px) {
+  /* Make the category title smaller in mobile view */
+  .d-flex.align-items-center.d-lg-none.me-auto h4,
+  .mobile-category-title {
+    font-size: 1rem !important;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+  }
+
+  /* Make the back button smaller */
+  .d-flex.align-items-center.d-lg-none.me-auto .btn,
+  .mobile-back-btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  /* Adjust spacing */
+  .d-flex.align-items-center.d-lg-none.me-auto,
+  .mobile-category-header {
+    margin-right: 0.5rem !important;
+  }
+}
+
+/* For very small screens */
+@media (max-width: 375px) {
+  .d-flex.align-items-center.d-lg-none.me-auto h4,
+  .mobile-category-title {
+    max-width: 150px;
+    font-size: 0.875rem !important;
+  }
+}

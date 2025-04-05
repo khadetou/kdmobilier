@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <!-- Custom Blog Cover Template -->
+  <template id="custom_blog_cover" inherit_id="website_blog.blog_post_short" name="Custom Blog Cover">
+    <xpath expr="//div[@id='o_wblog_blog_top']" position="replace">
+      <div id="o_wblog_blog_top">
+        <!-- Selectively display droppable-areas for 'all blogs' or single-blog pages -->
+        <t t-if="not tag and not date_begin and not search">
+          <div id="o_wblog_blog_top_droppable">
+            <t t-if="blog">
+              <!-- CUSTOM COVER: Display the cover image with custom indicator -->
+              <t t-set="cover_properties" t-value="json.loads(blog.cover_properties)"/>
+              <t t-set="bg_image" t-value="cover_properties.get('background-image', 'none')"/>
+              <t t-set="opacity" t-value="cover_properties.get('opacity', '0.5')"/>
+              <t t-set="bg_class" t-value="cover_properties.get('background_color_class', '')"/>
+              <t t-set="resize_class" t-value="cover_properties.get('resize_class', '')"/>
+
+              <div data-name="Couverture" data-use_filters="True" data-use_text_align="True" data-res-model="blog.blog" t-att-data-res-id="blog.id" t-attf-class="o_record_cover_container d-flex flex-column h-100 o_colored_level o_cc #{bg_class} o_wblog_post_page_cover o_record_has_cover cover_auto">
+
+                <!-- Background image div -->
+                <div t-attf-style="background-image: #{bg_image};" class="o_record_cover_component o_record_cover_image">
+                  <!-- Custom indicator badge -->
+                  <div class="position-absolute top-0 end-0 m-3">
+                    <span class="badge bg-primary">CUSTOM COVER</span>
+                  </div>
+                </div>
+
+                <!-- Filter div -->
+                <div t-attf-style="opacity: #{opacity};" class="o_record_cover_component o_record_cover_filter oe_black"></div>
+
+                <!-- Content container -->
+                <div class="container position-relative h-100 d-flex flex-column justify-content-around">
+                  <div class="o_wblog_post_title">
+                    <span class="text-white text-decoration-none" t-att-title="blog.name">
+                      <div id="o_wblog_post_name" placeholder="Titre du blog" t-field="blog.name"></div>
+                      <div id="o_wblog_post_subtitle" placeholder="Sous-titre du blog" t-field="blog.subtitle"></div>
+                    </span>
+                    <div>
+                      <span>&amp;nbsp;</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Original content field -->
+              <t t-set="oe_structure_blog_single_header_description">Edit the '<t t-esc="blog.name"/>
+' page header.</t>
+              <div t-field="blog.content" class="oe_structure" t-attf-id="oe_structure_blog_single_header_#{blog.id}" t-att-data-editor-sub-message="oe_structure_blog_single_header_description"/>
+            </t>
+            <t t-elif="blogs">
+              <!-- CUSTOM COVER: Display the cover image for All Blogs page -->
+              <div data-name="Couverture" data-use_filters="True" data-use_text_align="True" data-res-model="website" t-att-data-res-id="website.id" class="o_record_cover_container d-flex flex-column h-100 o_colored_level o_cc o_cc3 o_wblog_post_page_cover o_record_has_cover cover_auto">
+
+                <!-- Background image div -->
+                <t t-set="blogs_cover_url" t-value="request.env['ir.config_parameter'].sudo().get_param('website_blog.blogs_cover_image_url', False)"/>
+                <div t-if="blogs_cover_url" t-attf-style="background-image: url('#{blogs_cover_url}');" class="o_record_cover_component o_record_cover_image">
+                  <!-- Custom indicator badge -->
+                  <div class="position-absolute top-0 end-0 m-3">
+                    <span class="badge bg-primary custom-all-blogs-badge">CUSTOM ALL BLOGS COVER</span>
+                  </div>
+                </div>
+                <div t-else="" style="background-image: url('/website_blog/static/src/img/cover_1.jpg');" class="o_record_cover_component o_record_cover_image">
+                  <!-- Custom indicator badge -->
+                  <div class="position-absolute top-0 end-0 m-3">
+                    <span class="badge bg-primary custom-all-blogs-badge">CUSTOM ALL BLOGS COVER (DEFAULT)</span>
+                  </div>
+                </div>
+
+                <!-- Filter div -->
+                <div style="opacity: 0.4;" class="o_record_cover_component o_record_cover_filter oe_black"></div>
+
+                <!-- Content container -->
+                <div class="container position-relative h-100 d-flex flex-column justify-content-around">
+                  <div class="o_wblog_post_title text-center">
+                    <h1 class="display-4 text-white">Our Blogs</h1>
+                    <div class="lead text-white">Discover our latest articles and insights</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Original content field -->
+              <t t-set="oe_structure_blog_all_header_description">Edit the 'All Blogs' page header.</t>
+              <div class="oe_structure" id="oe_structure_blog_all_header" t-att-data-editor-sub-message="oe_structure_blog_all_header_description"/>
+            </t>
+          </div>
+        </t>
+      </div>
+    </xpath>
+  </template>
+</odoo>

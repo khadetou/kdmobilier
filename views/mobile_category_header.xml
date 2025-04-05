@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Mobile Category Header Text Size Fix -->
+    <template id="mobile_category_header_fix" inherit_id="website_sale.products" name="Mobile Category Header Text Size Fix" priority="20">
+        <xpath expr="//div[hasclass('d-flex') and hasclass('align-items-center') and hasclass('d-lg-none')]" position="replace">
+            <div t-if="category" class="d-flex align-items-center d-lg-none me-auto mobile-category-header">
+                <t t-if="not category.parent_id" t-set="backUrl" t-valuef="/shop"/>
+                <t t-else="" t-set="backUrl" t-value="keep('/shop/category/' + slug(category.parent_id), category=0)"/>
+                
+                <a t-attf-class="btn btn-{{ navClass }} me-2 mobile-back-btn" t-att-href="category.parent_id and keep('/shop/category/' + slug(category.parent_id), category=0) or '/shop'">
+                    <i class="fa fa-angle-left"/>
+                </a>
+                <h4 t-out="category.name" class="mb-0 me-auto mobile-category-title"/>
+            </div>
+        </xpath>
+    </template>
+</odoo>

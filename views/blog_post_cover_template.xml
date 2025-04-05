@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <!-- Custom Blog Post Cover Template -->
+  <template id="custom_blog_post_cover" inherit_id="website_blog.blog_post_complete" name="Custom Blog Post Cover">
+    <xpath expr="//section[@id='o_wblog_post_top']" position="replace">
+      <section id="o_wblog_post_top">
+        <div id="title" class="blog_header">
+          <div data-name="Couverture de l'article de blog" 
+               style="" 
+               data-use_size="True" 
+               data-use_filters="True" 
+               data-res-model="blog.post" 
+               t-att-data-res-id="blog_post.id" 
+               class="o_record_cover_container d-flex flex-column h-100 o_colored_level o_cc o_cc3 o_half_screen_height o_record_has_cover o_wblog_post_page_cover">
+            
+            <!-- Background image div -->
+            <t t-set="cover_properties" t-value="json.loads(blog_post.cover_properties)"/>
+            <t t-set="bg_image" t-value="cover_properties.get('background-image', 'none')"/>
+            <div t-attf-style="background-image: #{bg_image};" 
+                 class="o_record_cover_component o_record_cover_image o_we_snippet_autofocus" 
+                 data-oe-model="ir.ui.view" 
+                 data-oe-id="3658" 
+                 data-oe-field="arch" 
+                 data-oe-xpath="/t[1]/div[1]/div[1]"></div>
+            
+            <!-- Filter div with 20% opacity -->
+            <div style="opacity: 0.2;" 
+                 class="o_record_cover_component o_record_cover_filter oe_black" 
+                 data-oe-model="ir.ui.view" 
+                 data-oe-id="3658" 
+                 data-oe-field="arch" 
+                 data-oe-xpath="/t[1]/div[1]/div[2]"></div>
+            
+            <!-- Content container -->
+            <div class="container text-center position-relative h-100 d-flex flex-column flex-grow-1 justify-content-around">
+              <div class="o_wblog_post_title">
+                <h1 id="o_wblog_post_name" 
+                    class="o_editable_no_shadow text-white" 
+                    data-oe-expression="blog_post.name" 
+                    placeholder="Titre de l'article de blog" 
+                    t-att-data-blog-id="blog_post.id" 
+                    data-oe-model="blog.post" 
+                    t-att-data-oe-id="blog_post.id" 
+                    data-oe-field="name" 
+                    data-oe-type="char" 
+                    t-esc="blog_post.name"/>
+                <div id="o_wblog_post_subtitle" 
+                     class="o_editable_no_shadow text-white" 
+                     placeholder="Sous-titre" 
+                     data-oe-model="blog.post" 
+                     t-att-data-oe-id="blog_post.id" 
+                     data-oe-field="subtitle" 
+                     data-oe-type="char" 
+                     data-oe-expression="blog_post.subtitle" 
+                     t-esc="blog_post.subtitle"/>
+              </div>
+              <a id="o_wblog_post_content_jump" 
+                 href="#o_wblog_post_main" 
+                 class="css_editable_mode_hidden justify-content-center align-items-center rounded-circle mx-auto mb-5 text-decoration-none">
+                <i class="fa fa-angle-down fa-3x text-white" 
+                   aria-label="Au contenu du blog" 
+                   title="Au contenu du blog"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </xpath>
+  </template>
+</odoo>

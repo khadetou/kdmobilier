@@ -1,0 +1,43 @@
+/* Direct override for mega menu images with inline styles */
+
+/* Class added by our JavaScript */
+.mega-menu-img-fix {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* This is a very specific selector with high specificity to override inline styles */
+body
+  .s_mega_menu_thumbnails
+  img.img.o_we_custom_image[style*="width: 50% !important"] {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+@media (max-width: 991.98px) {
+  /* Target by attribute selector */
+  [style*="width: 50% !important"] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Target by specific image IDs */
+  img[data-original-id="40840"],
+  img[data-original-id="40841"],
+  img[data-original-id="40842"] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Target by class with !important */
+  .img-fluid.rounded.shadow.img.o_we_custom_image {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Target the mega menu specifically */
+  .o_mega_menu .s_mega_menu_thumbnails img {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}

@@ -1,0 +1,160 @@
+/* Enhanced Category Navigation Styling
+   Mobile-first responsive design
+   Brand colors: #8a5830, #1a1a1a, #d19d66, #1a1a1a, #f8f9fa
+*/
+
+/* Main container */
+.products_header {
+  position: relative;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Filmstrip container */
+.o_wsale_filmstip_container {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  overflow: hidden;
+  min-height: auto !important;
+  padding: 0.5rem 0;
+}
+
+.o_wsale_filmstip_wrapper {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.o_wsale_filmstip_wrapper::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* Category list */
+.o_wsale_filmstip {
+  padding: 0.5rem 0 !important;
+  gap: 0.5rem !important;
+}
+
+/* Category item */
+.o_wsale_filmstip li {
+  transition: all 0.3s ease;
+}
+
+/* Category button */
+.o_wsale_filmstip .btn {
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  min-height: 70px !important;
+  padding: 0.75rem 1rem;
+  border: none;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+.o_wsale_filmstip .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Active category */
+.o_wsale_filmstip .btn.border-primary {
+  background-color: #8a5830 !important;
+  border: none !important;
+  color: #fff !important;
+}
+
+.o_wsale_filmstip .btn.border-primary span {
+  color: #fff !important;
+}
+
+/* Category image */
+.o_image_64_cover {
+  width: 56px !important;
+  height: 56px !important;
+  border-radius: 8px !important;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.o_wsale_filmstip .btn:hover .o_image_64_cover {
+  transform: scale(1.05);
+}
+
+.o_wsale_filmstip .btn.border-primary .o_image_64_cover {
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
+}
+
+/* Category text */
+.o_wsale_filmstip .btn span {
+  font-weight: 500;
+  color: #1a1a1a;
+  transition: all 0.3s ease;
+}
+
+/* Mobile header */
+.products_header .d-flex.align-items-center.d-lg-none {
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.products_header .d-flex.align-items-center.d-lg-none h4 {
+  color: #8a5830;
+  font-weight: 600;
+  margin: 0;
+}
+
+.products_header .d-flex.align-items-center.d-lg-none .btn {
+  color: #8a5830;
+  border: none;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.products_header .d-flex.align-items-center.d-lg-none .btn:hover {
+  background-color: rgba(138, 88, 48, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+  .o_wsale_filmstip_container {
+    padding: 0.25rem 0;
+  }
+  
+  .o_wsale_filmstip .btn {
+    min-height: 60px !important;
+    padding: 0.5rem 0.75rem;
+  }
+  
+  .o_image_64_cover {
+    width: 48px !important;
+    height: 48px !important;
+  }
+  
+  .o_wsale_filmstip .btn span {
+    font-size: 0.9rem !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .o_wsale_filmstip .btn {
+    min-height: 65px !important;
+  }
+  
+  .o_image_64_cover {
+    width: 52px !important;
+    height: 52px !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .o_wsale_filmstip_container {
+    min-height: 100px !important;
+  }
+  
+  .o_wsale_filmstip {
+    padding: 1rem 0 !important;
+  }
+}

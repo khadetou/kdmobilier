@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Inline CSS fix for mega menu images -->
+    <template id="mega_menu_inline_fix" inherit_id="website.layout" name="Mega Menu Inline Fix">
+        <xpath expr="//head" position="inside">
+            <style>
+                /* Direct fix for mega menu images on mobile */
+                @media (max-width: 991.98px) {
+                    /* Target all mega menu images */
+                    .s_mega_menu_thumbnails img,
+                    .o_mega_menu .s_mega_menu_thumbnails img,
+                    .dropdown-menu .s_mega_menu_thumbnails img,
+                    /* Target by inline style */ img[style*="width: 50% !important"],
+                    /* Target by specific data attributes */ img[data-original-id="40840"], img[data-original-id="40841"], img[data-original-id="40842"],
+                    /* Target by specific classes */
+                    .img-fluid.rounded.shadow.img.o_we_custom_image {
+                        width: 100% !important;
+                        max-width: 100% !important;
+                    }
+                }
+
+                /* Override any other styles */
+                @media (max-width: 991.98px) {
+                    /* !important needed to override inline styles */
+                    .s_mega_menu_thumbnails img[style*="width: 50%"] {
+                        width: 100% !important;
+                        max-width: 100% !important;
+                    }
+                }
+            </style>
+
+            <!-- No JavaScript needed, using pure CSS solution -->
+        </xpath>
+    </template>
+</odoo>

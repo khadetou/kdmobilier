@@ -1,0 +1,58 @@
+/* Mega Menu Image Width Fix
+   Ensures images are properly sized on all screen sizes
+*/
+
+/* Override the inline styles for small screens */
+@media (max-width: 991.98px) {
+  /* Target the specific mega menu */
+  .dropdown-menu[data-oe-id="73"] .s_mega_menu_thumbnails .img-fluid,
+    /* Also target by class in case the data-oe-id changes */
+    .o_mega_menu .s_mega_menu_thumbnails .img-fluid,
+    /* Target by inline style to override it */
+    .s_mega_menu_thumbnails img[style*="width: 50% !important"],
+    /* Target all images in the mega menu */
+    .s_mega_menu_thumbnails img {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Target the columns to ensure proper spacing */
+  .s_mega_menu_thumbnails .col-6 {
+    padding: 0.5rem;
+  }
+
+  /* Make text smaller on mobile */
+  .s_mega_menu_thumbnails .small b {
+    font-size: 0.8rem;
+  }
+
+  /* Direct override for the specific images */
+  img[src*="/web/image/40845-"],
+  img[src*="/web/image/40843-"],
+  img[src*="/web/image/40844-"] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* For very small screens */
+@media (max-width: 575.98px) {
+  .s_mega_menu_thumbnails .col-6 {
+    padding: 0.25rem;
+  }
+
+  .s_mega_menu_thumbnails .small b {
+    font-size: 0.7rem;
+  }
+
+  /* Reduce padding to save space */
+  .s_mega_menu_thumbnails .d-block.p-2 {
+    padding: 0.5rem !important;
+  }
+}
+
+/* !important override for all screen sizes */
+.s_mega_menu_thumbnails img[style*="width: 50% !important"] {
+  width: 100% !important;
+  max-width: 100% !important;
+}

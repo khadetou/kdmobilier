@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Custom Category Header Template -->
+    <template id="custom_category_header" inherit_id="website_sale.products" name="Custom Category Header">
+        <xpath expr="//div[hasclass('position-relative')][1]" position="replace">
+            <div class="category-header-container position-relative mb-4">
+                <div class="category-image-container position-relative overflow-hidden">
+                    <img t-if="category" t-att-src="website.image_url(category, 'image_1920')" t-att-alt="category.name" class="category-image w-100 h-100 object-fit-cover position-absolute"/>
+                    <img t-else="" src="/website_sale/static/src/img/shop_banner.jpg" alt="Shop Banner" class="category-image w-100 h-100 object-fit-cover position-absolute"/>
+                    <div class="category-overlay"></div>
+                    <div class="category-text-container">
+                        <h1 class="category-title display-4" t-esc="category.name if category else 'Shop'"/>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Direct fix for the original category image on mobile -->
+    <template id="direct_category_image_fix" inherit_id="website_sale.products" name="Direct Category Image Fix" priority="20">
+        <xpath expr="//div[hasclass('position-relative')][1]/div[hasclass('position-relative')]/img" position="attributes">
+            <attribute name="style">min-width: 100%; object-fit: cover; top: 50%; left: 50%; transform: translate(-50%, -50%);</attribute>
+            <attribute name="class">w-100 h-100 object-fit-cover position-absolute</attribute>
+        </xpath>
+    </template>
+
+    <!-- Add inline CSS for category header images -->
+    <template id="category_header_inline_fix" inherit_id="website.layout" name="Category Header Inline Fix">
+        <xpath expr="//head" position="inside">
+            <style>
+                /* Fix for category header images on mobile */
+                @media (max-width: 767.98px) {
+                    /* Override the default Odoo CSS that disables transforms on small screens */
+                    .position-relative.mb-4 .position-relative.overflow-hidden img.w-100.h-100.object-fit-cover.position-absolute.start-50.translate-middle-x {
+                        transform: translate(-50%, -50%) !important;
+                        top: 50% !important;
+                        left: 50% !important;
+                        min-width: 100% !important;
+                        min-height: 100% !important;
+                        width: auto !important;
+                        height: auto !important;
+                    }
+
+                    /* Make the category title smaller on mobile */
+                    .d-flex.align-items-center.d-lg-none.me-auto h4 {
+                        font-size: 1rem !important;
+                        font-weight: 500;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        max-width: 200px;
+                    }
+                }
+            </style>
+        </xpath>
+    </template>
+</odoo>

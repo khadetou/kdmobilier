@@ -315,75 +315,101 @@
           </div>
 
           <!-- Products Section -->
-          <section class="valencia-products py-5" style="
-              background-color: #fcfaf7;
-              margin-top: 2rem;
-              padding-top: 4rem !important;
-              padding-bottom: 4rem !important;
-            ">
+          <section class="premium-collection py-5">
+            <!-- Decorative elements for premium look -->
+            <div class="premium-collection-top-border"></div>
+            <div class="premium-collection-bottom-border"></div>
+
             <div class="container">
-              <div class="valencia-section-header">
-                <div class="valencia-section-subtitle" style="color: var(--pbmit-global-color)">
-                  COLLECTION EXCLUSIVE
+              <div class="premium-section-header">
+                <div class="premium-section-subtitle">
+                  <span class="premium-section-subtitle-text">COLLECTION EXCLUSIVE</span>
+                  <span class="premium-section-subtitle-highlight"></span>
                 </div>
-                <h2 class="valencia-section-title">
-                  SALONS ET <span>CANAPÉS</span>
-                </h2>
-                <div style="
-                    width: 60px;
-                    height: 3px;
-                    background-color: var(--pbmit-global-color);
-                    margin: 1.5rem auto;
-                  ">                </div>
+                <h2 class="premium-section-title">SALONS ET <span class="premium-section-title-highlight">CANAPÉS<span class="premium-section-title-underline"></span>
+                </span>
+              </h2>
+              <div class="premium-section-divider">
+                <div class="premium-section-divider-dot"></div>
               </div>
+              <p class="premium-section-description">
+                  Découvrez notre sélection de salons et canapés de haute qualité, alliant confort exceptionnel et design élégant pour sublimer votre intérieur.
+              </p>
+            </div>
 
-              <div class="valencia-products-grid">
-                <t t-set="canapes_category" t-value="request.env['product.public.category'].search([('name', '=', 'Canapes')], limit=1)" />
+            <div class="premium-products-grid">
+              <!-- Fix category search to handle accents and try multiple variations -->
+              <t t-set="canapes_category" t-value="request.env['product.public.category'].search(['|', '|', '|',
+                    ('name', '=', 'Canapes'),
+                    ('name', '=', 'Canapés'),
+                    ('name', '=', 'Salons et Canapés'),
+                    ('name', 'ilike', 'canap')], limit=1)" />
+
+              <!-- If no category found, try to get products directly -->
+              <t t-if="not canapes_category">
                 <t t-set="products" t-value="request.env['product.template'].search([
-                          ('public_categ_ids', 'in', canapes_category.ids),
-                          ('website_published', '=', True)
-                      ], limit=6)" />
+                            ('website_published', '=', True),
+                            '|',
+                            ('name', 'ilike', 'canap'),
+                            ('name', 'ilike', 'salon')
+                        ], limit=6)" />
+              </t>
+              <t t-else="">
+                <t t-set="products" t-value="request.env['product.template'].search([
+                            ('public_categ_ids', 'in', canapes_category.ids),
+                            ('website_published', '=', True)
+                        ], limit=6)" />
+              </t>
 
-                <t t-foreach="products" t-as="product">
-                  <div class="valencia-product-card">
-                    <a t-att-href="product.website_url" class="product-link">
-                      <div class="valencia-product-image">
-                        <img t-att-src="website.image_url(product, 'image_1024')" t-att-alt="product.name" />
-                        <div class="valencia-product-overlay">
-                          <button class="valencia-quick-view" style="
-                              background-color: var(--pbmit-global-color);
-                              color: white;
-                              border: none;
-                            ">
-                            Découvrir
-                          </button>
+              <!-- Fallback if still no products -->
+              <t t-if="not products">
+                <t t-set="products" t-value="request.env['product.template'].search([
+                            ('website_published', '=', True)
+                        ], limit=6)" />
+              </t>
+
+              <t t-foreach="products" t-as="product">
+                <div class="premium-product-card">
+                  <a t-att-href="product.website_url" class="product-link">
+                    <div class="premium-product-image">
+                      <img t-att-src="website.image_url(product, 'image_1024')" t-att-alt="product.name" />
+                      <div class="premium-product-overlay">
+                        <div class="premium-quick-view">
+                          Découvrir
                         </div>
                       </div>
-                    </a>
-                    <a t-att-href="product.website_url" class="product-link">
-                      <div class="valencia-product-info">
-                        <div class="valencia-product-category" t-esc="product.public_categ_ids[0].name" style="color: var(--pbmit-global-color)" />
-                        <h3 class="valencia-product-name" t-esc="product.name" style="
-                            font-family: var(
-                              --pbmit-heading-typography-font-family
-                            );
-                          " />
-                      </div>
-                    </a>
+                    </div>
+                  </a>
+                  <a t-att-href="product.website_url" class="product-link">
+                    <div class="premium-product-info">
+                      <t t-if="product.public_categ_ids">
+                        <div class="premium-product-category" t-esc="product.public_categ_ids[0].name if product.public_categ_ids else ''" />
+                      </t>
+                      <h3 class="premium-product-name" t-esc="product.name" />
+                      <div class="premium-product-divider"></div>
+                      <div class="premium-product-tagline">Collection Exclusive</div>
+                    </div>
+                  </a>
+                  <!-- Premium badge -->
+                  <div class="premium-badge">
+                    Premium
                   </div>
-                </t>
-              </div>
-              <div class="valencia-discover-more">
-                <a href="/shop/category/salons-canapes-21" class="valencia-discover-link" style="font-weight: 500">
-                  <span>DÉCOUVRIR PLUS</span>
-                </a>
-              </div>
+                </div>
+              </t>
             </div>
-          </section>
 
-          <!-- Newsletter Section -->
-          <section class="newsletter-section" style="position: relative; background-color: #fff; margin-top: 2rem">
-            <div class="newsletter-bg" style="
+            <div class="premium-discover-more">
+              <a href="/shop/category/salons-canapes-21" class="premium-discover-link">
+                <span class="premium-discover-text">DÉCOUVRIR PLUS</span>
+                <span class="premium-discover-bg"></span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter-section" style="position: relative; background-color: #fff; margin-top: 2rem">
+          <div class="newsletter-bg" style="
                 background: url('/theme_kdmobilier/static/src/images/5146-b-anasayfa-test.webp')
                   center/cover;
                 opacity: 0.1;
@@ -392,11 +418,11 @@
                 left: 0;
                 width: 100%;
                 height: 100%;
-              ">            </div>
-            <div class="container">
-              <div class="row justify-content-center">
-                <div class="col-lg-9 newsletter-content text-center py-5">
-                  <h3 class="kdmobilier-section-title" style="
+              ">          </div>
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-9 newsletter-content text-center py-5">
+                <h3 class="kdmobilier-section-title" style="
                       font-size: 1.2rem;
                       text-transform: uppercase;
                       letter-spacing: 2px;
@@ -404,14 +430,14 @@
                       margin-bottom: 1rem;
                     ">
                     NOTRE NEWSLETTER
-                  </h3>
-                  <div class="gold-line mx-auto" style="
+                </h3>
+                <div class="gold-line mx-auto" style="
                       width: 60px;
                       height: 3px;
                       background-color: var(--pbmit-global-color);
                       margin-bottom: 2rem;
-                    ">                  </div>
-                  <h2 class="newsletter-title" style="
+                    ">                </div>
+                <h2 class="newsletter-title" style="
                       font-size: 2.5rem;
                       font-weight: 300;
                       margin-bottom: 1.5rem;
@@ -420,8 +446,8 @@
                       color: var(--pbmit-heading-color);
                     ">
                     Kdmobilier : Mobilier Haut de Gamme
-                  </h2>
-                  <p class="newsletter-description" style="
+                </h2>
+                <p class="newsletter-description" style="
                       font-size: 1.1rem;
                       line-height: 1.8;
                       margin-bottom: 2rem;
@@ -432,20 +458,20 @@
                     avant-première nos créations, nos inspirations et nos
                     invitations aux événements exclusifs dédiés à l'art de
                     vivre.
-                  </p>
+                </p>
 
-                  <form class="newsletter-form mx-auto" style="max-width: 600px">
-                    <div class="row g-3 s_newsletter_subscribe_form s_newsletter_list js_subscribe" data-list-id="1">
-                      <div class="col-md-8">
-                        <input type="email" name="email" class="form-control js_subscribe_value" placeholder="Votre adresse email" style="
+                <form class="newsletter-form mx-auto" style="max-width: 600px">
+                  <div class="row g-3 s_newsletter_subscribe_form s_newsletter_list js_subscribe" data-list-id="1">
+                    <div class="col-md-8">
+                      <input type="email" name="email" class="form-control js_subscribe_value" placeholder="Votre adresse email" style="
                             height: 50px;
                             border-radius: 25px;
                             border: 1px solid #ddd;
                             padding-left: 20px;
                           " />
-                      </div>
-                      <div class="col-md-4">
-                        <button type="submit" class="submit-btn w-100 js_subscribe_btn" style="
+                    </div>
+                    <div class="col-md-4">
+                      <button type="submit" class="submit-btn w-100 js_subscribe_btn" style="
                             height: 50px;
                             border-radius: 25px;
                             background-color: var(--pbmit-global-color);
@@ -456,8 +482,8 @@
                             text-transform: uppercase;
                           ">
                           S'inscrire
-                        </button>
-                        <button type="submit" class="submit-btn w-100 js_subscribed_btn d-none" disabled="disabled" style="
+                      </button>
+                      <button type="submit" class="submit-btn w-100 js_subscribed_btn d-none" disabled="disabled" style="
                             height: 50px;
                             border-radius: 25px;
                             background-color: var(--pbmit-global-color);
@@ -467,31 +493,31 @@
                             letter-spacing: 1px;
                           ">
                           Merci
-                        </button>
-                      </div>
+                      </button>
                     </div>
-                  </form>
+                  </div>
+                </form>
 
-                  <p class="privacy-text" style="margin-top: 1.5rem; font-size: 0.9rem; color: #888">
+                <p class="privacy-text" style="margin-top: 1.5rem; font-size: 0.9rem; color: #888">
                     En vous inscrivant, vous acceptez notre
-                    <a href="#" style="color: var(--pbmit-global-color)">politique de confidentialité</a
-                    >.                    <br />
+                  <a href="#" style="color: var(--pbmit-global-color)">politique de confidentialité</a
+                    >.                  <br />
                     Vous pouvez vous désinscrire à tout moment.
-                  </p>
-                </div>
+                </p>
               </div>
             </div>
-          </section>
+          </div>
+        </section>
 
-          <!-- Services Section -->
-          <section style="background-color: #fcfaf7; padding: 5rem 15px;">
-            <div class="container">
-              <div class="row g-5">
-                <!-- Left side - Hero Image -->
-                <div class="col-lg-7">
-                  <div class="position-relative overflow-hidden" style="height: 100%; min-height: 500px">
-                    <img src="https://saloni-furniture.b-cdn.net/spio/ret_img,q_orig,to_auto,s_webp:avif/https://saloni.furniture/wp-content/uploads/slider-f7-1797x1200.jpg" alt="Luxury Canapé" class="w-100 h-100 object-fit-cover" style="position: absolute; top: 0; left: 0" />
-                    <div class="position-absolute" style="
+        <!-- Services Section -->
+        <section style="background-color: #fcfaf7; padding: 5rem 15px;">
+          <div class="container">
+            <div class="row g-5">
+              <!-- Left side - Hero Image -->
+              <div class="col-lg-7">
+                <div class="position-relative overflow-hidden" style="height: 100%; min-height: 500px">
+                  <img src="https://saloni-furniture.b-cdn.net/spio/ret_img,q_orig,to_auto,s_webp:avif/https://saloni.furniture/wp-content/uploads/slider-f7-1797x1200.jpg" alt="Luxury Canapé" class="w-100 h-100 object-fit-cover" style="position: absolute; top: 0; left: 0" />
+                  <div class="position-absolute" style="
                         top: 0;
                         left: 0;
                         right: 0;
@@ -502,9 +528,9 @@
                           rgba(0, 0, 0, 0.2) 50%,
                           rgba(0, 0, 0, 0.5) 100%
                         );
-                      ">                    </div>
-                    <div class="position-absolute" style="bottom: 50px; left: 50px; max-width: 80%">
-                      <h1 style="
+                      ">                  </div>
+                  <div class="position-absolute" style="bottom: 50px; left: 50px; max-width: 80%">
+                    <h1 style="
                           color: #fff;
                           font-size: 3rem;
                           font-weight: 200;
@@ -514,23 +540,23 @@
                           );
                         ">
                         EXCELLENCE
-                      </h1>
-                      <p style="
+                    </h1>
+                    <p style="
                           color: rgba(255, 255, 255, 0.9);
                           font-size: 1.2rem;
                           font-weight: 300;
                           letter-spacing: 2px;
                         ">
                         Artisanat d'Exception
-                      </p>
-                    </div>
+                    </p>
                   </div>
                 </div>
+              </div>
 
-                <!-- Right side - Services -->
-                <div class="col-lg-5">
-                  <div>
-                    <h2 style="
+              <!-- Right side - Services -->
+              <div class="col-lg-5">
+                <div>
+                  <h2 style="
                         font-size: 1.8rem;
                         margin-bottom: 0.5rem;
                         font-weight: 500;
@@ -541,21 +567,21 @@
                         );
                       ">
                       NOS SERVICES
-                    </h2>
-                    <div style="
+                  </h2>
+                  <div style="
                         width: 60px;
                         height: 3px;
                         background-color: var(--pbmit-global-color);
                         margin: 1rem 0 2rem;
-                      ">                    </div>
+                      ">                  </div>
 
-                    <div style="
+                  <div style="
                         margin-bottom: 2rem;
                         border-left: 3px solid var(--pbmit-global-color);
                         padding-left: 1.5rem;
                       ">
-                      <div style="margin-bottom: 1rem">
-                        <h3 style="
+                    <div style="margin-bottom: 1rem">
+                      <h3 style="
                             font-size: 1.3rem;
                             margin-bottom: 0.5rem;
                             font-weight: 500;
@@ -566,21 +592,21 @@
                             );
                           ">
                           CONSEIL EN DÉCORATION
-                        </h3>
-                      </div>
-                      <p style="color: #666; line-height: 1.8; font-weight: 300">
+                      </h3>
+                    </div>
+                    <p style="color: #666; line-height: 1.8; font-weight: 300">
                         Notre service de conseil en décoration vous aide à créer
                         des espaces personnalisés qui reflètent votre style.
-                      </p>
-                    </div>
+                    </p>
+                  </div>
 
-                    <div style="
+                  <div style="
                         margin-bottom: 2rem;
                         border-left: 3px solid var(--pbmit-global-color);
                         padding-left: 1.5rem;
                       ">
-                      <div style="margin-bottom: 1rem">
-                        <h3 style="
+                    <div style="margin-bottom: 1rem">
+                      <h3 style="
                             font-size: 1.3rem;
                             margin-bottom: 0.5rem;
                             font-weight: 500;
@@ -591,22 +617,22 @@
                             );
                           ">
                           DESIGN &amp; ARCHITECTURE D'INTÉRIEUR
-                        </h3>
-                      </div>
-                      <p style="color: #666; line-height: 1.8; font-weight: 300">
+                      </h3>
+                    </div>
+                    <p style="color: #666; line-height: 1.8; font-weight: 300">
                         Design et architecture d'intérieur alliant élégance et
                         fonctionnalité, créant des espaces harmonieux et
                         accueillants.
-                      </p>
-                    </div>
+                    </p>
+                  </div>
 
-                    <div style="
+                  <div style="
                         margin-bottom: 2rem;
                         border-left: 3px solid var(--pbmit-global-color);
                         padding-left: 1.5rem;
                       ">
-                      <div style="margin-bottom: 1rem">
-                        <h3 style="
+                    <div style="margin-bottom: 1rem">
+                      <h3 style="
                             font-size: 1.3rem;
                             margin-bottom: 0.5rem;
                             font-weight: 500;
@@ -617,14 +643,14 @@
                             );
                           ">
                           ENTRETIEN DE CANAPÉ
-                        </h3>
-                      </div>
-                      <p style="color: #666; line-height: 1.8; font-weight: 300">
-                        Service personnalisé pour une expérience d'achat unique.
-                      </p>
+                      </h3>
                     </div>
+                    <p style="color: #666; line-height: 1.8; font-weight: 300">
+                        Service personnalisé pour une expérience d'achat unique.
+                    </p>
+                  </div>
 
-                    <a href="/shop" style="
+                  <a href="/shop" style="
                         display: inline-block;
                         position: relative;
                         color: #000;
@@ -636,8 +662,8 @@
                         padding-bottom: 5px;
                         margin-top: 1rem;
                       ">
-                      <span>DÉCOUVRIR NOTRE COLLECTION</span>
-                      <div style="
+                    <span>DÉCOUVRIR NOTRE COLLECTION</span>
+                    <div style="
                           width: 100%;
                           height: 2px;
                           background-color: var(--pbmit-global-color);
@@ -645,15 +671,15 @@
                           bottom: 0;
                           left: 0;
                           transition: width 0.3s ease;
-                        ">                      </div>
-                    </a>
-                  </div>
+                        ">                    </div>
+                  </a>
                 </div>
               </div>
             </div>
-          </section>
-        </div>
-      </t>
-    </xpath>
-  </template>
+          </div>
+        </section>
+      </div>
+    </t>
+  </xpath>
+</template>
 </odoo>

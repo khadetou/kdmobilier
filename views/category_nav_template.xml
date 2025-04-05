@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Custom Category Navigation Template -->
+    <template id="custom_category_nav" inherit_id="website_sale.products_categories_top" name="Custom Category Navigation">
+        <xpath expr="//div[hasclass('products_header')]" position="replace">
+            <div class="products_header btn-toolbar flex-nowrap align-items-center justify-content-between gap-3">
+                <!-- Category Filmstrip -->
+                <div class="o_wsale_filmstip_container d-flex align-items-stretch overflow-hidden">
+                    <div class="o_wsale_filmstip_wrapper overflow-auto">
+                        <ul class="o_wsale_filmstip d-flex align-items-stretch p-0 mb-0 list-unstyled overflow-visible">
+                            <t t-foreach="categories" t-as="c">
+                                <li class="d-flex pe-3" t-att-data-link-href="keep('/shop/category/' + slug(c), category=0)">
+                                    <input type="radio" class="btn-check pe-none" 
+                                           t-att-name="'wsale_categories_top_radios_' + str(category and category.id or 0)" 
+                                           t-att-id="c.id" 
+                                           t-att-value="c.id" 
+                                           t-att-checked="c.id == int(category or 0)"/>
+                                    <div t-attf-class="btn btn-light d-flex align-items-center ps-3 pe-4 fs-5 fw-normal #{'border border-2 border-primary' if c.id == int(category or 0) else ''}" t-att-for="c.id">
+                                        <t t-if="c.image_128">
+                                            <div class="o_image_64_cover oe_img_bg o_bg_img_center rounded-3 me-3" 
+                                                 t-attf-style="background-image:url('data:image/png;base64,#{c.image_128.decode('utf-8')}'); width: 64px; height: 64px;" 
+                                                 t-att-alt="c.name"/>
+                                        </t>
+                                        <span class="fs-5" t-field="c.name"/>
+                                    </div>
+                                </li>
+                            </t>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Mobile Header -->
+                <div class="d-flex align-items-center d-lg-none me-auto">
+                    <a class="btn btn-light me-2" t-att-href="keep('/shop/category/' + slug(category.parent_id if category and category.parent_id else request.env.ref('product.product_category_all')), category=0)">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <h4 class="mb-0 me-auto" t-esc="category.name if category else 'All Products'"/>
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>

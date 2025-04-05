@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Mega Menu Image Width Fix -->
+    <template id="mega_menu_fix" name="Mega Menu Image Width Fix">
+        <!-- This is a CSS-only fix for mega menu images -->
+        <style>
+            @media (max-width: 991.98px) {
+                /* Target the specific mega menu */ .dropdown-menu[data-oe-id="73"] .s_mega_menu_thumbnails .img-fluid,
+                /* Also target by class in case the data-oe-id changes */
+                .o_mega_menu .s_mega_menu_thumbnails .img-fluid,
+                /* Target all images in the mega menu */
+                .s_mega_menu_thumbnails img {
+                    width: 100% !important;
+                    max-width: 100% !important;
+                }
+
+                /* Target the columns to ensure proper spacing */
+                .s_mega_menu_thumbnails .col-6 {
+                    padding: 0.5rem;
+                }
+
+                /* Make text smaller on mobile */
+                .s_mega_menu_thumbnails .small b {
+                    font-size: 0.8rem;
+                }
+            }
+        </style>
+    </template>
+
+    <!-- Add the CSS to the website assets -->
+    <template id="mega_menu_fix_assets" inherit_id="website.assets_frontend" name="Mega Menu Fix Assets">
+        <xpath expr="//link[last()]" position="after">
+            <link rel="stylesheet" type="text/css" href="/theme_kdmobilier/static/src/css/mega_menu_fix.css"/>
+            <link rel="stylesheet" type="text/css" href="/theme_kdmobilier/static/src/css/mega_menu_important_fix.css"/>
+        </xpath>
+    </template>
+</odoo>
